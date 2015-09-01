@@ -1,0 +1,42 @@
+{
+	"age10": {
+		"socialiser" 	: 3.8,
+		"freespirit" 	: 6.6,
+		"achiever" 		: 6,
+		"philanthropist" : 3.2,
+		"player" 		: 4,
+		"disruptor" 	: 8.4
+	},
+	"age20": {
+		"socialiser" 	: 7.6,
+		"freespirit" 	: 5.5,
+		"achiever" 		: 6,
+		"philanthropist" : 3.2,
+		"player" 		: 4,
+		"disruptor" 	: 6
+	},
+	"age30": {
+		"socialiser" 	: 5.7,
+		"freespirit" 	: 5.5,
+		"achiever" 		: 6,
+		"philanthropist" : 4,
+		"player" 		: 7,
+		"disruptor" 	: 6
+	},
+	"age40": {
+		"socialiser" 	: 6.65,
+		"freespirit" 	: 6.6,
+		"achiever" 		: 9.6,
+		"philanthropist" : 4.8,
+		"player" 		: 8,
+		"disruptor" 	: 4.8
+	},
+	"age50": {
+		"socialiser" 	: 4.75,
+		"freespirit" 	: 8.8,
+		"achiever" 		: 3.6,
+		"philanthropist" : 6.4,
+		"player" 		: 6,
+		"disruptor" 	: 3.6
+	}
+}

@@ -1,0 +1,22 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "PlayerPoint"
+        ],
+        "name": "GMRE",
+        "views": [
+            "MainWindow",
+            "gmre.MainView",
+            "gmre.FiveScaleAnswer",
+            "gmre.ResultWindow"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

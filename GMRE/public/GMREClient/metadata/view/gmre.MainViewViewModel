@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gmremainview",
+        "designer|userClassName": "gmre.MainViewViewModel"
+    },
+    "designerId": "ee25a9f0-058f-491a-b1f3-dc3f578f15c6"
+}

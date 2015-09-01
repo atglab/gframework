@@ -1,0 +1,42 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|initialView": true,
+        "designer|userAlias": "mainwindow",
+        "designer|userClassName": "MainWindow",
+        "height": 800,
+        "layout": "border",
+        "maximizable": true,
+        "minHeight": 500,
+        "minWidth": 600,
+        "minimizable": true,
+        "title": "GMRE Beta",
+        "width": 1000
+    },
+    "name": "MyWindow",
+    "designerId": "bc433f2c-b939-45d6-89ad-e61e510f3c16",
+    "viewControllerInstanceId": "dd261425-e989-462a-babb-e4a3cf5813dc",
+    "viewModelInstanceId": "7bef43d1-8a80-48ec-a9ad-1fc3a0224397",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center"
+            },
+            "name": "gmre.mainview",
+            "designerId": "5934d001-d913-45e6-83ad-95f4299f91df",
+            "masterInstanceId": "00a915a5-9c7e-47da-bf65-9179e07fb878"
+        }
+    ]
+}

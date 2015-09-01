@@ -1,0 +1,78 @@
+{
+    "type": "Ext.form.RadioGroup",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "columns": null,
+        "designer|userAlias": "fivescaleanswer",
+        "designer|userClassName": "gmre.FiveScaleAnswer",
+        "fieldLabel": null,
+        "margin": "10,10,20,10",
+        "radioFieldName": "user_defined"
+    },
+    "name": "MyRadioGroup2",
+    "configAlternates": {
+        "columns": "number"
+    },
+    "designerId": "726b5ffe-a943-42f0-bef2-bde835096388",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "radioFieldName",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "65faddef-e42c-4a90-acaf-a2630686c0d8",
+    "viewModelInstanceId": "dcb760d2-6fc5-4eed-99b8-3d33714dbf9b",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initComponent",
+                "implHandler": [
+                    "this.items = [",
+                    "    {",
+                    "        xtype: 'radiofield',",
+                    "        name: this.radioFieldName,",
+                    "        boxLabel: '절대 그렇지 않다',",
+                    "        inputValue: '1'",
+                    "    },{",
+                    "        xtype: 'radiofield',",
+                    "        name: this.radioFieldName,",
+                    "        boxLabel: '그렇지 않은 편이다',",
+                    "        inputValue: '2'",
+                    "    },{",
+                    "        xtype: 'radiofield',",
+                    "        name: this.radioFieldName,",
+                    "        boxLabel: '보통이다',",
+                    "        inputValue: '3',",
+                    "        checked: true",
+                    "    },{",
+                    "        xtype: 'radiofield',",
+                    "        name: this.radioFieldName,",
+                    "        boxLabel: '그런 편이다',",
+                    "        inputValue: '4'",
+                    "    },{",
+                    "        xtype: 'radiofield',",
+                    "        name: this.radioFieldName,",
+                    "        boxLabel: '매우 그렇다',",
+                    "        inputValue: '5'",
+                    "    }",
+                    "];",
+                    "",
+                    "this.callParent(arguments);"
+                ]
+            },
+            "name": "initComponent",
+            "designerId": "af090287-8f77-4c99-a968-fdeb0f3ccd9e"
+        }
+    ]
+}

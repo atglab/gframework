@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gmrefivescaleanswer",
+        "designer|userClassName": "gmre.FiveScaleAnswerViewController"
+    },
+    "designerId": "65faddef-e42c-4a90-acaf-a2630686c0d8"
+}

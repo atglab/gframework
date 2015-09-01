@@ -1,0 +1,426 @@
+{
+	"gm1": {
+		"nameE" : "Access",
+		"nameK" : "접근 권한",
+		"discriptionE" : "Access to more features and abilities in a system can give people more ways to help others and to contribute. It also helps make them feel valued. More meaningful if earned.",
+		"discriptionK" : "시스템에 더 많은 기능과 능력에 대한 '접근'은 사람들이 다른 사람을 도와주고 기여하는 다양한 방법을 제공할 수 있다. 또한 시스템을 평가하는데 용이하며, 좀더 의미있는 것을 얻을수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Permission'을 통해 다양한 권한을 부여할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm2": {
+		"nameE" : "Anarchy",
+		"nameK" : "무정부 상태(규칙이 없는 상태를 만들어 주는것)",
+		"discriptionE" : "Sometimes you just have to burn it all to the ground and start again. Sit back, throw the rule book out of the window and see what happens! Consider running short 'no rules' events.",
+		"discriptionK" : "게임 메카닉은 때때로 모든것을 처음부터 다시 시작해야하며, '규칙이 없는 이벤트'를 고려해야한다. <br><u>게이미피케이션 프레임워크</u>에서는 'Mission'설정 시 큐칙을 없음으로 설정할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm3": {
+		"nameE" : "Anonymity",
+		"nameK" : "익명성 보장",
+		"discriptionE" : "If you want to encourage total freedom and lack of inhibitions, allow your users to remain anonymous. Be very, very careful as anonymity can bring out the worst in people!",
+		"discriptionK" : "관리자는 사용자에게 '익명성'을 보장할 수 있다. 그러나 익명성은 최악의 경우를 가져올수 있기 때문에 조심해서 사용해야 한다.<br><u>게이미피케이션 프레임워크</u>에서는 'User'의 닉네임으로 사용자의 익명성을 보장할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1,
+		"costfilter": 1
+	},
+	"gm4": {
+		"nameE" : "Badges / Achievements",
+		"nameK" : "배지/업적",
+		"discriptionE" : "Badges and achievements are a form of feedback. Award them to people for accomplishments. Use them wisely and in a meaningful way to make them more appreciated",
+		"discriptionK" : "'배지'와 '업적'은 피드백의 한 형태이며, 성과에 대한 보상이다. 또한, 의미있는 방식으로 '배지'와 '업적'을 더 높이 평가하게 만들고 현명하게 사용해야 한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'의 보상으로 'Badge'를 생성할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 3, 
+		"costfilter": 1
+	},
+	"gm5": {
+		"nameE" : "Boss Battles",
+		"nameK" : "보스 전투(스테이지 왕을 만드는 것)",
+		"discriptionE" : "Boss battles are a chance to consolidate everything you have learned and mastered in one epic challenge. Usually signals the end of the journey - and the beginning of a new one.",
+		"discriptionK" : "'보스 전투'는 에픽 챌린저에서 익힌 모든것을 통합할 수 있는 기회이다. '보스 전투'는 보통 여행의 끝과 새로운 시작을 의미한다. <br><u>게이미피케이션 프레임워크</u>에서는 'Level', 'Status'의 최대 레벨, 최대 등급을 통해 '보스 전투'를 생성할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm6": {
+		"nameE" : "Branching Choices",
+		"nameK" : "선택 분기(대안을 준비해주는 것)",
+		"discriptionE" : "Let the user choose their path and destiny. From multiple learning paths to responsive narratives. Remember, choice has to be or at least feel meaningful to be most effective and appreciated",
+		"discriptionK" : "사용자는 자신의 경로와 운명을 선택할 수 있다. 또한, 이것은 여러 학습 경로가 있으며, '기억'과 '선택'은 가장 효과적이고 인식되어야 의미있게 사용할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 사용자가 'Level'또는 'Status'를 획득하기 위해 'Point'를 누적시키거나, 'Mission'을 완료할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm7": {
+		"nameE" : "Care-taking",
+		"nameK" : "관리인(관리할 사람을 만들어 주는 것)",
+		"discriptionE" : "Looking after other people can be very fulfilling. Create roles for administrators, moderators, curators etc. Allow users to take a parental role.",
+		"discriptionK" : "다른 사람들을 돌보는 것은 매우 보람될 수 있다. 관리자, 조정자, 책임자 등의 역할을 만들고, 사용자의 부모 역할을 할 수 있도록 허용한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Status'로 상위 등급에 있는 사람들을 '관리자', '조정자'등의 역할로 만들수 있으며, 이를 'Mission'으로 생성할 수도 있다.",
+		"cnt" : 2,
+		"periodfilter" : 3, 
+		"costfilter": 4
+	},
+	"gm8": {
+		"nameE" : "Certificates",
+		"nameK" : "증명서",
+		"discriptionE" : "Different from general rewards and trophies, certificates are a physical symbol of mastery and achievement. They carry meaning, status and are useful.",
+		"discriptionK" : "일반 보상과 트로피와는 달리, '증명서'는 '숙달'과 '성취'의 물리적 상징이며, 의미, 상태를 지니고 유용하다.<br><u>게이미피케이션 프레임워크</u>에서는 추후 '증명서'를 업데이트할 예정이다.",
+		"cnt" : 3,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm9": {
+		"nameE" : "Challenges",
+		"nameK" : "도전",
+		"discriptionE" : "Challenges help keep people interested, testing their knowledge and allowing them to apply it. Overcoming challenges will make people feel they have earned their achievement.",
+		"discriptionK" : "'도전'은 사람들의 흥미를 유지하는데 도움을 주며, 자신의 지식을 테스트하고 그것을 적용할 수 있게 한다. 극복 과제는 사람들이 자신의 업적을 누적할 수 있게 만든다.<br><u>게이미피케이션 프레임워크</u>에서는 어려운 'Mission'을 설정하여 사용자로 하여금 도전 의식을 갖게 해줄수 있으며, 'Mission' 완료 시, 'Point'등을 통해 업적을 누적할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm10": {
+		"nameE" : "Collect & Trade",
+		"nameK" : "수집",
+		"discriptionE" : "Many people love to collect things. Give them a way to collect and trade items in your system. Helps build relationships and feelings of purpose and value.",
+		"discriptionK" : "많은 사람들은 물건을 수집하는 것을 좋아한다. 그들에게 시스템에서의 수집 방법 및 무역 항목을 지정한다. 이것은 관계와 목적, 가치의 감정을 구축하는데 도움이 된다.<br><u>게이미피케이션 프레임워크</u>에서는 다양한 'Badge'를 생성하여 사용자로 하여금 수집하게 할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm11": {
+		"nameE" : "Competition",
+		"nameK" : "경쟁",
+		"discriptionE" : "Competition gives people a chance to prove themselves against others. It can be a way to win rewards, but can also be a place where new friendships and relationships are born.",
+		"discriptionK" : "'경쟁'은 사람들이 다른 사람에 대해 자신을 증명할 수 있는 기회를 준다. 그것은 보상을 이길수 있는 방법이 될 수 있으며, 새로운 우정과 관계가 형성될 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Level'과 'Status'를 생성하여 사용자로 하여금 서로 경쟁 구도를 만들 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm12": {
+		"nameE" : "Creativity Tools",
+		"nameK" : "창조적인 도구",
+		"discriptionE" : "Allow people to create their own content and express themselves. This may be for personal gain, for pleasure or to help other people (teaching materials, levels, gear, FAQ etc).",
+		"discriptionK" : "사람들이 자신의 콘텐츠를 생성하고 표현하도록 허용한다. 이것은 개인의 이익을 위한 것이며, 다른 사람을 돕거나 즐거움을 위한 것이다.(교재, 레벨, 장비, 자주 묻는 질문 등)<br><u>게이미피케이션 프레임워크</u>에서는 추후'창조적인 도구'를 추가할 예정이다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm13": {
+		"nameE" : "Curiosity / Mystery Box",
+		"nameK" : "호기심/무언지 모르는 박스",
+		"discriptionE" : "Curiosity is a strong force. Not everything has to be fully explained, a little mystery may encourage people in new directions.",
+		"discriptionK" : "호기심은 강한 힘이다. 모든 것은 완벽하게 설명될 수 없고, 미스터리는 새로운 방향으로 사람을 격려할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 '호기심'을 불러 일으킬 수 있다. 이는 사람들이 '호기심'을 갖는 미션을 생성함으로써 가능하다.",
+		"cnt" : 3,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm14": {
+		"nameE" : "Customisation",
+		"nameK" : "주문 제작(아바타)",
+		"discriptionE" : "Give people the tools to customise their experience. From avatars to the environment, let them express themselves and choose how they will present themselves to others",
+		"discriptionK" : "사람들에게 자신의 경험을 제작할 수 있는 도구를 제공한다. 환경에 대한 '아바타'로부터, 그들이 자신을 표현하고, 다른 사람에게 자신을 소개하는 방법을 선택한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 자신의 경험을 '주문 제작'할 수 있으며, 이는 '글쓰기', '댓글', '소개'등으로 구성될수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm15": {
+		"nameE" : "Development Tools",
+		"nameK" : "개발 도구(추가할수 있는 애드온)",
+		"discriptionE" : "Think modifications rather than hacking and breaking. Let them develop new add-ons to improve and build on the system.",
+		"discriptionK" : "수정보다는 해킹 및 침입을 생각한다. 이를 개선하고 시스템을 구축할 수 있는 새로운 추가 기능을 개발한다.<br><u>게이미피케이션 프레임워크</u>에서는 추후 '개발 도구'를 추가할 예정이다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm16": {
+		"nameE" : "Easter Eggs",
+		"nameK" : "부활절 달걀",
+		"discriptionE" : "Easter eggs are a fun way to reward and surprise people for just having a look around. For some, the harder they are to find, the more exciting it is!",
+		"discriptionK" : "'이스터애그'는 보상과 사람을 놀라게하기 위한 재미있는 방법이다. 일부, 더 열심히 그들이 찾을수 있으며 흥미롭다.<br><u>게이미피케이션 프레임워크</u>에서는 추후 '부활절 달걀'을 추가할 예정이다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm17": {
+		"nameE" : "Exploration",
+		"nameK" : "탐험",
+		"discriptionE" : "Give your Free Spirits room to move and explore. If you are creating virtual worlds, consider that they will want to find the boundaries and give them something to find.",
+		"discriptionK" : "이동하고 탐구하는 자유주의자들의 공간을 제공한다. 그들은 경계를 발견하고 찾을 수 있는 무언가를 제공하기를 원한다.<br><u>게이미피케이션 프레임워크</u>에서는 숨겨진 'Mission'을 생성하여 자유주의자들이 이동하고 탐구하여 이를 발견하고, 이들을 위한 'Badge','Point'등을 제공할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 3, 
+		"costfilter": 1
+	},
+	"gm18": {
+		"nameE" : "Fixed Reward Schedule",
+		"nameK" : "고정주기 보상",
+		"discriptionE" : "Reward people based on defined actions and events. First activity, level up, progression. Useful during on-boarding and to celebrate milestone events.",
+		"discriptionK" : "정의된 행동과 이벤트를 기반으로 사람들에게 보상한다. 우선 활동, 레벨 업, 진행.<br><u>게이미피케이션 프레임워크</u>에서는 'Activity'를 통해 특정 행위를 정의하고, 이를 수행하면 'Point','Badge'등의 보상을 줄 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 2, 
+		"costfilter": 1
+	},
+	"gm19": {
+		"nameE" : "Gifting / Sharing",
+		"nameK" : "선물/공유",
+		"discriptionE" : "Allow gifting or sharing of items to other people to help them achieve their goals. Whilst a form of altruism, the potential for reciprocity can a strong motivator.",
+		"discriptionK" : "그들이 목표를 달성하는데 도움을 준 다른 사람들을 위해 아이템을 선물하거나 공유하는 것을 허용한다. 이타주의의 한형태로, 상호 강한 동기를 부여할 수 있는 가능성이 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 상호간의 아이템을 선물하거나 공유하는 미션을 만들수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm20": {
+		"nameE" : "Guilds / Teams",
+		"nameK" : "길드/팀",
+		"discriptionE" : "Let people build close-knit guilds or teams. Small groups can be much more effective than large sprawling ones. Create platforms for collaboration but also pave the way for team based competitions.",
+		"discriptionK" : "사람들은 서로 밀접한 길드 또는 팀을 구축할 수 있다. 작은 그룹은 큰 그룹보다 훨씬 효과적일수 있다. 협업을 위한 플랫폼을 만들뿐만 아니라, 팀 기반의 경쟁을 위한 방법이다.<br><u>게이미피케이션 프레임워크</u>에서는 'Level'을 통해 동등한 레벨을 갖은 사람들간의 길드/팀을 구성할 수 있으며, 이들은 협업 뿐만아니라 팀기반의 경쟁을 유도할 수 있다. ",
+		"cnt" : 2,
+		"periodfilter" : 3, 
+		"costfilter": 4
+	},
+	"gm21": {
+		"nameE" : "Innovation Platform",
+		"nameK" : "혁신 플랫폼(주어진 시스템을 변경할 수 있는 방법)",
+		"discriptionE" : "Disruptors think outside the box and boundaries of your system. Give them a way to channel that and you can generate great innovations",
+		"discriptionK" : "'방해자'는 박스와 시스템의 경계 밖에서 생각한다. '방해자'들의 채널을 위한 방식을 제공하고, '방해자'들과 당신은 큰 혁신을 생성할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 추후 '혁신 플랫폼'을 제공할 예정이다.",
+		"cnt" : 1,
+		"periodfilter" : 3, 
+		"costfilter": 4
+	},
+	"gm22": {
+		"nameE" : "Leaderboards / Ladders",
+		"nameK" : "리더보드",
+		"discriptionE" : "Leaderboards come in different flavours, most commonly relative or absolute. Commonly used to show people how they compare to others and so others can see them. Not for everyone.",
+		"discriptionK" : "'리더보드'는 다른 것에서 오며, 대부분 상대적이거나 절대적이다. 일반적으로 사람을 다른 사람들과 비교하는 방법으로 표시하고, 다른 사람을 볼 수 있다. 모든 사람을 위해.<br><u>게이미피케이션 프레임워크</u>에서는 'Level'를 이용하여 리더보드와 같은 역할을 만들수 있으며, 'Level'을 통해 사람들간의 비교를 할 수 있다.",
+		"cnt" : 4,
+		"periodfilter" : 2, 
+		"costfilter": 1
+	},
+	"gm23": {
+		"nameE" : "Learning / New Skills",
+		"nameK" : "학습/새로운 스킬",
+		"discriptionE" : "What better way to achieve mastery than to learn something new? Give your users the opportunity to learn and expand.",
+		"discriptionK" : "새로운 것을 배우는 것보다 숙달을 달성하기 위해 더 좋은 방법은 무엇인가? 사용자에게 배우고 확장할 수 있는 기회를 제공한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'의 '반복완료'를 이용하여 학습하고 새롭게 배울 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm24": {
+		"nameE" : "Levels / Progression",
+		"nameK" : "레벨/진행",
+		"discriptionE" : "Levels and goals help to map a users progression through a system. It can be as important to see where you can go next as it is to see where you have been.",
+		"discriptionK" : "'레벨'과 '목표'는 시스템을 통해 사용자의 '진행'을 지도하는데 도움을 준다. '레벨'과 '목표'는 당신이 어느정도 위치에 있는지 확인할 수 있으며, 당신이 다음에 갈 수 있는 위치를 확인하기 위해 중요할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Level'을 통해 사용자의 현재 레벨과 다음레벨을 확인할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 3, 
+		"costfilter": 1
+	},
+	"gm25": {
+		"nameE" : "Light Touch",
+		"nameK" : "라이트 터치",
+		"discriptionE" : "Whilst you must have rules, if you are encouraging disruption, apply them with a light touch. See how things play out before jumping in. Keep a watchful eye and listen to the feedback of users.",
+		"discriptionK" : "당신이 규칙을 가지고 있어야 하는 동안, 당신이 혼란을 장려하는 경우, '라이트 터치'를 적용할 수 있다. 점프하기 전 재생 방법을 참조하라. 감시하고 사용자의 의견을 듣는다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'의 특정 '규칙'으로 미션을 수행하며, 이에 대한 '라이트 터치'로 '설명'을 제공한다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm26": {
+		"nameE" : "Loss Aversion",
+		"nameK" : "손실 회피",
+		"discriptionE" : "No one likes to lose things. Fear of losing status, friends, points, achievements, possessions, progress etc can be a powerful reason for people to do things.",
+		"discriptionK" : "누구도 어떤것을 잃고 좋아하지 않는다. 위치, 친구, 포인트, 업적, 소지품, 진행상황 등을 잃는 두려움은 사람들이 무엇이든지 할 수 있는 강력한 이유가 될수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 특정 미션을 만들고 해당 미션을 완료하지 못하면, 'Point','Level'등을 삭감또는 강등시킬 수 있다.",
+		"cnt" : 4,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm27": {
+		"nameE" : "Lottery / Game of Chance",
+		"nameK" : "복권/기회의 게임",
+		"discriptionE" : "Lotteries and games of chance are a way to win rewards with very little effort from the user. You have to be in it, to win it though!",
+		"discriptionK" : "'복권'과 '기회의 게임'은 사용자의 아주 작은 노력으로 보상을 받을 수 있는 방법이다. 승리하기 위해서는 당신은 거기에 있어야한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 숨겨진 미션을 만들어 사용자에게로 하여금 복권과 같은 보상을 받을수 있게 할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm28": {
+		"nameE" : "Meaning / Purpose",
+		"nameK" : "의미/목적",
+		"discriptionE" : "Some just need to understand the meaning or the purpose of what they are doing (epic or otherwise). For others they need to feel they are part of something greater than themselves.",
+		"discriptionK" : "그들이 무엇을 하고 있는지 일부는 '의미' 또는 '목적'을 이해할 필요가 있다.(에픽 또는 기타). 다른 사람들 위해 그들은 자신보다 더 큰 무언가의 일부를 느낄 필요가 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'의 '설명'을 작성하여 해당 미션의 의미 또는 목적을 확인할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm29": {
+		"nameE" : "Narrative / Story",
+		"nameK" : "스토리",
+		"discriptionE" : "Tell your story and let people tell theirs. Use gamification to strengthen understanding of your story by involving people. Think like a writer!",
+		"discriptionK" : "당신의 '스토리'를 말하고 사람들이 그'스토리'을 말할 수 있다. 사람들을 포함하여 이야기의 이해를 강화하기 위해 게이미피케이션을 사용한다.<br><u>게이미피케이션 프레임워크</u>에서는 연결된 'Mission'을 이용하여 '스토리'형태로 만들수 있다. 이는 사람들의 쉬운 이해를 도와주며, 흥미를 일으켜 몰입 상태로 만들수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm30": {
+		"nameE" : "On-boarding / Tutorials",
+		"nameK" : "온보딩/튜토리얼",
+		"discriptionE" : "No one uses manuals anymore! Help people get used to your system with a nice tutorial or a gentle introduction on how everything works",
+		"discriptionK" : "아무도 더 이상 매뉴얼을 사용하지 않는다. 사람들은 좋은 '튜토리얼'로 시스템을 위한 사용법이나 어떻게 작동하는지 소개를 얻는다.<br><u>게이미피케이션 프레임워크</u>에서는 'Manual'을 통해 게이미피케이션 프레임워크 사용법 및 작동원리를 소개한다.",
+		"cnt" : 3,
+		"periodfilter" : 1, 
+		"costfilter": 3
+	},
+	"gm31": {
+		"nameE" : "Physical Rewards / Prizes",
+		"nameK" : "실제 보상/상품",
+		"discriptionE" : "Physical rewards and prizes can promote lots of activity and when used well, can create engagement. Be careful of promoting quantity over quality.",
+		"discriptionK" : "'실제 보상'과 '상품'은 많은 활동을 홍보하고 잘 사용하는 경우 참여를 만든다.<br><u>게이미피케이션 프레임워크</u>에서는 현재 가상의 보상/상품을 제공하고 있으며, 이를 웹사이트 관리자가 실제 보상/상품으로 변환할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm32": {
+		"nameE" : "Points / Experience Points (XP)",
+		"nameK" : "포인트/경험치",
+		"discriptionE" : "Points and XP are feedback mechanics. Can track progress, as well as be used as a way to unlock new things. Award based on achievement or desired behaviour.",
+		"discriptionK" : "'포인트'와 '경험치'는 피드백 메커니즘이다. '진행 상황'을 추적할 뿐만 아니라, 새로운 일을 잠금 해제하는 방법으로 사용된다. 원하는 행위 또는 업적 기반의 보상.<br><u>게이미피케이션 프레임워크</u>에서는 'Point'를 통해 현재 현황을 파악할 수 있으며, 포인트를 누적시켜 'Level'이나 'Status', 'Permission'등을 상향시킬 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 3, 
+		"costfilter": 1
+	},
+	"gm33": {
+		"nameE" : "Progress / Feedback",
+		"nameK" : "진행 상황/피드백과정을 보여주는 것",
+		"discriptionE" : "Progress and feedback come in many forms and have many mechanics available. All User Types need some sort of measure of progress or feedback, but some types work better than others.",
+		"discriptionK" : "'진행 상황'과 '피드백'은 여러 형태로 오고 많은 메카닉을 사용할 수 있다. 모든 사용자 타입은 '진행 상황'또는 '피드백'의 어떤 종류의 측정이 필요하지만 일부 타입은 다른 것이 보다 더 나은 작동을 한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Point'를 통해 '진행 상황'과 '피드백'을 확인할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm34": {
+		"nameE" : "Quests",
+		"nameK" : "퀘스트",
+		"discriptionE" : "Quests give users a fixed goal to achieve. Often made up from a series of linked challenges, multiplying the feeling of achievement.",
+		"discriptionK" : "'퀘스트'는 사용자에게 달성하기 위해 고정된 목표를 제공한다. 종종 연결된 '도전'의 시리즈로 만들어 지며, 성취의 느낌을 복합한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 퀘스트를 생성할 수 있다.  ",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm35": {
+		"nameE" : "Random Rewards",
+		"nameK" : "랜덤 보상",
+		"discriptionE" : "Surprise and delight people with unexpected rewards. Keep them on their toes and maybe even make them smile",
+		"discriptionK" : "예상치 못한 보상으로 사람들은 놀랍고 기뻐한다.<br><u>게이미피케이션 프레임워크</u>에서는 현재 특정'Mission'에 대해 고정된 보상이 주어지며, 추후 '랜덤 보상'을 업데이트할 예정이다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm36": {
+		"nameE" : "Sharing Knowledge",
+		"nameK" : "지식 공유",
+		"discriptionE" : "For some, helping other people by sharing knowledge with them is its own reward. Build the in the ability for people to answer questions and teach others.",
+		"discriptionK" : "일부, 그들과 함께 지식을 공유함으로써 다른 사람을 돕는 것은 자신의 보상이다. 질문에 답하고 다른 사람들을 가르칠 수 있는 사람들을 위한 능력을 구축할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 지식 공유하기 미션 또는 지식 전달 하기 미션을 생성할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm37": {
+		"nameE" : "Signposting",
+		"nameK" : "표지판",
+		"discriptionE" : "Sometimes, even the best people need to be pointed in the right direction. Signpost next actions to help smooth early stages of a journey. Use 'just in time' cues to help users who are stuck.",
+		"discriptionK" : "때때로, 사람들을 올바른 방향으로 지적할 필요가 있다. 표지판의 다음 행동은 여행의 원활한 초기 단계에 도움을 준다. 아무것도 할수 없는 사용자를 돕기 위해 'just in time'을 사용한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Level','Status','Permission'의 '연동방식'을 통해 사람들을 올바른 방향으로 이끌수 있으며, 'Activity'를 통해 사람들의 다음 행동을 정의할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm38": {
+		"nameE" : "Social Discovery",
+		"nameK" : "사회적인 발견",
+		"discriptionE" : "A way to find people and be found is a essential to building new relationships. Matching people based on interests and status can all help get people started.",
+		"discriptionK" : "사람을 발견하고 찾을수 있는 방법은 새로운 관계를 구축하는데 필수하다. 흥미와 상태에 따라 사람들을 매칭하는것은 모든 사람들이 시작하는데 도움이 될 수있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Status'를 통해 동등한 위치의 있는 사람들간의 새로운 사람을 발견하고 관계를 만들 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm39": {
+		"nameE" : "Social Network",
+		"nameK" : "사회적인 네트워크",
+		"discriptionE" : "Allow people to connect and be social with an easy to use and accessibile social netwok. It is can be more fun to play with other people than to play on your own.",
+		"discriptionK" : "사람들을 연결하고 쉽게 사용할 수 있으며 접근 하기 쉬운 '소셜 네트워크'를 허용한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Level'또는 'Status'를 통해 동등한 위치에 있는 사람들간의 연결을 할 수 있으며, 이를 기반으로 '소셜 네트워크'를 형성할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm40": {
+		"nameE" : "Social Pressure",
+		"nameK" : "사회적인 압력",
+		"discriptionE" : "People often don't like feeling they are the odd one out. In a social environment this can be used to encourage people to be like their friends. Can demotivate if expectations are unrealistic.",
+		"discriptionK" : "사람들은 종종 동떨어진 느낌을 좋아하지 않는다. 사회 환경에서 이것은 그들의 친구처럼 될 사람들을 권장하는데 사용될 수 있다. 기대가 비현실적일 경우, 사기를 저하할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Level'또는 'Status'을 통해 사용자간의 '사회적인 압력'을 조성할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm41": {
+		"nameE" : "Social Status",
+		"nameK" : "사회적인 지위",
+		"discriptionE" : "Status can lead to greater visibility for people, creating opportunities to create new relationships. It can also feel good. You can make use of feedback mechanics such as leaderboards and certificates.",
+		"discriptionK" : "'지위'는 새로운 관계를 만들수 있는 기회를 만드는 사람들을 위해 가시적으로 이끌수 있다. 또한 좋은 느낌이 들 수 있다. 당신은 '리더보드'와 '증명서'와 같은 피드백 메커니즘을 사용할 수 있다.<br><u>게이미피케이션 프레임워크</u>에서는 'Status'를 통해 지위를 생성할 수 있으며, 'Point', 'Level', 'Mission'과 연동하여 사용할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm42": {
+		"nameE" : "Theme",
+		"nameK" : "주제",
+		"discriptionE" : "Give your gamification a theme, often linked with narrative. Can be anything from company values to werewolves. Add a little fantasy, just make sure users can make sense of it.",
+		"discriptionK" : "당신의 게이미피케이션 '주제'를 제공하고, 이야기로 연결된다. '늑대인간'으로 회사의 가치로부터 아무것도 될수 있다. 다만 반드시 사용자가 이해할수 있도록 해야하며, 약간의 환상을 추가한다.<br><u>게이미피케이션 프레임워크</u>에서는 공통된 '주제'로 여러개의 'Mission'을 만들어 전체 게이미피케이션의 '주제'를 설정할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm43": {
+		"nameE" : "Time Dependent Rewards",
+		"nameK" : "시간 종속 보상",
+		"discriptionE" : "Events that happen at specific times (birthdays etc.) or are only available for set period of time (e.g. come back each day for a reward). Users have to be there to benefit.",
+		"discriptionK" : "특정 시간에 일어나는 이벤트(생일 등) 또는 시간의 설정 기간동안만 사용할 수 있으며, 사용자 혜택이 있어야 한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'의 '제한기간'을 통해 특정 시간동안에만 해당 미션을 수행하게 할 수 있으며, 'Activity'를 통해 특정 이벤트로 미션을 수행하게 할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm44": {
+		"nameE" : "Time Pressure",
+		"nameK" : "시간 압박",
+		"discriptionE" : "Reducing the amount of time people have to do things can focus them on the problem. It can also lead to different decisions.",
+		"discriptionK" : "사람들의 시간의 감소는 문제에 그 초점을 맞출수 있는 일을 해야 한다. 또한 그것은 다른 의사 결정으로 이어진다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'의 '제한기간'을 설정하여 사람들로 하여금 '시간 압박'을 할 수 있다.",
+		"cnt" : 4,
+		"periodfilter" : 1, 
+		"costfilter": 1
+	},
+	"gm45": {
+		"nameE" : "Unlockable / Rare Content",
+		"nameK" : "잠금해제/희귀 콘텐츠",
+		"discriptionE" : "Add to the feeling of self expression and value, by offering unlockable or rare content for free spirits to make use of. Link to Easter eggs and exploration as well as achievement.",
+		"discriptionK" : "자기 표현과 가치의 느낌을 추가하고, '잠금 해제'또는 '희귀 콘텐츠'를 제공함으로써 자유로운 영혼을 활용한다. '이스터애그' 와 '탐험' 뿐만아니라 '업적'과 연결된다.<br><u>게이미피케이션 프레임워크</u>에서는 'Status'를 통해 어느정도 등급 이상이 되었을 경우, 특정 기능에 대한 '잠금 해제' 및 '희귀 콘텐츠'를 제공할 수 있다.",
+		"cnt" : 2,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm46": {
+		"nameE" : "Virtual Economy",
+		"nameK" : "가상 경제",
+		"discriptionE" : "Create a virtual economy and allow people to spend their virtual currency on real or virtual goods. Look into the legalities of this type of system and consider the long term financial costs!",
+		"discriptionK" : "가상 경제를 만들고 사람들이 실제 또는 가상 상품에 가상 통화를 보낼수 있다. 이러한 유형의 시스템은 적법성을 보고 장기적으로 금융 비용을 고려한다.<br><u>게이미피케이션 프레임워크</u>에서는 'Point'를 획득하여 가상 통화로 사용할 수 있다.또한, 이를 이용하여 가상 상품을 구매할 수 있음으로써, 가상경제를 형성할 수 있다.",
+		"cnt" : 1,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	},
+	"gm47": {
+		"nameE" : "Voting / Voice",
+		"nameK" : "투표/목소리",
+		"discriptionE" : "Give people a voice and let them know that it is being heard. Change is much easier if everyone is on the same page.",
+		"discriptionK" : "사람들에게 목소리를 부여하고 그들이 듣고 있음을 알아야 한다. 변화는 모두가 같은 페이지에 있는 경우 훨씬 더 쉽다.<br><u>게이미피케이션 프레임워크</u>에서는 'Mission'을 통해 투표하기 미션 또는 댓글달기 미션 등을 만들수 있다.",
+		"cnt" : 3,
+		"periodfilter" : 1, 
+		"costfilter": 4
+	}
+	
+}

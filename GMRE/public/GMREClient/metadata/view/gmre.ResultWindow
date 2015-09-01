@@ -1,0 +1,492 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "resultwindow",
+        "designer|userClassName": "gmre.ResultWindow",
+        "height": 700,
+        "layout": "border",
+        "modal": true,
+        "reference": "resultwindow",
+        "title": "분석 결과",
+        "width": 900
+    },
+    "name": "MyWindow",
+    "configAlternates": {
+        "viewModel": "binding"
+    },
+    "designerId": "8180176b-8b52-4343-af2d-3d39a340f122",
+    "viewControllerInstanceId": "72e2be70-d85a-4f9b-8cbd-cde90b3a4614",
+    "viewModelInstanceId": "cde8606a-ec99-4c73-851b-bdef6999ded6",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "name": "MyToolbar3",
+            "designerId": "111aead5-4faf-4ac7-b410-04ff1e8dfffb",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "save_btn",
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "d5ae6de4-1cd7-4880-9d8a-e5074075fa7b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "bodyPadding": 5,
+                "collapsible": true,
+                "container|align": "stretch",
+                "designer|uiInterfaceName": "default",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "layout|region": "west",
+                "reference": null,
+                "title": "플레이어 타입 분석",
+                "width": null
+            },
+            "name": "MyPanel",
+            "designerId": "aecd1e3e-acd1-4e88-a5ab-a2816a852b6e",
+            "cn": [
+                {
+                    "type": "Ext.chart.PolarChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "colors": [
+                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                        ],
+                        "height": null,
+                        "innerPadding": null,
+                        "layout|flex": 1,
+                        "layout|margins": null,
+                        "margin": null,
+                        "padding": 20,
+                        "reference": null,
+                        "store": null,
+                        "style": null,
+                        "theme": null,
+                        "width": null
+                    },
+                    "name": "MyRadarChart",
+                    "designerId": "75235b18-a57b-4efd-9e29-baa48b946b3f",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-radar-chart",
+                    "autoName": "MyRadarChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "grid": [
+                                    "true"
+                                ],
+                                "increment": null,
+                                "majorTickSteps": null,
+                                "maximum": 10,
+                                "minimum": 0,
+                                "minorTickSteps": 1,
+                                "position": "radial"
+                            },
+                            "name": "MyNumericAxis",
+                            "designerId": "0e9decd4-4a3c-4be1-8893-063e37130b1f"
+                        },
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "grid": [
+                                    "true"
+                                ],
+                                "increment": null,
+                                "label": [
+                                    "{fontSize: 16}"
+                                ],
+                                "majorTickSteps": null,
+                                "minorTickSteps": null,
+                                "position": "angular"
+                            },
+                            "name": "MyCategoryAxis",
+                            "designerId": "0abd9447-39c9-4b9e-8eb6-1d7a7d52f62a"
+                        },
+                        {
+                            "type": "Ext.chart.series.Radar",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "marker": [
+                                    "{radius: 4,size: 4,fillStyle: 'rgb(69,109,159)'}"
+                                ],
+                                "style": [
+                                    "{",
+                                    "    fillStyle: 'rgb(194,214,240)',",
+                                    "    opacity: 0.5,",
+                                    "    lineWidth: 0.5",
+                                    "}"
+                                ],
+                                "xField": "Name",
+                                "yField": "Point"
+                            },
+                            "name": "MyRadarSeries1",
+                            "designerId": "fd3b2b43-0285-4059-a333-3619266e4c43"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.Rotate",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyRotateInteraction",
+                            "designerId": "4ef60072-7e0a-4933-aacf-e0c83dcc8a40"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "playergrid",
+                        "layout|flex": 1,
+                        "store": null,
+                        "title": null,
+                        "width": null
+                    },
+                    "name": "MyGridPanel",
+                    "designerId": "06f9be64-fee5-40a0-a8fa-4bdd49757211",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Name",
+                                "text": "플레이어 타입",
+                                "width": "60%"
+                            },
+                            "name": "MyColumn",
+                            "designerId": "0e7c778e-b0b7-4d54-a7df-d0427f24b44d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Point",
+                                "sortable": true,
+                                "text": "적합도",
+                                "width": "30%"
+                            },
+                            "name": "MyNumberColumn",
+                            "designerId": "24f97ea8-889c-44ab-9b99-469ce1294e13"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTable",
+                            "designerId": "300da127-b14e-483b-9ae7-94925248a078"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowExpander",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyRowExpanderPlugin",
+                            "designerId": "d720d4f6-be25-4efb-9ee2-8acca8e31242",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "rowBodyTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "rowBodyTpl",
+                                        "implHandler": [
+                                            "<tpl if= 'Name == \\\"참가자\\\"'>    ",
+                                            "    보상 중심의 플레이어<br> ",
+                                            "    참가자들은 보상에 관심이 있다. 보상을 받기 위해 게이미피케이션에 참가하고 이 보상을 얻는 것이 목적이다.",
+                                            "</tpl>",
+                                            "",
+                                            "<tpl else if= 'Name == \\\"사교가\\\"'>    ",
+                                            "    관계 중심의 플레이어<br>",
+                                            "    사교가들은 관계를 형성하기 위해 게이미피케이션에 참가한다. 그들은 사회적 관계 형성에 관심이 있다.    ",
+                                            "</tpl>",
+                                            "",
+                                            "<tpl else if= 'Name == \\\"자유주의자\\\"'>    ",
+                                            "    자율성 중심의 플레이어<br>",
+                                            "    자유주의자들은 자신들이 무언가 자유롭게 하기 위해서 게이미피케이션에 참가하며, 창조하고 만들어내고 발견하길 원한다.",
+                                            "</tpl>",
+                                            "",
+                                            "<tpl else if= 'Name == \\\"성취가\\\"'>    ",
+                                            "    숙련 중심의 플레이어<br>",
+                                            "    성취가들은 무언가에 대해 달인이 되고자 한다. 새로 배울 무언가를 찾으며, 게이미피케이션을 통해 자신을 계발 하고자 한다. 성취가들은 한계를 극복할 수 있는 무언가의 도전을 원한다.",
+                                            "</tpl>",
+                                            "",
+                                            "<tpl else if= 'Name == \\\"자선가\\\"'>    ",
+                                            "    목적 중심의 플레이어<br>",
+                                            "    자선가들은 선한 목적을 가진 플레이어들이다. 이타적인 이들로 사람들을 돕고, 아름다운 세상으로 세상을 변화시키려는 이상론자들이다.",
+                                            "</tpl>",
+                                            "",
+                                            "<tpl else if= 'Name == \\\"방해자\\\"'>    ",
+                                            "    변화 중심의 플레이어<br>",
+                                            "    방해자들은 시스템을 직접적이든 간접적이든 방해하고자하는 이들이다. 이들은 때로는 긍정적으로 때로는 부정적으로 시스템을 변화시킨다.",
+                                            "</tpl>",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "rowBodyTpl",
+                                    "designerId": "16f7c14f-a950-481e-9c1f-c29b5a48e3fc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyBorder": true,
+                "bodyPadding": null,
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "layout|region": "center",
+                "title": "추천 게임 메카닉"
+            },
+            "name": "MyPanel1",
+            "designerId": "55042e34-ed44-493a-b998-86a5e0b78f89",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "mechanicgrid",
+                        "itemId": null,
+                        "layout|flex": 2,
+                        "maxWidth": null,
+                        "reference": null,
+                        "title": null,
+                        "width": null
+                    },
+                    "name": "MyGridPanel1",
+                    "designerId": "11662a9f-5960-496c-99e3-057adb533751",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Name",
+                                "text": "추천 게임 메카닉",
+                                "width": "60%"
+                            },
+                            "name": "MyColumn1",
+                            "designerId": "32be5d9f-ce60-499c-b129-01eef19d0658"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "Prefer",
+                                "text": "선호도",
+                                "width": "25%"
+                            },
+                            "name": "MyNumberColumn1",
+                            "designerId": "4df40263-b460-4a12-893a-b22fbd412009"
+                        },
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTable1",
+                            "designerId": "f82af2e6-75ee-42b1-8c2e-a40906b8b0f3"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowExpander",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MyRowExpanderPlugin1",
+                            "designerId": "7f25c134-1479-4cb2-9f02-26ee12d3d67e",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "rowBodyTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "rowBodyTpl",
+                                        "implHandler": [
+                                            "{Description}"
+                                        ]
+                                    },
+                                    "name": "rowBodyTpl",
+                                    "designerId": "f4044213-2488-4933-ac8d-cf1e180802cf"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "center",
+                        "dock": null,
+                        "layout": "vbox",
+                        "layout|flex": 1,
+                        "title": "웹 사이트 분야",
+                        "width": null
+                    },
+                    "name": "MyPanel2",
+                    "designerId": "3a3ab076-d3e3-4473-975c-957307c90aa0",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "fieldLabel": null,
+                                "height": null,
+                                "layout": "hbox",
+                                "layout|flex": null,
+                                "maxWidth": null,
+                                "width": null
+                            },
+                            "name": "MyFieldContainer",
+                            "designerId": "9fd49bc4-91c5-4e08-bcc9-c35e5183196e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "siteAreaName",
+                                        "layout|flex": null,
+                                        "text": null,
+                                        "width": null
+                                    },
+                                    "name": "MyLabel3",
+                                    "designerId": "faa64469-b4fc-4da6-9043-843b5c2a329f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "※ Gamification Framework(Wizard)의 <b><u>Step3. 게임 메카닉 생성단계</u></b>에서 위의 웹 사이트 분야를 선택하고 생성합니다.",
+                                "layout|flex": null,
+                                "text": null
+                            },
+                            "name": "MyLabel4",
+                            "designerId": "9be2fcb8-920f-4f67-a595-c63b1e137d57"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

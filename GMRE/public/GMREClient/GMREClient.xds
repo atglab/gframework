@@ -1,0 +1,69 @@
+{
+    "name": "GMREClient",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "5.1.1.39",
+            "frameworkVersion": "5.1.0.107"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "E:/Eclipse_workspaces/workspace_GF/GMRE/public/GMRETest",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        },
+        "lockUrlPrefix": true,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 239,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext51",
+    "viewOrderMap": {
+        "view": [
+            "bc433f2c-b939-45d6-89ad-e61e510f3c16",
+            "7bef43d1-8a80-48ec-a9ad-1fc3a0224397",
+            "dd261425-e989-462a-babb-e4a3cf5813dc",
+            "00a915a5-9c7e-47da-bf65-9179e07fb878",
+            "ee25a9f0-058f-491a-b1f3-dc3f578f15c6",
+            "ebc99873-80bd-496c-9f9c-8637393558ab",
+            "726b5ffe-a943-42f0-bef2-bde835096388",
+            "dcb760d2-6fc5-4eed-99b8-3d33714dbf9b",
+            "65faddef-e42c-4a90-acaf-a2630686c0d8",
+            "8180176b-8b52-4343-af2d-3d39a340f122",
+            "cde8606a-ec99-4c73-851b-bdef6999ded6",
+            "72e2be70-d85a-4f9b-8cbd-cde90b3a4614"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [
+            "918b92f5-ab5e-4c1c-a833-f48bdc91c5e9"
+        ],
+        "resource": [
+            "75b8c8ac-4640-4c61-a11a-e9c11331f8a9",
+            "ce4e01e5-92ee-44b5-b59d-0127d0d59dc6",
+            "1dc568db-8116-46a0-9832-4996d1b30aef",
+            "a2b0715a-d802-48d5-8885-66d458fa2bbf"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

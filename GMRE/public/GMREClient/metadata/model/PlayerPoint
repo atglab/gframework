@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "playerpoint",
+        "designer|userClassName": "PlayerPoint"
+    },
+    "name": "MyModel",
+    "designerId": "918b92f5-ab5e-4c1c-a833-f48bdc91c5e9",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name"
+            },
+            "name": "MyString",
+            "designerId": "b31d705c-9496-4aa5-8c75-fcc02c3fe823"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Point"
+            },
+            "name": "MyNumber",
+            "designerId": "ff4978df-d451-4f40-8168-4649bf1d91ae"
+        }
+    ]
+}

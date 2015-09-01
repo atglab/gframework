@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gmreresultwindow",
+        "designer|userClassName": "gmre.ResultWindowViewController"
+    },
+    "designerId": "72e2be70-d85a-4f9b-8cbd-cde90b3a4614"
+}

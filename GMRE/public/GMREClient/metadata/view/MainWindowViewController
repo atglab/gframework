@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainwindow",
+        "designer|userClassName": "MainWindowViewController"
+    },
+    "designerId": "dd261425-e989-462a-babb-e4a3cf5813dc"
+}

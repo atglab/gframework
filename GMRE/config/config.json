@@ -1,0 +1,15 @@
+{
+	"app": {
+		"title": "GMRE",
+		"server": "localhost",
+		"port": 3030,
+		"version": "0.0.1"
+	},
+	"database": {
+		"uri": "mongodb://localhost/gmredb",
+		"port": 27017,		
+		"user": "admin",
+		"password": "12345"
+	},	
+	"loglevel": "warning"
+}
