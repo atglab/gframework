@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "activityedit",
+        "designer|userClassName": "manager.activity.ActivityEditViewModel"
+    },
+    "name": "manager.point.PointEditViewModel1",
+    "designerId": "dddccf55-f975-4c3d-8aca-fbac706b8167"
+}

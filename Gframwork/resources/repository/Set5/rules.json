@@ -1,0 +1,7 @@
+[
+{   
+    "id" : "countOne",
+    "name" : "1회 카운트 하기",
+    "description" : "사용자 status에 1을 증가시키는 규칙"
+}
+]

@@ -1,0 +1,39 @@
+[
+
+{   
+  "id" : "neighbor_badge",
+  "name" : "이웃 배지",
+  "category" : "기본",
+  "description" : "이웃 추가 1회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_neighbor.png"
+},
+{
+  "id" : "comment_badge",
+  "name" : "덧글 배지",
+  "category" : "기본",
+  "description" : "덧글 작성 100회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_write.png"
+},
+{
+  "id" : "message_badge",
+  "name" : "쪽지 배지",
+  "category" : "기본",
+  "description" : "쪽지 보내기 100회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_08.png"
+},
+{
+  "id" : "email_badge",
+  "name" : "이메일 배지",
+  "category" : "기본",
+  "description" : "이메일 보내기 100회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_email.png"
+},
+{
+  "id" : "recommend_badge",
+  "name" : "추천 배지",
+  "category" : "기본",
+  "description" : "글 추천 200회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_recommend.png"
+}
+
+]

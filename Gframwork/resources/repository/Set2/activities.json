@@ -1,0 +1,39 @@
+[
+
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "purchase",
+  "name" : "이용권 구매",
+  "description" : "음악 이용권 구매하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "download",
+  "name" : "음악 다운로드",
+  "description" : "음악 다운로드 받기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "recommend",
+  "name" : "음악 추천",
+  "description" : "음악 추천하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "present",
+  "name" : "음악 선물",
+  "description" : "음악 선물하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "share",
+  "name" : "음악 공유",
+  "description" : "음악 공유하기 미션을 위한 사용자 Activity"
+}
+
+]

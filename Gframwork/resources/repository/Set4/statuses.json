@@ -1,0 +1,35 @@
+[
+{   
+  "id" : "user_status",
+  "name" : "고객 등급",
+  "description" : "사용자의 게임 포인트에 따라 변하는 고객 등급",
+  "relation_method" : "point_type",
+  "relation_object" : "game_point",
+  "classes" : [ 
+       {
+          "rank" : 1,
+          "name" : "실버",
+          "condition" : "0",
+          "icon" : "/resources/images/status/class_silver.png"
+      }, 
+      {
+          "rank" : 2,
+          "name" : "골드",
+          "condition" : "200000",
+          "icon" : "/resources/images/status/class_gold.png"
+      }, 
+      {
+          "rank" : 3,
+          "name" : "다이아",
+          "condition" : "400000",
+          "icon" : "/resources/images/status/class_diamond.png"
+      }, 
+      {
+          "rank" : 4,
+          "name" : "마스터",
+          "condition" : "800000",
+          "icon" : "/resources/images/status/class_master.png"
+      }
+  ]
+}
+]

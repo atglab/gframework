@@ -1,0 +1,17 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "Badge",
+        "groupField": null,
+        "model": "Badge",
+        "storeId": "Badge"
+    },
+    "name": "UserCategory1",
+    "designerId": "7787213c-a9ed-48c7-844a-7d1534f89cf9"
+}

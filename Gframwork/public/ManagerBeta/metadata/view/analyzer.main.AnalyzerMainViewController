@@ -1,0 +1,79 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "analyzermainanalyzermain",
+        "designer|userClassName": "analyzer.main.AnalyzerMainViewController"
+    },
+    "designerId": "8fdac163-6b44-448f-9524-4f37deb5fcff",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "prefix",
+                    "record",
+                    "cfg"
+                ],
+                "fn": "createTab",
+                "implHandler": [
+                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                    "",
+                    "    var tabs = this.lookupReference('AnalysisEditPanel');",
+                    "    var id, tab, title;",
+                    "",
+                    "    if(record === null) {",
+                    "",
+                    "        id\t\t= prefix + '_edittab';",
+                    "        title\t=  '전체 ' + prefix + '통계';",
+                    "",
+                    "",
+                    "    } else {",
+                    "        id = record.get('id');",
+                    "",
+                    "    }",
+                    "",
+                    "    tab = tabs.items.getByKey(id);",
+                    "",
+                    "    if(tab){",
+                    "        // @TODO: before closing the tab, check to exist any change in the form.",
+                    "        // so, if some change is detected, display a dialog to ask to a user",
+                    "        //cfg.itemId = id;",
+                    "        cfg.closable = true;",
+                    "",
+                    "        tabs.setActiveTab(tab);",
+                    "",
+                    "    }else{",
+                    "",
+                    "        cfg.itemId = id;",
+                    "        cfg.title = title;",
+                    "        cfg.closable = true;",
+                    "        tab = tabs.add(cfg);",
+                    "",
+                    "        tabs.setActiveTab(tab);",
+                    "    }",
+                    "",
+                    "} else {",
+                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                    "        if (btn == 'ok') {            ",
+                    "        }",
+                    "    }, this);",
+                    "",
+                    "}",
+                    ""
+                ]
+            },
+            "name": "createTab",
+            "designerId": "1f20dbae-9968-49fa-8a78-e96a624bd559"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+[
+
+{   
+  "id" : "login_badge",
+  "name" : "로그인 배지",
+  "category" : "기본",
+  "description" : "로그인 10회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_login.png"
+},
+{
+  "id" : "music_recommend_badge",
+  "name" : "음악 추천 배지",
+  "category" : "기본",
+  "description" : "음악 추천 50회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/music_recommend_badge.png"
+},
+{
+  "id" : "music_present_badge",
+  "name" : "음악 선물 배지",
+  "category" : "기본",
+  "description" : "음악 선물 50회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/music_present_badge.png"
+},
+{
+  "id" : "music_share_badge",
+  "name" : "음악 공유 배지",
+  "category" : "기본",
+  "description" : "음악 공유 50회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/music_share_badge.png"
+}
+
+]

@@ -1,0 +1,154 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "Badge",
+        "designer|userClassName": "Badge"
+    },
+    "name": "MyModel",
+    "designerId": "7f66145c-080b-40e7-9f1b-c7f6cf19c348",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "id",
+                "unique": true
+            },
+            "name": "MyString6",
+            "designerId": "05e9a099-ee3d-4540-9ad6-5235e191d447"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString1",
+            "designerId": "0931a656-2710-4ead-a808-0e10d66ca823"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "description"
+            },
+            "name": "MyString2",
+            "designerId": "ed9f8187-ac4c-43a8-b388-ed20ec4bf99c"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "icon"
+            },
+            "name": "MyString3",
+            "designerId": "ddc58d91-da21-4f1e-8e89-274e3afd4bb0"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "created_at"
+            },
+            "name": "MyDate",
+            "designerId": "f99685b6-76b1-4bee-bbca-c02e6cb31ab5"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at"
+            },
+            "name": "MyDate1",
+            "designerId": "b4bea00c-fc72-4f8e-9afe-9c2ec1ad4c62"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "badgeRestProxy",
+                "url": "/api/v1/manager/rewards/badges"
+            },
+            "name": "MyRestProxy",
+            "designerId": "737be63f-388a-463d-918b-fe4e73705760",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "badgeJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "00347aa5-0861-4c1b-a164-c8d7bcf8974a"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "badgeJsonWriter",
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "59f3c302-520f-48d3-9835-ef7d248a9529"
+                }
+            ]
+        }
+    ]
+}

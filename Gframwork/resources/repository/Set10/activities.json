@@ -1,0 +1,27 @@
+[
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "sponsor",
+  "name" : "후원",
+  "description" : "후원하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "watch",
+  "name" : "시청",
+  "description" : "방송 보기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "comment",
+  "name" : "덧글 작성",
+  "description" : "덧글 달기 미션을 위한 사용자 Activity"
+}
+]

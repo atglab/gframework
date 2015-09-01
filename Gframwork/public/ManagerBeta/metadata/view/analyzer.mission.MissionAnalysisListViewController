@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "missionanalysislist",
+        "designer|userClassName": "analyzer.mission.MissionAnalysisListViewController"
+    },
+    "name": "analyzer.permission.PermissionAnalysisListViewController1",
+    "designerId": "082b1e7b-0a60-4a55-8593-1efede2c7f9d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewMissionAnalysis",
+                "implHandler": [
+                    "this.fireViewEvent('viewMissionAnalysis', this.getView(), record);"
+                ]
+            },
+            "name": "viewMissionAnalysis",
+            "designerId": "5f64b0d2-4ea7-477d-89b3-a5f67f0818b9"
+        }
+    ]
+}

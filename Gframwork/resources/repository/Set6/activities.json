@@ -1,0 +1,29 @@
+[
+
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "reservation",
+  "name" : "놀이기구 예약",
+  "description" : "놀이기구 예약하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "purchase",
+  "name" : "티켓 구매",
+  "description" : "티켓 구매하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "write",
+  "name" : "이용 후기 평가",
+  "description" : "이용 후기 평가하기 미션을 위한 사용자 Activity"
+}
+
+]

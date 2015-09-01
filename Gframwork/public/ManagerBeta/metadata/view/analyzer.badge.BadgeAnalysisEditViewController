@@ -1,0 +1,162 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "badgeanalysisedit",
+        "designer|userClassName": "analyzer.badge.BadgeAnalysisEditViewController"
+    },
+    "designerId": "c546611e-18b3-48c2-b39b-56c812b6dd62",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsAllBadges",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/badges',",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var badgeAnalysisAllStore\t= me.getStore('badgeAnalysisAll');",
+                    "        badgeAnalysisAllStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsAllBadges",
+            "designerId": "673791f6-d9ab-4d83-8fdd-d8ecd2baf7fe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "badgeId"
+                ],
+                "fn": "getStatisticsBadge",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/badges/'+badgeId,",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var badgeAnalysisStore\t= me.getStore('badgeAnalysis');",
+                    "        badgeAnalysisStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsBadge",
+            "designerId": "0e631d27-de4e-4345-8f7b-2f575c7b80b4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "period"
+                ],
+                "fn": "getStatisticsBadgesByPeriod",
+                "implHandler": [
+                    "var badge\t= this.getViewModel().get('theBadge');",
+                    "var me\t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "if(badge.create) {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/badgesbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var badgeAnalysisPeriodStore\t= me.getStore('badgeAnalysisPeriod');",
+                    "            badgeAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "",
+                    "} else {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/badgesbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            id: badge.get('id'),",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var badgeAnalysisPeriodStore\t= me.getStore('badgeAnalysisPeriod');",
+                    "            badgeAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "getStatisticsBadgesByPeriod",
+            "designerId": "d9b4131c-ed7b-469d-8fe3-838ded039585"
+        }
+    ]
+}

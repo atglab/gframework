@@ -1,0 +1,82 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserMission",
+        "idProperty": null
+    },
+    "name": "UserCategory1",
+    "designerId": "ac1b57fd-19ba-42f8-9ecb-f6afcbb8fc9e",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "missionId"
+            },
+            "name": "MyString16",
+            "designerId": "760e2b31-1795-4e82-ae20-7ff9a30d1612"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currentStatus"
+            },
+            "name": "MyNumber14",
+            "designerId": "9b748e44-4d95-4f10-9593-a42814dd0c63"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "completeCount"
+            },
+            "name": "MyNumber15",
+            "designerId": "3f055fb9-ab8b-4c12-a3ad-ee7e11d4e158"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lastCompleted_at"
+            },
+            "name": "MyDate17",
+            "designerId": "23fbb3be-ffef-43f7-9649-a41769e096ef"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lastUpdated_at"
+            },
+            "name": "MyDate18",
+            "designerId": "0f94848f-33c6-4e99-afd7-6646a3bd7536"
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 10,
+        "cls": [
+            "top_menu_color"
+        ],
+        "container|align": "stretch",
+        "designer|userAlias": "homemain",
+        "designer|userClassName": "home.home.HomeMain",
+        "height": 600,
+        "layout": "vbox",
+        "margin": "10 0 0 10",
+        "maxHeight": 600,
+        "maxWidth": 1000,
+        "padding": 3,
+        "title": null,
+        "width": 1000
+    },
+    "name": "home.wizard.WizardMain1",
+    "designerId": "ad9cef44-e0ab-4bfa-953f-72facd121f81",
+    "viewControllerInstanceId": "01485fd9-ee3f-41f1-932e-4d3fc0223802",
+    "viewModelInstanceId": "865b2dee-a969-4c23-bddf-cffb48107123",
+    "cn": [
+        {
+            "type": "Ext.form.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "homeMainLabel",
+                "dock": null,
+                "height": 300,
+                "html": "<H1>환영합니다!</H1><br><H2>Gamification Framework 를 설치해주셔서 감사합니다.</H2> <br><br> 기존 게임 메카닉을 수정하거나 새로운 게임 메카닉을 추가한 경우는 아래 재시작 버튼을 클릭하세요.",
+                "margin": null,
+                "maxHeight": 300,
+                "maxWidth": 700,
+                "text": null,
+                "width": 700
+            },
+            "name": "MyLabel1",
+            "designerId": "2abf1438-1b6e-41d6-83ae-f29eaa93034f"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "buttonToolbar",
+                "dock": "bottom",
+                "layout|flex": 1
+            },
+            "name": "MyToolbar15",
+            "designerId": "de48aae4-e9a8-45cc-a947-49758b84be96",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "재시작",
+                        "layout|flex": null,
+                        "margin": null,
+                        "maxWidth": 100,
+                        "scale": "large",
+                        "text": "재시작",
+                        "width": 100
+                    },
+                    "name": "MyButton30",
+                    "designerId": "0bfe6391-b477-4fc5-a244-46b9e19d1c75",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRestartButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "    this.fireViewEvent('tabpanelSubRemoveAll', this, null);",
+                                    "    this.restartMechanics();",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onRestartButtonClick",
+                            "designerId": "46147985-7ef8-43b2-9ff5-30c229b036ca"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

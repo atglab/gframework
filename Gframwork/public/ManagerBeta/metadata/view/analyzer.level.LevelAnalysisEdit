@@ -1,0 +1,1333 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "levelanalysisedit",
+        "designer|userClassName": "analyzer.level.LevelAnalysisEdit",
+        "height": null,
+        "layout": "vbox",
+        "title": [
+            "{theLevel.name}"
+        ],
+        "width": null
+    },
+    "name": "analyzer.point.PointAnalysisEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "9acc9996-ffea-445c-a851-9a3afee40bbb",
+    "viewControllerInstanceId": "d6c58bf6-1dff-4300-9996-2c97d528bf24",
+    "viewModelInstanceId": "1adf0a94-c02a-4438-8e25-40bc47956091",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "top_menu_color"
+                ],
+                "container|align": "stretch",
+                "designer|displayName": "전체 통계",
+                "layout": "vbox",
+                "layout|flex": 5,
+                "padding": "5 0 5 0",
+                "title": "전체 통계"
+            },
+            "name": "MyPanel7",
+            "designerId": "9a3d3a25-a688-4807-bbaf-7a97f3330b47",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnLines": true,
+                        "designer|displayName": "levelStatisticsGridPanel",
+                        "layout|flex": 1,
+                        "maxHeight": 350,
+                        "maxWidth": 1000,
+                        "padding": null,
+                        "reference": "statisticsAllLevels",
+                        "store": [
+                            "{levelAnalysisAll}"
+                        ],
+                        "title": null
+                    },
+                    "name": "MyGridPanel2",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "386f3b49-dcb6-4280-8cbf-00153c04a7ea",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "designer|displayName": "levelAnalysisNumberer",
+                                "flex": 1,
+                                "maxWidth": 100,
+                                "text": "순번",
+                                "width": null
+                            },
+                            "name": "MyRowNumberer4",
+                            "designerId": "3de6234f-4f59-4fb6-8c2d-942340ae8dc9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "name",
+                                "designer|displayName": "이름",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "이름"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "e4a0845a-4580-466e-8c13-39e188c9f7b8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "icon",
+                                "designer|displayName": "아이콘",
+                                "flex": 1,
+                                "text": "아이콘"
+                            },
+                            "name": "MyActionColumn5",
+                            "designerId": "87d9e319-d0d7-4f0c-83d5-a0159dace4ae",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "this.icon = ''+value;",
+                                            "this.tooltip = ''+value;"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "04200e7b-b34d-40d3-aa8b-5b41c5083a43"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Widget",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "ratio",
+                                "designer|displayName": "평균 비율",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "평균 비율"
+                            },
+                            "name": "MyWidget",
+                            "designerId": "1584acfb-a92a-4f99-9ccb-cca46afa3cc5",
+                            "cn": [
+                                {
+                                    "type": "Ext.ProgressBarWidget",
+                                    "reference": {
+                                        "name": "widget",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "ratioProgressBar",
+                                        "textTpl": [
+                                            "'{percent:number(\"0\")}% done'"
+                                        ]
+                                    },
+                                    "name": "MyProgressBarWidget",
+                                    "designerId": "23c224ae-f9dc-43fe-96bd-504229495e3d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "avg",
+                                "designer|displayName": "평균 레벨",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "평균 레벨"
+                            },
+                            "name": "MyNumberColumn1",
+                            "designerId": "f15cd951-7dd8-41d7-b67d-69cf84758ea9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "max",
+                                "designer|displayName": "MAX",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "MAX"
+                            },
+                            "name": "MyNumberColumn2",
+                            "designerId": "70458bb0-3810-4401-b5b9-0575b6528833"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": [
+                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                        ],
+                        "designer|displayName": "levelTopLineChart",
+                        "dock": null,
+                        "height": null,
+                        "hidden": true,
+                        "insetPadding": [
+                            "40"
+                        ],
+                        "layout|flex": 1,
+                        "maxHeight": null,
+                        "maxWidth": 1000,
+                        "reference": "levelTopChartRef",
+                        "sprites": [
+                            "{",
+                            "    type: 'text',",
+                            "    text: '레벨 분포도',",
+                            "    width: 100,",
+                            "    height: 30,",
+                            "    font: '13px bold',",
+                            "    x: 30,",
+                            "    y: 20",
+                            "}"
+                        ],
+                        "store": [
+                            "{levelAnalysis}"
+                        ],
+                        "width": 1000
+                    },
+                    "name": "MyLineChart2",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "07d260f3-3cd8-4813-aaf7-c41c7000aded",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-line-chart",
+                    "autoName": "MyLineChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "사용자 수",
+                                "fields": [
+                                    "total",
+                                    "man",
+                                    "woman",
+                                    "other",
+                                    "age10",
+                                    "age30",
+                                    "age40",
+                                    "age50",
+                                    "age60",
+                                    "age20"
+                                ],
+                                "grid": [
+                                    "true"
+                                ],
+                                "listeners": [
+                                    "{",
+                                    "    rangechange: function (axis, range) {",
+                                    "        if (!range) {",
+                                    "            return;",
+                                    "        }",
+                                    "        ",
+                                    "        var max = range[1];",
+                                    "        if (max >= 1000) {",
+                                    "            range[1] = max + (max * 0.3);",
+                                    "        } else {",
+                                    "            range[1] = max + (max * 0.3);",
+                                    "        }",
+                                    "    }",
+                                    "}"
+                                ],
+                                "minimum": 0,
+                                "position": "left",
+                                "title": [
+                                    "사용자수",
+                                    ""
+                                ]
+                            },
+                            "name": "MyNumericAxis",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "c61b5348-18b5-40b7-8cfd-cbb641653f46",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "minMax",
+                                "fields": [
+                                    "range"
+                                ],
+                                "grid": [
+                                    "true"
+                                ],
+                                "listeners": [
+                                    "{",
+                                    "    rangechange: function (axis, range) {",
+                                    "        if (!range) {",
+                                    "            return;",
+                                    "        }        ",
+                                    "",
+                                    "        var max = range[1];",
+                                    "        range[1] = max + 1;",
+                                    "    }",
+                                    "}"
+                                ]
+                            },
+                            "name": "MyCategoryAxis",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "67c9b0db-231e-4784-8f57-fcfac7378a80",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "axis": "left",
+                                "designer|displayName": "totalLineSeries",
+                                "highlightCfg": [
+                                    "{",
+                                    "    scaling: 2",
+                                    "}"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'total',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'circle',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "전체"
+                                ],
+                                "tooltip": null,
+                                "xField": "range",
+                                "yField": [
+                                    "total"
+                                ]
+                            },
+                            "name": "MyLineSeries",
+                            "designerId": "ed96b955-46ad-43db-92ae-65975cc2326e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "axis",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "manLineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'man',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'line',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "남"
+                                ],
+                                "tooltip": null,
+                                "xField": "range",
+                                "yField": [
+                                    "man"
+                                ]
+                            },
+                            "name": "MyLineSeries1",
+                            "designerId": "c4295f69-dfe8-42b3-bc01-3ff12c742ed7"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "womanLineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'woman',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'square',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "여"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "woman"
+                                ]
+                            },
+                            "name": "MyLineSeries2",
+                            "designerId": "ae97b549-7b77-4f1c-bbb1-1ec6f4f36e49"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "otherLineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'other',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'triangle',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "기타"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "other"
+                                ]
+                            },
+                            "name": "MyLineSeries3",
+                            "designerId": "5d85486b-e1d8-4e2f-9551-4c5695099080"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "age10LineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'age10',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'diamond',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "10대 이하"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "age10"
+                                ]
+                            },
+                            "name": "MyLineSeries4",
+                            "designerId": "ced571fe-67db-4896-94f0-b713e3ff82c9"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "age20LineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'age20',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'cross',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "20대"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "age20"
+                                ]
+                            },
+                            "name": "MyLineSeries5",
+                            "designerId": "cbedfe69-c8ab-40a4-a88f-1e759d924095"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "age30LineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'age30',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'plus',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "30대"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "age30"
+                                ]
+                            },
+                            "name": "MyLineSeries6",
+                            "designerId": "0cd0797e-90ec-42d5-b682-a3bcf6d0366b"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "age40LineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'age40',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'arrow',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "40대"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "age40"
+                                ]
+                            },
+                            "name": "MyLineSeries7",
+                            "designerId": "eb7994f5-82e9-459b-961f-1a565715e79f"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "age50LineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'age50',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'circle',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "50대"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "age50"
+                                ]
+                            },
+                            "name": "MyLineSeries8",
+                            "designerId": "d92b4e1c-c255-438a-bd8d-20f89b16cdc1"
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "age60LineSeries",
+                                "highlightCfg": [
+                                    "[{",
+                                    "    scaling: 2",
+                                    "}]"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'age60',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'square',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "smooth": null,
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "60대 이상"
+                                ],
+                                "xField": "range",
+                                "yField": [
+                                    "age60"
+                                ]
+                            },
+                            "name": "MyLineSeries9",
+                            "designerId": "fcee2490-1c9a-4e8b-904f-15a3a01d256b"
+                        },
+                        {
+                            "type": "Ext.chart.interactions.PanZoom",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "levelPanZoom"
+                            },
+                            "name": "MyPanZoomInteraction",
+                            "designerId": "cf6ab33d-b05a-449d-9df8-08c486a8d142"
+                        },
+                        {
+                            "type": "Ext.chart.Legend",
+                            "reference": {
+                                "name": "legend",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "levelLegend",
+                                "docked": "right",
+                                "itemSelector": null
+                            },
+                            "name": "MyLegend",
+                            "designerId": "2df839ae-7928-4900-9bf9-37faca85155a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "docked",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|align": "stretch",
+                "designer|displayName": "시간에 따른 레벨 업 통계",
+                "layout": "vbox",
+                "layout|flex": 4,
+                "title": "시간에 따른 레벨 업 통계"
+            },
+            "name": "MyForm3",
+            "designerId": "f8a61ddb-0e84-440d-9c65-f521c275bae1",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "levelPeriodToolbar",
+                        "dock": "top",
+                        "layout|flex": 1
+                    },
+                    "name": "MyToolbar8",
+                    "designerId": "48becfbb-a03c-441a-a7c7-40da5a974c49",
+                    "cn": [
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "기간검색",
+                                "fieldLabel": "기간검색",
+                                "layout|flex": null,
+                                "reference": null,
+                                "width": 400
+                            },
+                            "name": "MyRadioGroup3",
+                            "designerId": "a6edbb65-524c-48a8-ab59-c2c6a71c1996",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1일",
+                                        "checked": true,
+                                        "designer|displayName": "1일",
+                                        "fieldLabel": null,
+                                        "inputValue": "1",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio4",
+                                    "designerId": "d0408421-8770-422b-809f-9d21cb476ea3"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1주일",
+                                        "designer|displayName": "1주일",
+                                        "fieldLabel": null,
+                                        "inputValue": "2",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio5",
+                                    "designerId": "63151826-9c05-4288-a05a-0fd75a852da8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1개월",
+                                        "designer|displayName": "1개월",
+                                        "fieldLabel": null,
+                                        "inputValue": "3",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio6",
+                                    "designerId": "69887045-488b-4ad2-b76b-7df2152eb0ad"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1년",
+                                        "designer|displayName": "1년",
+                                        "fieldLabel": null,
+                                        "inputValue": "4",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio7",
+                                    "designerId": "8704a8c9-94d6-4275-bdd9-76992097e537"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelPeriodRadiogroupChange",
+                                        "implHandler": [
+                                            "this. getStatisticsLevelsByPeriod(newValue.period);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelPeriodRadiogroupChange",
+                                    "designerId": "d20b51b1-d3b5-4b1e-9e4f-ca80ec9fd5e7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": [
+                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                        ],
+                        "designer|displayName": "levelLineChart",
+                        "dock": null,
+                        "height": 350,
+                        "insetPadding": [
+                            "40"
+                        ],
+                        "layout|flex": 1,
+                        "maxHeight": 350,
+                        "maxWidth": 1000,
+                        "reference": "levelChartRef",
+                        "sprites": [
+                            "                 [{",
+                            "                    ",
+                            "                    type: 'text',",
+                            "                    fontSize: 22,",
+                            "                    width: 100,",
+                            "                    height: 30,",
+                            "                    x: 40,",
+                            "                    // the sprite x position",
+                            "                    y: 20// the sprite y position",
+                            "                },",
+                            "                {",
+                            "                    type: 'text',",
+                            "                    fontSize: 10,",
+                            "                    x: 12,",
+                            "                    y: 470",
+                            "                },",
+                            "                {",
+                            "                    type: 'text',",
+                            "                    fontSize: 10,",
+                            "                    x: 12,",
+                            "                    y: 485",
+                            "                }]"
+                        ],
+                        "store": [
+                            "{levelAnalysisPeriod}"
+                        ],
+                        "width": 1000
+                    },
+                    "name": "MyLineChart",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "f57d3694-1a05-4240-8686-a5375b0522dc",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-line-chart",
+                    "autoName": "MyLineChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "레벨 업 횟수",
+                                "fields": [
+                                    "y"
+                                ],
+                                "grid": [
+                                    "true"
+                                ],
+                                "listeners": [
+                                    "{",
+                                    "    rangechange: function (axis, range) {",
+                                    "        if (!range) {",
+                                    "            return;",
+                                    "        }",
+                                    "        // expand the range slightly to make sure markers aren't clipped",
+                                    "        ",
+                                    "        var max = range[1];",
+                                    "        if (max >= 1000) {",
+                                    "            range[1] = max + (max * 0.3);",
+                                    "        } else {",
+                                    "            range[1] = max + (max * 0.3);",
+                                    "        }",
+                                    "    }",
+                                    "}"
+                                ],
+                                "minimum": 0,
+                                "position": "left",
+                                "title": [
+                                    "'레벨 업 횟수'",
+                                    "    "
+                                ]
+                            },
+                            "name": "MyNumericAxis",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "cb310804-daff-4aa3-a32b-458c48eca41f",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "label",
+                                            "layout",
+                                            "lastLabel"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "return Ext.util.Format.number(label\t, '0.0');"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "ecdf3972-0fe4-47bd-ae07-f3eabfa4168b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "날짜",
+                                "fields": [
+                                    "x"
+                                ],
+                                "grid": [
+                                    "true"
+                                ],
+                                "listeners": [
+                                    "{",
+                                    "    rangechange: function (axis, range) {",
+                                    "        if (!range) {",
+                                    "            return;",
+                                    "        }        ",
+                                    "",
+                                    "        var max = range[1];",
+                                    "        range[1] = max + 1;",
+                                    "    }",
+                                    "}"
+                                ],
+                                "title": [
+                                    "날짜"
+                                ]
+                            },
+                            "name": "MyCategoryAxis",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "a69cf7d1-b897-4f98-b112-eda6d443ed82",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "axis": "left",
+                                "designer|displayName": "levelLineSeries",
+                                "highlightCfg": [
+                                    "{",
+                                    "    scaling: 2",
+                                    "}"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'y',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'circle',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "legend"
+                                ],
+                                "tooltip": [
+                                    "{",
+                                    "    trackMouse: true,",
+                                    "    style: 'background: #fff',",
+                                    "    renderer: function(storeItem, item) {",
+                                    "        var title = item.series.getTitle();",
+                                    "        this.setHtml(storeItem.get('x') + ': ' + storeItem.get(item.series.getYField()));",
+                                    "    }",
+                                    "}"
+                                ],
+                                "xField": "x",
+                                "yField": [
+                                    "y"
+                                ]
+                            },
+                            "name": "MyLineSeries",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "779b6968-fb34-41a2-b53b-5f1cc4e555a4",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "axis",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.interactions.PanZoom",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "levelPanZoom"
+                            },
+                            "name": "MyPanZoomInteraction",
+                            "designerId": "7e60aeec-9189-4508-8e7e-f28a75284c31"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLevelAnalysisFormShow",
+                "implHandler": [
+                    "var level\t\t\t\t= this.getViewModel().get('theLevel');",
+                    "var statisticsAllLevels\t= this.lookupReference('statisticsAllLevels');",
+                    "var statisticsLevel\t\t= this.lookupReference('levelTopChartRef');",
+                    "",
+                    "var nStart = new Date().getTime();     ",
+                    "console.log('게임 메카닉 결과 분석 시작 시점(Level)');",
+                    "",
+                    "if(level.create) {",
+                    "    this.getStatisticsAllLevels();",
+                    "",
+                    "    statisticsAllLevels.show();",
+                    "    statisticsLevel.hide();",
+                    "} else {",
+                    "    this.getStatisticsLevel(level.get('id'));",
+                    "",
+                    "    statisticsAllLevels.hide();",
+                    "    statisticsLevel.show();",
+                    "}",
+                    "",
+                    "this.getStatisticsLevelsByPeriod(1);",
+                    "",
+                    "",
+                    "var nEnd =  new Date().getTime();",
+                    "console.log('게임 메카닉 결과 분석 종료 시점(Level)');",
+                    "",
+                    "var nDiff = nEnd - nStart;     ",
+                    "",
+                    "console.log('게임 메카닉 결과 분석 기능 반응 시간(Level) : '+ nDiff + ' (ms)');"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onLevelAnalysisFormShow",
+            "designerId": "0695a8c0-ad91-465f-ba1b-d40af98770e8"
+        }
+    ]
+}

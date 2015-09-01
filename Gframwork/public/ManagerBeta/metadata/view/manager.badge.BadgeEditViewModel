@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "managerbadgebadgeedit",
+        "designer|userClassName": "manager.badge.BadgeEditViewModel"
+    },
+    "designerId": "e99cf15a-f914-45ec-b81d-d941fe71e52e"
+}

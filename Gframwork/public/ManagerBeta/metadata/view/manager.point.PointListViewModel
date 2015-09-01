@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pointlist",
+        "designer|userClassName": "manager.point.PointListViewModel"
+    },
+    "designerId": "07e88acc-c37a-4e95-9ea7-0a310672810c"
+}

@@ -1,0 +1,943 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "baseCls": null,
+        "bodyPadding": 30,
+        "border": false,
+        "cls": [
+            "top_menu_color"
+        ],
+        "componentCls": "top_menu_color",
+        "defaultListenerScope": true,
+        "designer|userAlias": "wizardmain",
+        "designer|userClassName": "home.wizard.WizardMain",
+        "headerOverCls": null,
+        "height": 600,
+        "iconCls": null,
+        "itemCls": null,
+        "margin": "10 0 0 10",
+        "maxHeight": 600,
+        "maxWidth": 1000,
+        "padding": 3,
+        "reference": null,
+        "title": null,
+        "width": 1000
+    },
+    "configAlternates": {
+        "bbar": "object"
+    },
+    "designerId": "5f32e90a-24cb-40e6-a1ee-4dbdd2ae4196",
+    "viewControllerInstanceId": "bdf8a151-9eb5-43c8-8408-624928479d61",
+    "viewModelInstanceId": "c98a8ef9-3ed8-42c1-b063-a5e1332dcd4d",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": null,
+                "bodyPadding": null,
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "step1",
+                "dock": null,
+                "height": 700,
+                "id": "card-0",
+                "layout": "vbox",
+                "margin": null,
+                "maxHeight": 700,
+                "maxWidth": 1100,
+                "reference": "step1",
+                "title": "Step1 &raquo",
+                "width": 1100
+            },
+            "name": "MyForm5",
+            "designerId": "e5ace535-ab48-49d7-bd40-923a876c748c",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "wizardLabel01_1",
+                        "dock": "top",
+                        "height": null,
+                        "html": "<H1>Gamification Framework 마법사를 실행합니다!</H1> <br> <H2>Step 1 of 4</H2> <br><H2>첫 번째는 데이터 초기화 단계입니다.</H2> 아래 초기화 옵션을 선택하고 초기화 버튼을 클릭하세요.",
+                        "layout|flex": null,
+                        "maxHeight": null,
+                        "text": null
+                    },
+                    "name": "MyLabel",
+                    "designerId": "fc68bec2-b6fb-42c6-a6f4-1d97a5558ec5"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "wizardRadio01",
+                        "dock": "top",
+                        "fieldLabel": null,
+                        "layout": "vbox",
+                        "layout|flex": null,
+                        "margin": "20 0 0 0",
+                        "reference": "wizardRadio01",
+                        "width": null
+                    },
+                    "name": "MyRadioGroup4",
+                    "designerId": "5d266fde-e117-4edf-8ef8-9221f12aa16d",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "모든 사용자 데이터를 삭제합니다.",
+                                "checked": true,
+                                "designer|displayName": "allDelete",
+                                "fieldLabel": null,
+                                "inputValue": "all",
+                                "name": "initData",
+                                "reference": "allDelete"
+                            },
+                            "name": "MyRadio8",
+                            "designerId": "16f6afc2-45f8-4e1c-9ae7-24e455c9fd8f"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "사용자의 기본 정보는 남겨두고 사용자의 게임 데이터만 삭제합니다.",
+                                "designer|displayName": "partDelete",
+                                "fieldLabel": null,
+                                "inputValue": "init",
+                                "name": "initData"
+                            },
+                            "name": "MyRadio9",
+                            "designerId": "8b352f49-56ec-41ec-acec-d1456fd5effd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "buttonToolbar",
+                        "dock": "top",
+                        "layout|flex": 1
+                    },
+                    "name": "MyToolbar7",
+                    "designerId": "71cbb445-74b2-4f7e-8528-77c85d72c1ee",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "maxWidth": 100,
+                                "scale": "large",
+                                "text": "초기화",
+                                "width": 100
+                            },
+                            "name": "MyButton31",
+                            "designerId": "73f7dba6-f92e-4440-afdc-700ba51e4d1e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onInitialDataButtonClick",
+                                        "implHandler": [
+                                            "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                            "    this.resetUserData();",
+                                            "} else {",
+                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                            "        if (btn == 'ok') {            ",
+                                            "        }",
+                                            "    }, this);",
+                                            "",
+                                            "}",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onInitialDataButtonClick",
+                                    "designerId": "80d44d0d-e13a-44ed-aa6c-7c657bd517af"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "wizardLabel01_2",
+                        "dock": "top",
+                        "html": "초기화를 완료하신 후, 다음 단계로 넘어가세요.",
+                        "layout|flex": null,
+                        "margin": "20 0 0 0",
+                        "text": null
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "f429d927-98ea-4b93-929b-04c4ca040f12"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "end",
+                        "designer|displayName": "buttonContainer",
+                        "dock": "bottom",
+                        "layout": "hbox",
+                        "layout|flex": null
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "e0f29ae6-39dd-4fc2-89c1-65bdf0534f11",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "itemId": "card-next",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "reference": "next_btn1",
+                                "scale": "large",
+                                "text": "다음 &raquo"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "0a7717a1-a430-4865-a7f9-a37443857aa1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDepress": false,
+                        "arrowAlign": null,
+                        "arrowCls": null,
+                        "baseCls": null,
+                        "cls": null,
+                        "designer|displayName": "wizardTabConfig1",
+                        "disabledCls": null,
+                        "focusCls": null,
+                        "height": 50,
+                        "iconCls": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "maxHeight": 50,
+                        "overCls": null,
+                        "padding": null,
+                        "reference": "wizardTabConfig1",
+                        "scale": null,
+                        "shadow": null,
+                        "shim": false,
+                        "tabPosition": null,
+                        "value": null,
+                        "width": null
+                    },
+                    "name": "TabConfig6",
+                    "designerId": "d10da9e5-5218-440a-88c9-0a9a2782be9a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "step2",
+                "height": 700,
+                "id": "card-1",
+                "layout": "vbox",
+                "margin": null,
+                "maxHeight": 700,
+                "maxWidth": 1100,
+                "reference": "step2",
+                "title": "Step2 &raquo",
+                "width": 1100
+            },
+            "name": "MyForm6",
+            "designerId": "f2a78c56-5e51-4779-91c1-897a57761cf5",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "wizardLabel02",
+                        "dock": "top",
+                        "height": null,
+                        "html": "<H1>Gamification Framework 마법사를 실행합니다!</H1> <br> <H2>Step 2 of 4</H2> <br> <H2>두 번째는 게임 메카닉 추천 단계 입니다.</H2> <br> 아래 링크에 접속하여, 플레이어 타입을 분석하고 적합한 게임 메카닉과 웹 사이트를 추천 받으세요. <br><br> <a href=\"http://dev1.atglab.co.kr:3031/Client/\" target=\"_blank\"> http://dev1.atglab.co.kr:3031/Client/ </a> <br><br>  게임 메카닉 타입과 웹 사이트 분야를 추천 받으신 후, 다음 단계로 넘어가세요.",
+                        "layout|flex": null,
+                        "maxHeight": null,
+                        "text": null
+                    },
+                    "name": "MyLabel3",
+                    "designerId": "01e7cc0d-f43e-4e1c-b61b-d992107aa3b6"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "end",
+                        "designer|displayName": "buttonContainer",
+                        "dock": "bottom",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "b20c6321-5344-4e85-aa82-667f592b7ba1",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "card-prev",
+                                "layout|flex": null,
+                                "scale": "large",
+                                "text": "&laquo; 이전"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "de6f7c7c-d0c7-45b6-a45c-5ae1e3b78eeb"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "card-next",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "scale": "large",
+                                "text": "다음 &raquo"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "133a8132-a27e-4058-822a-19d492b8ef82"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "designer|displayName": "wizardTabConfig2",
+                        "disabled": true,
+                        "layout|flex": 1,
+                        "reference": "wizardTabConfig2"
+                    },
+                    "name": "TabConfig7",
+                    "designerId": "02ff48c0-c896-4e08-b204-6b00fb236299"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "step3",
+                "height": 700,
+                "id": "card-2",
+                "layout": "vbox",
+                "margin": null,
+                "maxHeight": 700,
+                "maxWidth": 1100,
+                "reference": "step3",
+                "title": "Step3 &raquo",
+                "width": 1100
+            },
+            "name": "MyForm7",
+            "designerId": "b9298b09-0a5a-451a-bae3-7141333bccda",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "wizardLabel03_1",
+                        "dock": "top",
+                        "height": null,
+                        "html": "<H1>Gamification Framework 마법사를 실행합니다!</H1> <br>  <H2>Step 3 of 4</H2> <br> <H2>세 번째는 게임 메카닉 생성 단계 입니다.</H2> <br> 이전 단계에서 추천 받은 게임 메카닉 타입을 기반으로한 웹사이트 분야를 아래 보기에서 선택하고, 생성 버튼을 클릭하세요. <br><br> 선택한 웹 사이트 분야에 맞는 기본 게임 메카닉 데이터가 자동으로 생성됩니다. ",
+                        "layout|flex": null,
+                        "maxHeight": null,
+                        "text": null
+                    },
+                    "name": "MyLabel4",
+                    "designerId": "bf4a3b48-b155-4d81-b259-88de965e8fa3"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columns": [
+                            "5"
+                        ],
+                        "designer|displayName": "dataTypeRadioGroup",
+                        "dock": "top",
+                        "fieldLabel": null,
+                        "layout|flex": 1,
+                        "margin": "20 0 0 0",
+                        "reference": "dataTypeRadioGroup",
+                        "width": 400
+                    },
+                    "name": "MyRadioGroup5",
+                    "designerId": "d4ef3a2a-e699-4f7c-ae16-bcf5b0d4dad8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "1. 의류 관련",
+                                "checked": true,
+                                "designer|displayName": "1. 의류 관련",
+                                "fieldLabel": null,
+                                "inputValue": "1",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio10",
+                            "designerId": "bbb33b34-73f3-4931-b621-b5d43246bed3"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "2. 음악 관련",
+                                "designer|displayName": "2. 음악 관련",
+                                "fieldLabel": null,
+                                "inputValue": "2",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio11",
+                            "designerId": "c6cdf7a0-41e4-4f1d-8269-f799849c66b5"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "3. 자동차 관련",
+                                "designer|displayName": "3. 자동차 관련",
+                                "fieldLabel": null,
+                                "inputValue": "3",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio12",
+                            "designerId": "eb1c7eb4-65d5-40d8-85a2-fe97501f9f5c"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "4. 게임 관련",
+                                "designer|displayName": "4. 게임 관련",
+                                "fieldLabel": null,
+                                "inputValue": "4",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio13",
+                            "designerId": "fde2b340-ae37-4e3e-af75-4a58e4406e4b"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "5. 여행 관련",
+                                "designer|displayName": "5. 여행 관련",
+                                "fieldLabel": null,
+                                "inputValue": "5",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio16",
+                            "designerId": "2a6e4e52-2114-4ea2-9e7f-e1ff8b55f8a8"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "6. 놀이동산 관련",
+                                "designer|displayName": "6. 놀이동산 관련",
+                                "fieldLabel": null,
+                                "inputValue": "6",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio17",
+                            "designerId": "9d4b6f40-f432-4c15-9b9d-d4637b0b20c9"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "7. 부동산 및 건물 관련",
+                                "designer|displayName": "7. 부동산 및 건물 관련",
+                                "fieldLabel": null,
+                                "inputValue": "7",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio18",
+                            "designerId": "53b0f864-8690-43a2-9292-057d70cc2438"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "8. 영화 및 공연 관련",
+                                "designer|displayName": "8. 영화 및 공연 관련",
+                                "fieldLabel": null,
+                                "inputValue": "8",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio19",
+                            "designerId": "3292307b-8d46-4f89-b9e0-8168f9f9e401"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "9. 블로그 관련",
+                                "designer|displayName": "9. 블로그 관련",
+                                "fieldLabel": null,
+                                "inputValue": "9",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio20",
+                            "designerId": "7827f052-f793-4804-b49d-6cde45df7e2c"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "10. 종교 및 비영리 관련",
+                                "designer|displayName": "10. 종교 및 비영리 관련",
+                                "fieldLabel": null,
+                                "inputValue": "10",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio21",
+                            "designerId": "fd9e4f10-3ad9-4b3a-9855-319924a80216"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "11. 기본",
+                                "designer|displayName": "11. 기본",
+                                "fieldLabel": null,
+                                "inputValue": "11",
+                                "name": "dataType"
+                            },
+                            "name": "MyRadio14",
+                            "designerId": "9230fd38-3577-4ab9-b216-ac47f508cf9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "buttonToolbar",
+                        "dock": "top",
+                        "layout|flex": 1,
+                        "margin": "20 0 0 0"
+                    },
+                    "name": "MyToolbar14",
+                    "designerId": "3854e97a-4a47-43dc-9b46-8790ccf5016b",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "maxWidth": 100,
+                                "scale": "large",
+                                "text": "생성",
+                                "width": 100
+                            },
+                            "name": "MyButton31",
+                            "designerId": "077769b8-fb28-4c77-b2fb-003cfec4830e",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCreateMechaButtonClick",
+                                        "implHandler": [
+                                            "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                            "    this.loadRepositorySet();",
+                                            "} else {",
+                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                            "        if (btn == 'ok') {            ",
+                                            "        }",
+                                            "    }, this);",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCreateMechaButtonClick",
+                                    "designerId": "99e9c160-9b0a-4981-ad84-f9f0c2bddfa1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "wizardLabel03_2",
+                                "layout|flex": null,
+                                "text": "생성 완료 후, 다음 단계로 넘어가세요."
+                            },
+                            "name": "MyLabel5",
+                            "designerId": "a0c0fab4-ea9d-4ee6-b617-f7b180a061dc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "end",
+                        "designer|displayName": "buttonContainer",
+                        "dock": "bottom",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer3",
+                    "designerId": "f7729ff3-8950-4ae3-94cd-37ea7a57f2fb",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "card-prev",
+                                "layout|flex": null,
+                                "scale": "large",
+                                "text": "&laquo; 이전"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "56a78fcc-0dd0-4e1d-b59e-814b8de83e3e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "itemId": "card-next",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "reference": "next_btn3",
+                                "scale": "large",
+                                "text": "다음 &raquo"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "e5e87127-f827-4876-a382-2b8419ff3ed2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "designer|displayName": "wizardTabConfig3",
+                        "disabled": true,
+                        "layout|flex": 1,
+                        "reference": "wizardTabConfig3"
+                    },
+                    "name": "TabConfig8",
+                    "designerId": "55fdcd47-e0c2-48eb-85ac-c7a6d092227f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "step4",
+                "height": 700,
+                "id": "card-3",
+                "layout": "vbox",
+                "margin": null,
+                "maxHeight": 700,
+                "maxWidth": 1100,
+                "reference": "step4",
+                "title": "Step4 &raquo",
+                "width": 1100
+            },
+            "name": "MyForm8",
+            "designerId": "4df1b77f-1350-479d-a444-0913a44f147d",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "wizardLabel03_1",
+                        "dock": "top",
+                        "height": null,
+                        "html": "<H1>Gamification Framework 마법사를 실행합니다!</H1> <br>  <H2>Step 4 of 4</H2> <br> <H2>수고하셨습니다.</H2> <br> Gamification Framework 의 기본 데이터 설정이 완료되었습니다.  <br><br> 상단 메뉴의 Manager 를 실행하여, 사용자 정보를 추가하거나 수정하고,  <br><br> 상세한 게임 메카닉 데이터를 설정하세요.",
+                        "layout|flex": null,
+                        "maxHeight": null,
+                        "text": null
+                    },
+                    "name": "MyLabel6",
+                    "designerId": "5ad0c31b-deac-442e-8f54-6dad66ed2a1a"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "container|pack": "end",
+                        "designer|displayName": "buttonContainer",
+                        "dock": "bottom",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "5f01b7fd-767c-4ac8-9813-401db3b18524",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "card-prev",
+                                "layout|flex": null,
+                                "scale": "large",
+                                "text": "&laquo; 이전"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "b2b3ec10-cd1d-4d4c-8446-f2c48ffa1303"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "submit_btn",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "scale": "large",
+                                "text": "완료 &raquo"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "10fb14bc-86d6-4590-a86c-b6195c8030a5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "cls": null,
+                        "componentCls": null,
+                        "designer|displayName": "wizardTabConfig4",
+                        "disabled": true,
+                        "frame": false,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "reference": "wizardTabConfig4",
+                        "scale": null
+                    },
+                    "name": "TabConfig10",
+                    "designerId": "4a48cc74-cf01-4210-a18c-65e3cc08048f"
+                }
+            ]
+        }
+    ]
+}

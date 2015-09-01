@@ -1,0 +1,17 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "LevelEntity",
+        "groupField": null,
+        "model": "LevelEntity",
+        "storeId": "LevelEntity"
+    },
+    "name": "MyStore22",
+    "designerId": "f37a2550-633c-4250-9fc2-47f0083b1930"
+}

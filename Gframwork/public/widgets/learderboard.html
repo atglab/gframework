@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GF Widget Leader Board</title>
+	<link rel="stylesheet" href="./jqwidgets/styles/jqx.base.css" type="text/css" />
+	<style>
+		.container {
+			color: #ffffff;
+			background-color: #FD249F;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		.rewardList {
+			color: #000000;
+			background-color: #EBF5FF;
+			margin: 0 0 2px 0;
+			border: 0;
+		}
+		.listItem {
+			height: 20px;
+			float: left;
+			font-size: 13px;
+			font-family: Verdana Arial;
+		}
+		.listItemImg {
+			height: 20px;
+			width: 20px;
+			float: left;
+			margin-top: 2px;
+			margin-right: 5px;
+		}
+		.rankImg {
+			width: 30px;
+			height: 40px;
+			float: left;
+			margin-top: 2px;
+			margin-right: 2px;
+		}
+		.rankText {
+			width: 40px;
+			font-size: 20px;
+			font-family: Verdana Arial;
+		}
+		.rankUserProfile {
+			width: 40px;
+		}
+		.rankUserProfileImg {
+			width: 40px;
+			height: 40px;
+			float: left;
+			margin-top: 2px;
+			margin-right: 2px;
+		}
+		.rankItem {
+			float: left;
+			font-size: 13px;
+			font-family: Verdana Arial;
+		}
+	</style>
+	<script type="text/javascript" src="./scripts/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./scripts/lib/demos.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxscrollbar.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxlistbox.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxdata.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxdropdownlist.js"></script>
+	<!-- json2.js is needed for IE8 or IE9 -->
+	<script src="./scripts/lib/json2.js"></script>
+<script>
+	$.urlParam = function(name, url) {
+		if (!url) {
+			url = window.location.href;
+		}
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(url);
+		if (!results) {
+			return undefined;
+		}
+		return results[1] || undefined;
+	};
+
+	function viewRewardRankData(type, id){
+		var rewardRankData =
+		{
+			datatype: "json",
+			url: "/api/rewardrank?type=" + type + "&id=" + id
+		};
+		var rewardRankDataAdapter = new $.jqx.dataAdapter(rewardRankData, {
+			loadComplete: function(data){
+
+				//TODO insert codes
+				if(!data.data){
+
+				}
+				//TODO insert codes
+				if(data.data.length === 0){
+
+				}
+
+				for(var i = 0; i<data.data.length; i++){
+					var item;
+					if( i < 3){
+						item = "<table><tr>" +
+								"<td class='rankText' rowspan='2'>" +
+								"<img class='rankImg' src='/resources/images/rank/rank" + (i+1) + ".png'>" + "</td>" +
+								"<td class='rankUserProfile' rowspan='2'>" +
+								"<img class='rankUserProfileImg' src=" + data.data[i].profile + ">" + "</td>" +
+								"<td class='rankItem'><b>" + data.data[i].name + "</b></td></tr>" +
+								"<tr><td class='rankItem'><b>" + data.data[i].rewards.reward_status + "</b></td></tr></table>";
+					}else{
+						item = "<table><tr>" +
+								"<td class='rankText' rowspan='2'><b>" + (i+1) + ".</b></td>" +
+								"<td class='rankUserProfile' rowspan='2'>" +
+								"<img class='rankUserProfileImg' src=" + data.data[i].profile + ">" + "</td>" +
+								"<td class='rankItem'><b>" + data.data[i].name + "</b></td></tr>" +
+								"<tr><td class='rankItem'><b>" + data.data[i].rewards.reward_status + "</b></td></tr></table>";
+					}
+					$("#rewardRank").jqxListBox('addItem', {html: item});
+				}
+			},
+			loadError: function(jqXHR, status, error)
+			{
+				//TODO insert codes
+			},
+			beforeLoadComplete: function (records) {
+				//TODO insert codes
+			}
+		});
+		// perform data binding.
+		rewardRankDataAdapter.dataBind();
+	}
+
+	$(document).ready(function(){
+
+		$("#rewardRank").jqxListBox({source: [], width: 220, height:210});
+		viewRewardRankData($.urlParam('type'), $.urlParam('id'));
+
+		var rewardList = {
+			datatype: "json",
+			url: "/api/rewardlist"
+		};
+
+		var rewardListDataAdapter = new $.jqx.dataAdapter(rewardList, {
+			loadComplete: function(data){
+				var rewardList = $("#rewardList");
+				rewardList.jqxDropDownList({ source: [], selectedIndex: 0, width: '150', height: '25px'});
+
+				for(var i = 0; i< data.data.length; i++){
+					var listItem;
+					if(data.data[i].icon === null){
+						listItem = "<div class='listItem' type='" + data.data[i].type + "' id='"+ data.data[i].id + "'><b>" + data.data[i].name + "</b></div>";
+					}else{
+						listItem = "<div class='listItem' type='" + data.data[i].type + "' id='"+ data.data[i].id + "'><b>" +
+								"<img class='listItemImg' src=" + data.data[i].icon + ">" +
+								data.data[i].name + "</b></div>";
+					}
+					$("#rewardList").jqxDropDownList('addItem', {html: listItem});
+				}
+				// Selected Event Handler of Reward List
+				rewardList.on('select', function(event){
+					if(event.args){
+						var item = event.args.item;
+						if(item){
+							$('#rewardRank').jqxListBox('clear');
+							viewRewardRankData($(item.html).attr('type'), $(item.html).attr('id'));
+						}
+					}
+				});
+			}
+		});
+		// perform data binding.
+		rewardListDataAdapter.dataBind();
+	});
+
+	function refreshClick(){
+		var item = $("#rewardList").jqxDropDownList('getSelectedItem');
+		if(item){
+			$('#rewardRank').jqxListBox('clear');
+			viewRewardRankData($(item.html).attr('type'), $(item.html).attr('id'));
+		}
+	}
+
+	function myRankClick(){
+		// TODO insert codes
+	}
+</script>
+</head>
+<body>
+<div id="content">
+	<div class="container">
+		<b>리더보드</b>
+		<table>
+			<tr>
+				<td><div id="rewardList" class="rewardList"></div></td>
+				<td><input type="image" width='30' height='30' src="/widgets/images/list_search_btn.png" onclick="refreshClick()"></td>
+				<td><input type="image" width='30' height='30' src="/widgets/images/me_btn.png" onclick="myRankClick()"></td>
+			</tr>
+		</table>
+		<div id="rewardRank"></div>
+	</div>
+</div>
+</body>
+</html>

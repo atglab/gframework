@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statusanalysislist",
+        "designer|userClassName": "analyzer.status.StatusAnalysisListViewModel"
+    },
+    "name": "analyzer.level.LevelAnalysisListViewModel1",
+    "designerId": "2a7c3a15-5581-456a-bc15-8b93fcf4b238"
+}

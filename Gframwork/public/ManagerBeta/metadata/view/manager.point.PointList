@@ -1,0 +1,308 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "baseCls": null,
+        "collapsedCls": null,
+        "collapsible": false,
+        "componentCls": null,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "pointlist",
+        "designer|userClassName": "manager.point.PointList",
+        "disabledCls": null,
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "focusCls": null,
+        "headerOverCls": null,
+        "height": null,
+        "hideHeaders": true,
+        "iconCls": null,
+        "itemId": "pointlist",
+        "margin": null,
+        "overCls": null,
+        "padding": null,
+        "store": "Point",
+        "title": null,
+        "titleAlign": "center",
+        "width": 250
+    },
+    "name": "MyGridPanel",
+    "designerId": "a69f2bfd-9861-4c69-a187-4f88077beaae",
+    "viewControllerInstanceId": "0e5462cd-c319-4b41-b084-d16426ad3ecf",
+    "viewModelInstanceId": "07e88acc-c37a-4e95-9ea7-0a310672810c",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": null,
+                "designer|displayName": "pointListToolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar5",
+            "designerId": "9695c27e-2cce-4a6f-8afa-fd6861d73821",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "hiddenField",
+                        "fieldLabel": null,
+                        "layout|flex": 1,
+                        "maxHeight": 25,
+                        "maxWidth": null,
+                        "value": null,
+                        "width": null
+                    },
+                    "name": "MyDisplayField17",
+                    "designerId": "b15a289f-ad5d-4a7f-86d0-1b36654f2f32"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "arrowAlign": null,
+                        "baseCls": "list_add_btn",
+                        "designer|displayName": "추가",
+                        "icon": null,
+                        "iconAlign": null,
+                        "iconCls": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_add_btn_over",
+                        "scale": null,
+                        "text": null
+                    },
+                    "name": "MyButton9",
+                    "designerId": "cbaf5c6d-bb87-47e3-ab2d-1a69bda5958c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPointAddButtonClick",
+                                "implHandler": [
+                                    "this.viewPoint(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onPointAddButtonClick",
+                            "designerId": "230f336d-a700-400c-8c02-399ec40b84c6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_del_btn",
+                        "designer|displayName": "삭제",
+                        "disabled": true,
+                        "iconCls": "",
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_del_btn_over",
+                        "reference": "del_point_btn",
+                        "scale": null,
+                        "text": null,
+                        "textAlign": null
+                    },
+                    "name": "MyButton10",
+                    "designerId": "c239974a-8fe2-421b-91a1-07937c330072",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPointDelButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "    var pointGrid = button.up('pointlist');",
+                                    "    var pointSelection = pointGrid.getSelectionModel().getSelection()[0];",
+                                    "",
+                                    "    pointSelection.erase();",
+                                    "",
+                                    "    this.viewPoint(pointSelection);",
+                                    "",
+                                    "    button.disable();",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onPointDelButtonClick",
+                            "designerId": "90fb66e4-566b-443b-842a-9b66e89c5538"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "baseCls": null,
+                "designer|displayName": "pointRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size",
+                "text": null
+            },
+            "name": "MyRowNumberer1",
+            "designerId": "c46dedd1-7ec7-4d70-abcd-4058efb4cc2f"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": null,
+                "componentCls": null,
+                "dataIndex": "name",
+                "designer|displayName": "name",
+                "disabledCls": null,
+                "flex": 3,
+                "focusCls": null,
+                "height": "500px",
+                "menuText": "",
+                "overCls": null,
+                "tdCls": "grid-size",
+                "text": "x-font"
+            },
+            "name": "MyColumn1",
+            "designerId": "ad3d3d3b-d3d7-42a6-8590-14a2f0bfc50d"
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "anchorSize": null,
+                "dataIndex": "icon",
+                "defaultWidth": null,
+                "designer|displayName": "아이콘",
+                "flex": 1,
+                "icon": null,
+                "iconCls": "grid-img",
+                "itemId": null,
+                "tdCls": "grid-size",
+                "text": "아이콘",
+                "tooltip": null,
+                "width": null
+            },
+            "name": "MyActionColumn2",
+            "designerId": "9d9a6cdf-02ff-40ff-8ff2-915311e5f487",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "this.icon = ''+value;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "ffbbe691-0a08-4c11-b699-686f2cffcf2f"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPointlistviewSelectionChange",
+                "implHandler": [
+                    "var delPointBtn = this.lookupReference('del_point_btn');",
+                    "delPointBtn.enable();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onPointlistviewSelectionChange",
+            "designerId": "3146f2ee-4368-481e-82a5-7fae703a7adf"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridpanelPointItemDblClick",
+                "implHandler": [
+                    "this.viewPoint(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onGridpanelPointItemDblClick",
+            "designerId": "715c524e-bed9-4a97-a42f-8b3a9d31809d"
+        }
+    ]
+}

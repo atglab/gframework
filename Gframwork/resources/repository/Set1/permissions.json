@@ -1,0 +1,10 @@
+[
+{
+  "id" : "write_permission",
+  "name" : "글쓰기 권한",
+  "description" : "사용자의 상품 평가 등급이 3등급 이상일 경우 주어지는 권한",
+  "get_parameter" : "3",
+  "relation_method" : "status_type",
+  "relation_object" : "evaluation_status"    
+}
+]

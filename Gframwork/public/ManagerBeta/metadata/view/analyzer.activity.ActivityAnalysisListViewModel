@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "activityanalysislist",
+        "designer|userClassName": "analyzer.activity.ActivityAnalysisListViewModel"
+    },
+    "name": "analyzer.badge.BadgeAnalysisListViewModel1",
+    "designerId": "bb5845e3-4e26-47e2-96e4-753b822b755e"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gfoverviewmain",
+        "designer|userClassName": "home.manual.GFOverviewMainViewController"
+    },
+    "designerId": "b8c01c87-ced9-4a9b-afe4-246ea6df417d"
+}

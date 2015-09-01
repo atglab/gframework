@@ -1,0 +1,905 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "activityanalysisedit",
+        "designer|userClassName": "analyzer.activity.ActivityAnalysisEdit",
+        "height": null,
+        "layout": "vbox",
+        "title": [
+            "{theActivity.name}"
+        ],
+        "width": null
+    },
+    "name": "analyzer.badge.BadgeAnalysisEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "0a50a9e6-8a24-4320-abca-741ec285e7be",
+    "viewControllerInstanceId": "05615507-9f49-4f27-9712-007624731686",
+    "viewModelInstanceId": "7eadb2f5-959e-438a-887e-f731f0ce85f5",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "top_menu_color"
+                ],
+                "container|align": "stretch",
+                "designer|displayName": "전체 통계",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "padding": "5 0 5 0",
+                "title": "전체 통계"
+            },
+            "name": "MyPanel7",
+            "designerId": "e6fb2960-3830-446a-bf32-9bbaa6c7d3c4",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "activityTopPeriodToolbar",
+                        "dock": "top",
+                        "layout|flex": 1
+                    },
+                    "name": "MyToolbar10",
+                    "designerId": "cde73af9-0220-4283-ac37-f48ed5b56e23",
+                    "cn": [
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "기간검색",
+                                "fieldLabel": "기간검색",
+                                "layout|flex": null,
+                                "reference": null,
+                                "width": 400
+                            },
+                            "name": "MyRadioGroup3",
+                            "designerId": "cdb1a42a-d8c2-4949-a646-066822d858d7",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1일",
+                                        "checked": true,
+                                        "designer|displayName": "1일",
+                                        "fieldLabel": null,
+                                        "inputValue": "1",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio4",
+                                    "designerId": "150f2762-df8e-4dd7-af14-0966946a0b26"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1주일",
+                                        "designer|displayName": "1주일",
+                                        "fieldLabel": null,
+                                        "inputValue": "2",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio5",
+                                    "designerId": "080f008c-45b0-4f2a-a6ad-9335864a7cc2"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1개월",
+                                        "designer|displayName": "1개월",
+                                        "fieldLabel": null,
+                                        "inputValue": "3",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio6",
+                                    "designerId": "fca42c93-e820-4250-b5eb-013a13b62185"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1년",
+                                        "designer|displayName": "1년",
+                                        "fieldLabel": null,
+                                        "inputValue": "4",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio7",
+                                    "designerId": "6b2c1128-5075-45c0-9f3c-1153de9d5959"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onActivityTopPeriodRadiogroupChange",
+                                        "implHandler": [
+                                            "var activity\t\t\t\t= this.getViewModel().get('theActivity');",
+                                            "var statisticsActivities\t= this.lookupReference('statisticsActivities');",
+                                            "var statisticsAllActivities\t= this.lookupReference('statisticsAllActivities');",
+                                            "",
+                                            "if(activity.create) {",
+                                            "    this.getStatisticsAllActivity(newValue.period);",
+                                            "    ",
+                                            "    statisticsActivities.hide();",
+                                            "    statisticsAllActivities.show();",
+                                            "} else {",
+                                            "    this.getStatisticActivity(activity.get('id'), newValue.period);     ",
+                                            "    ",
+                                            "    statisticsActivities.show();",
+                                            "    statisticsAllActivities.hide();",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onActivityTopPeriodRadiogroupChange",
+                                    "designerId": "8bb33852-895b-4510-b411-d3ecfb830164"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnLines": true,
+                        "designer|displayName": "activityStatisticsGridPanel",
+                        "layout|flex": 1,
+                        "maxHeight": 350,
+                        "maxWidth": 1000,
+                        "padding": null,
+                        "reference": "statisticsAllActivities",
+                        "store": [
+                            "{activityAnalysisAll}"
+                        ],
+                        "title": null,
+                        "width": null
+                    },
+                    "name": "MyGridPanel2",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "bb32cd70-1ec3-4a38-aae7-5f498efc8a7a",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.RowNumberer",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "designer|displayName": "activityAnalysisNumberer",
+                                "flex": 1,
+                                "maxWidth": 100,
+                                "text": "순번",
+                                "width": null
+                            },
+                            "name": "MyRowNumberer4",
+                            "designerId": "2c32704f-9b14-413b-a991-e1c7f128355f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "name",
+                                "designer|displayName": "이름",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "이름"
+                            },
+                            "name": "MyColumn3",
+                            "designerId": "3be89c50-6907-4f97-b96c-202b52c5c1f6"
+                        },
+                        {
+                            "type": "Ext.grid.column.Widget",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "userRatio",
+                                "designer|displayName": "사용자 비율",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "사용자 비율"
+                            },
+                            "name": "MyWidget",
+                            "designerId": "7820983c-be87-43eb-b08f-c1d910b57051",
+                            "cn": [
+                                {
+                                    "type": "Ext.ProgressBarWidget",
+                                    "reference": {
+                                        "name": "widget",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "ratioProgressBar",
+                                        "textTpl": [
+                                            "'{percent:number(\"0\")}% done'"
+                                        ]
+                                    },
+                                    "name": "MyProgressBarWidget",
+                                    "designerId": "2aff2817-1ce8-49cf-9835-8ef99866c85a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "count",
+                                "designer|displayName": "발생 횟수",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "발생 횟수"
+                            },
+                            "name": "MyNumberColumn1",
+                            "designerId": "d3f431f5-2082-4618-b1c8-d6c29a32d858"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "avgDay",
+                                "designer|displayName": "비획득자 수",
+                                "flex": 1,
+                                "sortable": true,
+                                "text": "일 평균 횟수"
+                            },
+                            "name": "MyNumberColumn2",
+                            "designerId": "c481e5ba-0627-4998-967c-84eff459a918"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "animation": null,
+                        "designer|displayName": "activityStatisticsColumnChart",
+                        "height": null,
+                        "hidden": true,
+                        "insetPadding": [
+                            "40",
+                            ""
+                        ],
+                        "layout|flex": 1,
+                        "margin": null,
+                        "maxHeight": null,
+                        "maxWidth": 1000,
+                        "minWidth": null,
+                        "padding": "20 0 0 0",
+                        "reference": "statisticsActivities",
+                        "sprites": [
+                            "{",
+                            "    type: 'text',",
+                            "    text: '수행 횟수 분포도',",
+                            "    width: 100,",
+                            "    height: 30,",
+                            "    font: '13px bold',",
+                            "    x: 30,",
+                            "    y: 20    ",
+                            "}",
+                            "",
+                            ""
+                        ],
+                        "store": [
+                            "{activityAnalysis}"
+                        ],
+                        "width": null
+                    },
+                    "name": "ColumnChart",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "e5f72c2a-dbe8-498b-b241-775819b36410",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-column-chart",
+                    "autoName": "ColumnChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "사용자수",
+                                "fields": [
+                                    "y"
+                                ],
+                                "increment": null,
+                                "margin": null,
+                                "minimum": 0,
+                                "position": "left",
+                                "title": [
+                                    "사용자수"
+                                ],
+                                "titleMargin": null
+                            },
+                            "name": "MyNumericAxis1",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "ac49fdcf-62bd-48ef-9f68-12d2c7d026c0"
+                        },
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "사용자구분",
+                                "fields": [
+                                    "x"
+                                ],
+                                "minimum": null,
+                                "title": null
+                            },
+                            "name": "MyCategoryAxis1",
+                            "designerId": "b8d30950-23c8-4978-bddd-e503d907c332"
+                        },
+                        {
+                            "type": "Ext.chart.series.Bar",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "badgeStatisticsBarSeries",
+                                "highlight": [
+                                    "{",
+                                    "    strokeStyle: 'black',",
+                                    "    fillStyle: 'gold',",
+                                    "    lineDash: [5, 3]",
+                                    "}"
+                                ],
+                                "label": [
+                                    "{ ",
+                                    "    field: 'y',    ",
+                                    "    display: 'insideEnd',",
+                                    "    renderer: function (value) {",
+                                    "        return value;",
+                                    "    }",
+                                    "}"
+                                ],
+                                "style": [
+                                    "{",
+                                    "    minGapWidth: 40",
+                                    "}"
+                                ],
+                                "xField": "x",
+                                "yField": [
+                                    "y"
+                                ]
+                            },
+                            "name": "MyBarSeries",
+                            "designerId": "955b20e3-50dd-4a4f-b528-2cd7e90444dc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "title": "시간에 따른 발생 횟수 통계"
+            },
+            "name": "MyForm3",
+            "designerId": "ad9a2803-4045-4a65-8a51-647d5cc0fd07",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "activityBottomPeriodToolbar",
+                        "dock": "top",
+                        "layout|flex": 1
+                    },
+                    "name": "MyToolbar8",
+                    "designerId": "9a2e1918-d806-4f6d-9f7b-73babcd6bf9a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "기간검색",
+                                "fieldLabel": "기간검색",
+                                "layout|flex": null,
+                                "reference": null,
+                                "width": 400
+                            },
+                            "name": "MyRadioGroup3",
+                            "designerId": "df6fd5f9-e55c-40d7-99cf-80528f3d2546",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1일",
+                                        "checked": true,
+                                        "designer|displayName": "1일",
+                                        "fieldLabel": null,
+                                        "inputValue": "1",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio4",
+                                    "designerId": "0a9e9c60-ba73-4341-9847-0777f38f7fd8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1주일",
+                                        "designer|displayName": "1주일",
+                                        "fieldLabel": null,
+                                        "inputValue": "2",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio5",
+                                    "designerId": "2570016e-47f7-4b04-bdbe-fbb123838476"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1개월",
+                                        "designer|displayName": "1개월",
+                                        "fieldLabel": null,
+                                        "inputValue": "3",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio6",
+                                    "designerId": "cb816009-8ae2-4f5e-aec7-90f9a7299fda"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "1년",
+                                        "designer|displayName": "1년",
+                                        "fieldLabel": null,
+                                        "inputValue": "4",
+                                        "name": "period"
+                                    },
+                                    "name": "MyRadio7",
+                                    "designerId": "e8d88e40-0a39-44a3-ad4d-750e3fd69ed7"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onActivityBottomPeriodRadiogroupChange",
+                                        "implHandler": [
+                                            "this.getStatisticsByPeriod(newValue.period);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onActivityBottomPeriodRadiogroupChange",
+                                    "designerId": "a68d46de-a98b-4d20-a37e-5971eca77d0e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "colors": [
+                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                        ],
+                        "designer|displayName": "activityLineChart",
+                        "dock": null,
+                        "height": 350,
+                        "insetPadding": [
+                            "40"
+                        ],
+                        "layout|flex": 1,
+                        "maxHeight": 350,
+                        "maxWidth": 1000,
+                        "reference": "activityChartRef",
+                        "sprites": [
+                            "                 [{",
+                            "                    ",
+                            "                    type: 'text',",
+                            "                    fontSize: 22,",
+                            "                    width: 100,",
+                            "                    height: 30,",
+                            "                    x: 40,",
+                            "                    // the sprite x position",
+                            "                    y: 20// the sprite y position",
+                            "                },",
+                            "                {",
+                            "                    type: 'text',",
+                            "                    fontSize: 10,",
+                            "                    x: 12,",
+                            "                    y: 470",
+                            "                },",
+                            "                {",
+                            "                    type: 'text',",
+                            "                    fontSize: 10,",
+                            "                    x: 12,",
+                            "                    y: 485",
+                            "                }]"
+                        ],
+                        "store": [
+                            "{activityAnalysisPeriod}"
+                        ],
+                        "width": 1000
+                    },
+                    "name": "MyLineChart",
+                    "configAlternates": {
+                        "store": "binding"
+                    },
+                    "designerId": "c4ad7823-3100-40c2-82a0-80a0666f50eb",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-line-chart",
+                    "autoName": "MyLineChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "발생 횟수",
+                                "fields": [
+                                    "y"
+                                ],
+                                "grid": [
+                                    "true"
+                                ],
+                                "listeners": [
+                                    "{",
+                                    "    rangechange: function (axis, range) {",
+                                    "        if (!range) {",
+                                    "            return;",
+                                    "        }",
+                                    "        // expand the range slightly to make sure markers aren't clipped",
+                                    "        ",
+                                    "        var max = range[1];",
+                                    "        if (max >= 1000) {",
+                                    "            range[1] = max + (max * 0.3);",
+                                    "        } else {",
+                                    "            range[1] = max + (max * 0.3);",
+                                    "        }",
+                                    "    }",
+                                    "}"
+                                ],
+                                "minimum": 0,
+                                "position": "left",
+                                "title": [
+                                    "'발생 횟수'",
+                                    ""
+                                ]
+                            },
+                            "name": "MyNumericAxis",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "7d4f3e78-588a-40f3-b9f7-9ffbf8017ca1",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "label",
+                                            "layout",
+                                            "lastLabel"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "return Ext.util.Format.number(label\t, '0.0');"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "94a795b5-848f-40af-9f53-9a7789d2a292"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "날짜",
+                                "fields": [
+                                    "x"
+                                ],
+                                "grid": [
+                                    "true"
+                                ],
+                                "listeners": [
+                                    "{",
+                                    "    rangechange: function (axis, range) {",
+                                    "        if (!range) {",
+                                    "            return;",
+                                    "        }        ",
+                                    "",
+                                    "        var max = range[1];",
+                                    "        range[1] = max + 1;",
+                                    "    }",
+                                    "}"
+                                ],
+                                "title": [
+                                    "날짜"
+                                ]
+                            },
+                            "name": "MyCategoryAxis",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "515ea5b6-f526-4bb2-81d0-4444e639575c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "listeners",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.series.Line",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "axis": "left",
+                                "designer|displayName": "activityLineSeries",
+                                "highlightCfg": [
+                                    "{",
+                                    "    scaling: 2",
+                                    "}"
+                                ],
+                                "label": [
+                                    "{",
+                                    "    field: 'y',",
+                                    "    display: 'over'",
+                                    "}"
+                                ],
+                                "marker": [
+                                    "{",
+                                    "    type: 'circle',",
+                                    "    fx: {",
+                                    "        duration: 200,",
+                                    "        easing: 'backOut'",
+                                    "    }",
+                                    "}"
+                                ],
+                                "style": [
+                                    "{",
+                                    "    lineWidth: 3",
+                                    "}"
+                                ],
+                                "title": [
+                                    "legend"
+                                ],
+                                "tooltip": [
+                                    "{",
+                                    "    trackMouse: true,",
+                                    "    style: 'background: #fff',",
+                                    "    renderer: function(storeItem, item) {",
+                                    "        var title = item.series.getTitle();",
+                                    "        this.setHtml(storeItem.get('x') + ': ' + storeItem.get(item.series.getYField()));",
+                                    "    }",
+                                    "}"
+                                ],
+                                "xField": "x",
+                                "yField": [
+                                    "y"
+                                ]
+                            },
+                            "name": "MyLineSeries",
+                            "designerId": "084d3154-0ebb-4599-ad0e-feef0bf56a9e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "axis",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.interactions.PanZoom",
+                            "reference": {
+                                "name": "interactions",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "activityPanZoom"
+                            },
+                            "name": "MyPanZoomInteraction",
+                            "designerId": "280b7ef6-1ac8-4f1f-8756-a26c08c54a73"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivityAnalysisFormShow",
+                "implHandler": [
+                    "var activity\t\t\t\t= this.getViewModel().get('theActivity');",
+                    "var statisticsActivities\t= this.lookupReference('statisticsActivities');",
+                    "var statisticsAllActivities\t= this.lookupReference('statisticsAllActivities');",
+                    "",
+                    "var nStart = new Date().getTime();",
+                    "console.log('게임 메카닉 결과 분석 시작 시점(Activity)');",
+                    "",
+                    "",
+                    "if(activity.create) {",
+                    "    this.getStatisticsAllActivity(1);",
+                    "",
+                    "    statisticsActivities.hide();",
+                    "    statisticsAllActivities.show();",
+                    "} else {",
+                    "    this.getStatisticActivity(activity.get('id'),1);",
+                    "",
+                    "    statisticsActivities.show();",
+                    "    statisticsAllActivities.hide();",
+                    "}",
+                    "",
+                    "this.getStatisticsByPeriod(1);",
+                    "",
+                    "",
+                    "var nEnd =  new Date().getTime();",
+                    "console.log('게임 메카닉 결과 분석 종료 시점(Activity)');",
+                    "",
+                    "var nDiff = nEnd - nStart;",
+                    "",
+                    "console.log('게임 메카닉 결과 분석 기능 반응 시간(Activity) : '+ nDiff + ' (ms)');",
+                    "",
+                    ""
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onActivityAnalysisFormShow",
+            "designerId": "5af783bb-551f-41fe-9689-4a7e532d1a5e"
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "data": [
+            "[",
+            "    {",
+            "        \"id\": \"5\",",
+            "        \"name\": \"최상\"",
+            "    },",
+            "    {",
+            "        \"id\": \"4\",",
+            "        \"name\": \"상\"",
+            "    },",
+            "    {",
+            "        \"id\": \"3\",",
+            "        \"name\": \"중\"",
+            "    },",
+            "    {",
+            "        \"id\": \"2\",",
+            "        \"name\": \"하\"",
+            "    },",
+            "    {",
+            "        \"id\": \"1\",",
+            "        \"name\": \"최하\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "Grade",
+        "groupField": null,
+        "model": "Grade",
+        "session": null,
+        "storeId": "Grade"
+    },
+    "name": "MyStore20",
+    "designerId": "705e7d70-dfad-4cb5-b1c0-7415b943ba2f",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gradeSorter",
+                "direction": "DESC",
+                "property": "id"
+            },
+            "name": "MySorter4",
+            "designerId": "7c6226cc-9e14-4f73-850c-1ba2a2081c05"
+        }
+    ]
+}

@@ -1,0 +1,183 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "managermain",
+        "designer|userClassName": "manager.main.ManagerMainViewController"
+    },
+    "designerId": "e2a5048f-c9ef-478e-aa61-bd42ccb093f1",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "prefix",
+                    "record",
+                    "cfg"
+                ],
+                "fn": "createTab",
+                "implHandler": [
+                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                    "    var tabs\t= this.lookupReference('maintabeditpanel');",
+                    "    var id, tab;",
+                    "",
+                    "",
+                    "    if(record === null) {",
+                    "",
+                    "        id = prefix + '_edittab';",
+                    "",
+                    "    } else {",
+                    "",
+                    "        id = record.get('id');",
+                    "    }",
+                    "",
+                    "    tab = tabs.items.getByKey(id);",
+                    "",
+                    "",
+                    "    if(tab){",
+                    "        // @TODO: before closing the tab, check to exist any change in the form.",
+                    "        // so, if some change is detected, display a dialog to ask to a user",
+                    "        //cfg.itemId = id;",
+                    "        cfg.closable = true;",
+                    "",
+                    "        tabs.setActiveTab(tab);",
+                    "",
+                    "    } else {",
+                    "",
+                    "        cfg.itemId = id;",
+                    "        cfg.title = id;",
+                    "        cfg.closable = true;",
+                    "        tab = tabs.add(cfg);",
+                    "",
+                    "        tabs.setActiveTab(tab);",
+                    "",
+                    "    }",
+                    "} else {",
+                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                    "        if (btn == 'ok') {            ",
+                    "        }",
+                    "    }, this);",
+                    "",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "name": "createTab",
+            "designerId": "0920e724-c100-450f-97b8-4245cf48ea7e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "closeTab",
+                "implHandler": [
+                    "var tabs = this.lookupReference('maintabeditpanel');",
+                    "var tab = tabs.items.getByKey(id);",
+                    "",
+                    "if(tab) {",
+                    "    for(i=0; i<tabs.items.length; i++) {",
+                    "        var itemId = tabs.items.items[i].itemId;",
+                    "",
+                    "        if(id == itemId) {",
+                    "            tabs.items.items[i].close();",
+                    "        }",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "closeTab",
+            "designerId": "8b6c7ab3-2c3b-4eab-af5c-2bbe047ce384"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "restartMechanics",
+                "implHandler": [
+                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/manager/init/restart',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            if(decodeResponse.success) {",
+                    "                Ext.toast({",
+                    "                    title: '게임 메카닉 로딩' ,",
+                    "                    html: '새로운 게임 메카닉이 성공적으로 재시작 되었습니다.',",
+                    "                    align: 't',",
+                    "                    bodyPadding:10",
+                    "                });            ",
+                    "",
+                    "",
+                    "                Ext.getStore('User').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Activity').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('ActivityMission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Badge').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Status').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Permission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('StatusClass').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Rule').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('RepoStatus').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "",
+                    "",
+                    "                Ext.getStore('User').load();",
+                    "                Ext.getStore('Activity').load();",
+                    "                Ext.getStore('ActivityMission').load();",
+                    "                Ext.getStore('Mission').load();",
+                    "                Ext.getStore('Badge').load();",
+                    "                Ext.getStore('Point').load();",
+                    "                Ext.getStore('Level').load();",
+                    "                Ext.getStore('Status').load();",
+                    "                Ext.getStore('Permission').load();",
+                    "                Ext.getStore('StatusClass').load();",
+                    "                Ext.getStore('Rule').load();",
+                    "                Ext.getStore('RepoStatus').load();",
+                    "            }",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "    });",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "name": "restartMechanics",
+            "designerId": "1cfb142d-d1aa-4511-b168-fd76bf050899"
+        }
+    ]
+}

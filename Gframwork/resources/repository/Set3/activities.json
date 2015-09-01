@@ -1,0 +1,39 @@
+[
+
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "purchase",
+  "name" : "차 구매",
+  "description" : "차 구매하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "registration",
+  "name" : "차 등록",
+  "description" : "차 등록하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "sale",
+  "name" : "차 판매",
+  "description" : "차 판매하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "purchase_write",
+  "name" : "구매 후기 작성",
+  "description" : "구매 후기 작성하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "sale_write",
+  "name" : "판매 후기 작성",
+  "description" : "판매 후기 작성하기 미션을 위한 사용자 Activity"
+}
+
+]

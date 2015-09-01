@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GF Widget User Profile</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- CSS for the custom scrollbar-->
+    <link type="text/css" href="./style/lionbars.css" rel="stylesheet" media="all" />
+    <!-- CSS for userprofile widget-->
+    <link type="text/css" href="./style/userprofile.css" rel="stylesheet" media="all" />
+
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <[endif]-->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- json2.js is needed for IE8 or IE9 -->
+    <script src="./scripts/lib/json2.js"></script>
+    <!-- Javascript for the custom scrollbar -->
+    <script type="text/javascript" src="./scripts/lib/jquery.lionbars.0.3.js"></script>
+    <!-- Javascript for timeago plugin -->
+    <script type="text/javascript" src="./scripts/lib/jquery.timeago.js"></script>
+    <!-- Javascript for userprofile widget -->
+    <script type="text/javascript" src="./scripts/userprofile.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <b>사용자 프로필</b>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4 col-thin">
+                    <img id="userprofile" class="profileImg" src="/resources/images/profile/userprofile_1.png" alt="User Profile Img">
+                    <div id="userName" class="userName"></div>
+                    <div id="userNickName" class="userInfo"></div>
+                    <div id="userGender" class="userInfo"></div>
+                    <div id="userBirthday" class="userInfo"></div>
+                </div>
+                <div class="col-sm-8 col-thin">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>배지 획득 상태</b>
+                        </div>
+                        <div class="table-responsive scroll-lion badgeTable">
+                            <table id="badgeTable" class="table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-thin">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>임무 진행 상태</b>
+                        </div>
+                        <ul id="missionList" class="list-group col-box scroll-lion">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-thin">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>획득 보상 상태</b>
+                        </div>
+                        <ul id="rewardList" class="list-group col-box scroll-lion">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-thin">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <b>최근 활동</b>
+                        </div>
+                        <ul id="activityList" class="list-group col-box scroll-lion">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "permissionanalysisedit",
+        "designer|userClassName": "analyzer.permission.PermissionAnalysisEditViewController"
+    },
+    "name": "analyzer.badge.BadgeAnalysisEditViewController2",
+    "designerId": "fc034474-2045-445b-be04-68aeeac92aa4",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsAllPermissions",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/permissions',",
+                    "    method: 'GET',",
+                    "",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var permissionAnalysisAllStore\t= me.getStore('permissionAnalysisAll');",
+                    "        permissionAnalysisAllStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsAllPermissions",
+            "designerId": "437aed6d-2926-49c1-9af8-fdd71fcb7ce4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "permissionId"
+                ],
+                "fn": "getStatisticsPermission",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/permissions/'+permissionId,",
+                    "    method: 'GET',",
+                    "",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var permissionAnalysisStore\t= me.getStore('permissionAnalysis');",
+                    "        permissionAnalysisStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsPermission",
+            "designerId": "ccc3663c-dafa-499e-960a-b14e459b46a1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "period"
+                ],
+                "fn": "getStatisticsPermissionByPeriod",
+                "implHandler": [
+                    "var permission\t= this.getViewModel().get('thePermission');",
+                    "var me \t\t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "if(permission.create) {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/permissionsbyperiod',",
+                    "        method: 'GET',",
+                    "",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var permissionAnalysisPeriodStore\t= me.getStore('permissionAnalysisPeriod');",
+                    "            permissionAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "",
+                    "} else {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/permissionsbyperiod',",
+                    "        method: 'GET',",
+                    "",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            id: permission.get('id'),",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var permissionAnalysisPeriodStore\t= me.getStore('permissionAnalysisPeriod');",
+                    "            permissionAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "getStatisticsPermissionByPeriod",
+            "designerId": "3432f1f8-251d-45c6-9a1a-02bd98262e1c"
+        }
+    ]
+}

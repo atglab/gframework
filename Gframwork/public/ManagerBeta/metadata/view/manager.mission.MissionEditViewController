@@ -1,0 +1,126 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "missionedit",
+        "designer|userClassName": "manager.mission.MissionEditViewController"
+    },
+    "name": "manager.point.PointEditViewController3",
+    "designerId": "bde3a4a7-0093-41b8-8e97-14a133e8f427",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSetBindStore",
+                "implHandler": [
+                    "    var reward_type\t\t= this.getViewModel().get('theMission').get('reward_type');",
+                    "",
+                    "",
+                    "    var rewardOptionField\t\t= this.lookupReference('rewardOptionField');",
+                    "    var rewardOptionListStatus\t= this.lookupReference('rewardOptionListStatus');",
+                    "    var rewardOptionListLevel\t= this.lookupReference('rewardOptionListLevel');",
+                    "",
+                    "",
+                    "    var rewardListCombo\t= this.lookupReference('missionRewardList');",
+                    "    var store;",
+                    "",
+                    "    if(reward_type == 'badge_type') {",
+                    "",
+                    "        store\t= Ext.getStore('Badge');",
+                    "",
+                    "        //=================================",
+                    "        rewardOptionField.disable();",
+                    "        rewardOptionField.show();",
+                    "        rewardOptionListStatus.hide();",
+                    "        rewardOptionListLevel.hide();",
+                    "        //=================================",
+                    "",
+                    "    } else if(reward_type == 'point_type') {",
+                    "",
+                    "        store\t= Ext.getStore('Point');",
+                    "",
+                    "        //=================================",
+                    "        rewardOptionField.enable();",
+                    "        rewardOptionField.show();",
+                    "        rewardOptionListStatus.hide();",
+                    "        rewardOptionListLevel.hide();",
+                    "        //=================================",
+                    "",
+                    "    } else if(reward_type == 'level_type') {",
+                    "",
+                    "        store\t= Ext.getStore('Level');",
+                    "",
+                    "        //=================================",
+                    "        rewardOptionField.disable();",
+                    "        rewardOptionField.hide();",
+                    "        rewardOptionListStatus.hide();",
+                    "        rewardOptionListLevel.show();",
+                    "        //=================================",
+                    "",
+                    "    } else if(reward_type == 'status_type') {",
+                    "",
+                    "        store\t= Ext.getStore('Status');",
+                    "",
+                    "",
+                    "        //=================================",
+                    "        rewardOptionField.disable();",
+                    "        rewardOptionField.hide();",
+                    "        rewardOptionListStatus.show();",
+                    "        rewardOptionListLevel.hide();",
+                    "        //=================================",
+                    "",
+                    "    } else if(reward_type == 'permission_type') {",
+                    "",
+                    "        store\t= Ext.getStore('Permission');",
+                    "        ",
+                    "        ",
+                    "        //=================================",
+                    "        rewardOptionField.disable();",
+                    "        rewardOptionField.show();",
+                    "        rewardOptionListStatus.hide();",
+                    "        rewardOptionListLevel.hide();",
+                    "        //=================================",
+                    "",
+                    "    }",
+                    "",
+                    "    rewardListCombo.bindStore(store);"
+                ]
+            },
+            "name": "onSetBindStore",
+            "designerId": "5f806010-4d40-4c6c-b028-c95561c7f992"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelMission",
+                "implHandler": [
+                    "var mission\t\t\t= this.getViewModel().get('theMission');",
+                    "",
+                    "var isDirtyMission\t= mission.dirty;",
+                    "",
+                    "if(isDirtyMission)  {",
+                    "    //console.log(mission);",
+                    "    Ext.getStore('Mission').rejectChanges();",
+                    "    this.onSetBindStore();",
+                    "}"
+                ]
+            },
+            "name": "onCancelMission",
+            "designerId": "2b1516b4-8a53-4e8d-b12f-311f96666756"
+        }
+    ]
+}

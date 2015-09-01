@@ -1,0 +1,24 @@
+{
+  "name": "GframworkTest",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "ATG Lab.",
+  "license": "",
+  "dependencies": {
+  	"express": "*",
+  	"body-parser": "*",
+  	"async":"*",
+  	"mongoose":"*",
+    "socket.io": "*",
+    "winston": "*",
+    "multer": "*",
+    "busboy": "*",
+    "moment": "*",
+    "bson": "*",
+    "jwt-simple": "*",
+    "node-rsa": "*"
+  }
+}

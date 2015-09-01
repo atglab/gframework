@@ -1,0 +1,515 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "top_menu_color"
+        ],
+        "collapsed": false,
+        "collapsible": null,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "userlist",
+        "designer|userClassName": "manager.user.UserList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "itemId": null,
+        "margin": null,
+        "maxWidth": null,
+        "padding": null,
+        "resizable": null,
+        "session": null,
+        "store": "User",
+        "title": null,
+        "titleCollapse": null,
+        "width": 250
+    },
+    "name": "manager.rule.RuleList1",
+    "designerId": "a107c543-eaa1-470a-8996-1d8bac921737",
+    "viewControllerInstanceId": "1c96cde6-688d-45f7-8fd7-17013a3892bc",
+    "viewModelInstanceId": "c5a9f3c2-9b97-4a1e-ba48-9d5bb53edbc3",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "userListToolbar",
+                "dock": "top",
+                "padding": null
+            },
+            "name": "MyToolbar2",
+            "designerId": "f2e0d065-700c-49dd-ac18-50b593bd58de",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "designer|displayName": "가져오기",
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "reference": "userListImport",
+                        "title": null
+                    },
+                    "name": "MyForm",
+                    "designerId": "99681841-08e7-48ed-b624-12bfbfcb4954",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.File",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "buttonOnly": true,
+                                "buttonText": "가져오기",
+                                "componentCls": null,
+                                "fieldLabel": null,
+                                "name": "userlistupload",
+                                "reference": ""
+                            },
+                            "name": "MyFileUpload",
+                            "designerId": "9bf7ce4a-7c7c-4186-901b-a85dc54f013b",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUserListFilefieldChange",
+                                        "implHandler": [
+                                            "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                            "    var userListImport\t= this.lookupReference('userListImport');",
+                                            "",
+                                            "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                            "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                            "",
+                                            "",
+                                            "    var encodedFilename = Ext.urlEncode({ 'x_key': key, 'access_token': token });",
+                                            "",
+                                            "    userListImport.submit({",
+                                            "        url:'/api/v1/manager/users/list?' + encodedFilename,",
+                                            "        method: 'POST',",
+                                            "        waitMsg: '사용자 리스트 로드 중...',",
+                                            "        success: function(response, records){",
+                                            "            var userStore = Ext.getStore('User');",
+                                            "",
+                                            "            userStore.reload();",
+                                            "        }",
+                                            "    });",
+                                            "",
+                                            "} else {",
+                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                            "        if (btn == 'ok') {",
+                                            "        }",
+                                            "    }, this);",
+                                            "",
+                                            "}",
+                                            "",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onUserListFilefieldChange",
+                                    "designerId": "456ef192-2f17-4617-849d-3728cd08563b"
+                                },
+                                {
+                                    "type": "Ext.form.field.FileButton",
+                                    "reference": {
+                                        "name": "buttonConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": "list_import_btn",
+                                        "designer|displayName": "userListImportButton",
+                                        "overCls": "list_import_btn_over",
+                                        "text": ""
+                                    },
+                                    "name": "MyFileButton1",
+                                    "designerId": "138992fb-dbd8-4e21-b197-67781aaf9ef3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_add_btn",
+                        "designer|displayName": "추가",
+                        "disabled": null,
+                        "height": null,
+                        "icon": "",
+                        "iconCls": null,
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "overCls": "list_add_btn_over",
+                        "text": null,
+                        "width": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "6b1a68d5-6a8e-433b-ba61-ddec717fd8db",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUserAddButtonClick",
+                                "implHandler": [
+                                    "this.viewUser(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onUserAddButtonClick",
+                            "designerId": "d807909e-c3b0-46a3-a61b-0439b745ceab"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_del_btn",
+                        "designer|displayName": "삭제",
+                        "disabled": true,
+                        "icon": null,
+                        "iconCls": "",
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "overCls": "list_del_btn_over",
+                        "reference": "del_user_btn",
+                        "text": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "51ff98b9-712e-4269-9288-af4e5534fa7a",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUserDelButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "",
+                                    "    var UserGrid\t= button.up('userlist');",
+                                    "    var selection\t= UserGrid.getSelectionModel().getSelection()[0];",
+                                    "    selection.erase();",
+                                    "",
+                                    "    this.viewUser(selection);",
+                                    "",
+                                    "    button.disable();",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onUserDelButtonClick",
+                            "designerId": "88b3f7d4-0623-4b99-abb2-b39a152e7332"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "userListSearchToolbar",
+                "dock": "top",
+                "margin": null,
+                "padding": null
+            },
+            "name": "MyToolbar6",
+            "designerId": "97c4c3f2-c35d-4a21-bdb4-f0433a034f9e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "searchUser",
+                        "emptyText": "사용자 검색",
+                        "fieldLabel": null,
+                        "layout|flex": 5,
+                        "reference": "searchUser"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "967af05e-9cf1-45aa-aaf7-bb8609e63cd1"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_search_btn",
+                        "designer|displayName": "검색",
+                        "height": null,
+                        "layout|flex": 1,
+                        "text": null,
+                        "tooltip": [
+                            "검색",
+                            ""
+                        ],
+                        "width": null
+                    },
+                    "name": "MyButton",
+                    "designerId": "5819e8cb-1b07-4ba8-8d57-6408b7bb998b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUserSearchButtonClick",
+                                "implHandler": [
+                                    "var search_user_cmp\t\t\t= this.lookupReference('searchUser');",
+                                    "var search_result_cmp\t\t= this.lookupReference('searchResultUser');",
+                                    "var search_result_toolbar\t= this.lookupReference('searchResultToolbar');",
+                                    "",
+                                    "var users_store \t\t\t= Ext.getStore('User');",
+                                    "",
+                                    "var user_search \t\t\t= users_store.findRecord('name', search_user_cmp.value);",
+                                    "",
+                                    "if(user_search !== null){",
+                                    "",
+                                    "    search_result_toolbar.show();",
+                                    "    search_result_cmp.setValue(user_search.get('name'));",
+                                    "    this.viewUser(user_search);",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "    Ext.toast({",
+                                    "        title: 'User-검색 실패' ,",
+                                    "        html:  search_user_cmp.value + '의 정보를 찾지 못하였습니다.',",
+                                    "        align: 't',",
+                                    "        bodyPadding:10",
+                                    "    });",
+                                    "    ",
+                                    "    search_user_cmp.setValue('');",
+                                    "    search_result_toolbar.hide();",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onUserSearchButtonClick",
+                            "designerId": "09577e7c-6898-445e-b5b1-33f9b33a7f7c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": null,
+                "componentCls": null,
+                "designer|displayName": "userListSearchResultToolbar",
+                "dock": "top",
+                "hidden": true,
+                "margin": "5 0 5 0",
+                "padding": null,
+                "reference": "searchResultToolbar"
+            },
+            "name": "MyToolbar9",
+            "designerId": "9259fe02-315d-408a-86d3-4cc411eae61a",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "alignTarget": "",
+                        "defaultAlign": null,
+                        "fieldLabel": null,
+                        "layout|flex": null,
+                        "value": "검색 결과:"
+                    },
+                    "name": "MyDisplayField8",
+                    "designerId": "721840cc-170f-41b5-a8db-288054115f99"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "searchResultUser",
+                        "editable": false,
+                        "emptyText": "검색 결과",
+                        "fieldLabel": null,
+                        "labelAlign": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "padding": null,
+                        "reference": "searchResultUser",
+                        "width": null
+                    },
+                    "name": "MyTextField8",
+                    "designerId": "cc80c0d3-f75f-4d8e-98d8-8efd76785a4b"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "manager-close",
+                        "designer|displayName": "닫기",
+                        "hidden": true,
+                        "layout|flex": null,
+                        "text": null,
+                        "tooltip": [
+                            "닫기",
+                            ""
+                        ]
+                    },
+                    "name": "MyButton11",
+                    "designerId": "82223d88-974b-4ce3-90fe-9e581a409312"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "designer|displayName": "userRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "458bf176-2d58-47ad-8755-aa25c8392a58"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "flex": 4,
+                "tdCls": "grid-size",
+                "text": null,
+                "width": null
+            },
+            "name": "MyColumn",
+            "designerId": "dcda9e44-a8b2-49f8-94b5-e09e92750992"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserlistviewSelectionChange",
+                "implHandler": [
+                    "var delBtn = this.lookupReference('del_user_btn');",
+                    "delBtn.enable();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onUserlistviewSelectionChange",
+            "designerId": "8ea3d552-09ee-4495-8599-e32318f932b6"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserGridpanelItemDblClick",
+                "implHandler": [
+                    "this.viewUser(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onUserGridpanelItemDblClick",
+            "designerId": "eab5985c-e0f2-4934-bfad-4fdf2ea57571"
+        }
+    ]
+}

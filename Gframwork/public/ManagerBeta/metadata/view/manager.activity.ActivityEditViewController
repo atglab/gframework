@@ -1,0 +1,37 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "activityedit",
+        "designer|userClassName": "manager.activity.ActivityEditViewController"
+    },
+    "name": "manager.point.PointEditViewController1",
+    "designerId": "d0c50176-82d1-47c4-95e7-e7d4c3f50e95",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelActivity",
+                "implHandler": [
+                    "var activity\t\t= this.getViewModel().get('theActivity');",
+                    "",
+                    "var isDirtyActivity\t= activity.dirty;",
+                    "if(isDirtyActivity)  {",
+                    "    Ext.getStore('Activity').rejectChanges();",
+                    "}"
+                ]
+            },
+            "name": "onCancelActivity",
+            "designerId": "959d500d-c404-44aa-88dc-4411729b1e22"
+        }
+    ]
+}

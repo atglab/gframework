@@ -1,0 +1,1843 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "managermain",
+        "designer|userClassName": "manager.main.ManagerMain",
+        "height": null,
+        "layout": "border",
+        "renderTo": null,
+        "width": null
+    },
+    "name": "MyContainer",
+    "configAlternates": {
+        "listeners": "object"
+    },
+    "designerId": "400bb72c-2058-4a0f-ac41-68e4a7640874",
+    "viewControllerInstanceId": "e2a5048f-c9ef-478e-aa61-bd42ccb093f1",
+    "viewModelInstanceId": "83dcb9ee-07e0-45be-9918-9da33eaf1810",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "top_menu_color"
+                ],
+                "collapsed": null,
+                "collapsible": true,
+                "designer|uiInterfaceName": "left-menu-panel",
+                "layout": "border",
+                "layout|region": "west",
+                "padding": "0 5 0 0",
+                "title": "Mechanics",
+                "ui": "left-menu-panel",
+                "width": 380
+            },
+            "name": "MyPanel",
+            "configAlternates": {
+                "header": "object",
+                "listeners": "object"
+            },
+            "designerId": "4c03df8c-5a5a-4d89-a507-1822371d759d",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "restartMechanicsToolbar",
+                        "dock": "top"
+                    },
+                    "name": "MyToolbar13",
+                    "designerId": "67e688f1-2076-45cc-8a93-40d5f0875f8a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "text": "재시작"
+                            },
+                            "name": "MyButton29",
+                            "designerId": "a45e8ec7-50f3-4a68-b4a3-5e75456b8758",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onResetButtonClick",
+                                        "implHandler": [
+                                            "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                            "    this.fireViewEvent('tabpanelRemoveAllinManager', this, null);",
+                                            "    this.restartMechanics();",
+                                            "} else {",
+                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                            "        if (btn == 'ok') {",
+                                            "        }",
+                                            "    }, this);",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onResetButtonClick",
+                                    "designerId": "508f438a-26ec-418a-9b64-d121584bb00d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": null,
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": "기존 게임 메카닉을 수정하거나 새로운 게임 메카닉을 추가한 경우, 재시작 버튼을 클릭해주세요."
+                            },
+                            "name": "MyButton34",
+                            "configAlternates": {
+                                "tooltip": "string"
+                            },
+                            "designerId": "2ccd5993-e1f3-4586-8056-459b498afc42"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "bodyBorder": false,
+                        "bodyPadding": null,
+                        "border": false,
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "collapsible": false,
+                        "componentCls": null,
+                        "defaults": null,
+                        "designer|createAlias": "",
+                        "designer|displayName": "GFManagerMenu",
+                        "designer|uiInterfaceName": "navigation",
+                        "dock": null,
+                        "hideMode": null,
+                        "iconCls": null,
+                        "itemCls": null,
+                        "itemId": "managerMenu",
+                        "layout|flex": null,
+                        "layout|region": "west",
+                        "margin": null,
+                        "maxWidth": null,
+                        "padding": "1 5 0 0",
+                        "tabPosition": "left",
+                        "tabRotation": [
+                            "0"
+                        ],
+                        "title": null,
+                        "ui": "navigation",
+                        "width": 380
+                    },
+                    "name": "MyTabPanel",
+                    "designerId": "a5acf1f8-f200-4722-89d9-1d1f3aa80008",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "collapsedCls": null,
+                                "componentCls": null,
+                                "disabledCls": null,
+                                "focusCls": null,
+                                "headerOverCls": "",
+                                "icon": null,
+                                "iconAlign": null,
+                                "iconCls": "",
+                                "layout": "fit",
+                                "margin": null,
+                                "overCls": null,
+                                "padding": "0 0 0 1",
+                                "title": "User",
+                                "width": null
+                            },
+                            "name": "MyPanel15",
+                            "designerId": "e6831682-24d1-43fd-94e7-019257b5bd4b",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "cls": null,
+                                        "designer|displayName": "UserTabConfig",
+                                        "focusCls": "",
+                                        "iconCls": "left_menu_user_btn_over",
+                                        "layout|margins": null,
+                                        "margin": null,
+                                        "overCls": null,
+                                        "tabPosition": null,
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "69da5c0e-d7b4-4777-9408-1d5262cc30fa",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onUserTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_user_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onUserTabMouseOver",
+                                            "designerId": "c030790b-7cdf-4b70-9fb0-ac9475aeef25"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onUserTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "",
+                                                    "     button.setIconCls('left_menu_user_btn_over');",
+                                                    "",
+                                                    "} else {",
+                                                    "",
+                                                    "      button.setIconCls('left_menu_user_btn');",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onUserTabMouseOut",
+                                            "designerId": "6f2b16da-8fa8-4e81-be9a-13a70e2deb8a"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onUserTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_user_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onUserTabDeactivate",
+                                            "designerId": "c4c89957-5467-4acf-a139-4f621786737d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "reference": "userlist",
+                                        "width": null
+                                    },
+                                    "name": "manager.user.userlist",
+                                    "designerId": "4bb88694-2abb-4109-a97e-8451edad0df5",
+                                    "masterInstanceId": "a107c543-eaa1-470a-8996-1d8bac921737",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewUser",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'useredit',",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                theUser: record || {",
+                                                    "                    type: 'GFManager.model.User',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "    ",
+                                                    "    this.createTab('user', record, editTab);",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "viewUser",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewUser",
+                                            "designerId": "16120c8b-53ae-4c94-b242-0f5fd2a06855"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onUserGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('User').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "",
+                                                    "    Ext.getStore('User').load();",
+                                                    "}"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onUserGridpanelBeforeRender",
+                                            "designerId": "f69ca1fd-655a-44a0-9587-0cdc606b70f7"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "icon": null,
+                                "iconCls": null,
+                                "layout": "fit",
+                                "overCls": null,
+                                "padding": "0 0 0 1",
+                                "title": "Activity"
+                            },
+                            "name": "MyPanel4",
+                            "designerId": "2af45dbc-51e8-479a-aaa6-9fda2afd276b",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": null,
+                                        "designer|displayName": "ActivityTabConfig",
+                                        "icon": null,
+                                        "iconCls": "left_menu_activity_btn",
+                                        "overCls": null,
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig4",
+                                    "designerId": "8bb5f2f5-58ef-409d-88a5-4b8bfd8486e8",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onActivityTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_activity_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onActivityTabMouseOver",
+                                            "designerId": "00285419-7950-4287-8dea-c99638eb808d"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onActivityTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_activity_btn_over');",
+                                                    "    ",
+                                                    "} else {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_activity_btn');",
+                                                    "    ",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onActivityTabMouseOut",
+                                            "designerId": "dc916ca5-467f-4f2b-8b1d-b02b8f3412f3"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onActivityTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_activity_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onActivityTabDeactivate",
+                                            "designerId": "e2cba958-e95e-4809-8955-ec2ea616b02b"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "reference": "activitylist"
+                                    },
+                                    "name": "manager.activity.activitylist",
+                                    "designerId": "5b35d113-f80f-425d-891f-4a2950e64327",
+                                    "masterInstanceId": "7b486133-4abe-4b21-a7eb-396d4e7e7711",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewActivity",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'activityedit',",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                theActivity: record || {",
+                                                    "                    type: 'GFManager.model.Activity',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "",
+                                                    "    this.createTab('activity', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewActivity",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewActivity",
+                                            "designerId": "fb81f3d8-9107-4edf-aca7-c1a7d5edb1a7"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onActivityGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Activity').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('ActivityMission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "    Ext.getStore('Activity').load();",
+                                                    "    Ext.getStore('ActivityMission').load();",
+                                                    "    Ext.getStore('Mission').load();",
+                                                    "}"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onActivityGridpanelBeforeRender",
+                                            "designerId": "d0004434-1b10-4441-a6ea-d9e5a2428b1b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "",
+                                "layout": "fit",
+                                "margin": null,
+                                "padding": "0 0 0 1",
+                                "title": "Badge"
+                            },
+                            "name": "MyPanel2",
+                            "designerId": "421eccdd-bb88-42af-ab57-8b8368fc5240",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "designer|displayName": "BadgeTabConfig",
+                                        "iconCls": "left_menu_badge_btn",
+                                        "layout|margins": null,
+                                        "margin": null,
+                                        "overCls": null,
+                                        "tabPosition": null,
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "b54f8fd6-d5ef-4fca-9c09-4bb3e82ee059",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBadgeTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_badge_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onBadgeTabMouseOver",
+                                            "designerId": "fce3f78f-2f42-495e-949a-7fd8e8ab18d8"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBadgeTabMouseOut",
+                                                "implHandler": [
+                                                    "",
+                                                    "if(button.active) {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_badge_btn_over');",
+                                                    "    ",
+                                                    "} else {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_badge_btn');",
+                                                    "    ",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onBadgeTabMouseOut",
+                                            "designerId": "3859a49d-9c0d-4b45-8f2f-45792e84e547"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBadgeTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_badge_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onBadgeTabDeactivate",
+                                            "designerId": "49713d28-0269-47e4-9de9-b8cea944a77d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapseFirst": null,
+                                        "margin": null,
+                                        "reference": "badgelist"
+                                    },
+                                    "name": "manager.badge.badgelist",
+                                    "designerId": "7eeaf9fe-c28f-4505-b99a-7cefc39f29fd",
+                                    "masterInstanceId": "ccecdd30-a5ee-460b-afde-9ea5f256b3e2",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewBadge",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'badgeedit',        ",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                theBadge: record || {",
+                                                    "                    type: 'GFManager.model.Badge',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "",
+                                                    "    this.createTab('badge', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewBadge",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewBadge",
+                                            "designerId": "88e51683-f62a-43ae-bd46-026d032f3bd2"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBadgeGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Badge').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "",
+                                                    "    Ext.getStore('Badge').load();",
+                                                    "} ",
+                                                    "",
+                                                    ""
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onBadgeGridpanelBeforeRender",
+                                            "designerId": "27a8a155-753c-4ca7-b7d0-7bad267bd8e9"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "",
+                                "layout": "fit",
+                                "margin": null,
+                                "padding": "0 0 0 1",
+                                "title": "Point"
+                            },
+                            "name": "MyPanel3",
+                            "designerId": "6a865d83-b928-4bf4-bf2a-5c74f74dc3a7",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "PointTabConfig",
+                                        "iconCls": "left_menu_point_btn",
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig2",
+                                    "designerId": "7761f440-9522-4056-9acf-ae2e907d1698",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPointTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_point_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPointTabMouseOver",
+                                            "designerId": "004a1c1b-9340-4604-b591-63eb91514cc1"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPointTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_point_btn_over');",
+                                                    "    ",
+                                                    "} else {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_point_btn');",
+                                                    "    ",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPointTabMouseOut",
+                                            "designerId": "5cb6fd88-91ec-4486-baa3-5f30918f3c4b"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPointTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_point_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPointTabDeactivate",
+                                            "designerId": "e6bfcd9d-7088-4956-976b-298b24b7ae60"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "collapsedCls": null,
+                                        "componentCls": null,
+                                        "disabledCls": null,
+                                        "focusCls": null,
+                                        "headerOverCls": null,
+                                        "iconCls": null,
+                                        "margin": null,
+                                        "overCls": null,
+                                        "reference": "pointlist"
+                                    },
+                                    "name": "manager.point.pointlist",
+                                    "designerId": "a1b1af02-23df-4eaa-9fc0-ebe297358a8b",
+                                    "masterInstanceId": "a69f2bfd-9861-4c69-a187-4f88077beaae",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewPoint",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'pointedit',    ",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                thePoint: record || {",
+                                                    "                    type: 'GFManager.model.Point',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "",
+                                                    "    this.createTab('point', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewPoint",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewPoint",
+                                            "designerId": "ea5f45db-fbf7-482d-ac1b-f3f8688e0f45"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPointGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "    Ext.getStore('Point').load();",
+                                                    "}"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPointGridpanelBeforeRender",
+                                            "designerId": "0f08f95e-2b5a-43a9-b991-008f66a15dfc"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "",
+                                "layout": "fit",
+                                "padding": "0 0 0 1",
+                                "title": "Level"
+                            },
+                            "name": "MyPanel5",
+                            "designerId": "c708c980-9fbc-4654-bfb0-f67bae1fcf9e",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "LevelTabConfig",
+                                        "iconCls": "left_menu_level_btn",
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig4",
+                                    "designerId": "37b25ee8-445d-4b08-8293-a740324e2c46",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onLevelTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_level_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onLevelTabMouseOver",
+                                            "designerId": "cf0c413f-b504-4636-bb33-19a6289ae70b"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onLevelTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_level_btn_over');",
+                                                    "    ",
+                                                    "} else {",
+                                                    "        ",
+                                                    "    button.setIconCls('left_menu_level_btn');",
+                                                    "    ",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onLevelTabMouseOut",
+                                            "designerId": "adde2739-c5a7-4a2d-a93e-728eb42313b7"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onLevelTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_level_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onLevelTabDeactivate",
+                                            "designerId": "a8a260f6-be8e-406c-9468-147e84de81bc"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "reference": "levellist"
+                                    },
+                                    "name": "manager.level.levellist",
+                                    "designerId": "5dc23873-390c-482b-a36e-c2a45597c173",
+                                    "masterInstanceId": "32842431-5b1e-4fd4-b2fe-c1431696c41e",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewLevel",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'leveledit',        ",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                theLevel: record || {",
+                                                    "                    type: 'GFManager.model.Level',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "    ",
+                                                    "    this.createTab('level', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewLevel",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewLevel",
+                                            "designerId": "aa6f6416-91ba-4056-a009-4898dc533a1f"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onLevelGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "",
+                                                    "    Ext.getStore('Level').load();",
+                                                    "    Ext.getStore('Point').load();",
+                                                    "    Ext.getStore('Mission').load();",
+                                                    "",
+                                                    "}",
+                                                    "",
+                                                    ""
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onLevelGridpanelBeforeRender",
+                                            "designerId": "04f8ba50-1403-407d-b2b6-fddc010d4273"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "",
+                                "layout": "fit",
+                                "padding": "0 0 0 1",
+                                "title": "Status"
+                            },
+                            "name": "MyPanel14",
+                            "designerId": "07f2a7ea-14bd-4e31-a141-4a2218351c72",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "StatusTabConfig",
+                                        "iconCls": "left_menu_status_btn",
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig4",
+                                    "designerId": "1d548d3d-197a-4ac5-a4c3-8c4875d2aa91",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onStatusTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_status_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onStatusTabMouseOver",
+                                            "designerId": "847aeda2-f2ef-41de-8159-65829f40384e"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onStatusTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_status_btn_over');",
+                                                    "    ",
+                                                    "} else {    ",
+                                                    "    ",
+                                                    "    button.setIconCls('left_menu_status_btn');",
+                                                    "    ",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onStatusTabMouseOut",
+                                            "designerId": "8d15bf31-53e4-4b13-bf39-0b775b9a1a05"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onStatusTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_status_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onStatusTabDeactivate",
+                                            "designerId": "53ab56ad-bebe-4295-8560-f76a9b7c1820"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "reference": "statuslist"
+                                    },
+                                    "name": "manager.status.statuslist",
+                                    "designerId": "93053761-047d-4da3-957c-bff291315433",
+                                    "masterInstanceId": "3f998f82-e544-46e6-a0dd-d9ed3860e107",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewStatus",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'statusedit',        ",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                theStatus: record || {",
+                                                    "                    type: 'GFManager.model.Status',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "    ",
+                                                    "    this.createTab('status', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewStatus",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewStatus",
+                                            "designerId": "1e50d459-c923-4bac-ab1d-7041c72b660a"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onStatusGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "",
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Status').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('RepoStatus').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('StatusClass').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "",
+                                                    "    Ext.getStore('Status').load();",
+                                                    "    Ext.getStore('Level').load();",
+                                                    "    Ext.getStore('Point').load();",
+                                                    "    Ext.getStore('Mission').load();",
+                                                    "    Ext.getStore('RepoStatus').load();",
+                                                    "    Ext.getStore('StatusClass').load();",
+                                                    "}",
+                                                    ""
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onStatusGridpanelBeforeRender",
+                                            "designerId": "7fe378d8-741a-40c2-970a-65b196f38bf0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "",
+                                "layout": "fit",
+                                "padding": "0 0 0 1",
+                                "title": "Permission"
+                            },
+                            "name": "MyPanel16",
+                            "designerId": "b7da2b94-553a-4c69-a1c9-1b92d85626d4",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "permissionTabConfig",
+                                        "iconCls": "left_menu_permission_btn",
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig4",
+                                    "designerId": "5a1b39e1-d43f-46a0-b000-bccaf164ea0b",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPermissionTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_permission_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPermissionTabMouseOver",
+                                            "designerId": "ad95a346-e28b-4582-a1d0-d4e24521cf8c"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPermissionTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_permission_btn_over');",
+                                                    "",
+                                                    "",
+                                                    "} else {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_permission_btn');",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPermissionTabMouseOut",
+                                            "designerId": "c5ff6763-fcf5-4947-942f-2ff9b433f7d6"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPermissionTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_permission_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPermissionTabDeactivate",
+                                            "designerId": "d8f5ca09-cb4c-40a6-b85a-e35db59f74df"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "reference": "permissionlist"
+                                    },
+                                    "name": "manager.permission.permissionlist",
+                                    "designerId": "cf8bb9b6-03b4-431d-9757-b1c9d91e8aae",
+                                    "masterInstanceId": "c74fe3b6-8188-41c1-b9eb-edf1120be0e0",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewPermission",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'permissionedit',        ",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                thePermission: record || {",
+                                                    "                    type: 'GFManager.model.Permission',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "    ",
+                                                    "    this.createTab('permission', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewPermission",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewPermission",
+                                            "designerId": "a58008c1-ec45-49e9-8c95-151524053ace"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPermissionGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Permission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Status').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('StatusClass').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "    Ext.getStore('Permission').load();",
+                                                    "    Ext.getStore('Status').load();",
+                                                    "    Ext.getStore('Level').load();",
+                                                    "    Ext.getStore('Point').load();",
+                                                    "    Ext.getStore('Mission').load();",
+                                                    "    Ext.getStore('StatusClass').load();",
+                                                    "}",
+                                                    "",
+                                                    ""
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPermissionGridpanelBeforeRender",
+                                            "designerId": "da1bd1fe-96b6-48e9-b3f7-d1cd9b16f561"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "",
+                                "layout": "fit",
+                                "padding": "0 0 0 1",
+                                "title": "Mission"
+                            },
+                            "name": "MyPanel8",
+                            "designerId": "a4b540bf-57ce-4354-9937-fc4257ec635a",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "MissionTabConfig",
+                                        "iconCls": "left_menu_mission_btn",
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig4",
+                                    "designerId": "6826b43d-c85a-4a95-a901-49b44352818a",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMissionTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_mission_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onMissionTabMouseOver",
+                                            "designerId": "3427548f-01bc-4b8c-a8c2-087a5cc83d3d"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMissionTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_mission_btn_over');",
+                                                    "",
+                                                    "} else {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_mission_btn');",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onMissionTabMouseOut",
+                                            "designerId": "8512cd00-7328-417e-9b4c-0b89f715e376"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMissionTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_mission_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onMissionTabDeactivate",
+                                            "designerId": "3687bb65-7960-4599-bc14-ea9fd33465cd"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "reference": "missionlist"
+                                    },
+                                    "name": "manager.mission.missionlist",
+                                    "designerId": "4c564743-73a9-4426-ad66-e2b0fd913838",
+                                    "masterInstanceId": "2f473e04-419c-4839-8653-87cc15f7e440",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "gridpanel",
+                                                    "record"
+                                                ],
+                                                "fn": "onGridpanelViewMission",
+                                                "implHandler": [
+                                                    "if(record !== null && record.dropped) {",
+                                                    "    this.closeTab(record.get('id'));",
+                                                    "} else {",
+                                                    "    var editTab = {",
+                                                    "        xtype: 'missionedit',        ",
+                                                    "        viewModel:{",
+                                                    "            data: {",
+                                                    "                theMission: record || {",
+                                                    "                    type: 'GFManager.model.Mission',",
+                                                    "                    create: true",
+                                                    "                }",
+                                                    "            }",
+                                                    "        }",
+                                                    "    };",
+                                                    "    ",
+                                                    "    this.createTab('mission', record, editTab);",
+                                                    "}"
+                                                ],
+                                                "name": "viewMission",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGridpanelViewMission",
+                                            "designerId": "847b98c9-21ff-4085-9b2f-77f1798f4313"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMissionGridpanelBeforeRender",
+                                                "implHandler": [
+                                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                    "",
+                                                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "    Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Activity').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Badge').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Permission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Status').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "    Ext.getStore('Rule').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                                                    "",
+                                                    "",
+                                                    "    Ext.getStore('Mission').load();",
+                                                    "    Ext.getStore('Activity').load();",
+                                                    "    Ext.getStore('Badge').load();",
+                                                    "    Ext.getStore('Permission').load();",
+                                                    "    Ext.getStore('Status').load();",
+                                                    "    Ext.getStore('Level').load();",
+                                                    "    Ext.getStore('Point').load();",
+                                                    "    Ext.getStore('Mission').load();",
+                                                    "    Ext.getStore('Rule').load();",
+                                                    "}",
+                                                    ""
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onMissionGridpanelBeforeRender",
+                                            "designerId": "923f25f1-f295-495e-9f13-8f4592ee1cb3"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "animCollapse": null,
+                "border": null,
+                "cls": [
+                    "top_menu_color"
+                ],
+                "designer|displayName": "",
+                "frameHeader": null,
+                "headerPosition": null,
+                "iconCls": null,
+                "id": null,
+                "layout|flex": null,
+                "layout|floatable": null,
+                "layout|region": "center",
+                "maxTabWidth": null,
+                "maxWidth": null,
+                "padding": null,
+                "reference": "maintabeditpanel",
+                "tabBarHeaderPosition": null,
+                "title": null,
+                "titleCollapse": null
+            },
+            "name": "MyTabPanel1",
+            "configAlternates": {
+                "header": "object",
+                "dockedItems": "object",
+                "listeners": "object",
+                "viewConfig": "object"
+            },
+            "designerId": "267047af-fb8c-4ff6-9388-2d76cce18fe4",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "overlapHeader": false,
+                        "padding": null,
+                        "title": "Mechanics Edit"
+                    },
+                    "name": "MyPanel13",
+                    "designerId": "39b89768-7575-4f0b-ac89-3adf25c5d6bb",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "closable": false,
+                                "fixed": true
+                            },
+                            "name": "TabConfig9",
+                            "designerId": "fe779bba-e232-4b52-8f67-659cc5134072"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|displayName": "allCloseManagerContainer",
+                "fieldLabel": null,
+                "layout": "vbox",
+                "layout|flex": null,
+                "layout|region": "east",
+                "margin": null,
+                "width": null
+            },
+            "name": "MyFieldContainer35",
+            "designerId": "5276acd3-eed5-4979-a8d4-bbfffecc775d",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 35,
+                        "layout|flex": null,
+                        "margin": null,
+                        "maxHeight": 35,
+                        "minHeight": 35,
+                        "reference": null,
+                        "text": "전체 닫기"
+                    },
+                    "name": "MyButton35",
+                    "designerId": "00fdffd8-8ffb-42ae-9104-d936262b0cb0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAllCloseManagerButtonClick",
+                                "implHandler": [
+                                    "this.fireViewEvent('managerTabpanelRemoveAll', this, null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onAllCloseManagerButtonClick",
+                            "designerId": "4a747728-7458-4f54-b6f4-7531da3e993e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "designer|displayName": "emptyForm",
+                        "layout|flex": 1,
+                        "title": null
+                    },
+                    "name": "MyForm11",
+                    "designerId": "5267ea5d-79af-4efb-bcf4-02b4d0acfa10"
+                }
+            ]
+        }
+    ]
+}

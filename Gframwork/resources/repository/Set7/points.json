@@ -1,0 +1,22 @@
+[
+{   
+  "id" : "transaction_point",
+  "name" : "거래 포인트",
+  "description" : "사용자가 부동산 또는 건물을 거래 했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 1000000,    
+  "relation_method": "level_type",
+  "relation_object": "user_level",
+  "icon" : "/resources/images/points/point_bill.png"
+},
+{   
+  "id" : "report_point",
+  "name" : "신고 포인트",
+  "description" : "사용자가 거래 사기등을 신고했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 100,
+  "relation_method": "level_type",
+  "relation_object": "report_level",
+  "icon" : "/resources/images/points/point_report.png"
+}
+]

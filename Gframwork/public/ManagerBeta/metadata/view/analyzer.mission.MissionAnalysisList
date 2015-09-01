@@ -1,0 +1,151 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "baseCls": null,
+        "bodyPadding": null,
+        "collapsible": false,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "missionanalysislist",
+        "designer|userClassName": "analyzer.mission.MissionAnalysisList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "itemId": null,
+        "margin": null,
+        "padding": null,
+        "resizable": null,
+        "session": null,
+        "store": "Mission",
+        "title": null,
+        "titleAlign": "center",
+        "width": 250
+    },
+    "name": "analyzer.permission.PermissionAnalysisList1",
+    "designerId": "90bc56f1-bc15-4e3b-8045-6f55aac5a3db",
+    "viewControllerInstanceId": "082b1e7b-0a60-4a55-8593-1efede2c7f9d",
+    "viewModelInstanceId": "92b83024-f736-4de6-b186-4b9c607cc0bb",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "missionListToolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "26cb3bb6-104d-4586-aaca-5866fc7aa2b5",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "designer|displayName": "전체 통계 보기",
+                        "icon": null,
+                        "iconCls": "",
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": null,
+                        "text": "전체 통계 보기",
+                        "width": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "dc0f9739-53c0-4c82-8e37-71cd6dfc7a0c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMissionAllButtonClick",
+                                "implHandler": [
+                                    "this.viewMissionAnalysis(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onMissionAllButtonClick",
+                            "designerId": "b36ffe05-4f83-44af-8640-b70721fa188d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "baseCls": null,
+                "designer|displayName": "missionRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "05dba2bc-3e9f-4cd8-b420-7b1e97b39985"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": null,
+                "baseCls": null,
+                "componentCls": null,
+                "dataIndex": "name",
+                "flex": 4,
+                "overCls": null,
+                "sortable": true,
+                "tdCls": "grid-size",
+                "text": null,
+                "width": null
+            },
+            "name": "MyColumn",
+            "designerId": "9b69cf4a-3a36-4498-994f-cd7b5add9ab7"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMissionGridpanelItemDblClick",
+                "implHandler": [
+                    "this.viewMissionAnalysis(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onMissionGridpanelItemDblClick",
+            "designerId": "eb12ff8c-4056-4c52-be64-5752e27cade3"
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StatusClass",
+        "idProperty": null
+    },
+    "name": "MyModel",
+    "designerId": "20039255-5210-47ce-a541-6601fb23a0b2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "id",
+                "unique": true
+            },
+            "name": "MyString39",
+            "designerId": "a6d2c462-d827-4576-8389-8ed8cd2b3b3e"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rank",
+                "unique": true
+            },
+            "name": "MyNumber",
+            "designerId": "602d777c-bff4-4f69-a651-ede49d807274"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString14",
+            "designerId": "b28b12af-8928-4ad7-ad50-26d217adaba3"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "condition"
+            },
+            "name": "MyNumber7",
+            "designerId": "f417d194-2a46-4611-a23e-1d6b607e98a8"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "icon"
+            },
+            "name": "MyString16",
+            "designerId": "73c168ad-d6be-48be-96ac-d2c0b8cc7ed6"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "StatusClassMemoryProxy",
+                "enablePaging": true
+            },
+            "name": "MyMemoryProxy4",
+            "designerId": "e17b168a-36dc-4034-95a8-463ff23f0700"
+        }
+    ]
+}

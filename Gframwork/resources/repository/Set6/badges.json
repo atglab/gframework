@@ -1,0 +1,25 @@
+[
+
+{   
+  "id" : "login_badge",
+  "name" : "로그인 배지",
+  "category" : "기본",
+  "description" : "로그인 10회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_login.png"
+},
+{
+  "id" : "reservation_badge",
+  "name" : "예약 배지",
+  "category" : "기본",
+  "description" : "놀이 기구 예약 10회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_07.png"
+},
+{
+  "id" : "write_badge",
+  "name" : "글쓰기 배지",
+  "category" : "기본",
+  "description" : "놀이 기구 이용 후기 10회 평가 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_write.png"
+}
+
+]

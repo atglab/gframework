@@ -1,0 +1,1430 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "statusedit",
+        "designer|userClassName": "manager.status.StatusEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "requires": [
+            "Ext.grid.column.Action",
+            "GFManager.view.manager.point.PointList"
+        ],
+        "scrollable": "true",
+        "title": [
+            "{theStatus.name}"
+        ],
+        "width": null
+    },
+    "name": "manager.point.PointEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "a6ae71b6-94ef-4cf0-9f5e-381249b4cf2f",
+    "viewControllerInstanceId": "f838a623-9f3e-4cde-856f-a7f52c2d69ce",
+    "viewModelInstanceId": "5e8a3a9a-89cc-47a4-9d1d-e16af6643e12",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer24",
+            "designerId": "209ffadc-c189-4e71-baa2-8031a47af9b5",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "statusEditToolbar",
+                        "enableFocusableContainer": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "5a428e6c-d2e5-41a6-8700-33f695451b46",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "1c68c3c9-d3e3-4ebd-990b-39e685630d4b",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStatusSaveButtonClick",
+                                        "implHandler": [
+                                            "var statusEditTab = button.up('statusedit');",
+                                            "var me = this;",
+                                            "",
+                                            "",
+                                            "var saveStatus = statusEditTab.getViewModel().get('theStatus');",
+                                            "",
+                                            "var isStatusClass = Ext.getStore('StatusClass').getModifiedRecords().length;",
+                                            "var isStatusClassR= Ext.getStore('StatusClass').getRemovedRecords().length;",
+                                            "",
+                                            "var method_radiogroup\t= this.lookupReference('relation_method');",
+                                            "var difficultyCmp \t\t= this.lookupReference('difficulty');",
+                                            "var repoStatusCmp\t\t= this.lookupReference('repoStatus_combo');",
+                                            "",
+                                            "",
+                                            "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                            "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                            "",
+                                            "",
+                                            "if(saveStatus.create) {",
+                                            "    if(statusEditTab.isValid()) {",
+                                            "",
+                                            "        if(!saveStatus.id || !saveStatus.name || !saveStatus.description || !saveStatus.relation_object) {",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Status-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        } else {",
+                                            "",
+                                            "            var statusStore\t= Ext.getStore('Status');",
+                                            "            var status \t\t= Ext.create('GFManager.model.Status');",
+                                            "            var relationMethod;",
+                                            "",
+                                            "",
+                                            "            status.set('id', saveStatus.id);",
+                                            "            status.set('name', saveStatus.name);",
+                                            "            status.set('description', saveStatus.description);",
+                                            "",
+                                            "            if(method_radiogroup.items.items[0].value) {",
+                                            "                relationMethod = method_radiogroup.items.items[0].inputValue;",
+                                            "            } else if(method_radiogroup.items.items[1].value) {",
+                                            "                relationMethod = method_radiogroup.items.items[1].inputValue;",
+                                            "            } else if(method_radiogroup.items.items[2].value) {",
+                                            "                relationMethod = method_radiogroup.items.items[2].inputValue;",
+                                            "            }",
+                                            "",
+                                            "            status.set('relation_method', relationMethod);",
+                                            "            status.set('relation_object', saveStatus.relation_object);",
+                                            "",
+                                            "",
+                                            "            var repoStatusid \t= repoStatusCmp.value;",
+                                            "            var relationObject\t= saveStatus.relation_object;",
+                                            "            var difficulty\t\t= difficultyCmp.value;",
+                                            "",
+                                            "",
+                                            "",
+                                            "            var statusClass\t\t \t= Ext.getStore('StatusClass');",
+                                            "            var ckLoadBtntoStore\t= statusClass.data.length;",
+                                            "",
+                                            "",
+                                            "            if(ckLoadBtntoStore === 0) {\t\t//불러오기 버튼을 클릭하지 않았다면",
+                                            "                Ext.toast({",
+                                            "                    title: 'Status-저장 실패' ,",
+                                            "                    html: '불러오기 버튼을 클릭하여 등급표를 완성하고 저장해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "",
+                                            "            } else {",
+                                            "",
+                                            "                if(repoStatusid && relationMethod && relationObject && difficulty) {\t//값이 있으면",
+                                            "",
+                                            "                    if(relationObject.indexOf('.') == -1) {\t\t\t\t\t\t\t//relation_object검증",
+                                            "",
+                                            "                        Ext.Ajax.request({",
+                                            "                            url: '/api/v1/manager/rewards/statusconditions',",
+                                            "                            method: 'GET',",
+                                            "                            headers: {",
+                                            "                                'x-key': key,",
+                                            "                                'x-access-token': token",
+                                            "                            },",
+                                            "                            params:{",
+                                            "                                id: repoStatusid,",
+                                            "                                difficulty: difficulty,",
+                                            "                                rtype: relationMethod,",
+                                            "                                rid: relationObject",
+                                            "                            },",
+                                            "                            success: function(response){",
+                                            "",
+                                            "                                var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "",
+                                            "                                var statusClassesStore = Ext.getStore('StatusClass');",
+                                            "                                statusClassesStore.loadData(decodeResponse.data, false);",
+                                            "",
+                                            "                                status.set('classes', decodeResponse.data);",
+                                            "",
+                                            "                                statusStore.add(status);",
+                                            "                                statusStore.save();",
+                                            "                                statusStore.commitChanges();",
+                                            "",
+                                            "                                statusEditTab.close();",
+                                            "",
+                                            "                                Ext.toast({",
+                                            "                                    title: 'Status-추가',",
+                                            "                                    html: '새로운 Status ('+ saveStatus.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                                    align: 't',",
+                                            "                                    bodyPadding:10",
+                                            "                                });",
+                                            "                            },",
+                                            "                            failure: function(response){console.log(response);}",
+                                            "                        });",
+                                            "",
+                                            "                    } else {",
+                                            "                        Ext.toast({",
+                                            "                            title: 'Status-저장 실패' ,",
+                                            "                            html: '등급표 필드값을 다시 확인해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "                            align: 't',",
+                                            "                            bodyPadding:10",
+                                            "                        });",
+                                            "                    }",
+                                            "                } else {\t\t\t//값이 없으면",
+                                            "",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Status-저장 실패' ,",
+                                            "                        html: '등급표 필드값을 다시 확인해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                }",
+                                            "",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "    } else {",
+                                            "",
+                                            "        Ext.toast({",
+                                            "            title: 'Status-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    if(saveStatus.dirty || isStatusClass || isStatusClassR) { //change editTab",
+                                            "        if(statusEditTab.isValid()) {",
+                                            "",
+                                            "            if(!saveStatus.get('id') || !saveStatus.get('name') ||",
+                                            "               !saveStatus.get('description') || !saveStatus.get('relation_object')) {",
+                                            "",
+                                            "",
+                                            "                Ext.toast({",
+                                            "                    title: 'Status-저장 실패' ,",
+                                            "                    html: '필드값을 다시 확인해주세요.',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "            }",
+                                            "            else {",
+                                            "                if(saveStatus.get('relation_object').indexOf('.') != -1) {",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Status-저장 실패' ,",
+                                            "                        html: '필드값을 다시 확인해주세요.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                } else {",
+                                            "                    Ext.MessageBox.confirm('Status-저장', saveStatus.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                        if (btn == 'yes') {",
+                                            "",
+                                            "                            Ext.getStore('StatusClass').save();",
+                                            "                            Ext.getStore('StatusClass').commitChanges();",
+                                            "",
+                                            "                            saveStatus.save();",
+                                            "",
+                                            "                            Ext.toast({",
+                                            "                                title: 'Status-수정 완료' ,",
+                                            "                                html: saveStatus.get('name') + '의 Status정보가 성공적으로 수정되었습니다.',",
+                                            "                                align: 't',",
+                                            "                                bodyPadding:10",
+                                            "                            });",
+                                            "",
+                                            "                        } else {",
+                                            "                            me.onCancelStatus();",
+                                            "                        }",
+                                            "                    });",
+                                            "",
+                                            "                }",
+                                            "            }",
+                                            "",
+                                            "        } else {",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Status-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onStatusSaveButtonClick",
+                                    "designerId": "2231bd91-11bb-426c-8588-b6283965ba60"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "d0f7be01-ff52-467b-ab82-5ae8f7cfbf90",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStatusCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelStatus();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onStatusCancelButtonClick",
+                                    "designerId": "3e5e55d9-b25a-4651-92cd-a4e9af010100"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet1",
+            "designerId": "8229d963-6746-4533-a4ad-d1d801071454",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "ID",
+                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                        "fieldLabel": "ID*",
+                        "maxLength": 20,
+                        "maxWidth": 700,
+                        "minLength": 1,
+                        "modelValidation": null,
+                        "reference": "statusID",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{theStatus.id}"
+                        ],
+                        "vtype": "alphanum"
+                    },
+                    "name": "MyTextField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "266108e3-7597-4deb-8fe2-57c1c6e1f6e9",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusIDTextfieldBeforeRender",
+                                "implHandler": [
+                                    "var statusID_textfield\t= this.lookupReference('statusID');",
+                                    "",
+                                    "if(this.getViewModel().get('theStatus').create) {",
+                                    "",
+                                    "    statusID_textfield.setDisabled(false);",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "    statusID_textfield.setDisabled(true);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onStatusIDTextfieldBeforeRender",
+                            "designerId": "a6afed37-1e8c-44b4-a00f-72d2509b02f6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "이름",
+                        "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                        "fieldLabel": "이름*",
+                        "formBind": null,
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "modelValidation": null,
+                        "publishes": null,
+                        "value": [
+                            "{theStatus.name}"
+                        ]
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "4a157bd1-f3a7-411c-a207-05dce1f6a516"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "설명",
+                        "emptyText": "1~1000자 이내의 설명을 입력하세요.",
+                        "fieldLabel": "설명*",
+                        "height": 60,
+                        "layout|flex": 1,
+                        "maxHeight": 60,
+                        "modelValidation": null,
+                        "value": [
+                            "{theStatus.description}"
+                        ]
+                    },
+                    "name": "MyTextArea4",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "8ee893d6-3e58-4276-92ce-3de209823044"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "연동방식",
+                        "fieldLabel": "연동방식*",
+                        "modelValidation": null,
+                        "reference": "relation_method",
+                        "value": null
+                    },
+                    "name": "MyRadioGroup",
+                    "designerId": "1d245a41-a3b2-4c3b-847a-3d720c3673ef",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Point",
+                                "designer|displayName": "Point",
+                                "fieldLabel": null,
+                                "inputValue": "point_type",
+                                "name": "method"
+                            },
+                            "name": "MyRadio",
+                            "designerId": "e91cf13f-7c91-42e6-8a8c-633a871e617b"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Level",
+                                "designer|displayName": "Level",
+                                "fieldLabel": null,
+                                "inputValue": "level_type",
+                                "name": "method"
+                            },
+                            "name": "MyRadio1",
+                            "designerId": "cf76c316-61ca-4fa9-8c95-9d7d63681a73"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Mission",
+                                "designer|displayName": "Mission",
+                                "fieldLabel": null,
+                                "inputValue": "mission_type",
+                                "name": "method"
+                            },
+                            "name": "MyRadio2",
+                            "designerId": "f1a7e8cb-f5b5-407d-8206-a4105547c8ff"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusRadiogroupChange",
+                                "implHandler": [
+                                    "var curPosition = newValue.method;",
+                                    "",
+                                    "var isCreatedStatus = this.getViewModel().get('theStatus').create;",
+                                    "var method_combobox   = this.lookupReference('relation_factor');",
+                                    "var store;",
+                                    "",
+                                    "",
+                                    "if(isCreatedStatus) {",
+                                    "",
+                                    "    if(curPosition == 'point_type') {\t\t\t//Point",
+                                    "        store\t= Ext.getStore('Point');        ",
+                                    "    } else if(curPosition == 'level_type') {\t//Level",
+                                    "        store\t= Ext.getStore('Level');",
+                                    "    } else if(curPosition == 'mission_type') {\t//Mission",
+                                    "        store\t= Ext.getStore('RelationFactor');",
+                                    "    }   ",
+                                    "",
+                                    "    method_combobox.bindStore(store);",
+                                    "    method_combobox.setValue('');",
+                                    "} else {",
+                                    "",
+                                    "",
+                                    "    var relation_object\t \t= this.getViewModel().get('theStatus').get('relation_object');",
+                                    "    var relation_method \t= this.getViewModel().get('theStatus').get('relation_method');",
+                                    "",
+                                    "    if(curPosition == 'point_type') {\t\t\t//Point",
+                                    "",
+                                    "        store\t= Ext.getStore('Point');",
+                                    "        method_combobox.bindStore(store);",
+                                    "",
+                                    "        if(relation_method == curPosition) {",
+                                    "            method_combobox.setValue(relation_object);",
+                                    "        } else {",
+                                    "            method_combobox.setValue('');",
+                                    "            this.getViewModel().get('theStatus').set('relation_method', 'point_type');",
+                                    "        }",
+                                    "",
+                                    "    } else if(curPosition == 'level_type') {\t//Level",
+                                    "",
+                                    "        store\t= Ext.getStore('Level');",
+                                    "        method_combobox.bindStore(store);",
+                                    "",
+                                    "        if(relation_method == curPosition) {",
+                                    "           method_combobox.setValue(relation_object);",
+                                    "        } else {",
+                                    "            method_combobox.setValue('');",
+                                    "            this.getViewModel().get('theStatus').set('relation_method', 'level_type');",
+                                    "        }",
+                                    "",
+                                    "    } else if(curPosition == 'mission_type') {\t//Mission",
+                                    "",
+                                    "        store\t= Ext.getStore('RelationFactor');",
+                                    "        method_combobox.bindStore(store);",
+                                    "",
+                                    "        if(relation_method == curPosition) {",
+                                    "           method_combobox.setValue(relation_object);",
+                                    "        } else {",
+                                    "            method_combobox.setValue('');",
+                                    "            this.getViewModel().get('theStatus').set('relation_method', 'mission_type');",
+                                    "        }",
+                                    "    }",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onStatusRadiogroupChange",
+                            "designerId": "82fedac0-1620-4680-b8fd-4ba3f5d84e2c"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusRadiogroupBeforeRender",
+                                "implHandler": [
+                                    "var isCreatedStatus = this.getViewModel().get('theStatus').create;",
+                                    "",
+                                    "var method_radiogroup\t= this.lookupReference('relation_method');",
+                                    "",
+                                    "if(isCreatedStatus) {",
+                                    "     method_radiogroup.items.items[0].setValue(true);",
+                                    "} else {",
+                                    "",
+                                    "",
+                                    "    var relation_method \t= this.getViewModel().get('theStatus').get('relation_method');",
+                                    "",
+                                    "    if(relation_method == 'point_type') {\t//Point List",
+                                    "",
+                                    "        method_radiogroup.items.items[0].setValue(true);",
+                                    "",
+                                    "    } else if(relation_method == 'level_type') {\t//Level List",
+                                    "",
+                                    "        method_radiogroup.items.items[1].setValue(true);",
+                                    "",
+                                    "    } else if(relation_method == 'mission_type') {\t//Mission List",
+                                    "",
+                                    "        method_radiogroup.items.items[2].setValue(true);",
+                                    "",
+                                    "    }",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onStatusRadiogroupBeforeRender",
+                            "designerId": "78d02c17-1f1c-4aa5-b1cf-f78d156d505d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "연동요소",
+                        "displayField": "name",
+                        "editable": false,
+                        "emptyText": "연동요소를 리스트에서 선택하세요.",
+                        "fieldLabel": "연동요소*",
+                        "id": null,
+                        "layout|flex": 1,
+                        "modelValidation": null,
+                        "reference": "relation_factor",
+                        "renderTo": null,
+                        "store": null,
+                        "submitValue": false,
+                        "value": [
+                            "{theStatus.relation_object}"
+                        ],
+                        "valueField": "id",
+                        "valueNotFoundText": null
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "8ca07bbb-9e82-45e7-9611-76b5a31aa811",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRelationFactorComboboxSelect",
+                                "implHandler": [
+                                    "var selectedRelationFactor = record.get('name');",
+                                    "",
+                                    "if(selectedRelationFactor !== '특정 mission') {",
+                                    "",
+                                    "    var isCondition = this.lookupReference('condition');",
+                                    "",
+                                    "    isCondition.setEditor({",
+                                    "        xtype: 'numberfield',",
+                                    "        allowBlank: false",
+                                    "    });",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "    var isCondition = this.lookupReference('condition');",
+                                    "",
+                                    "    isCondition.setEditor({",
+                                    "        xtype: 'numberfield',",
+                                    "        allowBlank: false,",
+                                    "        editable: false,",
+                                    "        disabled: true",
+                                    "    });",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onRelationFactorComboboxSelect",
+                            "designerId": "2d3c9e1e-938e-4a66-80ef-9580ad0b13fd"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "relationFactorBoundList",
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList6",
+                            "designerId": "5e3b1aa6-9585-4312-8e2c-17f83a4db6cb",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<tpl if=\"{icon}\">       ",
+                                            "    <img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}        ",
+                                            "<tpl else>\t\t\t\t\t\t\t        ",
+                                            "    {name}            ",
+                                            "</tpl>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "756a8e14-d969-4e2b-9507-6a38b81bba5f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "등급표",
+                        "fieldLabel": "등급표*",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer",
+                    "designerId": "31b3c559-6088-4c01-8b84-8d795370ce5e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "등급표_1",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "등급",
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "reference": "repoStatus_combo",
+                                "store": "RepoStatus",
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "09d45e3e-4d80-48e4-843b-08d40b4c3a21"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "blankText": null,
+                                "designer|displayName": "등급표_2",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "난이도",
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "loader": null,
+                                "margin": "0 30 0 30",
+                                "reference": "difficulty",
+                                "store": [
+                                    "[['5','난이도 최상'],['4','난이도 상'],['3','난이도 중'],['2','난이도 하'],['1','난이도 최하']]"
+                                ],
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox2",
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "275978d4-4edb-49e3-a1ac-26042951d406"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDepress": false,
+                                "designer|displayName": "불러오기",
+                                "layout|flex": 1,
+                                "reference": null,
+                                "text": "불러오기"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "5b579132-52f0-412f-9251-1afea245c3ee",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onStatusLoadButtonClick",
+                                        "implHandler": [
+                                            "var statusEditTab\t\t= button.up('statusedit');",
+                                            "var status \t\t\t\t= statusEditTab.getViewModel().get('theStatus');",
+                                            "",
+                                            "var isCreateStatus\t\t= status.create;",
+                                            "var difficultyCmp\t\t= this.lookupReference('difficulty');",
+                                            "var repoStatusCmp\t\t= this.lookupReference('repoStatus_combo');",
+                                            "var relationMethodCmp\t= this.lookupReference('relation_method');",
+                                            "",
+                                            "",
+                                            "",
+                                            "var repoStatusid;",
+                                            "var relationMethod;",
+                                            "var relationObject;",
+                                            "var difficulty;",
+                                            "",
+                                            "",
+                                            "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                            "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "if(isCreateStatus) {",
+                                            "    var me\t\t\t\t= this;",
+                                            "",
+                                            "    repoStatusid\t= repoStatusCmp.value;",
+                                            "",
+                                            "    if(relationMethodCmp.items.items[0].value) {",
+                                            "        relationMethod = 'point_type';",
+                                            "    } else if(relationMethodCmp.items.items[1].value) {",
+                                            "        relationMethod = 'level_type';",
+                                            "    } else if(relationMethodCmp.items.items[2].value) {",
+                                            "        relationMethod = 'mission_type';",
+                                            "    }",
+                                            "",
+                                            "    relationObject\t= status.relation_object;",
+                                            "    difficulty\t\t= difficultyCmp.value;",
+                                            "",
+                                            "    if(repoStatusid && relationMethod && relationObject && difficulty) {\t//값이 있으면",
+                                            "",
+                                            "        if(relationObject.indexOf('.') == -1) {\t\t\t\t\t\t\t//relation_object검증",
+                                            "            Ext.Ajax.request({",
+                                            "                url: '/api/v1/manager/rewards/statusconditions',",
+                                            "                method: 'GET',",
+                                            "                //{ 'x-key': key, 'x-access-token': token };",
+                                            "                headers: {",
+                                            "                    'x-key': key,",
+                                            "                    'x-access-token': token",
+                                            "                },",
+                                            "                params:{",
+                                            "                    id: repoStatusid,",
+                                            "                    difficulty: difficulty,",
+                                            "                    rtype: relationMethod,",
+                                            "                    rid: relationObject",
+                                            "                },",
+                                            "                success: function(response){",
+                                            "",
+                                            "                    var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "",
+                                            "                    var statusClassesStore = Ext.getStore('StatusClass');",
+                                            "                    statusClassesStore.loadData(decodeResponse.data, false);",
+                                            "",
+                                            "                },",
+                                            "                failure: function(response){console.log(response);}",
+                                            "",
+                                            "            });",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Status-불러오기 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    } else {\t\t\t//값이 없으면",
+                                            "",
+                                            "        Ext.toast({",
+                                            "            title: 'Status-불러오기 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    var me\t\t\t\t= this;",
+                                            "",
+                                            "    repoStatusid\t= repoStatusCmp.value;",
+                                            "    relationMethod\t= status.get('relation_method');",
+                                            "    relationObject\t= status.get('relation_object');",
+                                            "    difficulty\t\t= difficultyCmp.value;",
+                                            "",
+                                            "    if(repoStatusid && relationMethod && relationObject && difficulty) {\t//값이 있으면",
+                                            "",
+                                            "        if(relationObject.indexOf('.') == -1) {\t\t\t\t\t\t\t//relation_object검증",
+                                            "",
+                                            "            Ext.Ajax.request({",
+                                            "                url: '/api/v1/manager/rewards/statusconditions',",
+                                            "                method: 'GET',",
+                                            "                headers: {",
+                                            "                    'x-key': key,",
+                                            "                    'x-access-token': token",
+                                            "                },",
+                                            "                params:{",
+                                            "                    id: repoStatusid,",
+                                            "                    difficulty: difficulty,",
+                                            "                    rtype: relationMethod,",
+                                            "                    rid: relationObject",
+                                            "                },",
+                                            "                success: function(response){",
+                                            "",
+                                            "                    var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "                    var statusClassesStore = Ext.getStore('StatusClass');",
+                                            "                    statusClassesStore.loadData(decodeResponse.data, false);",
+                                            "",
+                                            "                    me.getViewModel().get('theStatus').set('classes', decodeResponse.data);",
+                                            "",
+                                            "                },",
+                                            "                failure: function(response){console.log(response);}",
+                                            "            });",
+                                            "",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Status-불러오기 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    } else {\t\t\t//값이 없으면",
+                                            "",
+                                            "        Ext.toast({",
+                                            "            title: 'Status-불러오기 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동 방식, 연동 요소, 등급 및 난이도)',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onStatusLoadButtonClick",
+                                    "designerId": "27317df3-6bef-4a74-a67e-a384b7e3f283"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": false,
+                        "cls": [
+                            "panel_color"
+                        ],
+                        "columnLines": true,
+                        "data": null,
+                        "defaultAlign": null,
+                        "deferRowRender": true,
+                        "designer|displayName": "statusGridPanel",
+                        "enableColumnHide": false,
+                        "forceFit": true,
+                        "layout|flex": null,
+                        "layout|margins": null,
+                        "margin": "10 10 10 100",
+                        "modelValidation": false,
+                        "padding": "1 1 0 1",
+                        "reference": "subStatusGridPanel",
+                        "stateful": true,
+                        "store": "StatusClass",
+                        "title": null,
+                        "width": null
+                    },
+                    "name": "MyGridPanel1",
+                    "configAlternates": {
+                        "data": "binding"
+                    },
+                    "designerId": "79ac82b7-3e9f-4836-a4b2-9e54a53bd114",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "rank",
+                                "sortable": true,
+                                "text": "순번"
+                            },
+                            "name": "MyColumn4",
+                            "designerId": "03a254cd-4226-457d-b9db-2e4cea600fbc",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyNumberField",
+                                    "designerId": "97c0e719-4bac-4d0b-aec0-72ae9c0705af"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "loader": null,
+                                "sortable": true,
+                                "text": "등급 명"
+                            },
+                            "name": "MyColumn5",
+                            "designerId": "03ddd62d-3ad0-43ca-b0c0-d96e44864180",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyTextField9",
+                                    "designerId": "e02d1347-9af6-441e-a747-121c5d00f084"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "condition",
+                                "designer|displayName": "획득 조건",
+                                "reference": "condition",
+                                "sortable": true,
+                                "text": "획득 조건"
+                            },
+                            "name": "MyColumn6",
+                            "designerId": "fc330c0b-b8b1-4ee6-9f2b-3ae538556e72"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "icon",
+                                "defaultWidth": null,
+                                "designer|displayName": "아이콘",
+                                "icon": null,
+                                "iconCls": null,
+                                "itemId": "myactioncolumn",
+                                "text": "아이콘",
+                                "tooltip": null,
+                                "width": null
+                            },
+                            "name": "MyActionColumn",
+                            "designerId": "0a37d6d8-11b9-48c0-a7a1-7c71ecab859d",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "this.icon = ''+value;",
+                                            "this.tooltip = ''+value;"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "c89dab55-f643-4ae2-9b44-2290f112f0aa"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "defaultWidth": null,
+                                "designer|displayName": "수정",
+                                "iconCls": "manager-delete",
+                                "menuDisabled": true
+                            },
+                            "name": "MyActionColumn1",
+                            "designerId": "c492fbea-8aaf-4b19-aa9a-8beee392cffa",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e",
+                                            "record",
+                                            "row"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "Ext.getStore('StatusClass').removeAt(rowIndex);",
+                                            "",
+                                            "var statusData = view.up().up().up().getViewModel().get('theStatus').data;",
+                                            "",
+                                            "for(i=0; i<statusData.classes.length; i++) {    ",
+                                            "    if(statusData.classes[i].name == record.get('name')) {",
+                                            "        view.up().up().up().getViewModel().get('theStatus').data.classes.splice(i,1);",
+                                            "    }",
+                                            "    ",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "9b535b87-f9db-4b9c-ab7e-df5b729f7f7f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusGridpanelAfterRender",
+                                "implHandler": [
+                                    "var relationFactorName = this.lookupReference('relation_factor').rawValue;",
+                                    "",
+                                    "if(relationFactorName !== '특정 mission') {",
+                                    "",
+                                    "    var isCondition = this.lookupReference('condition');",
+                                    "",
+                                    "    isCondition.setEditor({",
+                                    "        xtype: 'numberfield',",
+                                    "        allowBlank: false",
+                                    "    });",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "    var isCondition = this.lookupReference('condition');",
+                                    "",
+                                    "    isCondition.setEditor({",
+                                    "        xtype: 'numberfield',",
+                                    "        allowBlank: false,",
+                                    "        editable: false,",
+                                    "        disabled: true",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "name": "onStatusGridpanelAfterRender",
+                            "designerId": "1ac0cc42-855d-41e9-9ae6-f7bd7029273b"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.RowEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "statusRowEditingPlugin"
+                            },
+                            "name": "MyRowEditingPlugin2",
+                            "designerId": "54798636-af29-4b27-8e31-e22e1405ac0a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer38",
+            "designerId": "e213f305-ad1e-4a67-9be4-741e1fa46ff0",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "fbfe6818-8225-46b0-959c-3597612b5ba1"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStatusFormShow",
+                "implHandler": [
+                    "var isCreatedStatus = this.getViewModel().get('theStatus').create;",
+                    "",
+                    "if(isCreatedStatus) {",
+                    "    var statusClassesStore = Ext.getStore('StatusClass');",
+                    "    statusClassesStore.loadData('', false);",
+                    "",
+                    "} else {",
+                    "",
+                    "    var statusClassesStore = Ext.getStore('StatusClass');",
+                    "    var mydata = this.getViewModel().get('theStatus').get('classes');",
+                    "    statusClassesStore.loadRawData(mydata, false);",
+                    "",
+                    "}"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onStatusFormShow",
+            "designerId": "ada97a33-dcd7-4657-91d6-26e3ca9c84bf"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStatusFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'status_edittab') {",
+                    "",
+                    "} else {",
+                    "    if(!this.getViewModel().data.theStatus.dropped) {",
+                    "        var status\t\t= this.getViewModel().get('theStatus');",
+                    "        var isDirtyStatus\t= status.dirty;",
+                    "        var isCreateStatus\t= status.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyStatus)  {",
+                    "            Ext.MessageBox.confirm('Status-저장', status.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "                    status.save();",
+                    "                    Ext.toast({",
+                    "                        title: 'Status-수정 완료' ,",
+                    "                        html: status.get('name') + '의 Status정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelStatus();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onStatusFormDeactivate",
+            "designerId": "515171e9-315d-4d67-bed7-a8b5b5cae3bc"
+        }
+    ]
+}

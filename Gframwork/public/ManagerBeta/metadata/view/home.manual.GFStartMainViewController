@@ -1,0 +1,126 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gfstartmain",
+        "designer|userClassName": "home.manual.GFStartMainViewController"
+    },
+    "designerId": "07b8b0ac-1291-42d9-8c0c-d82ca4d34f44",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#start-next",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onStartNextButtonClick",
+                "implHandler": [
+                    "/*var tabPanel = button.up('tabpanel');",
+                    "",
+                    "var thisPanel\t= button.up('panel');",
+                    "var ref_this\t= thisPanel.getReference();",
+                    "var me\t\t\t= this;",
+                    "var nextPanel;",
+                    "",
+                    "if(ref_this == 'login'){",
+                    "",
+                    "    nextPanel = this.lookupReference('main');",
+                    "",
+                    "} else if(ref_this == 'main'){",
+                    "",
+                    "    nextPanel = this.lookupReference('main_upbar');",
+                    "",
+                    "} else if(ref_this == 'main_upbar'){",
+                    "",
+                    "",
+                    "    // nextPanel = this.lookupReference('step4');",
+                    "",
+                    "}",
+                    "",
+                    "nextPanel.enable();",
+                    "tabPanel.setActiveTab(nextPanel);*/",
+                    "",
+                    "",
+                    "this.doCreateMechanicNavigation(1);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onStartNextButtonClick",
+            "designerId": "ca293ac0-022d-428c-8ec0-d687005619c3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#start-prev",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onStartPrevButtonClick",
+                "implHandler": [
+                    "this.doCreateMechanicNavigation(-1);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onStartPrevButtonClick",
+            "designerId": "2d4bc1f1-b0a5-4707-a90b-53840f5f1472"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "incr"
+                ],
+                "fn": "doCreateMechanicNavigation",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var layout \t\t= Ext.get('createMechanic').component.layout;",
+                    "var increment\t= layout.activeItem.id.split('create-')[1];",
+                    "var next \t\t= parseInt(increment, 10) + incr;",
+                    "layout.setActiveItem(next);"
+                ]
+            },
+            "name": "doCreateMechanicNavigation",
+            "designerId": "5700cc24-3d88-411b-86c8-fb3ca5142ca9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#start-return",
+                "designer|targetType": "Ext.button.Button",
+                "fn": "onStartRetunButtonClick",
+                "implHandler": [
+                    "var layout \t\t= Ext.get('createMechanic').component.layout;",
+                    "layout.setActiveItem(0);"
+                ],
+                "name": "click",
+                "scope": "me"
+            },
+            "name": "onStartRetunButtonClick",
+            "designerId": "cf7e051c-b2d5-4706-9f58-78d9f9b1fedb"
+        }
+    ]
+}

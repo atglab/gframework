@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pointlist",
+        "designer|userClassName": "manager.point.PointListViewController"
+    },
+    "designerId": "0e5462cd-c319-4b41-b084-d16426ad3ecf",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewPoint",
+                "implHandler": [
+                    "this.fireViewEvent('viewPoint', this.getView(), record);"
+                ]
+            },
+            "name": "viewPoint",
+            "designerId": "431fa687-f494-4a67-a551-592cb632ad7b"
+        }
+    ]
+}

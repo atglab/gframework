@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "levelanalysislist",
+        "designer|userClassName": "analyzer.level.LevelAnalysisListViewController"
+    },
+    "name": "analyzer.point.PointAnalysisListViewController1",
+    "designerId": "a3c3f3d2-8220-4ac7-b9aa-f8ba48c9fea9",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewLevelAnalysis",
+                "implHandler": [
+                    "this.fireViewEvent('viewLevelAnalysis', this.getView(), record);"
+                ]
+            },
+            "name": "viewLevelAnalysis",
+            "designerId": "926dd0dd-c28b-4875-8272-45bf8c84f00b"
+        }
+    ]
+}

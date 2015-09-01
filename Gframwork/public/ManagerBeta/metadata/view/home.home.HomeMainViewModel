@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "homemain",
+        "designer|userClassName": "home.home.HomeMainViewModel"
+    },
+    "name": "home.wizard.WizardMainViewModel1",
+    "designerId": "865b2dee-a969-4c23-bddf-cffb48107123"
+}

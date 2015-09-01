@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statuslist",
+        "designer|userClassName": "manager.status.StatusListViewController"
+    },
+    "designerId": "9afa7a05-2526-4506-bb75-cb117cdf2335",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewStatus",
+                "implHandler": [
+                    "this.fireViewEvent('viewStatus', this.getView(), record);"
+                ]
+            },
+            "name": "viewStatus",
+            "designerId": "115fbc93-8f16-495b-8f17-992668622ce5"
+        }
+    ]
+}

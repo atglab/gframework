@@ -1,0 +1,48 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "data": [
+            "[",
+            "{",
+            "\"id\": \"level_01\",        ",
+            "\"icon\": \"/resources/images/levels/level_01.png\"",
+            "},",
+            "{",
+            "\"id\": \"level_02\",        ",
+            "\"icon\": \"/resources/images/levels/level_02.png\"",
+            "},",
+            "{",
+            "\"id\": \"level_1\",        ",
+            "\"icon\": \"/resources/images/levels/level_1.png\"",
+            "},",
+            "{",
+            "\"id\": \"level_2\",        ",
+            "\"icon\": \"/resources/images/levels/level_2.png\"",
+            "},",
+            "{",
+            "\"id\": \"level_tv\",        ",
+            "\"icon\": \"/resources/images/levels/level_tv.png\"",
+            "},",
+            "{",
+            "\"id\": \"level_trophy\",        ",
+            "\"icon\": \"/resources/images/levels/level_trophy.png\"",
+            "}",
+            "",
+            "",
+            "]"
+        ],
+        "designer|userClassName": "LevelIcon",
+        "groupField": null,
+        "model": "IconRepository",
+        "session": null,
+        "storeId": "LevelIcon"
+    },
+    "name": "MyStore16",
+    "designerId": "b7ff2c5f-6813-45bd-89cf-dd8a4f4f50a6"
+}

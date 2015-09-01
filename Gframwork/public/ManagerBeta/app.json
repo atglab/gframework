@@ -1,0 +1,72 @@
+{
+   "name": "GFManager",
+   "indexHtmlPath": "index.html",
+   "classpath": "${app.dir}/app",
+   "overrides": "${app.dir}/overrides",
+   "framework": "ext",
+   "theme": "ext-theme-crisp-4fabb504-b411-44b1-b26f-b62bc28203ef",
+   "requires": [
+      "sencha-charts"
+   ],
+   "sass": {
+      "namespace": "GFManager"
+   },
+   "js": [
+      {
+         "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+      },
+      {
+         "path": "jsencrypt.min.js"
+      },
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "bootstrap.css",
+         "bootstrap": true
+      },
+      {
+         "path": "icon.css"
+      }
+   ],
+   "production": {},
+   "testing": {},
+   "development": {},
+   "bootstrap": {
+      "base": "${app.dir}",
+      "manifest": "bootstrap.json",
+      "microloader": "bootstrap.js",
+      "css": "bootstrap.css"
+   },
+   "output": {
+      "base": "${workspace.build.dir}/${build.environment}/${app.name}"
+   },
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [
+      "icon.css"
+   ],
+   "ignore": [
+      "(^|/)CVS(/?$|/.*?$)"
+   ],
+   "archivePath": "archive",
+   "slicer": {
+      "js": [
+         {
+            "path": "${app.dir}/sass/example/custom.js",
+            "isWidgetManifest": true
+         }
+      ]
+   },
+   "id": "bf1ad0db-da88-4586-a19e-4bbfc694db74"
+}

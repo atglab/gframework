@@ -1,0 +1,241 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsible": false,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "activitylist",
+        "designer|userClassName": "manager.activity.ActivityList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "iconCls": null,
+        "itemId": null,
+        "margin": null,
+        "padding": null,
+        "resizable": null,
+        "session": null,
+        "store": "Activity",
+        "title": null,
+        "width": 250
+    },
+    "name": "manager.badge.BadgeList1",
+    "designerId": "7b486133-4abe-4b21-a7eb-396d4e7e7711",
+    "viewControllerInstanceId": "7e5cd870-2111-406a-940e-b96f8cf2cb7c",
+    "viewModelInstanceId": "662614b0-45a3-45e5-9050-a28f7ef2b687",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "activityListToolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "392622da-4a13-458f-828d-262d5a905f03",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "hiddenField",
+                        "fieldLabel": null,
+                        "layout|flex": 1,
+                        "maxHeight": 25,
+                        "maxWidth": null,
+                        "value": null,
+                        "width": null
+                    },
+                    "name": "MyDisplayField11",
+                    "designerId": "afa4684c-c3bc-40a8-b9f6-5a3f0917ef57"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_add_btn",
+                        "designer|displayName": "추가",
+                        "icon": null,
+                        "iconCls": "",
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_add_btn_over",
+                        "text": null,
+                        "width": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "fcae8ac9-6d1d-4380-935e-fe8f52178d8c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onActivityAddButtonClick",
+                                "implHandler": [
+                                    "this.viewActivity(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onActivityAddButtonClick",
+                            "designerId": "3ee58ee3-5dc2-45e3-b629-e7cb81a94b1e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_del_btn",
+                        "designer|displayName": "삭제",
+                        "disabled": true,
+                        "icon": null,
+                        "iconCls": null,
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_del_btn_over",
+                        "reference": "del_activity_btn",
+                        "text": null,
+                        "width": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "c3d72e57-140f-407b-b464-ce125e898952",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onActivityDelButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "    var ActivityGrid = button.up('activitylist');",
+                                    "    var selection = ActivityGrid.getSelectionModel().getSelection()[0];",
+                                    "",
+                                    "    selection.erase();",
+                                    "",
+                                    "    this.viewActivity(selection);",
+                                    "",
+                                    "    button.disable();",
+                                    "",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onActivityDelButtonClick",
+                            "designerId": "12d43efc-55ca-4ad6-986c-bf58ee6b84f8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "designer|displayName": "activityRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "ecc4e4d4-3c1b-4331-89c6-ef87de658521"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "flex": 4,
+                "tdCls": "grid-size",
+                "text": null,
+                "width": null
+            },
+            "name": "MyColumn",
+            "designerId": "5ca8c858-7cd0-4897-92a0-882a4d9b50dc"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivityListviewSelectionChange",
+                "implHandler": [
+                    "var delBtn = this.lookupReference('del_activity_btn');",
+                    "delBtn.enable();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onActivityListviewSelectionChange",
+            "designerId": "2c46b07b-0837-4adf-8939-06a7945e1a15"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivityListGridpanelItemDblClick",
+                "implHandler": [
+                    "this.viewActivity(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onActivityListGridpanelItemDblClick",
+            "designerId": "fdcc167a-fbf4-47a5-8510-ece3612023b1"
+        }
+    ]
+}

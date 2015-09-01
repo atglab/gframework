@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "activitylist",
+        "designer|userClassName": "manager.activity.ActivityListViewController"
+    },
+    "name": "manager.badge.BadgeListViewController1",
+    "designerId": "7e5cd870-2111-406a-940e-b96f8cf2cb7c",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewActivity",
+                "implHandler": [
+                    "this.fireViewEvent('viewActivity', this.getView(), record);"
+                ]
+            },
+            "name": "viewActivity",
+            "designerId": "306424d9-a357-4487-88bb-5ad1dd7f2d59"
+        }
+    ]
+}

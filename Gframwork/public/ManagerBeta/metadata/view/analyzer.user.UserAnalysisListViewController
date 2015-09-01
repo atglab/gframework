@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "useranalysislist",
+        "designer|userClassName": "analyzer.user.UserAnalysisListViewController"
+    },
+    "name": "analyzer.status.StatusAnalysisListViewController2",
+    "designerId": "6ea78044-a924-47e0-83e3-7718a2e81a53",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewUserAnalysis",
+                "implHandler": [
+                    "this.fireViewEvent('viewUserAnalysis', this.getView(), record);"
+                ]
+            },
+            "name": "viewUserAnalysis",
+            "designerId": "563f5324-c7a7-41da-9746-cdd80d63fb07"
+        }
+    ]
+}

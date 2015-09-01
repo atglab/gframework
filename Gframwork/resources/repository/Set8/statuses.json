@@ -1,0 +1,29 @@
+[
+{   
+  "id" : "user_status",
+  "name" : "고객 등급",
+  "description" : "사용자의 예매 포인트에 따라 변하는 고객 등급",
+  "relation_method" : "point_type",
+  "relation_object" : "reservation_point",
+  "classes" : [ 
+      {
+          "rank" : 1,
+          "name" : "실버",
+          "condition" : "0",
+          "icon" : "/resources/images/status/status_silver.png"
+      }, 
+      {
+          "rank" : 2,
+          "name" : "골드",
+          "condition" : "300000",
+          "icon" : "/resources/images/status/status_gold.png"
+      }, 
+      {
+          "rank" : 3,
+          "name" : "플래티넘",
+          "condition" : "800000",
+          "icon" : "/resources/images/status/status_platinum.png"
+      }
+  ]
+}
+]

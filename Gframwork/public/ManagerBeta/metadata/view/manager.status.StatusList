@@ -1,0 +1,244 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "x-badge-background"
+        ],
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "statuslist",
+        "designer|userClassName": "manager.status.StatusList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "padding": null,
+        "store": "Status",
+        "title": null,
+        "width": 250
+    },
+    "name": "MyGridPanel",
+    "designerId": "3f998f82-e544-46e6-a0dd-d9ed3860e107",
+    "viewControllerInstanceId": "9afa7a05-2526-4506-bb75-cb117cdf2335",
+    "viewModelInstanceId": "245a8cd0-a5fd-4e0b-87c6-4617ba4d51d6",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": null,
+                "designer|displayName": "statusListToolbar",
+                "dock": "top",
+                "width": null
+            },
+            "name": "MyToolbar1",
+            "designerId": "d80762a8-3e57-40a4-8630-7940b58406cc",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "hiddenField",
+                        "fieldLabel": null,
+                        "layout|flex": 1,
+                        "maxHeight": 25,
+                        "maxWidth": null,
+                        "value": null,
+                        "width": null
+                    },
+                    "name": "MyDisplayField18",
+                    "designerId": "1e1185fe-47e0-49ce-87c7-e040b6d6b9ff"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "arrowAlign": null,
+                        "baseCls": "list_add_btn",
+                        "designer|displayName": "추가",
+                        "height": "",
+                        "icon": null,
+                        "iconAlign": null,
+                        "iconCls": "",
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_add_btn_over",
+                        "scale": null,
+                        "text": null,
+                        "width": null
+                    },
+                    "name": "MyButton9",
+                    "designerId": "6c1f8d0c-39d6-4052-838e-cb7c7f9a8f22",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusAddButtonClick",
+                                "implHandler": [
+                                    "this.viewStatus(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onStatusAddButtonClick",
+                            "designerId": "46f81267-c489-4596-a20d-7f209a231506"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_del_btn",
+                        "designer|displayName": "삭제",
+                        "disabled": true,
+                        "iconAlign": null,
+                        "iconCls": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_del_btn_over",
+                        "reference": "del_status_btn",
+                        "scale": null,
+                        "text": null,
+                        "textAlign": null
+                    },
+                    "name": "MyButton10",
+                    "designerId": "2c256f55-fec1-4ca5-acef-5ee3f24c73fd",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onStatusDelButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "    var StatusGrid = button.up('statuslist');",
+                                    "    var selection = StatusGrid.getSelectionModel().getSelection()[0];",
+                                    "    selection.erase();",
+                                    "",
+                                    "    this.viewStatus(selection);",
+                                    "",
+                                    "    button.disable();",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onStatusDelButtonClick",
+                            "designerId": "dd0574c7-7ea0-46db-a466-229f6d1c718c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "baseCls": null,
+                "designer|displayName": "statusRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size",
+                "text": null
+            },
+            "name": "MyRowNumberer2",
+            "designerId": "7315bbd7-7c8e-41a1-bcf7-8e6f86ab0fa5"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "designer|displayName": "name",
+                "flex": 4,
+                "height": null,
+                "tdCls": "grid-size",
+                "text": null
+            },
+            "name": "MyColumn2",
+            "designerId": "ff565bab-6c68-44b5-9807-ee81c3c34b06"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStatusGridpanelStatusItemDblClick",
+                "implHandler": [
+                    "this.viewStatus(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onStatusGridpanelStatusItemDblClick",
+            "designerId": "f2e1ffeb-a546-4a75-abfe-c627e90622b9"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStatuslistviewSelectionChange",
+                "implHandler": [
+                    "var delStatusBtn = this.lookupReference('del_status_btn');",
+                    "delStatusBtn.enable();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onStatuslistviewSelectionChange",
+            "designerId": "ff154b23-1b04-4e2c-99c3-cda6d6074d89"
+        }
+    ]
+}

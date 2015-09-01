@@ -1,0 +1,202 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "Point",
+        "designer|userClassName": "Point"
+    },
+    "name": "MyModel",
+    "designerId": "a1ea0a84-122c-4e8f-ac58-995aebd245a2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "\"\""
+                ],
+                "name": "id",
+                "unique": true
+            },
+            "name": "MyString11",
+            "designerId": "9ab94970-bc73-4d98-aabb-d9c4fec85a3d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString12",
+            "designerId": "dfaa914c-698f-4072-b08e-57bd0c930928"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "description"
+            },
+            "name": "MyString13",
+            "designerId": "9ea80e20-3d1e-42d6-b898-fce4dcc327e2"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "0"
+                ],
+                "name": "min"
+            },
+            "name": "MyNumber1",
+            "designerId": "5cf8d82c-8d78-4e9e-b0a7-b866f782948e"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "1000000"
+                ],
+                "name": "max"
+            },
+            "name": "MyNumber2",
+            "designerId": "690bdf3c-c208-4614-a806-ff4360a2cd5d"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "1"
+                ],
+                "name": "unit"
+            },
+            "name": "MyNumber6",
+            "designerId": "3056c22b-86b4-4666-a732-2d7b9f9045af"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "icon"
+            },
+            "name": "MyString18",
+            "designerId": "00151300-c5f9-4702-bf89-6857232789bc"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "created_at"
+            },
+            "name": "MyDate2",
+            "designerId": "1e4bee85-a551-47f0-84a3-1d0157fc78e8"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at"
+            },
+            "name": "MyDate3",
+            "designerId": "70796bb9-e5a5-4aca-8cec-dd816b2cdf23"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "pointRestProxy",
+                "url": "/api/v1/manager/rewards/points"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "ee732e95-95f0-47b5-b601-2dc190d04588",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "pointJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "2387a1ad-8745-4600-ade2-623d5c394ce9"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "pointJsonWriter",
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter2",
+                    "designerId": "b6635b46-03ad-4348-8089-ece8b1964fdf"
+                }
+            ]
+        }
+    ]
+}

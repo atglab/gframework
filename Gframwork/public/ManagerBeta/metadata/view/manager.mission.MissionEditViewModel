@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "missionedit",
+        "designer|userClassName": "manager.mission.MissionEditViewModel"
+    },
+    "name": "manager.point.PointEditViewModel3",
+    "designerId": "19eeabd7-e395-453a-9a40-6ea4dd8211da"
+}

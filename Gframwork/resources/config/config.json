@@ -1,0 +1,15 @@
+{
+	"app": {
+		"title": "Gamification Framework",
+		"server": "localhost",
+		"port": 3000,
+		"version": "0.0.1"
+	},
+	"database": {
+		"uri": "mongodb://localhost/gfdb",
+		"port": 27017,		
+		"user": "admin",
+		"password": "12345"
+	},	
+	"loglevel": "warning"
+}

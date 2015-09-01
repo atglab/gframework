@@ -1,0 +1,24 @@
+[
+
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "transaction",
+  "name" : "거래 하기",
+  "description" : "거래하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "report",
+  "name" : "신고 하기",
+  "description" : "신고하기 미션을 위한 사용자 Activity"
+}
+
+]

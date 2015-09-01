@@ -1,0 +1,19 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoDestroy": null,
+        "autoLoad": null,
+        "designer|userClassName": "Rule",
+        "groupField": null,
+        "model": "Rule",
+        "session": null,
+        "storeId": "Rule"
+    },
+    "name": "MyStore26",
+    "designerId": "5ffa0afc-ab39-4a19-8a6e-0801eb08c6d5"
+}

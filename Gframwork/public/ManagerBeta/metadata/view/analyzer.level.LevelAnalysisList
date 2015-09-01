@@ -1,0 +1,204 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "baseCls": null,
+        "bodyPadding": null,
+        "collapsible": false,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "levelanalysislist",
+        "designer|userClassName": "analyzer.level.LevelAnalysisList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "itemId": null,
+        "margin": null,
+        "padding": null,
+        "resizable": null,
+        "session": null,
+        "store": "Level",
+        "title": null,
+        "titleAlign": "center",
+        "width": 250
+    },
+    "name": "analyzer.point.PointAnalysisList1",
+    "designerId": "e2d54a78-9e2b-44d0-9dc7-cd0411be68c0",
+    "viewControllerInstanceId": "a3c3f3d2-8220-4ac7-b9aa-f8ba48c9fea9",
+    "viewModelInstanceId": "9e102542-e072-4334-a47c-24669d925042",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "levelListToolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "1768a3aa-b11d-4a90-ae9f-4ed9ccdcb01b",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "designer|displayName": "전체 통계 보기",
+                        "icon": null,
+                        "iconCls": "",
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": null,
+                        "text": "전체 통계 보기",
+                        "width": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "943e3e26-ae12-485e-9291-e66c4a5673da",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLevelAllButtonClick",
+                                "implHandler": [
+                                    "this.viewLevelAnalysis(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onLevelAllButtonClick",
+                            "designerId": "6bbf3575-f064-444f-8031-4ec59f3bfff9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "baseCls": null,
+                "designer|displayName": "levelRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "88d3a856-896b-479f-aa87-6735bb087ecd"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": null,
+                "baseCls": null,
+                "componentCls": null,
+                "dataIndex": "name",
+                "flex": 3,
+                "overCls": null,
+                "sortable": true,
+                "tdCls": "grid-size",
+                "text": null,
+                "width": null
+            },
+            "name": "MyColumn",
+            "designerId": "33dc76d3-ddef-4338-aaa3-81a9f4c25c43"
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "anchorSize": null,
+                "dataIndex": "icon",
+                "defaultWidth": null,
+                "designer|displayName": "아이콘",
+                "flex": 1,
+                "icon": null,
+                "iconCls": "grid-img",
+                "itemId": null,
+                "resizable": false,
+                "tdCls": "grid-size",
+                "text": "아이콘",
+                "tooltip": null,
+                "width": null
+            },
+            "name": "MyActionColumn3",
+            "designerId": "49ffd18f-a5ee-4168-b363-21e304ac0a5d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "this.icon = ''+value;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "a2d20fb2-9421-4a64-8482-00b06b891eba"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLevelGridpanelItemDblClick",
+                "implHandler": [
+                    "this.viewLevelAnalysis(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onLevelGridpanelItemDblClick",
+            "designerId": "4b5be3d8-c3d5-4fb8-8768-276e5f76f5b1"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+[
+
+{
+"id" : "write_permission",
+"name" : "글쓰기 권한",
+"description" : "사용자가 회원 가입을 할 경우 주어지는 권한",
+"get_parameter" : "1",
+"relation_method" : "mission_type",
+"relation_object" : "mission_id"
+}
+
+]

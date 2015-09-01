@@ -1,0 +1,648 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "badgeedit",
+        "designer|userClassName": "manager.badge.BadgeEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "reference": null,
+        "scrollable": true,
+        "session": null,
+        "title": [
+            "{theBadge.name}"
+        ]
+    },
+    "name": "manager.badge.BadgeEdit1",
+    "configAlternates": {
+        "bind": "object",
+        "scrollable": "boolean",
+        "title": "binding"
+    },
+    "designerId": "5a133762-5665-4eb5-8ac0-11867d8531be",
+    "viewControllerInstanceId": "c6724916-fa1a-494a-bb46-bedf387b7631",
+    "viewModelInstanceId": "e99cf15a-f914-45ec-b81d-d941fe71e52e",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": "",
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer29",
+            "designerId": "5875844e-62da-46c6-aac9-047aefa8663f",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "badgeEditToolbar"
+                    },
+                    "name": "MyToolbar1",
+                    "designerId": "f6956d3a-2f1d-4e3e-ba58-5855da896f11",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": "mybutton",
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "9527c300-a917-46a5-81ba-67d07e1e602c",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBadgeSaveButtonClick",
+                                        "implHandler": [
+                                            "var badgeEditTab = button.up('badgeedit');",
+                                            "var me = this;",
+                                            "",
+                                            "",
+                                            "var saveBadge = badgeEditTab.getViewModel().get('theBadge');",
+                                            "",
+                                            "if(saveBadge.create) {",
+                                            "    if(badgeEditTab.isValid()) {",
+                                            "",
+                                            "        if(!saveBadge.id || !saveBadge.name || !saveBadge.description || !saveBadge.icon) {",
+                                            "            Ext.toast({",
+                                            "                title: 'Badge-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        } else {",
+                                            "            var badgeStore = Ext.getStore('Badge');",
+                                            "            var badge = Ext.create('GFManager.model.Badge');",
+                                            "",
+                                            "            badge.set('id', saveBadge.id);",
+                                            "            badge.set('name', saveBadge.name);",
+                                            "            badge.set('description', saveBadge.description);",
+                                            "            badge.set('icon', saveBadge.icon);",
+                                            "",
+                                            "            badgeStore.add(badge);",
+                                            "            badgeStore.save();",
+                                            "            badgeStore.commitChanges();",
+                                            "",
+                                            "            badgeEditTab.close();",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Badge-추가',",
+                                            "                html: '새로운 Badge ('+ saveBadge.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    } else {",
+                                            "        Ext.toast({",
+                                            "            title: 'Badge-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "} else {",
+                                            "    if(saveBadge.dirty) { \t\t\t\t//기존 Badge 정보 변경시",
+                                            "        if(badgeEditTab.isValid()) {\t//기존 Badge 정보 검증                        ",
+                                            "            Ext.MessageBox.confirm('Badge-저장', saveBadge.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                if (btn == 'yes') {",
+                                            "",
+                                            "                    saveBadge.save();",
+                                            "                     ",
+                                            "                    Ext.toast({                        ",
+                                            "                        title: 'Badge-수정' ,",
+                                            "                        html: saveBadge.get('name') + '의 정보가 성공적으로 수정되었습니다.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                } else {",
+                                            "",
+                                            "                    me.onCancelBadge();",
+                                            "                }",
+                                            "            });        ",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Badge-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }   ",
+                                            "    } ",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBadgeSaveButtonClick",
+                                    "designerId": "f8399e6e-96e0-4841-bd92-6d2b8c281aea"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "a6edbdf5-a5ca-4087-8023-636ee0c43c3d",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBadgeCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelBadge();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBadgeCancelButtonClick",
+                                    "designerId": "7a2185cc-e67d-48ea-a458-6657d92afaee"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "dock": null,
+                "height": null,
+                "layout": "vbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet",
+            "designerId": "7beb6cf9-7a5c-43e0-8036-e28ad502be29",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "badgeField",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer19",
+                    "designerId": "9b7ba0c0-cf29-4e03-9808-b3127229c172",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "badgeImageField",
+                                "fieldLabel": null,
+                                "layout|flex": 2,
+                                "width": 150
+                            },
+                            "name": "MyFieldContainer8",
+                            "designerId": "87489765-868f-4285-8b35-2588415b7577",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "bind": null,
+                                        "border": null,
+                                        "formBind": null,
+                                        "frame": true,
+                                        "height": 150,
+                                        "padding": "10 10 10 10",
+                                        "src": [
+                                            "{theBadge.icon}"
+                                        ],
+                                        "title": "이미지",
+                                        "width": 150
+                                    },
+                                    "name": "MyImg",
+                                    "configAlternates": {
+                                        "src": "binding"
+                                    },
+                                    "designerId": "cf6af765-1ca1-402c-8863-928f9f254f3d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "bind",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "badgeInfomationField",
+                                "fieldLabel": null,
+                                "layout": "anchor",
+                                "layout|flex": 5,
+                                "margin": "0 0 0 30"
+                            },
+                            "name": "MyFieldContainer9",
+                            "designerId": "225d14dc-bebb-43ac-8a6d-b0fcfad99795",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "designer|displayName": "ID",
+                                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                                        "fieldLabel": "ID*",
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "reference": "badgeID",
+                                        "regex": "/^[A-Za-z]/",
+                                        "value": [
+                                            "{theBadge.id}"
+                                        ],
+                                        "vtype": "alphanum"
+                                    },
+                                    "name": "MyTextField2",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "bd4221d4-490f-42d6-aaa8-b7b9003b34f1",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onBadgeIDTextfieldBeforeRender",
+                                                "implHandler": [
+                                                    "var badgeIDCmp\t\t= this.lookupReference('badgeID');",
+                                                    "var isCreateBadge\t= this.getViewModel().get('theBadge').create;",
+                                                    "",
+                                                    "if(isCreateBadge) {",
+                                                    "    badgeIDCmp.setDisabled(false);",
+                                                    "} else {",
+                                                    "    badgeIDCmp.setDisabled(true);",
+                                                    "}"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onBadgeIDTextfieldBeforeRender",
+                                            "designerId": "68e20357-5fde-49e6-bcf8-64ebaa816ce1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "이름",
+                                        "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                                        "fieldLabel": "이름*",
+                                        "formBind": null,
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "value": [
+                                            "{theBadge.name}"
+                                        ]
+                                    },
+                                    "name": "MyTextField",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "104314a3-6890-440f-8af0-588cfd27b994"
+                                },
+                                {
+                                    "type": "Ext.form.field.TextArea",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "bind": null,
+                                        "designer|displayName": "상세설명",
+                                        "emptyText": "1~1000자 이내의 상세설명을 입력하세요.",
+                                        "fieldLabel": "상세설명*",
+                                        "height": 100,
+                                        "layout|anchor": "100%",
+                                        "maxHeight": 100,
+                                        "maxLength": 1000,
+                                        "minHeight": null,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "resizable": [
+                                            "true",
+                                            ""
+                                        ],
+                                        "value": [
+                                            "{theBadge.description}"
+                                        ]
+                                    },
+                                    "name": "MyTextArea",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "4edbcb1c-af20-41dc-b1ee-1427c0b65603",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "bind",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "아이콘",
+                        "frame": null,
+                        "layout": "auto",
+                        "layout|flex": null,
+                        "title": "아이콘*",
+                        "width": null
+                    },
+                    "name": "MyFieldSet5",
+                    "designerId": "115cbda7-3f68-4cc7-a48f-154d9409219d",
+                    "cn": [
+                        {
+                            "type": "Ext.view.View",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "badge_icon",
+                                "itemSelector": "div.icon_repository",
+                                "overItemCls": null,
+                                "padding": null,
+                                "reference": "badgeIcon",
+                                "resizable": null,
+                                "selectedItemCls": null,
+                                "store": "BadgeIcon"
+                            },
+                            "name": "MyView1",
+                            "designerId": "7467abbe-9f5b-4ed8-8f52-dedc53e5cab1",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "badge_itemTpl",
+                                        "implHandler": [
+                                            "<tpl for=\".\">",
+                                            "    <div class=\"icon_repository\">",
+                                            "            <img src=\"{icon}\" width=70 height=70/>",
+                                            "    </div>",
+                                            "</tpl>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "c8fa3b43-3b1d-4bc5-bea9-cfc5aafe7d3a"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBadgeDataviewItemClick",
+                                        "implHandler": [
+                                            "this.getViewModel().set('theBadge.icon', record.getData().icon);"
+                                        ],
+                                        "name": "itemclick",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBadgeDataviewItemClick",
+                                    "designerId": "e91d81c7-1062-49e3-b2a6-3a2d37f7a3bd"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDataviewBadgeAfterRender",
+                                        "implHandler": [
+                                            "this.onSelectedBadgeIcon(component);"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDataviewBadgeAfterRender",
+                                    "designerId": "b6d7b0ef-3e28-4367-8b88-24986dd52605"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer43",
+            "designerId": "4f5fe416-29bc-4128-b3ae-d9b9cdba51e0",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "298e5733-364b-4e39-b1ec-204f10bb524b"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBadgeFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'badge_edittab') {",
+                    "",
+                    "} else {",
+                    "    if(!this.getViewModel().data.theBadge.dropped) {",
+                    "        var badge\t\t= this.getViewModel().get('theBadge');",
+                    "",
+                    "        var isDirtyBadge\t= badge.dirty;",
+                    "        var isCreateBadge\t= badge.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyBadge)  {",
+                    "",
+                    "            Ext.MessageBox.confirm('Badge-저장', badge.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    badge.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'Badge-수정 완료' ,",
+                    "                        html: badge.get('name') + '의 Badge정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelBadge();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onBadgeFormDeactivate",
+            "designerId": "dcedcaec-7531-49ec-b0f7-c85a7a3ebbc5"
+        }
+    ]
+}

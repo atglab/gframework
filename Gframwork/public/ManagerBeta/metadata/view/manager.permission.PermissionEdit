@@ -1,0 +1,1868 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "permissionedit",
+        "designer|userClassName": "manager.permission.PermissionEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "scrollable": "true",
+        "title": [
+            "{thePermission.name}"
+        ],
+        "width": null
+    },
+    "name": "manager.activity.ActivityEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "251465c6-54d6-47bd-9d3f-28f32ca4b90d",
+    "viewControllerInstanceId": "9a2cb8f2-ce24-4918-bbc8-7d3325dc3d04",
+    "viewModelInstanceId": "5245437f-fade-4d8a-a1b6-b2f0b9e2e97d",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer26",
+            "designerId": "42c93615-3736-486d-bc17-cac7d0e53e3f",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "permissionEditToolbar",
+                        "enableFocusableContainer": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "01be45f1-e185-44cf-9c66-db2cc1861880",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "12e471d5-0cb4-4920-a6e8-1caeb7ef69e0",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPermissionSaveButtonClick",
+                                        "implHandler": [
+                                            "var permissionEditTab = button.up('permissionedit');",
+                                            "var me = this;",
+                                            "",
+                                            "var savePermission = permissionEditTab.getViewModel().get('thePermission');",
+                                            "",
+                                            "if(savePermission.create) {\t\t//새로운 User 추가시",
+                                            "    if(permissionEditTab.isValid()) {",
+                                            "",
+                                            "        if(!savePermission.id || !savePermission.name || !savePermission.description ) {",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Permission-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "            ",
+                                            "        } else {",
+                                            "",
+                                            "            var permissionStore\t= Ext.getStore('Permission');",
+                                            "            var permission \t\t= Ext.create('GFManager.model.Permission');",
+                                            "",
+                                            "            permission.set('id', savePermission.id);",
+                                            "            permission.set('name', savePermission.name);",
+                                            "            permission.set('description', savePermission.description);",
+                                            "",
+                                            "            permission.set('user_category', savePermission.user_category);",
+                                            "",
+                                            "",
+                                            "            var method_radiogroup = this.lookupReference('getMethod');",
+                                            "            var seletedMethod;",
+                                            "            var seletedObject;",
+                                            "            var setParameter;",
+                                            "",
+                                            "            if(method_radiogroup.items.items[0].items.items[0].value) { \t\t//basic",
+                                            "                seletedMethod = 'basic_type';",
+                                            "            } else if(method_radiogroup.items.items[1].items.items[0].value) { \t//point",
+                                            "",
+                                            "                seletedMethod\t= 'point_type';",
+                                            "                seletedObject\t= this.lookupReference('pointComboBox').value;",
+                                            "                setParameter\t= this.lookupReference('pointMax').value;",
+                                            "",
+                                            "",
+                                            "            } else if(method_radiogroup.items.items[2].items.items[0].value) { \t//level",
+                                            "",
+                                            "                seletedMethod = 'level_type';",
+                                            "                seletedObject\t= this.lookupReference('levelComboBox').value;",
+                                            "                setParameter\t= this.lookupReference('levelMax').value;",
+                                            "",
+                                            "",
+                                            "            } else if(method_radiogroup.items.items[3].items.items[0].value) { \t//status",
+                                            "",
+                                            "                seletedMethod = 'status_type';",
+                                            "                seletedObject\t= this.lookupReference('statusComboBox').value;",
+                                            "                setParameter\t= this.lookupReference('subStatusComboBox').value;",
+                                            "",
+                                            "            } else if(method_radiogroup.items.items[4].items.items[0].value) { \t//mission",
+                                            "",
+                                            "                seletedMethod = 'mission_type';",
+                                            "            }",
+                                            "",
+                                            "            permission.set('relation_method', seletedMethod);",
+                                            "            permission.set('relation_object', seletedObject);",
+                                            "            permission.set('get_parameter', setParameter);",
+                                            "",
+                                            "",
+                                            "            permissionStore.add(permission);",
+                                            "            permissionStore.save();",
+                                            "            permissionStore.commitChanges();",
+                                            "",
+                                            "            permissionEditTab.close();",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Permission-추가',",
+                                            "                html: '새로운 Permission ('+ savePermission.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    } else {",
+                                            "        Ext.toast({",
+                                            "            title: 'Permission-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    if(savePermission.dirty) { \t//change editTab",
+                                            "        if(permissionEditTab.isValid()) {",
+                                            "",
+                                            "",
+                                            "            if(!savePermission.get('id') || !savePermission.get('name') || !savePermission.get('description') ||",
+                                            "               !savePermission.get('relation_object') || !savePermission.get('relation_object') || !savePermission.get('get_parameter')) {",
+                                            "                Ext.toast({",
+                                            "                    title: 'Permission-저장 실패' ,",
+                                            "                    html: '필드값을 다시 확인해주세요.',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "            } else {",
+                                            "",
+                                            "                Ext.MessageBox.confirm('Permission-저장', savePermission.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                    if (btn == 'yes') {",
+                                            "",
+                                            "                        savePermission.save();",
+                                            "",
+                                            "                        Ext.toast({",
+                                            "                            title: 'Permission-수정 완료' ,",
+                                            "                            html: savePermission.get('name') + '의 Permission정보가 성공적으로 수정되었습니다.',",
+                                            "                            align: 't',",
+                                            "                            bodyPadding:10",
+                                            "                        });",
+                                            "",
+                                            "                    } else {",
+                                            "",
+                                            "                        me.onCancelPermission();",
+                                            "",
+                                            "                    }",
+                                            "                });",
+                                            "",
+                                            "            }",
+                                            "",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Permission-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPermissionSaveButtonClick",
+                                    "designerId": "094a262c-cee5-4ee7-a6d9-b8b42bba911d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "8f72f315-df3b-4596-8a3e-7b9537b06f84",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPermissionCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelPermission();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPermissionCancelButtonClick",
+                                    "designerId": "c3935492-d7c4-43a5-bfc8-006c1842614c"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet1",
+            "designerId": "f4c8e31e-b1f3-42f5-9b75-e7283b02bd2c",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "ID",
+                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                        "fieldLabel": "ID*",
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "reference": "permissionID",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{thePermission.id}"
+                        ],
+                        "vtype": "alphanum"
+                    },
+                    "name": "MyTextField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "7cf89fb7-55c9-4e69-901a-b699e793acea",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPermissionIDTextfieldBeforeRender",
+                                "implHandler": [
+                                    "var permissionID_textfield\t= this.lookupReference('permissionID');",
+                                    "",
+                                    "if(this.getViewModel().get('thePermission').create) {",
+                                    "",
+                                    "    permissionID_textfield.setDisabled(false);",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "    permissionID_textfield.setDisabled(true);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onPermissionIDTextfieldBeforeRender",
+                            "designerId": "44b7db98-15fd-4ad1-8bb4-b0665f0fb65a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "이름",
+                        "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                        "fieldLabel": "이름*",
+                        "formBind": null,
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "publishes": null,
+                        "value": [
+                            "{thePermission.name}"
+                        ]
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "050733b9-f027-429c-bd40-916a17033dcb"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "설명",
+                        "emptyText": "1~1000자 이내의 설명을 입력하세요.",
+                        "fieldLabel": "설명*",
+                        "height": 60,
+                        "maxHeight": 60,
+                        "maxLength": 1000,
+                        "minLength": 1,
+                        "publishes": null,
+                        "value": [
+                            "{thePermission.description}"
+                        ]
+                    },
+                    "name": "MyTextArea7",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "419b5fa3-bfca-4dac-912c-404f76ee1f99"
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "획득 방식",
+                        "fieldLabel": "획득방식*",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer13",
+                    "designerId": "88c67c3b-ea6e-412d-8ff5-0f3675346ca1",
+                    "cn": [
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "designer|displayName": "획득방식",
+                                "fieldLabel": null,
+                                "height": null,
+                                "layout": "vbox",
+                                "layout|flex": 1,
+                                "reference": "getMethod",
+                                "value": null
+                            },
+                            "name": "MyRadioGroup2",
+                            "designerId": "9fc4d7d4-4143-4b45-bc68-b66886f01054",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.FieldContainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|displayName": "basicFieldContainer",
+                                        "fieldLabel": null,
+                                        "height": "",
+                                        "layout": "hbox",
+                                        "layout|flex": null,
+                                        "reference": null,
+                                        "width": null
+                                    },
+                                    "name": "MyFieldContainer14",
+                                    "designerId": "58c9271a-f0be-4246-9143-fc0bc7f3c1c6",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "기본 소유",
+                                                "designer|displayName": "기본 소유",
+                                                "fieldLabel": null,
+                                                "inputValue": "basic_type",
+                                                "layout|flex": null,
+                                                "maxWidth": 80,
+                                                "name": "method",
+                                                "width": 80
+                                            },
+                                            "name": "MyRadio",
+                                            "designerId": "1d6a07de-d550-4c18-8bcb-d56f569c839c"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": "edit_tooltip_btn",
+                                                "designer|displayName": "toottip",
+                                                "iconAlign": "right",
+                                                "layout|flex": null,
+                                                "margin": "0 0 0 10",
+                                                "overCls": "edit_tooltip_btn_over",
+                                                "text": null,
+                                                "tooltip": "모든 사용자에게 기본으로 주어지는 방식<br>\\ (예: 모든 사용자에게 해당 권한 부여)"
+                                            },
+                                            "name": "MyButton23",
+                                            "configAlternates": {
+                                                "tooltip": "string"
+                                            },
+                                            "designerId": "48c3dcc4-a7fa-4541-96b7-9d54b32f7d72"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldContainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|displayName": "pointFieldContainer",
+                                        "fieldLabel": null,
+                                        "height": "",
+                                        "layout": "hbox",
+                                        "layout|flex": null,
+                                        "width": null
+                                    },
+                                    "name": "MyFieldContainer15",
+                                    "designerId": "ccb71888-4384-40ff-ba8c-fb05c1284f75",
+                                    "configMeta": {
+                                        "disabled": {
+                                            "bindSingle": true
+                                        }
+                                    },
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Point",
+                                                "designer|displayName": "Point",
+                                                "fieldLabel": null,
+                                                "inputValue": "point_type",
+                                                "layout|flex": null,
+                                                "maxWidth": 80,
+                                                "name": "method",
+                                                "width": 80
+                                            },
+                                            "name": "MyRadio",
+                                            "designerId": "39995b5a-3a1e-4f53-a713-1732a4da737c"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": "edit_tooltip_btn",
+                                                "designer|displayName": "toottip",
+                                                "iconAlign": "right",
+                                                "layout|flex": null,
+                                                "margin": "0 0 0 10",
+                                                "overCls": "edit_tooltip_btn_over",
+                                                "text": null,
+                                                "tooltip": "사용자가 특정 'Point'를 일정 수준 획득하여 얻어내는 방식<br>\\ (예: '사용자 포인트'를 100점 획득 시, 해당 권한 부여)",
+                                                "tooltipType": null
+                                            },
+                                            "name": "MyButton24",
+                                            "configAlternates": {
+                                                "tooltip": "string"
+                                            },
+                                            "designerId": "046b4363-e1f4-4969-9a88-97e4fb270799"
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "stretch",
+                                                "designer|displayName": "pointSubFieldContainer",
+                                                "fieldLabel": null,
+                                                "height": null,
+                                                "layout": "hbox",
+                                                "layout|flex": 5,
+                                                "reference": null,
+                                                "referenceHolder": false,
+                                                "width": null
+                                            },
+                                            "name": "MyFieldContainer6",
+                                            "designerId": "410d3e19-6ef5-42bc-82a0-0749f54b53ff",
+                                            "configMeta": {
+                                                "disabled": {
+                                                    "bindDeep": true
+                                                }
+                                            },
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "pointComboBox",
+                                                        "disabled": null,
+                                                        "displayField": "name",
+                                                        "editable": false,
+                                                        "emptyText": "Point List",
+                                                        "fieldLabel": null,
+                                                        "id": null,
+                                                        "layout|flex": null,
+                                                        "layout|margins": null,
+                                                        "margin": "0 10 0 10",
+                                                        "reference": "pointComboBox",
+                                                        "store": "Point",
+                                                        "value": null,
+                                                        "valueField": "id"
+                                                    },
+                                                    "name": "MyComboBox16",
+                                                    "designerId": "b519595e-69c0-4533-811b-e79e48cdaa44",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onPermissionPointComboboxSelect",
+                                                                "implHandler": [
+                                                                    "var pointMax = this.lookupReference('pointMax');",
+                                                                    "var maxValue = record.get('max');",
+                                                                    "pointMax.setValue(maxValue);",
+                                                                    "pointMax.setMaxValue(maxValue);",
+                                                                    "",
+                                                                    "",
+                                                                    "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                                                    "",
+                                                                    "if(isCreatedPermission) {",
+                                                                    "} else {",
+                                                                    "    var seletedPointID = record.get('id');",
+                                                                    "    var get_object\t\t= this.getViewModel().get('thePermission');",
+                                                                    "    get_object.set('relation_object', seletedPointID);",
+                                                                    "",
+                                                                    "}"
+                                                                ],
+                                                                "name": "select",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onPermissionPointComboboxSelect",
+                                                            "designerId": "510f21cc-1e59-4bb9-82ac-129e85fbbcc6"
+                                                        },
+                                                        {
+                                                            "type": "Ext.view.BoundList",
+                                                            "reference": {
+                                                                "name": "listConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "pointComboBoxBoundList",
+                                                                "itemSelector": "div"
+                                                            },
+                                                            "name": "MyBoundList3",
+                                                            "designerId": "2d9d8f08-d648-4715-8e6a-60d877b207b2",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "itemTpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "itemTpl",
+                                                                        "implHandler": [
+                                                                            "<img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}"
+                                                                        ]
+                                                                    },
+                                                                    "name": "itemTpl",
+                                                                    "designerId": "838cdb2d-1b5f-465b-8e6b-8c9580832e1a"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Number",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "pointMax",
+                                                        "emptyText": "Max",
+                                                        "fieldLabel": null,
+                                                        "layout|flex": null,
+                                                        "margin": "0 10 0 10",
+                                                        "maxValue": null,
+                                                        "reference": "pointMax",
+                                                        "validateOnChange": false,
+                                                        "value": null
+                                                    },
+                                                    "name": "MyNumberField3",
+                                                    "designerId": "d30410cb-2236-46ce-92c8-b66092a7e2c4",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onPermissionPointNumberfieldChange",
+                                                                "implHandler": [
+                                                                    "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                                                    "",
+                                                                    "if(isCreatedPermission) {",
+                                                                    "} else {",
+                                                                    "    var get_object\t\t= this.getViewModel().get('thePermission');",
+                                                                    "    get_object.set('get_parameter', newValue);",
+                                                                    "}"
+                                                                ],
+                                                                "name": "change",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onPermissionPointNumberfieldChange",
+                                                            "designerId": "3c92a4e4-f390-4911-9cc7-7622169f2896"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Display",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "maxPointDisplayField",
+                                                        "fieldLabel": null,
+                                                        "layout|flex": null,
+                                                        "reference": "maxPointDisplayField",
+                                                        "value": "/ Max Value"
+                                                    },
+                                                    "name": "MyDisplayField3",
+                                                    "designerId": "924b2e68-86a1-4e15-84c0-58a035450d7d"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldContainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|displayName": "levelFieldContainer",
+                                        "fieldLabel": null,
+                                        "height": "",
+                                        "layout": "hbox",
+                                        "layout|flex": null,
+                                        "width": null
+                                    },
+                                    "name": "MyFieldContainer16",
+                                    "designerId": "06cb8a71-beff-4787-beb4-344abbc406f2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Level",
+                                                "designer|displayName": "Level",
+                                                "fieldLabel": null,
+                                                "inputValue": "level_type",
+                                                "layout|flex": 1,
+                                                "maxWidth": 80,
+                                                "name": "method",
+                                                "width": 80
+                                            },
+                                            "name": "MyRadio",
+                                            "designerId": "00d7dea0-23e3-489c-bc0f-01a33e9aa337"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": "edit_tooltip_btn",
+                                                "designer|displayName": "toottip",
+                                                "iconAlign": "right",
+                                                "layout|flex": null,
+                                                "margin": "0 0 0 10",
+                                                "overCls": "edit_tooltip_btn_over",
+                                                "text": null,
+                                                "tooltip": "사용자가 특정 'Level'을 일정 수준 획득하여 얻어내는 방식<br>\\ (예: '사용자 레벨'이 2레벨 이상일 경우, 해당 권한 부여)"
+                                            },
+                                            "name": "MyButton25",
+                                            "configAlternates": {
+                                                "tooltip": "string"
+                                            },
+                                            "designerId": "e2ccbf09-3f32-4102-8de2-0385ab3940d5"
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "stretch",
+                                                "designer|displayName": "levelSubFieldContainer",
+                                                "fieldLabel": null,
+                                                "focusOnToFront": false,
+                                                "height": null,
+                                                "layout": "hbox",
+                                                "layout|flex": 5,
+                                                "reference": null,
+                                                "width": null
+                                            },
+                                            "name": "MyFieldContainer4",
+                                            "designerId": "cd0c549b-57db-4a8d-82d0-9b1975ba0529",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "levelComboBox",
+                                                        "disabled": null,
+                                                        "displayField": "name",
+                                                        "editable": false,
+                                                        "emptyText": "Level List",
+                                                        "fieldLabel": null,
+                                                        "id": null,
+                                                        "layout|flex": null,
+                                                        "layout|margins": "",
+                                                        "margin": "0 10 0 10",
+                                                        "reference": "levelComboBox",
+                                                        "store": "Level",
+                                                        "value": null,
+                                                        "valueField": "id"
+                                                    },
+                                                    "name": "MyComboBox6",
+                                                    "designerId": "6c4ff442-9f8b-41d7-9ad0-a33044d72fda",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onPermissionLevelComboboxSelect",
+                                                                "implHandler": [
+                                                                    "var levelMax = this.lookupReference('levelMax');",
+                                                                    "var maxValue = record.get('max');",
+                                                                    "",
+                                                                    "levelMax.setValue(maxValue);",
+                                                                    "levelMax.setMaxValue(maxValue);",
+                                                                    "",
+                                                                    "",
+                                                                    "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                                                    "",
+                                                                    "if(isCreatedPermission) {",
+                                                                    "    combo.setValue(record.get('id'));",
+                                                                    "} else {",
+                                                                    "",
+                                                                    "    var seletedLevelID = record.get('id');",
+                                                                    "    var get_object\t\t= this.getViewModel().get('thePermission');",
+                                                                    "    get_object.set('relation_object', seletedLevelID);",
+                                                                    "",
+                                                                    "}"
+                                                                ],
+                                                                "name": "select",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onPermissionLevelComboboxSelect",
+                                                            "designerId": "ff168011-f110-4467-a6cf-c77f90a67661"
+                                                        },
+                                                        {
+                                                            "type": "Ext.view.BoundList",
+                                                            "reference": {
+                                                                "name": "listConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "levelComboBoxBoundList",
+                                                                "itemSelector": "div"
+                                                            },
+                                                            "name": "MyBoundList4",
+                                                            "designerId": "945d8d96-e539-4d9e-85bb-c10aadf4bdc2",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "itemTpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "itemTpl",
+                                                                        "implHandler": [
+                                                                            "<img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}"
+                                                                        ]
+                                                                    },
+                                                                    "name": "itemTpl",
+                                                                    "designerId": "6be7696b-1f95-423f-997d-8f43df865c68"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Number",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "levelMax",
+                                                        "emptyText": "Max",
+                                                        "fieldLabel": null,
+                                                        "layout|flex": null,
+                                                        "margin": "0 10 0 10",
+                                                        "reference": "levelMax",
+                                                        "validateOnChange": false,
+                                                        "value": null
+                                                    },
+                                                    "name": "MyNumberField4",
+                                                    "designerId": "2d006f83-2f7f-4c5e-a540-5ff27ed44e30",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onPermissionLevelfieldChange",
+                                                                "implHandler": [
+                                                                    "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                                                    "",
+                                                                    "if(isCreatedPermission) {",
+                                                                    "} else {",
+                                                                    "",
+                                                                    "    var get_object\t\t= this.getViewModel().get('thePermission');",
+                                                                    "    get_object.set('get_parameter', newValue);",
+                                                                    "",
+                                                                    "}"
+                                                                ],
+                                                                "name": "change",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onPermissionLevelfieldChange",
+                                                            "designerId": "4b334add-a5eb-4153-9aa6-167b615f5ba8"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Display",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "maxLevelDisplayField",
+                                                        "fieldLabel": null,
+                                                        "layout|flex": null,
+                                                        "reference": "maxLevelDisplayField",
+                                                        "value": "/ Max Value"
+                                                    },
+                                                    "name": "MyDisplayField",
+                                                    "designerId": "a54bc460-acac-44e6-9d65-23b11277aac9"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldContainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|displayName": "statusFieldContainer",
+                                        "fieldLabel": null,
+                                        "height": "",
+                                        "layout": "hbox",
+                                        "layout|flex": null,
+                                        "width": null
+                                    },
+                                    "name": "MyFieldContainer17",
+                                    "designerId": "420c0f44-956c-43bf-9320-23542494644a",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Status",
+                                                "designer|displayName": "Status",
+                                                "fieldLabel": null,
+                                                "inputValue": "status_type",
+                                                "layout|flex": 1,
+                                                "maxWidth": 80,
+                                                "name": "method",
+                                                "width": 80
+                                            },
+                                            "name": "MyRadio",
+                                            "designerId": "e314c5ca-d90e-4d80-85dd-a3f456e5be30"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": "edit_tooltip_btn",
+                                                "designer|displayName": "toottip",
+                                                "iconAlign": "right",
+                                                "layout|flex": null,
+                                                "margin": "0 0 0 10",
+                                                "overCls": "edit_tooltip_btn_over",
+                                                "text": null,
+                                                "tooltip": "사용자가 특정 'Status'를 일정 수준 획득하여 얻어내는 방식<br>\\ (예: '사용자 등급'이 골드 이상일 경우, 해당 권한 부여)"
+                                            },
+                                            "name": "MyButton26",
+                                            "configAlternates": {
+                                                "tooltip": "string"
+                                            },
+                                            "designerId": "a3bd2d7a-6266-451d-9417-dddaf9ee7233"
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldContainer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "container|align": "stretch",
+                                                "designer|displayName": "statusSubFieldContainer",
+                                                "fieldLabel": null,
+                                                "height": null,
+                                                "layout": "hbox",
+                                                "layout|flex": 5,
+                                                "reference": null,
+                                                "width": null
+                                            },
+                                            "name": "MyFieldContainer3",
+                                            "designerId": "2e5708ce-c827-497f-a2f6-aba3cde3242e",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "statusComboBox",
+                                                        "displayField": "name",
+                                                        "editable": false,
+                                                        "emptyText": "Status List",
+                                                        "fieldLabel": null,
+                                                        "id": null,
+                                                        "layout|flex": null,
+                                                        "layout|margins": "",
+                                                        "margin": "0 10 0 10",
+                                                        "reference": "statusComboBox",
+                                                        "store": "Status",
+                                                        "value": null,
+                                                        "valueField": "id"
+                                                    },
+                                                    "name": "MyComboBox7",
+                                                    "designerId": "90ad1f8c-52e7-4c22-ab58-b3272f1a4ef5",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onPermissionStatusComboboxSelect",
+                                                                "implHandler": [
+                                                                    "var StatusClassStore = Ext.getStore('StatusClass');",
+                                                                    "var mydata = record.get('classes');",
+                                                                    "StatusClassStore.loadRawData(mydata, false);",
+                                                                    "",
+                                                                    "",
+                                                                    "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                                                    "",
+                                                                    "if(isCreatedPermission) {",
+                                                                    "} else {",
+                                                                    "    var seletedStatusID\t= record.get('id');",
+                                                                    "    var get_object\t\t= this.getViewModel().get('thePermission');",
+                                                                    "    get_object.set('relation_object', seletedStatusID);",
+                                                                    "}"
+                                                                ],
+                                                                "name": "select",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onPermissionStatusComboboxSelect",
+                                                            "designerId": "9c2a69f3-51fc-4ae1-8bef-4e0c390ef113"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.ComboBox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "subStatusComboBox",
+                                                        "displayField": "name",
+                                                        "editable": false,
+                                                        "emptyText": "Classes",
+                                                        "fieldLabel": null,
+                                                        "id": null,
+                                                        "layout|flex": null,
+                                                        "layout|margins": "",
+                                                        "margin": "0 10 0 10",
+                                                        "reference": "subStatusComboBox",
+                                                        "store": "StatusClass",
+                                                        "value": null,
+                                                        "valueField": "rank"
+                                                    },
+                                                    "name": "MyComboBox17",
+                                                    "designerId": "8e2eca52-85d5-4171-9edf-50689ee82fde",
+                                                    "cn": [
+                                                        {
+                                                            "type": "viewcontrollereventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onPermissionSubStatusComboboxSelect",
+                                                                "implHandler": [
+                                                                    "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                                                    "",
+                                                                    "if(isCreatedPermission) {",
+                                                                    "} else {",
+                                                                    "    var seletedStatusClassRank\t= record.get('rank');",
+                                                                    "    var get_object\t\t= this.getViewModel().get('thePermission');",
+                                                                    "    get_object.set('get_parameter', seletedStatusClassRank);",
+                                                                    "}",
+                                                                    ""
+                                                                ],
+                                                                "name": "select",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onPermissionSubStatusComboboxSelect",
+                                                            "designerId": "d421b6bd-04e8-476f-bb07-76fa4b624e53"
+                                                        },
+                                                        {
+                                                            "type": "Ext.view.BoundList",
+                                                            "reference": {
+                                                                "name": "listConfig",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "subStatusComboboxBoundList",
+                                                                "itemSelector": "div"
+                                                            },
+                                                            "name": "MyBoundList5",
+                                                            "designerId": "391e5e07-8c74-4ebb-b3ad-e747270f4bfb",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "itemTpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "itemTpl",
+                                                                        "implHandler": [
+                                                                            "<img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}"
+                                                                        ]
+                                                                    },
+                                                                    "name": "itemTpl",
+                                                                    "designerId": "578a36c4-f197-4ea8-8d43-dad2778299aa"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Display",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "maxStatusDisplayField",
+                                                        "fieldLabel": null,
+                                                        "layout|flex": null,
+                                                        "reference": "maxStatusDisplayField",
+                                                        "value": null
+                                                    },
+                                                    "name": "MyDisplayField4",
+                                                    "designerId": "df7d782c-7762-4605-bf3b-5895272b2015"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldContainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|displayName": "missionFieldContainer",
+                                        "fieldLabel": null,
+                                        "height": "",
+                                        "layout": "hbox",
+                                        "layout|flex": null,
+                                        "width": null
+                                    },
+                                    "name": "MyFieldContainer18",
+                                    "designerId": "c25603fd-f9be-4b21-a553-f7400c567631",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Mission",
+                                                "designer|displayName": "Mission",
+                                                "fieldLabel": null,
+                                                "inputValue": "mission_type",
+                                                "maxWidth": 80,
+                                                "name": "method",
+                                                "width": 80
+                                            },
+                                            "name": "MyRadio",
+                                            "designerId": "4f2da122-b098-449e-9443-2ece96c1fba9"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": "edit_tooltip_btn",
+                                                "designer|displayName": "toottip",
+                                                "iconAlign": "right",
+                                                "layout|flex": null,
+                                                "margin": "0 0 0 10",
+                                                "overCls": "edit_tooltip_btn_over",
+                                                "text": null,
+                                                "tooltip": "사용자가 특정 'Mission'을 완료하여 얻어내는 방식<br>\\ (예: '로그인 하기 미션'을 완료 했을 경우, 해당 권한 부여)"
+                                            },
+                                            "name": "MyButton27",
+                                            "configAlternates": {
+                                                "tooltip": "string"
+                                            },
+                                            "designerId": "869e8395-2044-467b-bfe8-a0c251d65cf2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPermissionRadiogroupChange",
+                                        "implHandler": [
+                                            "var isCreatedPermission = this.getViewModel().get('thePermission').create;",
+                                            "",
+                                            "var radioPosition \t\t\t= newValue.method;",
+                                            "",
+                                            "",
+                                            "var method_radiogroup \t\t= this.lookupReference('getMethod');",
+                                            "",
+                                            "var pointComboBox \t\t\t= this.lookupReference('pointComboBox');",
+                                            "var pointMax \t\t\t\t= this.lookupReference('pointMax');",
+                                            "var maxPointDisplayField\t= this.lookupReference('maxPointDisplayField');",
+                                            "",
+                                            "",
+                                            "var levelComboBox \t\t\t= this.lookupReference('levelComboBox');",
+                                            "var levelMax \t\t\t\t= this.lookupReference('levelMax');",
+                                            "var maxLevelDisplayField\t= this.lookupReference('maxLevelDisplayField');",
+                                            "",
+                                            "",
+                                            "var statusComboBox \t\t\t= this.lookupReference('statusComboBox');",
+                                            "var subStatusComboBox\t\t= this.lookupReference('subStatusComboBox');",
+                                            "",
+                                            "var me = this;",
+                                            "",
+                                            "",
+                                            "if(isCreatedPermission) {\t\t//새로운 Permission 추가시",
+                                            "",
+                                            "    if(radioPosition == 'basic_type') {\t\t\t//획득방식이 기본일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[0].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "    } else if(radioPosition == 'point_type') {\t//획득방식이 point일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[1].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(false);",
+                                            "        pointMax.setDisabled(false);",
+                                            "        maxPointDisplayField.setDisabled(false);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "    } else if(radioPosition == 'level_type') {\t//획득방식이 level 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[2].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(false);",
+                                            "        levelMax.setDisabled(false);",
+                                            "        maxLevelDisplayField.setDisabled(false);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "    } else if(radioPosition == 'status_type') {\t//획득방식이 status일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[3].items.items[0].setValue(true);",
+                                            "",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(false);",
+                                            "        subStatusComboBox.setDisabled(false);",
+                                            "",
+                                            "    } else {\t\t\t\t\t\t\t\t\t//획득방식이 mission일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[4].items.items[0].setValue(true);",
+                                            "",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    var get_object\t\t\t\t= this.getViewModel().get('thePermission').get('relation_object');",
+                                            "    var get_parameter\t\t\t= this.getViewModel().get('thePermission').get('get_parameter');",
+                                            "",
+                                            "    var permission\t\t= this.getViewModel().get('thePermission');",
+                                            "",
+                                            "",
+                                            "    //획득방식에 따른 Radio버튼 위치 및 비활성화 모듈",
+                                            "    if(radioPosition == 'basic_type') {\t\t\t//획득방식이 기본일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[0].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "    } else if(radioPosition == 'point_type') {\t//획득방식이 point일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[1].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(false);",
+                                            "        pointMax.setDisabled(false);",
+                                            "        maxPointDisplayField.setDisabled(false);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "        /*",
+                                            "        pointComboBox.setValue(get_object);",
+                                            "        pointMax.setValue(get_parameter);",
+                                            "        pointMax.setMaxValue(get_parameter);*/",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "    } else if(radioPosition == 'level_type') {\t//획득방식이 level 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[2].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(false);",
+                                            "        levelMax.setDisabled(false);",
+                                            "        maxLevelDisplayField.setDisabled(false);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "        /*",
+                                            "        levelComboBox.setValue(get_object);",
+                                            "        levelMax.setValue(get_parameter);",
+                                            "        levelMax.setMaxValue(get_parameter);*/",
+                                            "",
+                                            "    } else if(radioPosition == 'status_type') {\t//획득방식이 status일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[3].items.items[0].setValue(true);",
+                                            "",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(false);",
+                                            "        subStatusComboBox.setDisabled(false);",
+                                            "",
+                                            "",
+                                            "",
+                                            "/*",
+                                            "",
+                                            "        var statusRecord\t\t= me.onFindNameInStore('Status', get_object, 'id');",
+                                            "",
+                                            "        var StatusClassStore = Ext.getStore('StatusClass');",
+                                            "        var mydata = statusRecord.get('classes');",
+                                            "        StatusClassStore.loadData(mydata, false);",
+                                            "",
+                                            "",
+                                            "        statusComboBox.setValue(statusRecord.get('id'));",
+                                            "        subStatusComboBox.setValue(statusRecord.get('classes')[get_parameter-1].name);*/",
+                                            "    } else {\t\t\t\t\t\t\t\t\t//획득방식이 mission일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[4].items.items[0].setValue(true);",
+                                            "",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "    permission.set('relation_method', radioPosition);",
+                                            "    //permission.set('relation_object', '');",
+                                            "    //permission.set('get_parameter', '');",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPermissionRadiogroupChange",
+                                    "designerId": "2c711e7f-2371-415f-9d37-44b4ca2aaffd"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPermissionRadiogroupBeforeRender",
+                                        "implHandler": [
+                                            "var isCreatePermission = this.getViewModel().get('thePermission').create;",
+                                            "",
+                                            "var me = this;",
+                                            "",
+                                            "//획득방식 init",
+                                            "var method_radiogroup\t\t= this.lookupReference('getMethod');",
+                                            "",
+                                            "",
+                                            "",
+                                            "var pointComboBox \t\t\t= this.lookupReference('pointComboBox');",
+                                            "var pointMax \t\t\t\t= this.lookupReference('pointMax');",
+                                            "var maxPointDisplayField\t= this.lookupReference('maxPointDisplayField');",
+                                            "",
+                                            "",
+                                            "var levelComboBox \t\t\t= this.lookupReference('levelComboBox');",
+                                            "var levelMax \t\t\t\t= this.lookupReference('levelMax');",
+                                            "var maxLevelDisplayField\t= this.lookupReference('maxLevelDisplayField');",
+                                            "",
+                                            "",
+                                            "var statusComboBox \t\t\t= this.lookupReference('statusComboBox');",
+                                            "var subStatusComboBox\t\t= this.lookupReference('subStatusComboBox');",
+                                            "",
+                                            "",
+                                            "if(isCreatePermission) {\t\t//새로운 Permission 추가시",
+                                            "",
+                                            "    method_radiogroup.items.items[0].items.items[0].setValue(true);",
+                                            "",
+                                            "    pointComboBox.setDisabled(true);",
+                                            "    pointMax.setDisabled(true);",
+                                            "    maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "    levelComboBox.setDisabled(true);",
+                                            "    levelMax.setDisabled(true);",
+                                            "    maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "    statusComboBox.setDisabled(true);",
+                                            "    subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "",
+                                            "    var get_method \t\t\t\t= this.getViewModel().get('thePermission').get('relation_method');",
+                                            "    var get_object\t\t\t\t= this.getViewModel().get('thePermission').get('relation_object');",
+                                            "    var get_parameter\t\t\t= this.getViewModel().get('thePermission').get('get_parameter');",
+                                            "",
+                                            "    //획득방식에 따른 Radio버튼 위치 및 획득 Object 설정",
+                                            "    if(get_method == 'basic_type') {\t\t\t//획득방식이 기본일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[0].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "    } else if(get_method == 'point_type') {\t\t//획득방식이 point일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[1].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(false);",
+                                            "        pointMax.setDisabled(false);",
+                                            "        maxPointDisplayField.setDisabled(false);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "        /*var pointRecord = me.onFindNameInStore('Point', get_object, 'id');",
+                                            "",
+                                            "        var pointComboBox\t\t= this.lookupReference('pointComboBox');",
+                                            "        var pointMax\t\t\t= this.lookupReference('pointMax');",
+                                            "",
+                                            "",
+                                            "        pointComboBox.setValue(pointRecord.get('name'));",
+                                            "        pointMax.setValue(get_parameter);",
+                                            "        pointMax.setMaxValue(get_parameter);*/",
+                                            "",
+                                            "        pointComboBox.setValue(get_object);",
+                                            "        pointMax.setValue(get_parameter);",
+                                            "        pointMax.setMaxValue(get_parameter);",
+                                            "",
+                                            "",
+                                            "",
+                                            "    } else if(get_method == 'level_type') {\t\t//획득방식이 level 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[2].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(false);",
+                                            "        levelMax.setDisabled(false);",
+                                            "        maxLevelDisplayField.setDisabled(false);",
+                                            "",
+                                            "        statusComboBox.setDisabled(true);",
+                                            "        subStatusComboBox.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "        /* var levelRecord = me.onFindNameInStore('Level', get_object, 'id');",
+                                            "",
+                                            "        var levelComboBox\t\t= this.lookupReference('levelComboBox');",
+                                            "        var levelMax\t\t\t= this.lookupReference('levelMax');",
+                                            "",
+                                            "        levelComboBox.setValue(levelRecord.get('name'));",
+                                            "        levelMax.setValue(get_parameter);",
+                                            "        levelMax.setMaxValue(get_parameter);*/",
+                                            "",
+                                            "",
+                                            "        levelComboBox.setValue(get_object);",
+                                            "        levelMax.setValue(get_parameter);",
+                                            "        levelMax.setMaxValue(get_parameter);",
+                                            "",
+                                            "    } else if(get_method == 'status_type') {\t//획득방식이 status일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[3].items.items[0].setValue(true);",
+                                            "",
+                                            "        pointComboBox.setDisabled(true);",
+                                            "        pointMax.setDisabled(true);",
+                                            "        maxPointDisplayField.setDisabled(true);",
+                                            "",
+                                            "        levelComboBox.setDisabled(true);",
+                                            "        levelMax.setDisabled(true);",
+                                            "        maxLevelDisplayField.setDisabled(true);",
+                                            "",
+                                            "        statusComboBox.setDisabled(false);",
+                                            "        subStatusComboBox.setDisabled(false);",
+                                            "",
+                                            "",
+                                            "        var statusRecord\t\t= me.onFindNameInStore('Status', get_object, 'id');",
+                                            "",
+                                            "        var StatusClassStore = Ext.getStore('StatusClass');",
+                                            "        var mydata = statusRecord.get('classes');",
+                                            "        StatusClassStore.loadData(mydata, false);",
+                                            "",
+                                            "",
+                                            "        var statusComboBox\t\t\t= this.lookupReference('statusComboBox');",
+                                            "        var subStatusComboBox\t\t= this.lookupReference('subStatusComboBox');",
+                                            "        statusComboBox.setValue(statusRecord.get('name'));",
+                                            "        subStatusComboBox.setValue(statusRecord.get('classes')[get_parameter-1].name);",
+                                            "",
+                                            "",
+                                            "    } else {\t\t\t\t\t\t\t\t\t//획득방식이 mission일 경우,",
+                                            "",
+                                            "        method_radiogroup.items.items[4].items.items[0].setValue(true);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "}",
+                                            ""
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPermissionRadiogroupBeforeRender",
+                                    "designerId": "883462e1-5e51-4353-b73e-8270ac3320e6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "API 사용방법",
+                        "editable": false,
+                        "fieldLabel": "API 사용방법",
+                        "height": 60,
+                        "layout|flex": 1,
+                        "maxHeight": 60
+                    },
+                    "name": "MyTextArea6",
+                    "designerId": "ee70b749-3974-4ab1-b33c-7ce6561d83da"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer40",
+            "designerId": "d82a599d-6c41-4a20-a365-b1488712c19b",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "f5b5c240-06f4-4944-8244-2e0c145e703a"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPermissionFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'permission_edittab') {",
+                    "",
+                    "} else {",
+                    "    if(!this.getViewModel().data.thePermission.dropped) {",
+                    "        var permission\t\t= this.getViewModel().get('thePermission');",
+                    "",
+                    "        var isDirtyPermission\t= permission.dirty;",
+                    "        var isCreatePermission\t= permission.create;",
+                    "        var me = this;",
+                    "",
+                    "        //console.log(permission);",
+                    "",
+                    "        if(isDirtyPermission)  {",
+                    "            ",
+                    "            console.log(permission);",
+                    "",
+                    "",
+                    "            Ext.MessageBox.confirm('Permission-저장', permission.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    permission.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'Permission-수정 완료' ,",
+                    "                        html: permission.get('name') + '의 Permission정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelPermission();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onPermissionFormDeactivate",
+            "designerId": "617517ab-6b65-4a37-9102-795a0f7b5b7d"
+        }
+    ]
+}

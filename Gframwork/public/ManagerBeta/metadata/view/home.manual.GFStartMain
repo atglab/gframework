@@ -1,0 +1,559 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": null,
+        "designer|userAlias": "gfstartmain",
+        "designer|userClassName": "home.manual.GFStartMain",
+        "height": null,
+        "title": null,
+        "width": null
+    },
+    "name": "MyForm24",
+    "designerId": "9a325637-c12b-45f9-8811-57c47e17b136",
+    "viewControllerInstanceId": "07b8b0ac-1291-42d9-8c0c-d82ca4d34f44",
+    "viewModelInstanceId": "8214bfe7-40d8-493a-a130-1a0cf8c21eb6",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": "top_menu_color",
+                "designer|displayName": "GF 시작하기",
+                "height": 50,
+                "hidden": true,
+                "icon": null,
+                "iconCls": null,
+                "margin": "0 0 0 20",
+                "maxHeight": 50,
+                "maxWidth": 200,
+                "minHeight": 50,
+                "minWidth": 200,
+                "overCls": null,
+                "padding": null,
+                "scale": "large",
+                "text": "<strong>3. 게이미피케이션<br> 프레임워크 시작하기 </strong>",
+                "width": 200
+            },
+            "name": "MyButton50",
+            "designerId": "167e22df-cb12-4bb1-b5bc-fe091e7b8d33"
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "cls": [
+                    "top_menu_color"
+                ],
+                "height": null,
+                "id": null,
+                "margin": null,
+                "maxHeight": null,
+                "maxWidth": 880,
+                "minHeight": null,
+                "minWidth": null,
+                "padding": 3,
+                "title": null,
+                "titleAlign": null,
+                "width": 880
+            },
+            "name": "MyTabPanel4",
+            "designerId": "815e79b6-f4a4-482a-aab3-ba55bde5869f",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "로그인",
+                        "reference": null,
+                        "scrollable": "true",
+                        "title": "&laquo; 로그인  &raquo"
+                    },
+                    "name": "MyForm12",
+                    "designerId": "d1bb00d7-34a1-451b-b0fc-05b3fcba2785",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig1",
+                                "height": 50,
+                                "layout|flex": 1,
+                                "maxHeight": 50
+                            },
+                            "name": "TabConfig",
+                            "designerId": "2e67d12d-d5a6-45e6-868f-3e78e6c98f57"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "margin": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/login.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg3",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "d4761e07-babf-4c56-8ef2-5ca2058081d8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "designer|displayName": "게임 메카닉 생성",
+                        "id": "createMechanic",
+                        "layout": "card",
+                        "scrollable": null,
+                        "title": "&laquo; 게임 메카닉 생성  &raquo"
+                    },
+                    "name": "MyForm15",
+                    "designerId": "f7fd0133-6b21-4bfa-94a1-935776c38f9b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": null,
+                                "id": "create-0",
+                                "scrollable": "true",
+                                "title": null
+                            },
+                            "name": "MyForm19",
+                            "designerId": "905bb25f-5b7e-4e12-ab78-98d12862a2b4",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": null,
+                                        "maxHeight": null,
+                                        "maxWidth": null,
+                                        "minHeight": null,
+                                        "minWidth": null,
+                                        "src": "/resources/images/manual/startMechanics_1.png",
+                                        "style": "max-height:100%; max-width:100%;",
+                                        "width": null
+                                    },
+                                    "name": "MyImg6",
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "88fae319-4a2f-42af-868f-acf355907d72"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "end",
+                                        "designer|displayName": "buttonContainer",
+                                        "dock": "bottom",
+                                        "layout": "hbox",
+                                        "maxWidth": null,
+                                        "width": null
+                                    },
+                                    "name": "MyContainer11",
+                                    "designerId": "f5d1627d-6c2a-4dc4-9970-a11cf18f7bc7",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "start-next",
+                                                "layout|flex": null,
+                                                "margin": 20,
+                                                "reference": null,
+                                                "scale": "large",
+                                                "text": "다음 &raquo"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "145d8025-2903-494e-954e-65755d9273b8"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": null,
+                                "id": "create-1",
+                                "scrollable": "true",
+                                "title": null
+                            },
+                            "name": "MyForm20",
+                            "designerId": "325c6463-1b0c-4550-98e8-f60d6c5badea",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": null,
+                                        "maxHeight": null,
+                                        "maxWidth": null,
+                                        "minHeight": null,
+                                        "minWidth": null,
+                                        "src": "/resources/images/manual/startMechanics_2.png",
+                                        "style": "max-height:100%; max-width:100%;",
+                                        "width": null
+                                    },
+                                    "name": "MyImg7",
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "6d03f994-0ed2-4782-adad-3ebaa3d3fc95"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "end",
+                                        "designer|displayName": "buttonContainer",
+                                        "dock": "bottom",
+                                        "layout": "hbox",
+                                        "maxWidth": null,
+                                        "width": null
+                                    },
+                                    "name": "MyContainer12",
+                                    "designerId": "ba793b6f-f092-4448-be21-29016ece2d18",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "start-prev",
+                                                "layout|flex": null,
+                                                "margin": 20,
+                                                "reference": null,
+                                                "scale": "large",
+                                                "text": "&laquo; 이전"
+                                            },
+                                            "name": "MyButton36",
+                                            "designerId": "707cdbc4-e6a5-4998-9819-4bbd925432e1"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "start-next",
+                                                "layout|flex": null,
+                                                "margin": 20,
+                                                "reference": null,
+                                                "scale": "large",
+                                                "text": "다음 &raquo"
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "0bd2ed35-25bb-47ee-bc65-80c6a6a1aaf5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": null,
+                                "id": "create-2",
+                                "scrollable": "true",
+                                "title": null
+                            },
+                            "name": "MyForm21",
+                            "designerId": "bbd3a235-31de-43cf-bd5c-9b11de34a6c1",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "margin": null,
+                                        "maxHeight": null,
+                                        "maxWidth": null,
+                                        "minHeight": null,
+                                        "minWidth": null,
+                                        "src": "/resources/images/manual/startMechanics_3.png",
+                                        "style": "max-height:100%; max-width:100%;",
+                                        "width": null
+                                    },
+                                    "name": "MyImg7",
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "d21048c5-0ed2-4441-8905-31743c073e8e"
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "container|pack": "end",
+                                        "designer|displayName": "buttonContainer",
+                                        "dock": "bottom",
+                                        "layout": "hbox",
+                                        "maxWidth": null,
+                                        "width": null
+                                    },
+                                    "name": "MyContainer12",
+                                    "designerId": "274cbd76-2c96-43a6-b8ed-56f14e3aa318",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "start-prev",
+                                                "layout|flex": null,
+                                                "margin": 20,
+                                                "reference": null,
+                                                "scale": "large",
+                                                "text": "&laquo; 이전"
+                                            },
+                                            "name": "MyButton36",
+                                            "designerId": "5aef9e41-bb4a-4c7c-802f-2b83ee9ab3c3"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "itemId": "start-return",
+                                                "layout|flex": null,
+                                                "margin": 20,
+                                                "scale": "large",
+                                                "text": "처음으로.."
+                                            },
+                                            "name": "MyButton37",
+                                            "designerId": "ed2d58d8-5421-4904-929e-c5c4f0151a3e"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig4",
+                                "layout|flex": 1
+                            },
+                            "name": "TabConfig11",
+                            "designerId": "e337c175-05d6-4b3f-a920-8d2f6961eff6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "designer|displayName": "게임 메카닉 재시작",
+                        "scrollable": "true",
+                        "title": "&laquo; 게임 메카닉 재시작  &raquo"
+                    },
+                    "name": "MyForm16",
+                    "designerId": "cd28f41c-015f-4621-96a1-28542286095c",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/startMechanics_4.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg8",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "5b56ff37-80ad-4f4b-9355-7329e204b880"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig5",
+                                "layout|flex": 1
+                            },
+                            "name": "TabConfig12",
+                            "designerId": "a409c3af-0336-40ff-8974-8bbf78a99adb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "designer|displayName": "게임 메카닉 생성 확인",
+                        "scrollable": "true",
+                        "title": "&laquo; 게임 메카닉 생성 확인  &raquo"
+                    },
+                    "name": "MyForm17",
+                    "designerId": "15f9c967-92e3-4d9b-8362-10e688fd5aab",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/startMechanics_5.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg9",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "cb899d12-f3c0-4367-8c19-44afe7c36b68"
+                        },
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig6",
+                                "layout|flex": 1
+                            },
+                            "name": "TabConfig13",
+                            "designerId": "770b7300-bfc0-44ff-878d-2eb8f11953a7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

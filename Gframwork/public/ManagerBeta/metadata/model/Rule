@@ -1,0 +1,111 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Rule"
+    },
+    "name": "Point1",
+    "designerId": "f001ea81-ee37-4cb3-9971-65a8e84b6394",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "\"\""
+                ],
+                "name": "id",
+                "unique": true
+            },
+            "name": "MyString11",
+            "designerId": "dc19ff2f-a6d4-4853-850e-a3b428a6c97a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString12",
+            "designerId": "6d3329bf-231b-4462-8fdd-67fdea7ad3fc"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "description"
+            },
+            "name": "MyString13",
+            "designerId": "c6aa7ae4-32cc-4352-a733-14244a78cdc0"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "ruleRestProxy",
+                "url": "/api/v1/manager/missions/rules"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "4e70ddcc-c288-416e-9a47-023aaf799c14",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "ruleJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "45151395-6305-4a61-9d90-4c6073e32d7a"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "ruleJsonWriter",
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter2",
+                    "designerId": "903d2a28-eb70-4e33-a4bf-9c9a5593529c"
+                }
+            ]
+        }
+    ]
+}

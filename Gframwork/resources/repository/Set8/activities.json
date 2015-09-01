@@ -1,0 +1,24 @@
+[
+
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "reservation",
+  "name" : "예매",
+  "description" : "예매 하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "write",
+  "name" : "후기 작성",
+  "description" : "후기 작성하기 미션을 위한 사용자 Activity"
+}
+
+]

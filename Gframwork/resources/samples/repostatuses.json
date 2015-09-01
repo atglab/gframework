@@ -1,0 +1,227 @@
+[
+{
+	"id" : "jewel_classes",
+    "name" : "주얼 방식",
+    "description" : "주얼 형태의 등급표",
+    "classes" : [ 
+        {
+            "rank" : 1,
+            "name" : "실버",
+            "condition" : "0",
+            "icon" : "/resources/images/status/class_silver.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "골드",
+            "condition" : "200000",
+            "icon" : "/resources/images/status/class_gold.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "다이아",
+            "condition" : "500000",
+            "icon" : "/resources/images/status/class_diamond.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "마스터",
+            "condition" : "800000",
+            "icon" : "/resources/images/status/class_master.png"
+        }
+
+    ]
+},
+{
+	"id" : "transport_classes",
+    "name" : "교통수단 방식",
+    "description" : "교통수단 형태의 등급표",
+    "classes" : [ 
+				{
+            "rank" : 1,
+            "name" : "자전거",
+            "condition" : 2,
+            "icon" : "/resources/images/status/status_bicycle.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "오토바이",
+            "condition" : 3,
+            "icon" : "/resources/images/status/status_motorcycle.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "자동차",
+            "condition" : 4,
+            "icon" : "/resources/images/status/status_car.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "배",
+            "condition" : 5,
+            "icon" : "/resources/images/status/status_yacht.png"
+        }
+    ]
+},
+{
+	"id" : "military_classes",
+    "name" : "군대 방식",
+    "description" : "군대 계급표",
+    "classes" : [ 
+        {
+            "rank" : 1,
+            "name" : "이병",
+            "condition" : 10,
+            "icon" : "/resources/images/status/military_1.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "일병",
+            "condition" : 100,
+            "icon" : "/resources/images/status/military_1.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "상병",
+            "condition" : 1000,
+            "icon" : "/resources/images/status/military_1.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "병장",
+            "condition" : 5000,
+            "icon" : "/resources/images/status/military_1.png"
+        }
+    ]
+},
+{
+	"id" : "rank_classes",
+    "name" : "계급 방식",
+    "description" : "V형태의 계급 방식의 등급표",
+    "classes" : [ 
+       {
+            "rank" : 1,
+            "name" : "스타1",
+            "condition" : "0",
+            "icon" : "/resources/images/status/status_start1.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "스타2",
+            "condition" : "20000",
+            "icon" : "/resources/images/status/status_start2.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "스타3",
+            "condition" : "40000",
+            "icon" : "/resources/images/status/status_start3.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "스타4",
+            "condition" : "60000",
+            "icon" : "/resources/images/status/status_start4.png"
+        }, 
+        {
+            "rank" : 5,
+            "name" : "스타5",
+            "condition" : "80000",
+            "icon" : "/resources/images/status/status_start5.png"
+        }
+    ]
+},
+{
+	"id" : "trophy_classes",
+    "name" : "트로피 방식",
+    "description" : "트로피 형태의 등급표",
+    "classes" : [ 
+       {
+            "rank" : 1,
+            "name" : "트로피1",
+            "condition" : "2000",
+            "icon" : "/resources/images/status/status_trophy.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "트로피2",
+            "condition" : "4000",
+            "icon" : "/resources/images/status/status_trophy.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "트로피3",
+            "condition" : "6000",
+            "icon" : "/resources/images/status/status_trophy.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "트로피4",
+            "condition" : "8000",
+            "icon" : "/resources/images/status/status_trophy.png"
+        }
+    ]
+},
+{
+	"id" : "medal_classes1",
+    "name" : "메달 방식1",
+    "description" : "메달 형태의 등급표",
+    "classes" : [ 
+       {
+            "rank" : 1,
+            "name" : "메달1",
+            "condition" : "2000",
+            "icon" : "/resources/images/status/status_medal1.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "메달2",
+            "condition" : "4000",
+            "icon" : "/resources/images/status/status_medal2.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "메달3",
+            "condition" : "6000",
+            "icon" : "/resources/images/status/status_medal3.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "메달4",
+            "condition" : "8000",
+            "icon" : "/resources/images/status/status_medal4.png"
+        }
+    ]
+},
+{
+	"id" : "medal_classes2",
+    "name" : "메달 방식2",
+    "description" : "메달 형태의 등급표",
+    "classes" : [ 
+       {
+            "rank" : 1,
+            "name" : "메달1",
+            "condition" : "2000",
+            "icon" : "/resources/images/status/status_medal_t1.png"
+        }, 
+        {
+            "rank" : 2,
+            "name" : "메달2",
+            "condition" : "4000",
+            "icon" : "/resources/images/status/status_medal_t1.png"
+        }, 
+        {
+            "rank" : 3,
+            "name" : "메달3",
+            "condition" : "6000",
+            "icon" : "/resources/images/status/status_medal_t1.png"
+        }, 
+        {
+            "rank" : 4,
+            "name" : "메달4",
+            "condition" : "8000",
+            "icon" : "/resources/images/status/status_medal_t1.png"
+        }
+    ]
+}
+
+]

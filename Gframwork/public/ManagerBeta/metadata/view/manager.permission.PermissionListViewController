@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "permissionlist",
+        "designer|userClassName": "manager.permission.PermissionListViewController"
+    },
+    "name": "manager.user.UserListViewController1",
+    "designerId": "6822a94f-f485-4f0a-add7-f77fbbdbe9fd",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewPermission",
+                "implHandler": [
+                    "this.fireViewEvent('viewPermission', this.getView(), record);"
+                ]
+            },
+            "name": "viewPermission",
+            "designerId": "07aac3f3-9068-4d4f-871b-43b0b139b34f"
+        }
+    ]
+}

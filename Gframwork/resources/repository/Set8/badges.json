@@ -1,0 +1,11 @@
+[
+
+{   
+    "id" : "login_badge",
+    "name" : "로그인 배지",
+    "category" : "기본",
+    "description" : "로그인 10회 시 부여하는 배지",
+    "icon" : "/resources/images/badges/badge_login.png"
+}
+
+]

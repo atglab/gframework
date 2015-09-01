@@ -1,0 +1,29 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "data": [
+            "[",
+            "    {",
+            "        \"id\": \"true\",",
+            "        \"name\": \"연속\"",
+            "    },",
+            "    {",
+            "        \"id\": \"false\",",
+            "        \"name\": \"불연속\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "IsContinuous",
+        "groupField": null,
+        "model": "Template",
+        "storeId": "IsContinuous"
+    },
+    "name": "MyStore39",
+    "designerId": "78bb1be6-c71a-43cb-bd1a-a8eab2767aee"
+}

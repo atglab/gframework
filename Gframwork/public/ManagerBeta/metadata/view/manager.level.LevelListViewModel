@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "levellist",
+        "designer|userClassName": "manager.level.LevelListViewModel"
+    },
+    "name": "manager.badge.BadgeListViewModel2",
+    "designerId": "e6ee41cd-bea8-4e5b-a814-68d9319ccf9b"
+}

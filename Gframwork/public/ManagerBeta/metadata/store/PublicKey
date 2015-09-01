@@ -1,0 +1,29 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PublicKey",
+        "storeId": "PublicKey"
+    },
+    "name": "MyStore18",
+    "designerId": "46ebb33c-229c-41c5-a682-cdcf83473ff5",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "key"
+            },
+            "name": "MyField73",
+            "designerId": "4c356ed8-4d8d-4b6b-9030-f500b7ee9a99"
+        }
+    ]
+}

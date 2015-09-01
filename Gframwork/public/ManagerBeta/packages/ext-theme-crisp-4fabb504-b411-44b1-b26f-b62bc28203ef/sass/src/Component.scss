@@ -1,0 +1,61 @@
+@include extjs-tab-panel-ui(
+    $ui: 'navigation',
+    $ui-tab-background-color: transparent,
+
+    $ui-tab-background-color-over: #00326B,
+    $ui-tab-background-color-active: #00326B,
+
+    $ui-tab-background-gradient: 'none',
+    $ui-tab-background-gradient-over: 'none',
+    $ui-tab-background-gradient-active: 'none',
+
+    $ui-tab-color: #00326B,	//font color
+    $ui-tab-color-over: #ffffff,
+    $ui-tab-color-active: #fff,
+
+
+
+    $ui-tab-glyph-color: #000000,
+    $ui-tab-glyph-color-over: #ffffff,
+    $ui-tab-glyph-color-active: #000,
+
+
+    $ui-tab-glyph-opacity: 1,
+    $ui-tab-border-radius: 0,
+    $ui-tab-border-width: 0,
+    $ui-tab-inner-border-width: 0,
+    $ui-tab-padding: 24px,
+    $ui-tab-margin: 0,
+    $ui-tab-font-size: 15px,
+    $ui-tab-font-size-over: 15px,
+    $ui-tab-font-size-active: 15px,
+    $ui-tab-line-height: 20px,
+    $ui-tab-font-weight: bold,
+    $ui-tab-font-weight-over: bold,
+    $ui-tab-font-weight-active: bold,
+    $ui-tab-icon-width: 30px,
+    $ui-tab-icon-height: 30px,
+
+    $ui-bar-background-color: #ffffff,
+
+    $ui-bar-background-gradient: 'none',
+    $ui-bar-padding: 0,
+    $ui-strip-height: 0
+
+    );
+
+
+@include extjs-panel-ui (
+    $ui:"left-menu-panel",
+    $ui-body-border-color: red,
+    $ui-border-width: 10px,
+    $ui-header-color: #000,
+    $ui-header-font-size: 20px,
+    $ui-header-font-weight: bold,
+    $ui-header-line-height: 20px
+    );
+
+@include extjs-tab-panel-ui (
+    $ui:"main-menu-panel",
+    $ui-tab-line-height: 20px
+    );

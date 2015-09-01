@@ -1,0 +1,35 @@
+[
+{   
+  "id" : "user_status",
+  "name" : "고객 등급",
+  "description" : "사용자의 고객 레벨에 따라 변하는 고객 등급",
+  "relation_method" : "level_type",
+  "relation_object" : "user_level",
+  "classes" : [ 
+      {
+          "rank" : 1,
+          "name" : "메달1",
+          "condition" : "1",
+          "icon" : "/resources/images/status/status_medal1.png"
+      }, 
+      {
+          "rank" : 2,
+          "name" : "메달2",
+          "condition" : "2",
+          "icon" : "/resources/images/status/status_medal2.png"
+      }, 
+      {
+          "rank" : 3,
+          "name" : "메달3",
+          "condition" : "3",
+          "icon" : "/resources/images/status/status_medal3.png"
+      }, 
+      {
+          "rank" : 4,
+          "name" : "메달4",
+          "condition" : "4",
+          "icon" : "/resources/images/status/status_medal4.png"
+      }
+  ]
+}
+]

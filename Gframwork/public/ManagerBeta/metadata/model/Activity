@@ -1,0 +1,157 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Activity",
+        "idProperty": null
+    },
+    "name": "User1",
+    "designerId": "cb18d806-7558-4b5b-be45-f6e1cfbdb0d3",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "id",
+                "persist": null,
+                "unique": true
+            },
+            "name": "MyString16",
+            "designerId": "60f5a152-a9f8-42f2-b86f-428dacb980b7"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString14",
+            "designerId": "ce93ccde-a3bd-47fd-95c4-5408c8aa6f61"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "description"
+            },
+            "name": "MyString5",
+            "designerId": "037c72ca-c7b4-4280-bc9c-91025a805bbe"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "''"
+                ],
+                "name": "missions"
+            },
+            "name": "MyField2",
+            "designerId": "a06dfb3f-5739-4c2e-9798-ed05eb848250"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "created_at"
+            },
+            "name": "MyDate4",
+            "designerId": "f17d4016-4f52-4d73-9b03-f617edc2de11"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "updated_at"
+            },
+            "name": "MyDate5",
+            "designerId": "72f4e4c3-93b5-4f18-936a-f28db4b9bf3b"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "activityRestProxy",
+                "url": "/api/v1/manager/missions/activities"
+            },
+            "name": "MyRestProxy2",
+            "designerId": "852ec76c-a615-4ba1-ab6c-96da0841db24",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "activityJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "dc87da31-95eb-484d-92a7-f2844d572da3"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "clientIdProperty": null,
+                        "designer|createAlias": null,
+                        "designer|displayName": "activityJsonWriter",
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "22cbaa3c-c116-4ec5-993d-7c426aedcdf9"
+                }
+            ]
+        }
+    ]
+}

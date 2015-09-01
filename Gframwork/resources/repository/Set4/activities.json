@@ -1,0 +1,39 @@
+[
+
+{   
+  "id" : "join",
+  "name" : "회원 가입",
+  "description" : "회원 가입하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "login",
+  "name" : "로그인 수행",
+  "description" : "로그인하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "purchase",
+  "name" : "게임 구매",
+  "description" : "게임 구매하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "download",
+  "name" : "게임 다운로드",
+  "description" : "게임 다운로드하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "charge",
+  "name" : "캐시 충전",
+  "description" : "캐시 충전하기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "write",
+  "name" : "글 작성",
+  "description" : "글쓰기 미션을 위한 사용자 Activity"
+},
+{   
+  "id" : "comment",
+  "name" : "덧글 작성",
+  "description" : "덧글 달기 미션을 위한 사용자 Activity"
+}
+
+]

@@ -1,0 +1,24 @@
+[
+
+{
+  "id" : "game_point",
+  "name" : "게임 포인트",
+  "description" : "고객이 게임 구매 또는 게임을 구매하기 위해 캐시를 충전했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 1000000,
+  "relation_method": "status_type",
+  "relation_object": "user_status",
+  "icon" : "/resources/images/points/point_game.png"
+},
+{   
+  "id" : "download_point",
+  "name" : "다운로드 포인트",
+  "description" : "사용자가 게임을 다운로드 했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 100,
+  "relation_method": "level_type",
+  "relation_object": "user_level",
+  "icon" : "/resources/images/points/point_game_download.png"
+}
+
+]

@@ -1,0 +1,713 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "pointedit",
+        "designer|userClassName": "manager.point.PointEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "scrollable": "true",
+        "title": [
+            "{thePoint.name}"
+        ],
+        "width": null
+    },
+    "name": "MyForm1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "0c7eadae-05b3-4593-a542-fe795fe4b6b0",
+    "viewControllerInstanceId": "fbafca3b-7cde-4698-8610-1741f531e7fe",
+    "viewModelInstanceId": "8d1b74b5-522b-4edd-ba4c-0e5aeea0a5b8",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer25",
+            "designerId": "5e1e2e0e-20ec-4909-ac87-792e1f082a35",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "pointEditToolbar",
+                        "enableFocusableContainer": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "f2ee5837-f215-40c4-93a7-a82b3c0e0261",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "a67ce784-6167-404b-a9a5-13a9448649f4",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPointSaveButtonClick",
+                                        "implHandler": [
+                                            "var pointEditTab = button.up('pointedit');",
+                                            "var me = this;",
+                                            "",
+                                            "var savePoint = pointEditTab.getViewModel().get('thePoint');",
+                                            "",
+                                            "if(savePoint.create) {",
+                                            "    var max \t= savePoint.max;",
+                                            "    var min \t= savePoint.min;",
+                                            "",
+                                            "",
+                                            "    if(pointEditTab.isValid()) {",
+                                            "",
+                                            "        if(!savePoint.id || !savePoint.name || !savePoint.description || !savePoint.max || !savePoint.icon) {",
+                                            "            me.onSaveError('필수 입력란을 확인하세요.');",
+                                            "        }",
+                                            "        else {",
+                                            "",
+                                            "            if(max > min ) {\t//max값 검증",
+                                            "",
+                                            "                if(min >= 0) {",
+                                            "",
+                                            "                    var pointStore = Ext.getStore('Point');",
+                                            "                    var point = Ext.create('GFManager.model.Point');",
+                                            "",
+                                            "                    point.set('id', savePoint.id);",
+                                            "                    point.set('name', savePoint.name);",
+                                            "                    point.set('description', savePoint.description);",
+                                            "                    point.set('min', savePoint.min);",
+                                            "                    point.set('max', savePoint.max);",
+                                            "                    point.set('icon', savePoint.icon);",
+                                            "",
+                                            "                    pointStore.add(point);",
+                                            "                    pointStore.save();",
+                                            "                    pointStore.commitChanges();",
+                                            "",
+                                            "                    pointEditTab.close();",
+                                            "",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Point-추가',",
+                                            "                        html: '새로운 Point ('+ savePoint.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                } else {",
+                                            "                    me.onSaveError('필수 입력란을 확인하세요.');",
+                                            "                }",
+                                            "",
+                                            "            } else {",
+                                            "                me.onSaveError('max > min');",
+                                            "            }",
+                                            "        }",
+                                            "",
+                                            "    } else {",
+                                            "        me.onSaveError();",
+                                            "    }",
+                                            "",
+                                            "} else {",
+                                            "    var max = pointEditTab.getViewModel().get('thePoint').get('max');",
+                                            "    var min = pointEditTab.getViewModel().get('thePoint').get('min');",
+                                            "",
+                                            "    if(savePoint.dirty) { \t\t\t\t//기존 Point 정보 변경시",
+                                            "        if(pointEditTab.isValid()) {\t//기존 Point 정보 검증",
+                                            "",
+                                            "            Ext.MessageBox.confirm('Point-저장', savePoint.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                if (btn == 'yes') {",
+                                            "",
+                                            "                    savePoint.save();",
+                                            "",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Point-수정' ,",
+                                            "                        html: savePoint.get('name') + '의 정보가 성공적으로 수정되었습니다.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                } else {",
+                                            "",
+                                            "                    me.onCancelPoint();",
+                                            "                }",
+                                            "            });",
+                                            "",
+                                            "",
+                                            "        } else {",
+                                            "            me.onSaveError();",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPointSaveButtonClick",
+                                    "designerId": "7c69722d-8010-4e0f-b140-b95478ec0172"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "cls": null,
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "0c649874-40a7-4fbc-ad50-a18e1e7107d5",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPointCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelPoint();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onPointCancelButtonClick",
+                                    "designerId": "f1d2e00a-eb90-4644-84e3-4e5f96a375ee"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet1",
+            "designerId": "d63fa8f7-aba7-40c2-baa1-454ad4eb0b60",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "pointField",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer7",
+                    "designerId": "083601db-48cb-42e9-a85f-3f59d8e25d25",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "pointImageField",
+                                "fieldLabel": null,
+                                "layout|flex": 2,
+                                "width": 150
+                            },
+                            "name": "MyFieldContainer20",
+                            "designerId": "4cbb8b06-bb0e-46cf-9992-fe9c3265c155",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "bind": null,
+                                        "border": null,
+                                        "formBind": null,
+                                        "frame": true,
+                                        "height": 150,
+                                        "padding": "10 10 10 10",
+                                        "src": [
+                                            "{thePoint.icon}"
+                                        ],
+                                        "title": "이미지",
+                                        "width": 150
+                                    },
+                                    "name": "MyImg",
+                                    "configAlternates": {
+                                        "src": "binding"
+                                    },
+                                    "designerId": "b7bc7bf2-3f83-4158-a375-b2108a1ff4c9",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "bind",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "pointInfomationField",
+                                "fieldLabel": null,
+                                "height": null,
+                                "layout": "anchor",
+                                "layout|flex": 5,
+                                "margin": "0 0 0 30",
+                                "width": null
+                            },
+                            "name": "MyFieldContainer21",
+                            "designerId": "f5b33f1d-d87a-4aed-820a-b0ae01e08d99",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "designer|displayName": "ID",
+                                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                                        "fieldLabel": "ID*",
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "reference": "pointID",
+                                        "regex": "/^[A-Za-z]/",
+                                        "value": [
+                                            "{thePoint.id}"
+                                        ],
+                                        "vtype": "alphanum"
+                                    },
+                                    "name": "MyTextField2",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "0ba075dd-603d-40bf-bf36-a29bccec95aa",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPointIDTextfieldBeforeRender",
+                                                "implHandler": [
+                                                    "var pointIDCmp\t\t= this.lookupReference('pointID');",
+                                                    "var isCreatePoint\t= this.getViewModel().get('thePoint').create;",
+                                                    "",
+                                                    "if(isCreatePoint) {",
+                                                    "    pointIDCmp.setDisabled(false);",
+                                                    "} else {",
+                                                    "    pointIDCmp.setDisabled(true);",
+                                                    "}"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onPointIDTextfieldBeforeRender",
+                                            "designerId": "0a25cfc7-59be-4a7a-b6a2-040ddcc1c338"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "이름",
+                                        "emptyText": "1~20자 이내의 이름를 입력하세요.",
+                                        "fieldLabel": "이름*",
+                                        "formBind": null,
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "value": [
+                                            "{thePoint.name}"
+                                        ]
+                                    },
+                                    "name": "MyTextField",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "40479ed0-19dc-47b9-ab57-2af81e2d73c8"
+                                },
+                                {
+                                    "type": "Ext.form.field.TextArea",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "설명",
+                                        "emptyText": "1~1000자 이내의 설명을 입력하세요.",
+                                        "fieldLabel": "설명*",
+                                        "height": 60,
+                                        "layout|anchor": "100%",
+                                        "maxHeight": 60,
+                                        "maxLength": 1000,
+                                        "minLength": 1,
+                                        "value": [
+                                            "{thePoint.description}"
+                                        ]
+                                    },
+                                    "name": "MyTextArea1",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "91eb9859-66fb-414a-b1ef-6fd6efad107f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Max Value",
+                                        "emptyText": "최대 포인트를 입력하세요.",
+                                        "fieldLabel": "Max Value*",
+                                        "layout|anchor": "100%",
+                                        "publishes": null,
+                                        "value": [
+                                            "{thePoint.max}"
+                                        ]
+                                    },
+                                    "name": "MyNumberField1",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "354ae387-3893-4dd9-9147-5c8ae94bd34d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Min Value",
+                                        "emptyText": "최소 포인트를 입력하세요.",
+                                        "fieldLabel": "Min Value*",
+                                        "layout|anchor": "100%",
+                                        "publishes": null,
+                                        "value": [
+                                            "{thePoint.min}"
+                                        ]
+                                    },
+                                    "name": "MyNumberField5",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "e07fc978-f604-4edb-8908-977e392ca87b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Unit Value",
+                                        "fieldLabel": "Unit Value*",
+                                        "hidden": true,
+                                        "layout|anchor": "100%",
+                                        "publishes": null,
+                                        "value": [
+                                            "{thePoint.unit}"
+                                        ]
+                                    },
+                                    "name": "MyNumberField6",
+                                    "configAlternates": {
+                                        "value": "binding"
+                                    },
+                                    "designerId": "f65f2db2-2ae4-4e62-b142-4621cfd882f7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "아이콘",
+                        "height": null,
+                        "layout": "auto",
+                        "layout|flex": null,
+                        "title": "아이콘*"
+                    },
+                    "name": "MyFieldSet4",
+                    "designerId": "96e3616f-3f0a-4178-82eb-fb51c73ef084",
+                    "cn": [
+                        {
+                            "type": "Ext.view.View",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "point_icon",
+                                "itemSelector": "div.icon_repository",
+                                "reference": "pointIcon",
+                                "selection": null,
+                                "store": "PointIcon"
+                            },
+                            "name": "MyView1",
+                            "configAlternates": {
+                                "listeners": "object"
+                            },
+                            "designerId": "6b180a1b-ad23-4562-8102-6442ae7c3bdf",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "point_itemTpl",
+                                        "implHandler": [
+                                            "<tpl for=\".\">",
+                                            "    <div class=\"icon_repository\">      ",
+                                            "            <img src=\"{icon}\" width=70 height=70/>        ",
+                                            "    </div>",
+                                            "</tpl>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "35a4af45-1cc9-4c0f-a2b7-41bb4c3c5c1b"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDataviewPointItemClick",
+                                        "implHandler": [
+                                            "this.getViewModel().set('thePoint.icon', record.getData().icon);",
+                                            ""
+                                        ],
+                                        "name": "itemclick",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDataviewPointItemClick",
+                                    "designerId": "bafc37d8-295f-4024-bbeb-6984fa720e31"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDataviewPointAfterRender",
+                                        "implHandler": [
+                                            "this.onSelectedPointIcon(component);"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDataviewPointAfterRender",
+                                    "designerId": "6636f029-4ccf-4abe-adfb-2e5cad1e8159"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer39",
+            "designerId": "a3efcc32-b5c5-475c-b80f-47ecae97706e",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "b504c5ce-73a3-4152-aeab-37da9a6834e3"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPointFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'point_edittab') {",
+                    "",
+                    "} else {",
+                    "",
+                    "    if(!this.getViewModel().data.thePoint.dropped) {",
+                    "        var point\t\t= this.getViewModel().get('thePoint');",
+                    "",
+                    "        var isDirtyPoint\t= point.dirty;",
+                    "        var isCreatePoint\t= point.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyPoint)  {",
+                    "",
+                    "            Ext.MessageBox.confirm('Point-저장', point.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    point.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'Point-수정 완료' ,",
+                    "                        html: point.get('name') + '의 Point정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelPoint();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onPointFormDeactivate",
+            "designerId": "269eede0-8d80-40c8-a870-ffc933ae09dd"
+        }
+    ]
+}

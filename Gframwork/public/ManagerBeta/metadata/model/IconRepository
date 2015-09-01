@@ -1,0 +1,57 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "IconRepository"
+    },
+    "name": "RepoBadge1",
+    "designerId": "59353446-bb0b-47b3-9182-9ce756386d5d",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "id",
+                "unique": true
+            },
+            "name": "MyString7",
+            "designerId": "3075ff05-a938-48f6-8b00-c03df5bcff40"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "icon"
+            },
+            "name": "MyString8",
+            "designerId": "c2285adc-d1b1-40c9-852c-a5017b4ab5fe"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "iconRepositoryMemoryProxy"
+            },
+            "name": "MyMemoryProxy",
+            "designerId": "f3107363-829a-482e-ac57-d6a75ae2e361"
+        }
+    ]
+}

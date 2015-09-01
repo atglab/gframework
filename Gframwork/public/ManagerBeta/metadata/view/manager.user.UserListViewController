@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "userlist",
+        "designer|userClassName": "manager.user.UserListViewController"
+    },
+    "name": "manager.rule.RuleListViewController1",
+    "designerId": "1c96cde6-688d-45f7-8fd7-17013a3892bc",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewUser",
+                "implHandler": [
+                    "this.fireViewEvent('viewUser', this.getView(), record);"
+                ]
+            },
+            "name": "viewUser",
+            "designerId": "a2642959-2b7e-4447-8767-482f0701c40c"
+        }
+    ]
+}

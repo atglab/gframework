@@ -1,0 +1,118 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "managerbadgebadgeedit",
+        "designer|userClassName": "manager.badge.BadgeEditViewController"
+    },
+    "designerId": "c6724916-fa1a-494a-bb46-bedf387b7631",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelBadge",
+                "implHandler": [
+                    "var badge\t\t\t= this.getViewModel().get('theBadge');",
+                    "var isDirtyBadge\t= badge.dirty;",
+                    "if(isDirtyBadge)  {",
+                    "    if(!badge.create) {",
+                    "        Ext.getStore('Badge').rejectChanges();",
+                    "",
+                    "        var badgeIcon = this.lookupReference('badgeIcon');",
+                    "        this.onSelectedBadgeIcon(badgeIcon);",
+                    "",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "onCancelBadge",
+            "designerId": "6a9d12e9-4298-473a-855d-e530333e1089"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "component"
+                ],
+                "fn": "onSelectedBadgeIcon",
+                "implHandler": [
+                    "var badge\t= this.getViewModel().get('theBadge');",
+                    "",
+                    "if(!badge.create) {",
+                    "    if(badge.get('icon') == '/resources/images/badges/badge_01.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[0]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_02.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[1]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_03.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[2]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_04.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[3]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_05.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[4]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_07.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[5]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_08.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[6]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_09.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[7]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_10.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[8]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_11.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[9]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_airplane.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[10]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_bicycle.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[11]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_bus.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[12]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_car.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[13]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_login.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[14]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_motorcycle.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[15]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_write.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[16]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_yacht.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[17]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_recommend.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[18]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_neighbor.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[19]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_email.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[20]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/music_present_badge.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[21]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/music_recommend_badge.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[22]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/music_share_badge.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[23]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_comment.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[24]);",
+                    "    } else if(badge.get('icon') == '/resources/images/badges/badge_watch.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[25]);",
+                    "    }",
+                    "",
+                    "",
+                    "}"
+                ]
+            },
+            "name": "onSelectedBadgeIcon",
+            "designerId": "c246f8e9-debe-4742-acfd-4ac7f8fcd3d5"
+        }
+    ]
+}

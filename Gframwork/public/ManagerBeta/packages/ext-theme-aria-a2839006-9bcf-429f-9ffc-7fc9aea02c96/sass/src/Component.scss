@@ -1,0 +1,15 @@
+.repository-badge {
+    float: left;
+    padding: 8px;
+    margin: 8px 8px 4px 8px;
+}
+
+.x-rtl .repository-badge {
+    float: right;
+}
+
+.x-item-selected{
+    background: #eff5fb url(/resources/images/selected.gif) no-repeat right bottom;
+    border:1px solid #99bbe8;
+    padding: 4px;
+}

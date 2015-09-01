@@ -1,0 +1,70 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserReward",
+        "idProperty": null
+    },
+    "name": "UserMission1",
+    "designerId": "0274dbcf-f6b6-4f4b-a0eb-0206ccac6f42",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "reward_type"
+            },
+            "name": "MyString16",
+            "designerId": "a4c3b150-69b8-4273-b2b1-4bfbb9260b6b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "reward_object"
+            },
+            "name": "MyString33",
+            "designerId": "323bfe1f-2f71-4a12-b594-364f0e8a67a1"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "reward_status"
+            },
+            "name": "MyNumber14",
+            "designerId": "dd355270-1872-45e7-9aba-2fcb862a1490"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lastUpdated_at"
+            },
+            "name": "MyDate18",
+            "designerId": "62b4b11a-1ae6-4d00-a8dc-4e463c79d9fb"
+        }
+    ]
+}

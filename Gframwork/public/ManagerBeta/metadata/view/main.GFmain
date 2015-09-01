@@ -1,0 +1,834 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "defaultFocus": null,
+        "designer|userAlias": "gfmain",
+        "designer|userClassName": "main.GFmain",
+        "layout": "vbox",
+        "requires": [
+            "Ext.window.Toast"
+        ],
+        "session": true
+    },
+    "name": "main.GFmain1",
+    "configAlternates": {
+        "launch": "object"
+    },
+    "designerId": "62a0bd5b-1e65-45dc-b028-a1ce994f3bd9",
+    "viewControllerInstanceId": "d1391550-d054-4b33-8a87-da39d5017445",
+    "viewModelInstanceId": "324def16-7637-4794-b518-c8344d6697af",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "GFMainToolbar",
+                "height": 60,
+                "layout": "hbox",
+                "layout|flex": null,
+                "margin": null
+            },
+            "name": "MyContainer4",
+            "designerId": "7d4e07d9-5e31-4d8a-9b40-03a82e82c540",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "top_menu_color",
+                        "designer|displayName": "GFTopName",
+                        "layout|flex": null
+                    },
+                    "name": "MyToolbar3",
+                    "designerId": "6e23db72-a947-4bd4-acee-f77d6e4fe5b3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "fieldBodyCls": null,
+                                "fieldCls": "x-form-display-field top_menu_font",
+                                "fieldLabel": null,
+                                "layout|flex": null,
+                                "margin": "0 0 0 5",
+                                "value": "Gamification Framework"
+                            },
+                            "name": "MyDisplayField10",
+                            "designerId": "87ad2c78-4ddb-471e-b2f1-621791a0fed8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "top_menu_color",
+                        "container|align": "stretch",
+                        "container|pack": "end",
+                        "designer|displayName": "GFTopMenu",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer23",
+                    "designerId": "45429078-d919-4e0a-8d73-577ff6526d62",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "top_menu_color",
+                                "container|align": null,
+                                "designer|displayName": "GFMenuToolbar",
+                                "id": null,
+                                "layout|flex": null
+                            },
+                            "name": "MyToolbar",
+                            "designerId": "973682d1-9d2a-4f38-9a5b-d6b389c32c63",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.ButtonGroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": "top_menu_color",
+                                        "columns": 5,
+                                        "designer|displayName": "MainButtonGroup",
+                                        "frame": false,
+                                        "layout|flex": null,
+                                        "maxWidth": null,
+                                        "title": null,
+                                        "width": null
+                                    },
+                                    "name": "MyButtonGroup",
+                                    "designerId": "e40f7b6d-0164-4618-8462-92fe73a8d754",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowDepress": false,
+                                                "baseCls": "x-btn menu-button",
+                                                "designer|displayName": "main_home_button",
+                                                "enableToggle": true,
+                                                "iconCls": "top_menu_home_btn_over",
+                                                "margin": "0 50 0 0",
+                                                "overCls": null,
+                                                "pressed": true,
+                                                "scale": "large",
+                                                "text": "Home",
+                                                "toggleGroup": "mainMenu"
+                                            },
+                                            "name": "MyButton6",
+                                            "designerId": "c3bc8a91-6345-45d0-a92b-a11eaf708448",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onHomeButtonMouseOut",
+                                                        "implHandler": [
+                                                            "",
+                                                            "if(button.pressed) {",
+                                                            "    button.setIconCls('top_menu_home_btn_over');",
+                                                            "} else {",
+                                                            "    button.setIconCls('top_menu_home_btn');",
+                                                            "}",
+                                                            ""
+                                                        ],
+                                                        "name": "mouseout",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onHomeButtonMouseOut",
+                                                    "designerId": "1a6090df-86c1-48ac-84c8-31a09b29bc8d"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onHomeButtonMouseOver",
+                                                        "implHandler": [
+                                                            "",
+                                                            "button.setIconCls('top_menu_home_btn_over');",
+                                                            ""
+                                                        ],
+                                                        "name": "mouseover",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onHomeButtonMouseOver",
+                                                    "designerId": "8933af02-a22a-4045-88ef-3bb34e7368ad"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onHomeButtonClick",
+                                                        "implHandler": [
+                                                            "//if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                            "var home \t\t= this.lookupReference('home');",
+                                                            "var manager \t= this.lookupReference('manager');",
+                                                            "var analyzer\t= this.lookupReference('analyzer');",
+                                                            "",
+                                                            "home.show();",
+                                                            "manager.hide();",
+                                                            "analyzer.hide();",
+                                                            "/*} else {",
+                                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                                            "        if (btn == 'ok') {",
+                                                            "",
+                                                            "        }",
+                                                            "    }, this);",
+                                                            "}*/",
+                                                            "",
+                                                            "",
+                                                            ""
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onHomeButtonClick",
+                                                    "designerId": "47221eec-d6d5-4b0f-b4c2-b5b7c661e7d5"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onHomeButtonToggle",
+                                                        "implHandler": [
+                                                            "",
+                                                            "if(!pressed) {",
+                                                            "    button.setIconCls('top_menu_home_btn');",
+                                                            "}",
+                                                            ""
+                                                        ],
+                                                        "name": "toggle",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onHomeButtonToggle",
+                                                    "designerId": "bd9516b9-68ed-4102-a957-f82bd60e507b"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowDepress": false,
+                                                "baseCls": "x-btn menu-button",
+                                                "cls": null,
+                                                "designer|displayName": "main_manager_button",
+                                                "enableToggle": true,
+                                                "iconCls": "top_menu_manager_btn",
+                                                "margin": "0 50 0 0",
+                                                "overCls": null,
+                                                "scale": "large",
+                                                "text": "Manager",
+                                                "toggleGroup": "mainMenu",
+                                                "ui": null
+                                            },
+                                            "name": "MyButton8",
+                                            "designerId": "c6739de3-b995-4afe-97df-7d05772ba4b3",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onManagerButtonMouseOut",
+                                                        "implHandler": [
+                                                            "",
+                                                            "if(button.pressed) {",
+                                                            "    button.setIconCls('top_menu_manager_btn_over');",
+                                                            "} else {",
+                                                            "    button.setIconCls('top_menu_manager_btn');",
+                                                            "}",
+                                                            ""
+                                                        ],
+                                                        "name": "mouseout",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onManagerButtonMouseOut",
+                                                    "designerId": "f1aa4f5c-1615-4788-84ce-0131e35b916f"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onManagerButtonMouseOver",
+                                                        "implHandler": [
+                                                            "",
+                                                            "button.setIconCls('top_menu_manager_btn_over');",
+                                                            ""
+                                                        ],
+                                                        "name": "mouseover",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onManagerButtonMouseOver",
+                                                    "designerId": "f3d76766-1e3c-4b75-a415-768b8f7564c8"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onManagerButtonClick",
+                                                        "implHandler": [
+                                                            "//if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                            "",
+                                                            "var home \t\t= this.lookupReference('home');",
+                                                            "var manager \t= this.lookupReference('manager');",
+                                                            "var analyzer\t= this.lookupReference('analyzer');",
+                                                            "",
+                                                            "home.hide();",
+                                                            "manager.show();",
+                                                            "analyzer.hide();",
+                                                            "/*} else {",
+                                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                                            "        if (btn == 'ok') {        ",
+                                                            "        }",
+                                                            "    }, this);",
+                                                            "}*/",
+                                                            "",
+                                                            "",
+                                                            ""
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onManagerButtonClick",
+                                                    "designerId": "ee5db3c3-ae8d-42b3-b3d4-2369936f85d5"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onManagerButtonToggle",
+                                                        "implHandler": [
+                                                            "",
+                                                            "if(!pressed) {",
+                                                            "    button.setIconCls('top_menu_manager_btn');",
+                                                            "} else {",
+                                                            "",
+                                                            "}",
+                                                            ""
+                                                        ],
+                                                        "name": "toggle",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onManagerButtonToggle",
+                                                    "designerId": "a427e5a7-95ca-4f38-8003-300eb30d65cf"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowDepress": false,
+                                                "baseCls": "x-btn menu-button",
+                                                "cls": null,
+                                                "designer|displayName": "main_analyzer_button",
+                                                "enableToggle": true,
+                                                "iconCls": "top_menu_analyzer_btn",
+                                                "margin": "0 50 0 0",
+                                                "overCls": null,
+                                                "scale": "large",
+                                                "text": "Analyzer",
+                                                "toggleGroup": "mainMenu"
+                                            },
+                                            "name": "MyButton12",
+                                            "designerId": "2e74ee2f-ac95-4437-a827-8d2fe81e1fdf",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onAnalyzerButtonMouseOut",
+                                                        "implHandler": [
+                                                            "if(button.pressed) {",
+                                                            "    button.setIconCls('top_menu_analyzer_btn_over');",
+                                                            "} else {",
+                                                            "    button.setIconCls('top_menu_analyzer_btn');",
+                                                            "}"
+                                                        ],
+                                                        "name": "mouseout",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onAnalyzerButtonMouseOut",
+                                                    "designerId": "758703ef-8900-4b29-98f7-575b4bc4cb36"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onAnalyzerButtonMouseOver",
+                                                        "implHandler": [
+                                                            "button.setIconCls('top_menu_analyzer_btn_over');",
+                                                            ""
+                                                        ],
+                                                        "name": "mouseover",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onAnalyzerButtonMouseOver",
+                                                    "designerId": "6f929a49-ae69-491d-9e69-febeef782aa8"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onAnalyzerButtonClick",
+                                                        "implHandler": [
+                                                            "//if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                                            "",
+                                                            "var home \t\t= this.lookupReference('home');",
+                                                            "var manager \t= this.lookupReference('manager');",
+                                                            "var analyzer\t= this.lookupReference('analyzer');",
+                                                            "",
+                                                            "home.hide();",
+                                                            "manager.hide();",
+                                                            "analyzer.show();",
+                                                            "/*} else {",
+                                                            "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                                            "        if (btn == 'ok') {",
+                                                            "",
+                                                            "        }",
+                                                            "    }, this);",
+                                                            "}*/"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onAnalyzerButtonClick",
+                                                    "designerId": "7e29e6b2-8568-4f06-9fe1-af78df018bbb"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onAnalyzerButtonToggle",
+                                                        "implHandler": [
+                                                            "",
+                                                            "if(!pressed) {",
+                                                            "    button.setIconCls('top_menu_analyzer_btn');",
+                                                            "}",
+                                                            ""
+                                                        ],
+                                                        "name": "toggle",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onAnalyzerButtonToggle",
+                                                    "designerId": "cdc77bc6-50a5-418e-9e04-242ceda710bc"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "alignTarget": null,
+                                                "baseCls": "x-btn menu-button",
+                                                "cls": null,
+                                                "designer|displayName": "main_login_button",
+                                                "iconAlign": null,
+                                                "iconCls": null,
+                                                "margin": "0 30 0 0",
+                                                "reference": "loginBtn",
+                                                "scale": "medium",
+                                                "session": true,
+                                                "text": [
+                                                    "로그인 계정: {theManager}"
+                                                ]
+                                            },
+                                            "name": "MyButton5",
+                                            "configAlternates": {
+                                                "text": "binding"
+                                            },
+                                            "designerId": "75101c4b-34f4-48be-9498-c97845a4c6f8",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onLoginButtonClick",
+                                                        "implHandler": [
+                                                            "var loginEdit = new GFManager.view.main.login.EditManager({",
+                                                            "});",
+                                                            "loginEdit.show();"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onLoginButtonClick",
+                                                    "designerId": "57f7c03d-9983-40d8-b0dc-7e36a5c6bc17"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "alignTarget": null,
+                                                "baseCls": "x-btn menu-button",
+                                                "cls": null,
+                                                "designer|displayName": "main_logout_button",
+                                                "iconAlign": null,
+                                                "iconCls": null,
+                                                "margin": "0 30 0 0",
+                                                "reference": "logoutBtn",
+                                                "scale": "medium",
+                                                "text": "로그아웃"
+                                            },
+                                            "name": "MyButton20",
+                                            "designerId": "f88c53d0-8411-4c65-9337-6ed6de87d1cf",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onLogoutButtonClick",
+                                                        "implHandler": [
+                                                            "var loginBtn = this.lookupReference('loginBtn');",
+                                                            "var logoutBtn = this.lookupReference('logoutBtn');",
+                                                            "var me\t\t= this;",
+                                                            "",
+                                                            "if(logoutBtn.text === '로그아웃') {",
+                                                            "",
+                                                            "    Ext.MessageBox.confirm('확인', '로그아웃 하시겠습니까?', function(btn){",
+                                                            "        if (btn == 'yes') {",
+                                                            "",
+                                                            "            loginBtn.hide();",
+                                                            "            logoutBtn.setText('로그인');",
+                                                            "",
+                                                            "            var manager = me.lookupReference('manager');",
+                                                            "            manager.lookupReference('maintabeditpanel').removeAll();",
+                                                            "",
+                                                            "            var analyzer = me.lookupReference('analyzer');",
+                                                            "            analyzer.lookupReference('AnalysisEditPanel').removeAll();",
+                                                            "",
+                                                            "            var home = me.lookupReference('home');",
+                                                            "",
+                                                            "",
+                                                            "            Ext.getStore('ManagerInfo').removeAll();",
+                                                            "            Ext.getStore('User').removeAll();",
+                                                            "            Ext.getStore('Activity').removeAll();",
+                                                            "            Ext.getStore('ActivityMission').removeAll();",
+                                                            "            Ext.getStore('Mission').removeAll();",
+                                                            "            Ext.getStore('Badge').removeAll();",
+                                                            "            Ext.getStore('Point').removeAll();",
+                                                            "            Ext.getStore('Level').removeAll();",
+                                                            "            Ext.getStore('Status').removeAll();",
+                                                            "            Ext.getStore('Permission').removeAll();",
+                                                            "            Ext.getStore('StatusClass').removeAll();",
+                                                            "            Ext.getStore('Rule').removeAll();",
+                                                            "            Ext.getStore('RepoStatus').removeAll();",
+                                                            "",
+                                                            "",
+                                                            "",
+                                                            "            //console.log(manager.items.items[0].setDisabled(true));",
+                                                            "            //home.hide();",
+                                                            "",
+                                                            "            //manager.hide();",
+                                                            "            //analyzer.hide();",
+                                                            "        } else {",
+                                                            "",
+                                                            "        }",
+                                                            "    });",
+                                                            "",
+                                                            "} else {",
+                                                            "    var loginView = new GFManager.view.main.login.LoginMain({",
+                                                            "    });",
+                                                            "    loginView.show();",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onLogoutButtonClick",
+                                                    "designerId": "5d037b0e-e01a-4341-8ee0-465c52282a0d"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "GFMainCenter",
+                "id": null,
+                "itemId": null,
+                "layout": "fit",
+                "layout|flex": 1,
+                "reference": null
+            },
+            "name": "MyContainer",
+            "designerId": "d702dec4-c502-4dbd-a010-882778b98dec",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Home",
+                        "reference": "home"
+                    },
+                    "name": "home.main.main",
+                    "designerId": "a48a85fe-43f1-49b8-8b78-b48775929fb7",
+                    "masterInstanceId": "62ff2991-0c38-421c-b67f-0bb3a4360c2a",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "container"
+                                ],
+                                "fn": "onContainerTabpanelRemoveAll",
+                                "implHandler": [
+                                    "var manager = this.lookupReference('manager');",
+                                    "manager.lookupReference('maintabeditpanel').removeAll();",
+                                    "",
+                                    "var analyzer = this.lookupReference('analyzer');",
+                                    "analyzer.lookupReference('AnalysisEditPanel').removeAll();"
+                                ],
+                                "name": "tabpanelRemoveAll",
+                                "scope": "me"
+                            },
+                            "name": "onContainerTabpanelRemoveAll",
+                            "designerId": "90b4cef3-f733-4f15-81ca-c3cf50e08642"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Manager",
+                        "reference": "manager"
+                    },
+                    "name": "manager.main.managermain",
+                    "designerId": "a63cb406-c503-4d2e-a57f-127050bdf9e5",
+                    "masterInstanceId": "400bb72c-2058-4a0f-ac41-68e4a7640874",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "container"
+                                ],
+                                "fn": "onManagerTabpanelRemoveAll",
+                                "implHandler": [
+                                    "var manager = this.lookupReference('manager');",
+                                    "manager.lookupReference('maintabeditpanel').removeAll();",
+                                    ""
+                                ],
+                                "name": "managerTabpanelRemoveAll",
+                                "scope": "me"
+                            },
+                            "name": "onManagerTabpanelRemoveAll",
+                            "designerId": "a8e38e68-a995-49d4-9294-455f7e04b74d"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "container"
+                                ],
+                                "fn": "onTabpanelRemoveAllinManager",
+                                "implHandler": [
+                                    "var manager = this.lookupReference('manager');",
+                                    "manager.lookupReference('maintabeditpanel').removeAll();",
+                                    "",
+                                    "var analyzer = this.lookupReference('analyzer');",
+                                    "analyzer.lookupReference('AnalysisEditPanel').removeAll();"
+                                ],
+                                "name": "tabpanelRemoveAllinManager",
+                                "scope": "me"
+                            },
+                            "name": "onTabpanelRemoveAllinManager",
+                            "designerId": "e4bceaeb-0679-42a2-9529-efd99512c6ef"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Analyzer",
+                        "reference": "analyzer"
+                    },
+                    "name": "analyzer.main.analyzermain",
+                    "designerId": "cbd72472-b78e-41e8-b3e9-7b4a6b1e14f9",
+                    "masterInstanceId": "5bd7b699-ff49-4316-9bbf-1e8fb2bf5ca0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "container"
+                                ],
+                                "fn": "onAnalyzerTabpanelRemoveAll",
+                                "implHandler": [
+                                    "var analyzer = this.lookupReference('analyzer');",
+                                    "analyzer.lookupReference('AnalysisEditPanel').removeAll();"
+                                ],
+                                "name": "analyzerTabpanelRemoveAll",
+                                "scope": "me"
+                            },
+                            "name": "onAnalyzerTabpanelRemoveAll",
+                            "designerId": "1e2b55a0-1ac1-4bd7-920e-c6c7e0db0c97"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

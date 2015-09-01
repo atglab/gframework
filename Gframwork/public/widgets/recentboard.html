@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GF Widget Recent Board</title>
+	<link rel="stylesheet" href="./jqwidgets/styles/jqx.base.css" type="text/css" />
+	<link rel="stylesheet" href="./jqwidgets/styles/jqx.darkblue.css" type="text/css" />
+	<style>
+		.container {
+			color: #ffffff;
+			background-color: #FD249F;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		.widgetName {
+			margin: 0 0 5px 0;
+		}
+		.tabName {
+			height: 15px;
+			margin-top: 3px;
+			margin-left: 3px;
+			vertical-align: middle;
+			text-align: center;
+			float: left;
+		}
+		.userProfile {
+			width: 40px;
+		}
+		.userProfileImg {
+			width: 40px;
+			height: 40px;
+			float: left;
+			margin-top: 2px;
+			margin-right: 2px;
+		}
+		.messageMission {
+			width: 140px;
+			float: left;
+			font-size: 11px;
+			font-family: Verdana Arial;
+			white-space: pre-wrap;
+		}
+		.timeMission {
+			width: 140px;
+			float: left;
+			font-size: 11px;
+			font-family: Verdana Arial;
+			color: #999B99;
+		}
+		.messageReward {
+			width: 110px;
+			float: left;
+			font-size: 11px;
+			font-family: Verdana Arial;
+			white-space: pre-wrap;
+		}
+		.timeReward {
+			width: 110px;
+			float: left;
+			font-size: 11px;
+			font-family: Verdana Arial;
+			color: #999B99;
+		}
+		.rewardIcon {
+			width: 30px;
+			float: left;
+			margin-top: 2px;
+			margin-right: 2px;
+		}
+
+	</style>
+	<script type="text/javascript" src="./scripts/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./scripts/lib/jquery.timeago.js"></script>
+	<script type="text/javascript" src="./scripts/lib/demos.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxscrollbar.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxlistbox.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxdata.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxtabs.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxmenu.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxdropdownlist.js"></script>
+	<script type="text/javascript" src="./jqwidgets/jqxcheckbox.js"></script>
+	<!-- json2.js is needed for IE8 or IE9 -->
+	<script src="./scripts/lib/json2.js"></script>
+	<script src="http://dev1.atglab.co.kr:3000/socket.io/socket.io.js"></script>
+
+	<script>
+	$.urlParam = function(name, url) {
+		if (!url) {
+			url = window.location.href;
+		}
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(url);
+		if (!results) {
+			return undefined;
+		}
+		return results[1] || undefined;
+	};
+
+	jQuery.timeago.settings.strings = {
+		suffixAgo: "전",
+		suffixFromNow: "후",
+		seconds: "1분 이내",
+		minute: "1분",
+		minutes: "%d분",
+		hour: "1시간",
+		hours: "%d시간",
+		day: "하루",
+		days: "%d일",
+		month: "한달",
+		months: "%d달",
+		year: "1년",
+		years: "%d년"
+	};
+
+	$(document).ready(function(){
+		$("#tabRecentMission").jqxListBox({source: [], width: 220, height:210, theme: "Metro"});
+		$("#tabRecentReward").jqxListBox({source: [], width: 220, height:210, theme: "Metro"});
+
+		$('#tabs').jqxTabs({width: 220, height:240, theme: "Metro"});
+
+		//create socket
+		var socket = io.connect();		
+		var socketId = 0;
+		
+		var widgetType = 'recentboard';
+		socket.emit('widget_join', {widgetType:widgetType});
+		
+		socket.on('setSocketId', function(id){
+			socketId = id;
+		});
+		
+		socket.on('added', function(data){
+			var timeStamp = new Date(data.time*1000);
+			var dateTime = timeStamp.toISOString();
+
+			var item;
+			if(data.rewardIcon != null){
+				item = "<table>" +
+						"<tr><td class='userProfile' rowspan='3'>" +
+						"<img class='userProfileImg' src=" + data.userIcon + ">" + "</td>" +
+						"<td class='messageReward'>" + data.message + "</td>" +
+						"<td class='userProfile' rowspan='3'>" +
+						"<img class='rewardIcon' src=" + data.rewardIcon + ">" + "</td></tr>" +
+						"<tr><td class='timeReward'>" +
+						"<abbr class='timeago' title='"+ dateTime +"'>"+dateTime+"</abbr></td></tr>" +
+						"</table>";
+			}else{
+				item = "<table>" +
+						"<tr><td class='userProfile' rowspan='3'>" +
+						"<img class='userProfileImg' src=" + data.userIcon + ">" + "</td>" +
+						"<td class='messageMission'>" + data.message + "</td></tr>" +
+						"<tr><td class='timeMission'>" +
+						"<abbr class='timeago' title='"+ dateTime +"'>"+dateTime+"</abbr></td></tr>" +
+						"</table>";
+			}
+
+			var children;
+
+			if(data.type == 'mission'){
+				var missionTab = $("#tabRecentMission");
+				missionTab.jqxListBox('insertAt', {html: item}, 0);
+				children = missionTab.jqxListBox('getItems');
+
+				for(var i = 0; i< children.length; i++){
+					if(i > 9){
+						missionTab.jqxListBox('removeAt', i);
+					}
+				}
+			}else if(data.type == 'reward'){
+				var rewardTab = $("#tabRecentReward");
+				rewardTab.jqxListBox('insertAt', {html: item}, 0);
+				children = rewardTab.jqxListBox('getItems');
+
+				for(var i = 0; i< children.length; i++){
+					if(i > 9){
+						rewardTab.jqxListBox('removeAt', i);
+					}
+				}
+			}
+			$("abbr.timeago").timeago();
+		});
+	});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+	<div id="widgetName" class="widgetName">
+		<b>최근 활동</b>
+	</div>
+	<div id="tabs">
+		<ul>
+			<li>
+				<div class="tabName">
+						Missions
+				</div>
+			</li>
+			<li>
+				<div class="tabName">
+						Rewards
+				</div>
+			</li>
+		</ul>
+		<div style="overflow: hidden;">
+			<div id="tabRecentMission"></div>
+		</div>
+		<div style="overflow: hidden;">
+			<div id="tabRecentReward"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+{   
+  "id" : "sponsor_point",
+  "name" : "후원 포인트",
+  "description" : "사용자가 후원을 할 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 1000000,
+  "relation_method": "status_type",
+  "relation_object": "user_status",
+  "icon" : "/resources/images/points/point_sponsor.png"
+}
+]

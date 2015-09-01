@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statustedit",
+        "designer|userClassName": "manager.status.StatusEditViewModel"
+    },
+    "name": "manager.point.PointEditViewModel1",
+    "designerId": "5e8a3a9a-89cc-47a4-9d1d-e16af6643e12"
+}

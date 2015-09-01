@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "data": [
+            "[",
+            "    {",
+            "        \"id\": \"badge_type\",",
+            "        \"name\": \"Badge\"",
+            "    },",
+            "    {",
+            "        \"id\": \"point_type\",",
+            "        \"name\": \"Point\"",
+            "    },",
+            "    {",
+            "        \"id\": \"level_type\",",
+            "        \"name\": \"Level\"",
+            "    },",
+            "    {",
+            "        \"id\": \"status_type\",",
+            "        \"name\": \"Status\"",
+            "    },",
+            "    {",
+            "        \"id\": \"permission_type\",",
+            "        \"name\": \"Permission\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "RewardType",
+        "groupField": null,
+        "model": "RewardType",
+        "session": null,
+        "storeId": "RewardType"
+    },
+    "name": "MyStore31",
+    "designerId": "abe2621e-cdfd-420c-9e01-c366de239b1e"
+}

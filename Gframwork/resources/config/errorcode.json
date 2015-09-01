@@ -1,0 +1,24 @@
+{
+	"200" : "ok",
+	"201" : "Created",
+	"400" : "Bad Request",
+	"401" : "Unauthorized",
+	"403" : "Forbidden",
+	"409" : "Conflict",
+	"500" : "Internal Server Error",
+	"505" : "not valid authorization",
+
+  	"4001": "Failed to read the record",
+	"4002": "Failed to read records",
+  	"4003": "Failed to write the new record",
+  	"4004": "Invalid record id",
+  	"4005": "Duplicated record id",
+  	"4006": "Failed to update the record",
+  	"4007": "Failed to remove the record",
+  	"4008": "Failed to aggregated records",
+  	"4009": "Failed to count records",
+  	"4010": "Failed to upload the file",
+  	"4011": "Failed to remove all records",
+  	"4012": "Failed to add records",
+  	"4013": "Failed to read the uploaded file"
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editmanager",
+        "designer|userClassName": "main.login.EditManagerViewController"
+    },
+    "name": "main.login.LoginMainViewController1",
+    "designerId": "971be4a8-e8e1-4ff4-9fb2-6a493851def4"
+}

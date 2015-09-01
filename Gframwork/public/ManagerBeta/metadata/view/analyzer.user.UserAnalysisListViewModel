@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "useranalysislist",
+        "designer|userClassName": "analyzer.user.UserAnalysisListViewModel"
+    },
+    "name": "analyzer.status.StatusAnalysisListViewModel2",
+    "designerId": "a7c178d2-5b21-41f7-8ddc-5c3a65aeb28e"
+}

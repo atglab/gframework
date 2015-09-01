@@ -1,0 +1,334 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "baseCls": null,
+        "collapseFirst": false,
+        "componentCls": null,
+        "designer|userAlias": "editmanager",
+        "designer|userClassName": "main.login.EditManager",
+        "headerOverCls": null,
+        "height": null,
+        "overCls": null,
+        "resizable": [
+            "false"
+        ],
+        "title": "Manager 정보 수정",
+        "width": null
+    },
+    "name": "main.login.LoginMain1",
+    "designerId": "dfe11b77-6064-4621-9025-a2822884990c",
+    "viewControllerInstanceId": "971be4a8-e8e1-4ff4-9fb2-6a493851def4",
+    "viewModelInstanceId": "863a8c38-6ee3-455a-9e22-b0469654d898",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": false,
+                "bodyPadding": 10,
+                "collapseFirst": false,
+                "collapsed": false,
+                "collapsible": false,
+                "container|align": "stretch",
+                "designer|uiInterfaceName": "default-framed",
+                "frame": true,
+                "iconAlign": null,
+                "layout": "vbox",
+                "reference": "form",
+                "title": null,
+                "width": null
+            },
+            "name": "MyForm",
+            "designerId": "31d999a0-afae-4c03-a36a-13f40e7e3780",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": null,
+                        "disabled": true,
+                        "emptyText": "manager id",
+                        "fieldLabel": "Manager ID",
+                        "labelWidth": 150,
+                        "name": null,
+                        "reference": "managerID",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{theManager}"
+                        ],
+                        "vtype": "alphanum"
+                    },
+                    "name": "MyTextField6",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "3d0b5e95-8111-411d-90da-df880d1f33a4"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "emptyText": "password",
+                        "fieldLabel": "Password",
+                        "inputType": "password",
+                        "labelAlign": null,
+                        "labelWidth": 150,
+                        "name": null,
+                        "reference": "password",
+                        "width": null
+                    },
+                    "name": "MyTextField7",
+                    "designerId": "f7c8ab3d-1fb6-4a71-9657-d295df6d8fa3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "emptyText": "new password",
+                        "fieldLabel": "New Password",
+                        "inputType": "password",
+                        "labelAlign": null,
+                        "labelWidth": 150,
+                        "name": null,
+                        "reference": "newPassword",
+                        "width": null
+                    },
+                    "name": "MyTextField10",
+                    "designerId": "1e9516c5-4c7b-4370-a2d7-d671b0f6a2c4"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "emptyText": "confirm new password",
+                        "fieldLabel": "Confirm New Password",
+                        "inputType": "password",
+                        "labelAlign": null,
+                        "labelWidth": 150,
+                        "name": null,
+                        "reference": "confirmNewPassword",
+                        "width": null
+                    },
+                    "name": "MyTextField11",
+                    "designerId": "a1657ed2-a19a-4a7f-911a-cd211eaf90aa"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "editManagerToolbar",
+                        "dock": "bottom",
+                        "layout|flex": 1
+                    },
+                    "name": "MyToolbar4",
+                    "designerId": "ba85d149-0a05-4984-bebd-8eae4290de14",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "layout|flex": 1,
+                                "scale": null,
+                                "text": "Edit"
+                            },
+                            "name": "MyButton32",
+                            "designerId": "8f55cbc5-c91d-4b41-a562-8e9449f47022",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEditButtonClick",
+                                        "implHandler": [
+                                            "var managerID\t\t\t= this.lookupReference('managerID');",
+                                            "var password\t\t\t= this.lookupReference('password');",
+                                            "var newPassword\t\t\t= this.lookupReference('newPassword');",
+                                            "var confirmNewPassword\t= this.lookupReference('confirmNewPassword');",
+                                            "",
+                                            "if(newPassword.value == confirmNewPassword.value) {",
+                                            "    //step1. 서버로 managerID, password, newPassword 값 전송",
+                                            "    //step2. 서버는 클라이언트가 보낸 id와 password를 통해 관리자를 인증함.",
+                                            "    //step3. 서버는 인증이 된 관리자의 password를 newPassword로 변경",
+                                            "",
+                                            "    if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                            "",
+                                            "        var key = Ext.getStore('PublicKey').data.items[0].get('key');",
+                                            "",
+                                            "",
+                                            "        var encrypt = new JSEncrypt();",
+                                            "        encrypt.setPublicKey(key);",
+                                            "",
+                                            "",
+                                            "        var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                            "        var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                            "",
+                                            "",
+                                            "        var encryptedPW = encrypt.encrypt(password.value);",
+                                            "        var encryptedNPW = encrypt.encrypt(newPassword.value);",
+                                            "",
+                                            "        var encryptedUserName = encrypt.encrypt(key);",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "        Ext.Ajax.request({",
+                                            "            url: '/api/v1/changeadmin',",
+                                            "            method: 'POST',",
+                                            "            headers: {",
+                                            "                'x-key': key,",
+                                            "                'x-access-token': token",
+                                            "            },",
+                                            "            params:{",
+                                            "                username: encryptedUserName,",
+                                            "                password: encryptedPW,",
+                                            "                newPassword: encryptedNPW",
+                                            "            },",
+                                            "            success: function(response){",
+                                            "                var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "",
+                                            "                var editManager \t= button.up('editmanager');",
+                                            "                editManager.close();",
+                                            "",
+                                            "                Ext.toast({",
+                                            "                    title: '수정 완료' ,",
+                                            "                    html: 'Manager 정보를 성공적으로 수정하였습니다.',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "",
+                                            "",
+                                            "            },",
+                                            "            failure: function(response){",
+                                            "                console.log(response);",
+                                            "                Ext.MessageBox.alert('확인', '비밀번호를 다시 확인해주세요.', this, this);",
+                                            "                password.setValue('');",
+                                            "                newPassword.setValue('');",
+                                            "                confirmNewPassword.setValue('');",
+                                            "            }",
+                                            "",
+                                            "        });",
+                                            "",
+                                            "",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "} else {",
+                                            "    Ext.MessageBox.alert('확인', '새로운 비밀번호를 다시 확인해주세요.', this, this);",
+                                            "    newPassword.setValue('');",
+                                            "    confirmNewPassword.setValue('');",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onEditButtonClick",
+                                    "designerId": "f0e78cb1-1dc5-41c9-9e78-2346c20e2ab5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "scale": null,
+                                "text": "Close"
+                            },
+                            "name": "MyButton33",
+                            "designerId": "22d4bda6-da73-4c5a-924d-0418608d2f2a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCloseButtonClick",
+                                        "implHandler": [
+                                            "var editManager \t= button.up('editmanager');",
+                                            "editManager.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCloseButtonClick",
+                                    "designerId": "e8ea7dcf-b519-4d1b-b3b3-856e25510f28"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowClose",
+                "implHandler": [
+                    "panel.container.component.lookupReference('loginBtn').show();",
+                    "var logoutBtn = panel.container.component.lookupReference('logoutBtn');",
+                    "logoutBtn.setText('로그아웃');"
+                ],
+                "name": "close",
+                "scope": "me"
+            },
+            "name": "onWindowClose",
+            "designerId": "99ecedb9-fc17-4011-9137-6ce5a3c7d131"
+        }
+    ]
+}

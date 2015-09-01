@@ -1,0 +1,244 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "x-badge-background"
+        ],
+        "collapsible": false,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "missionlist",
+        "designer|userClassName": "manager.mission.MissionList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "itemId": null,
+        "margin": null,
+        "padding": null,
+        "resizable": null,
+        "session": null,
+        "store": "Mission",
+        "title": null,
+        "width": 250
+    },
+    "name": "manager.level.LevelList2",
+    "designerId": "2f473e04-419c-4839-8653-87cc15f7e440",
+    "viewControllerInstanceId": "6161135f-0407-4f05-9527-3564bafa9cd9",
+    "viewModelInstanceId": "bb08f0c1-9d74-406b-9f2c-dc005a736756",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "missionListToolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "c44f8360-c252-48a3-8a74-e4f71e66f3ec",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "hiddenField",
+                        "fieldLabel": null,
+                        "layout|flex": 1,
+                        "maxHeight": 25,
+                        "maxWidth": null,
+                        "value": null,
+                        "width": null
+                    },
+                    "name": "MyDisplayField15",
+                    "designerId": "7ba173f0-dd0e-40aa-a052-9bebd9490237"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_add_btn",
+                        "designer|displayName": "추가",
+                        "icon": null,
+                        "iconCls": "",
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_add_btn_over",
+                        "scale": null,
+                        "text": "",
+                        "width": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "b740dd15-4326-4b93-87d3-e38beb558fdc",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMissionAddButtonClick",
+                                "implHandler": [
+                                    "this.viewMission(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onMissionAddButtonClick",
+                            "designerId": "cc11eafc-fdbf-4cc8-b8d4-e854d37459a9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_del_btn",
+                        "designer|displayName": "삭제",
+                        "disabled": true,
+                        "icon": null,
+                        "iconCls": null,
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_del_btn_over",
+                        "reference": "del_mission_btn",
+                        "scale": null,
+                        "text": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "f3f96d28-68e4-43e6-8731-1b50e1682dd0",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMissionDelButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "    var MissionGrid = button.up('missionlist');",
+                                    "    var selection = MissionGrid.getSelectionModel().getSelection()[0];",
+                                    "",
+                                    "    selection.erase();",
+                                    "",
+                                    "    this.viewMission(selection);",
+                                    "",
+                                    "    button.disable();",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onMissionDelButtonClick",
+                            "designerId": "85c3e5f7-16ee-43bd-b86a-33969c49f2f2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "designer|displayName": "missionRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "867242c3-b26d-4e52-a824-e279d500588a"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "flex": 4,
+                "tdCls": "grid-size",
+                "text": null,
+                "width": null
+            },
+            "name": "MyColumn",
+            "designerId": "7d69a3f6-ae18-4e71-8e5c-73f40e39df92"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMissionListviewSelectionChange",
+                "implHandler": [
+                    "var delBtn = this.lookupReference('del_mission_btn');",
+                    "delBtn.enable();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onMissionListviewSelectionChange",
+            "designerId": "08d788d3-416c-4f25-9a75-1da8f7d947e2"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMissionGridpanelItemDblClick",
+                "implHandler": [
+                    "this.viewMission(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onMissionGridpanelItemDblClick",
+            "designerId": "470da266-c8c3-4135-878c-9c15d8b55908"
+        }
+    ]
+}

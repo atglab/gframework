@@ -1,0 +1,585 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "activityedit",
+        "designer|userClassName": "manager.activity.ActivityEdit",
+        "height": null,
+        "id": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "reference": null,
+        "scrollable": "true",
+        "session": null,
+        "title": [
+            "{theActivity.name}"
+        ],
+        "width": null
+    },
+    "name": "manager.point.PointEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "43c40275-6852-483c-bace-0fbfb7504159",
+    "viewControllerInstanceId": "d0c50176-82d1-47c4-95e7-e7d4c3f50e95",
+    "viewModelInstanceId": "dddccf55-f975-4c3d-8aca-fbac706b8167",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer30",
+            "designerId": "f8841af6-c56b-410f-bc91-2ab9cc27d8b5",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "activityEditToolbar",
+                        "enableFocusableContainer": null,
+                        "layout|flex": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "723ecfe1-312c-4c3f-8bb5-e0a967eb3cd8",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": null,
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "aa06bb06-2fc6-4c2e-8c32-3b8ec8c21dba",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onActivitySaveButtonClick",
+                                        "implHandler": [
+                                            "var activityEditTab = button.up('activityedit');",
+                                            "var me = this;",
+                                            "",
+                                            "var saveActivity = activityEditTab.getViewModel().get('theActivity');",
+                                            "",
+                                            "if(saveActivity.create) {\t//Add Activity",
+                                            "    if(activityEditTab.isValid()) {",
+                                            "",
+                                            "        if(!saveActivity.id || !saveActivity.name || !saveActivity.description) {",
+                                            "            Ext.toast({",
+                                            "                title: 'Activity-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        } else {",
+                                            "            var activityStore = Ext.getStore('Activity');",
+                                            "            var activity = Ext.create('GFManager.model.Activity');",
+                                            "",
+                                            "            activity.set('id', saveActivity.id);",
+                                            "            activity.set('name', saveActivity.name);",
+                                            "            activity.set('description', saveActivity.description);",
+                                            "",
+                                            "            activityStore.add(activity);",
+                                            "            activityStore.save();",
+                                            "            activityStore.commitChanges();",
+                                            "",
+                                            "            activityEditTab.close();",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Activity-추가',",
+                                            "                html: '새로운 Activity ('+ saveActivity.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "",
+                                            "    } else {",
+                                            "        Ext.toast({",
+                                            "            title: 'Activity-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "} else {\t\t\t\t\t\t\t//기존 Activity",
+                                            "    if(saveActivity.dirty) { \t\t//기존 Activity 정보 변경시",
+                                            "        if(activityEditTab.isValid()) {\t//기존 Activity 정보 검증",
+                                            "            Ext.MessageBox.confirm('Activity-저장', saveActivity.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                if (btn == 'yes') {",
+                                            "",
+                                            "                    saveActivity.save();",
+                                            "",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Activity-수정' ,",
+                                            "                        html: saveActivity.get('name') + '의 정보가 성공적으로 수정되었습니다.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "",
+                                            "                } else {",
+                                            "",
+                                            "                    me.onCancelActivity();",
+                                            "",
+                                            "                }",
+                                            "            });",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'User-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onActivitySaveButtonClick",
+                                    "designerId": "8f726b99-4b64-4213-b2d4-cbe266e95716"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "e3da1827-5033-4918-ad38-20d7d729c437",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onActivityCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelActivity();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onActivityCancelButtonClick",
+                                    "designerId": "3d981f3d-ec8d-4baa-8f16-6db828c7c951"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet1",
+            "designerId": "0b32838e-24f4-4fa0-b951-4b1e8271173d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "ID",
+                        "disabled": null,
+                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                        "fieldLabel": "ID*",
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "reference": "activityID",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{theActivity.id}"
+                        ],
+                        "vtype": "alphanum"
+                    },
+                    "name": "MyTextField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "6b61e1c9-1b0b-4a37-a0aa-aff3d3df6a51",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onActivityIDTextfieldBeforeRender",
+                                "implHandler": [
+                                    "var activityIDCmp\t= this.lookupReference('activityID');",
+                                    "var isCreateActivity= this.getViewModel().get('theActivity').create;",
+                                    "",
+                                    "if(isCreateActivity) {",
+                                    "    activityIDCmp.setDisabled(false);",
+                                    "} else {",
+                                    "    activityIDCmp.setDisabled(true);",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onActivityIDTextfieldBeforeRender",
+                            "designerId": "477f93d7-4454-4f56-bb1b-95ad6fdf63f6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "이름",
+                        "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                        "fieldLabel": "이름*",
+                        "formBind": null,
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "publishes": null,
+                        "value": [
+                            "{theActivity.name}"
+                        ]
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "7df7b75e-0294-44d9-8a46-846ef8df2c30"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "설명",
+                        "emptyText": "1~1000자 이내의 설명을 입력하세요.",
+                        "fieldLabel": "설명*",
+                        "height": 60,
+                        "layout|flex": 1,
+                        "maxHeight": 60,
+                        "maxLength": 1000,
+                        "minLength": 1,
+                        "value": [
+                            "{theActivity.description}"
+                        ]
+                    },
+                    "name": "MyTextArea2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "bc4e43b7-63aa-448e-b8c2-2e4443cbfd09"
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Mission",
+                        "height": null
+                    },
+                    "name": "MyFieldContainer1",
+                    "designerId": "8980fdf1-d848-4f93-b0ef-6a840f539600",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "panel_color"
+                                ],
+                                "columnLines": true,
+                                "data": null,
+                                "defaultAlign": null,
+                                "deferRowRender": true,
+                                "designer|displayName": "MissionGridPanel",
+                                "enableColumnHide": false,
+                                "forceFit": true,
+                                "margin": null,
+                                "modelValidation": false,
+                                "padding": "1 1 0 1",
+                                "reference": null,
+                                "stateful": true,
+                                "store": "ActivityMission",
+                                "title": null,
+                                "width": null
+                            },
+                            "name": "MyGridPanel",
+                            "designerId": "3f1ba34a-2665-4f54-ac1e-3f49e6e99519",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.RowNumberer",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "center",
+                                        "designer|displayName": "MissionRowNumberer",
+                                        "flex": null,
+                                        "maxWidth": 100,
+                                        "text": "순번",
+                                        "width": 100
+                                    },
+                                    "name": "MyRowNumberer3",
+                                    "designerId": "5f29beca-d941-4ff5-a6e5-48622b3b0782"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "missionName",
+                                        "draggable": false,
+                                        "flex": 1,
+                                        "loader": null,
+                                        "lockable": false,
+                                        "sortable": false,
+                                        "text": "미션 명"
+                                    },
+                                    "name": "MyColumn5",
+                                    "designerId": "fefcd5a1-a174-490a-8f86-a5cd598871fc"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "API 사용방법",
+                        "publishes": null,
+                        "value": null
+                    },
+                    "name": "MyTextField5",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "4b9f0508-3ee6-40ff-8804-683dd66fc6eb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer44",
+            "designerId": "ebe62144-0acb-4099-ae90-e616db1e7be4",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "24095d68-f6df-4c39-9fa6-7f7ea2ec8e9e"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivityFormShow",
+                "implHandler": [
+                    "var isCreatedActivity\t= this.getViewModel().get('theActivity').create;",
+                    "var activityMissionStore= Ext.getStore('ActivityMission');",
+                    "var missionStore\t\t= Ext.getStore('Mission');",
+                    "",
+                    "activityMissionStore.loadData('',false);",
+                    "",
+                    "if(isCreatedActivity) {",
+                    "} else {",
+                    "    var mydata = this.getViewModel().get('theActivity').get('missions');",
+                    "",
+                    "    for(i=0 ; i<mydata.length ; i++) {",
+                    "        var activityMission\t= Ext.create('GFManager.model.ActivityMission');",
+                    "        var missionId \t\t= mydata[i].missionId;",
+                    "        var findMission\t\t= missionStore.findRecord('id', missionId);",
+                    "",
+                    "        activityMission.set('missionId', missionId);",
+                    "        activityMission.set('missionName', findMission.get('name'));",
+                    "        activityMissionStore.add(activityMission);",
+                    "        activityMissionStore.commitChanges();",
+                    "    }",
+                    "}"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onActivityFormShow",
+            "designerId": "f172d474-6a53-4b98-88a7-ed3bbc2948cb"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActivityFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'activity_edittab') {",
+                    "",
+                    "} else {",
+                    "    if(!this.getViewModel().data.theActivity.dropped) {",
+                    "        var activity\t\t= this.getViewModel().get('theActivity');",
+                    "",
+                    "        var isDirtyActivity\t= activity.dirty;",
+                    "        var isCreateActivity\t= activity.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyActivity)  {",
+                    "",
+                    "            Ext.MessageBox.confirm('Activity-저장', activity.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    activity.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'Activity-수정 완료' ,",
+                    "                        html: activity.get('name') + '의 Activity정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelActivity();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onActivityFormDeactivate",
+            "designerId": "551c827b-989f-4916-b63c-9e07ee8be912"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+[
+{
+  "id" : "download_permission",
+  "name" : "고속 다운로드 권한",
+  "description" : "사용자의 고객 레벨이 2레벨 이상일 경우 주어지는 권한",
+  "get_parameter" : "2",
+  "relation_method" : "level_type",
+  "relation_object" : "user_level"    
+}
+]

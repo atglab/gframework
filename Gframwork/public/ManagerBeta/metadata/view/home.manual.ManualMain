@@ -1,0 +1,310 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "baseCls": "top_menu_color_background",
+        "bodyPadding": null,
+        "collapsed": false,
+        "container|align": "stretch",
+        "designer|userAlias": "manualmain",
+        "designer|userClassName": "home.manual.ManualMain",
+        "height": null,
+        "layout": "vbox",
+        "margin": 20,
+        "maxHeight": null,
+        "maxWidth": null,
+        "minHeight": null,
+        "minWidth": null,
+        "scrollable": "true",
+        "title": null,
+        "width": null
+    },
+    "name": "MyForm5",
+    "designerId": "723df93f-b363-454b-af72-f5a087c14895",
+    "viewControllerInstanceId": "280a112b-5267-4af6-a9fa-25acf1d0b21b",
+    "viewModelInstanceId": "d3127fe6-50a9-4483-ace6-9b00bfffba36",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": null,
+                "container|collapseFirst": false,
+                "container|hideCollapseTool": false,
+                "height": null,
+                "layout": "accordion",
+                "layout|flex": 1,
+                "maxHeight": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "minWidth": null,
+                "scrollable": "true",
+                "width": null
+            },
+            "name": "MyContainer6",
+            "designerId": "3aaa373f-88aa-4aaf-bd70-3e78070cea4c",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "bodyPadding": null,
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "collapseDirection": null,
+                        "collapsed": null,
+                        "collapsible": null,
+                        "container|align": "stretch",
+                        "designer|displayName": "개요",
+                        "height": null,
+                        "html": null,
+                        "icon": null,
+                        "iconCls": null,
+                        "layout": "vbox",
+                        "margin": null,
+                        "maxHeight": null,
+                        "maxWidth": null,
+                        "minHeight": null,
+                        "minWidth": null,
+                        "padding": null,
+                        "title": "<H2>1. Gamification Framework 개요</H2>",
+                        "titleAlign": null,
+                        "width": null
+                    },
+                    "name": "MyForm9",
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "designerId": "7dbdeab5-379f-4a2b-b6c1-b5a24ed15a84",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "id": "GFOverviewMain",
+                                "layout": "fit",
+                                "layout|flex": 1,
+                                "margin": "0 0 0 25",
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "padding": null,
+                                "reference": "GFOverviewMain",
+                                "scrollable": null,
+                                "width": null
+                            },
+                            "name": "home.manual.gfoverviewmain",
+                            "designerId": "e92b3067-683e-4915-b0ed-f1ee51460100",
+                            "masterInstanceId": "f17c77e6-1cce-4c08-b638-2c4e59b08adb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "bodyPadding": null,
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "collapsed": null,
+                        "container|align": "stretch",
+                        "container|padding": null,
+                        "designer|displayName": "소개",
+                        "id": null,
+                        "layout": "vbox",
+                        "margin": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "padding": null,
+                        "title": "<H2>2. Gamification Framework 소개</H2>",
+                        "titleAlign": null,
+                        "width": null
+                    },
+                    "name": "MyForm10",
+                    "designerId": "3b40ac75-8211-4069-b675-23fbf0735cc6",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": null,
+                                "id": "GFIntroMain",
+                                "layout": "fit",
+                                "layout|flex": 1,
+                                "layout|margins": null,
+                                "margin": "0 0 0 25",
+                                "padding": null,
+                                "reference": "GFIntroMain",
+                                "scrollable": null
+                            },
+                            "name": "home.manual.gfintromain",
+                            "designerId": "57c7da6c-8007-4db4-9547-630202d5d1d3",
+                            "masterInstanceId": "4dc31b46-4cff-4ff6-97e9-e32585bd2ea9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": null,
+                        "bodyPadding": null,
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "container|align": "stretch",
+                        "designer|displayName": "시작하기",
+                        "icon": null,
+                        "iconCls": null,
+                        "layout": "hbox",
+                        "margin": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "padding": null,
+                        "title": "<H2>3. Gamification Framework 시작하기</H2>",
+                        "titleAlign": null,
+                        "titleCollapse": null,
+                        "width": null
+                    },
+                    "name": "MyForm9",
+                    "designerId": "0b3ca2a2-a908-4cb9-a7e4-f6dfdd222fd7",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "GFStartMain",
+                                "layout": "fit",
+                                "layout|flex": 1,
+                                "margin": "0 0 0 25",
+                                "reference": "GFStartMain"
+                            },
+                            "name": "home.manual.gfstartmain",
+                            "designerId": "6197e77b-589d-4c01-9391-b283db8cb7ce",
+                            "masterInstanceId": "9a325637-c12b-45f9-8811-57c47e17b136"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "container|align": "stretch",
+                        "designer|displayName": "관리자 지원",
+                        "layout": "hbox",
+                        "margin": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "padding": null,
+                        "title": "<H2>4. 관리자 지원</H2>",
+                        "titleAlign": null,
+                        "width": null
+                    },
+                    "name": "MyForm10",
+                    "designerId": "55a9d5e9-4095-47db-8971-c34388424cd1",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "html": "<H2>4. 관리자 지원</H2>",
+                                "layout|flex": 3,
+                                "margin": 20,
+                                "text": null
+                            },
+                            "name": "MyLabel8",
+                            "designerId": "b76b0fea-53ef-4218-8011-8e04079cb08b"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": null,
+                                "hidden": true,
+                                "layout|flex": 1,
+                                "overCls": null,
+                                "text": null
+                            },
+                            "name": "MyButton28",
+                            "designerId": "93b670a3-d300-4063-889f-7f4cf9a4cf13"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": null,
+                "componentCls": null,
+                "dock": null,
+                "layout": "form",
+                "layout|flex": null,
+                "margin": null,
+                "scrollable": "true"
+            },
+            "name": "MyContainer7",
+            "designerId": "f82f6bbc-84d9-4d9c-9b80-c07d0dc8ae28"
+        }
+    ]
+}

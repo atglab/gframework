@@ -1,0 +1,165 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "levelanalysisedit",
+        "designer|userClassName": "analyzer.level.LevelAnalysisEditViewController"
+    },
+    "name": "analyzer.point.PointAnalysisEditViewController1",
+    "designerId": "d6c58bf6-1dff-4300-9996-2c97d528bf24",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsAllLevels",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/levels',",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var levelAnalysisAllStore\t= me.getStore('levelAnalysisAll');",
+                    "        levelAnalysisAllStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsAllLevels",
+            "designerId": "bc248a01-e1b5-4bb1-a8c3-0feb23173a08"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "levelId"
+                ],
+                "fn": "getStatisticsLevel",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/levels/'+levelId,",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var levelAnalysisStore\t= me.getStore('levelAnalysis');",
+                    "        levelAnalysisStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsLevel",
+            "designerId": "0d18079c-9756-42c3-8e20-39aed50266ac"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "period"
+                ],
+                "fn": "getStatisticsLevelsByPeriod",
+                "implHandler": [
+                    "var level\t= this.getViewModel().get('theLevel');",
+                    "var me \t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "",
+                    "if(level.create) {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/levelsbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var levelAnalysisPeriodStore\t= me.getStore('levelAnalysisPeriod');",
+                    "            levelAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "",
+                    "} else {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/levelsbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            id: level.get('id'),",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var levelAnalysisPeriodStore\t= me.getStore('levelAnalysisPeriod');",
+                    "            levelAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "getStatisticsLevelsByPeriod",
+            "designerId": "0922129f-663f-48a8-9f9a-f6167e603afd"
+        }
+    ]
+}

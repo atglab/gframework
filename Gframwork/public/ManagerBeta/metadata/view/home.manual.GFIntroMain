@@ -1,0 +1,309 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": null,
+        "designer|userAlias": "gfintromain",
+        "designer|userClassName": "home.manual.GFIntroMain",
+        "height": null,
+        "id": null,
+        "maxHeight": null,
+        "maxWidth": null,
+        "minHeight": null,
+        "minWidth": null,
+        "title": null,
+        "width": null
+    },
+    "name": "MyForm24",
+    "designerId": "4dc31b46-4cff-4ff6-97e9-e32585bd2ea9",
+    "viewControllerInstanceId": "1768afed-290a-42eb-922d-fd55f86dd633",
+    "viewModelInstanceId": "7f2b2f2f-b19f-408a-a1ca-1e5cedeb019f",
+    "cn": [
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": "top_menu_color",
+                "designer|displayName": "GF 소개",
+                "height": 50,
+                "hidden": true,
+                "icon": null,
+                "iconCls": null,
+                "margin": "0 0 0 20",
+                "maxHeight": 50,
+                "maxWidth": 200,
+                "minHeight": 50,
+                "minWidth": 200,
+                "overCls": null,
+                "padding": null,
+                "scale": "large",
+                "text": "<strong>2. 게이미피케이션 <br>프레임워크 소개</strong>",
+                "width": 200
+            },
+            "name": "MyButton47",
+            "designerId": "24bb412c-8f54-4e40-911f-31b4dd0d5a9f"
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "cls": [
+                    "top_menu_color"
+                ],
+                "height": null,
+                "id": null,
+                "margin": null,
+                "maxHeight": null,
+                "maxWidth": 880,
+                "minWidth": null,
+                "padding": 3,
+                "scrollable": null,
+                "title": null,
+                "titleAlign": "center",
+                "width": 880
+            },
+            "name": "home.manual.GFStartMain1",
+            "designerId": "9d8d4f61-81f1-40df-9937-0850945e470c",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "designer|displayName": "Menu",
+                        "scrollable": "true",
+                        "title": "&laquo; Menu &raquo"
+                    },
+                    "name": "MyForm18",
+                    "designerId": "abe36926-5604-4da2-832b-e59026b4e7be",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig1",
+                                "height": 50,
+                                "layout|flex": 1,
+                                "maxHeight": 50,
+                                "minHeight": 50
+                            },
+                            "name": "TabConfig14",
+                            "designerId": "0ba5953f-fa1c-417e-a3ac-dc7bbe2d8e12"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/introGF_1.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg10",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "d5047a2c-cc70-448b-8fd0-6632a4b91b4b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Home",
+                        "reference": "home",
+                        "scrollable": "true",
+                        "title": "&laquo; Home &raquo"
+                    },
+                    "name": "MyForm12",
+                    "designerId": "8c4977f4-1709-4445-8965-1cbb80fbd132",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig2",
+                                "height": 50,
+                                "layout|flex": 1,
+                                "maxHeight": 50
+                            },
+                            "name": "TabConfig",
+                            "designerId": "8765af03-8c14-4d02-b130-8c938bab964d"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/introGF_home.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg12",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "cd2e9a39-f058-457f-aeed-7a93d29166a7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Manager",
+                        "reference": "manager",
+                        "scrollable": "true",
+                        "title": "&laquo; Manager &raquo"
+                    },
+                    "name": "MyForm13",
+                    "designerId": "8c9e311a-97fb-4ac1-a12a-7c06fe2a7496",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig3",
+                                "layout|flex": 1
+                            },
+                            "name": "TabConfig3",
+                            "designerId": "e7829e4a-fc53-4a6f-85d1-e2495df5c126"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/introGF_manager.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg11",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "58be9b51-860f-47cb-8cfa-9ac645cf4b9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Analyzer",
+                        "reference": "anlyzer",
+                        "scrollable": "true",
+                        "title": "&laquo; Analyzer &raquo"
+                    },
+                    "name": "MyForm14",
+                    "designerId": "ec71348c-8f5e-41da-a40f-b907533fd66c",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "startTabConfig4",
+                                "layout|flex": 1
+                            },
+                            "name": "TabConfig5",
+                            "designerId": "e1cb7755-e26a-44c7-baa6-baeaefbf4c48"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "src": "/resources/images/manual/introGF_analyzer.png",
+                                "style": "max-height:100%; max-width:100%;",
+                                "width": null
+                            },
+                            "name": "MyImg13",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "c39f7dc5-8b4c-43b7-9e8a-972226565bb0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "permissionedit",
+        "designer|userClassName": "manager.permission.PermissionEditViewModel"
+    },
+    "name": "manager.activity.ActivityEditViewModel1",
+    "designerId": "5245437f-fade-4d8a-a1b6-b2f0b9e2e97d"
+}

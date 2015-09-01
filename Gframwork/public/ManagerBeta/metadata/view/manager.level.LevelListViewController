@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "levellist",
+        "designer|userClassName": "manager.level.LevelListViewController"
+    },
+    "name": "manager.badge.BadgeListViewController2",
+    "designerId": "4aebe400-a30e-426a-9e23-0a7330fabc2d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewLevel",
+                "implHandler": [
+                    "this.fireViewEvent('viewLevel', this.getView(), record);"
+                ]
+            },
+            "name": "viewLevel",
+            "designerId": "b90fb41e-4571-4662-8034-b556402c9dd8"
+        }
+    ]
+}

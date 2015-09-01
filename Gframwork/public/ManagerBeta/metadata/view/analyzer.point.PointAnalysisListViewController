@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pointanalysislist",
+        "designer|userClassName": "analyzer.point.PointAnalysisListViewController"
+    },
+    "name": "analyzer.badge.BadgeAnalysisListViewController2",
+    "designerId": "02864d85-c22d-4e9e-9d41-8d85a6e11492",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewPointAnalysis",
+                "implHandler": [
+                    "this.fireViewEvent('viewPointAnalysis', this.getView(), record);"
+                ]
+            },
+            "name": "viewPointAnalysis",
+            "designerId": "d0396e57-16e1-4a8e-b896-36fa94ee1e94"
+        }
+    ]
+}

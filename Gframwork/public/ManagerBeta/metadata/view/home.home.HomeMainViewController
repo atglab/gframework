@@ -1,0 +1,90 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "homemain",
+        "designer|userClassName": "home.home.HomeMainViewController"
+    },
+    "name": "home.wizard.WizardMainViewController1",
+    "designerId": "01485fd9-ee3f-41f1-932e-4d3fc0223802",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "restartMechanics",
+                "implHandler": [
+                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                    "    var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "    var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/manager/init/restart',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            if(decodeResponse.success) {",
+                    "                Ext.toast({",
+                    "                    title: '게임 메카닉 로딩' ,",
+                    "                    html: '새로운 게임 메카닉이 성공적으로 재시작 되었습니다.',",
+                    "                    align: 't',",
+                    "                    bodyPadding:10",
+                    "                });            ",
+                    "",
+                    "",
+                    "                Ext.getStore('User').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Activity').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('ActivityMission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Badge').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Status').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Permission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('StatusClass').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('Rule').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "                Ext.getStore('RepoStatus').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "",
+                    "",
+                    "                Ext.getStore('User').load();",
+                    "                Ext.getStore('Activity').load();",
+                    "                Ext.getStore('ActivityMission').load();",
+                    "                Ext.getStore('Mission').load();",
+                    "                Ext.getStore('Badge').load();",
+                    "                Ext.getStore('Point').load();",
+                    "                Ext.getStore('Level').load();",
+                    "                Ext.getStore('Status').load();",
+                    "                Ext.getStore('Permission').load();",
+                    "                Ext.getStore('StatusClass').load();",
+                    "                Ext.getStore('Rule').load();",
+                    "                Ext.getStore('RepoStatus').load();",
+                    "            }",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "    });",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "name": "restartMechanics",
+            "designerId": "b2bd95c7-b045-41df-9b7a-c0f5df15600a"
+        }
+    ]
+}

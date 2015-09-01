@@ -1,0 +1,242 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "x-badge-background"
+        ],
+        "collapsible": false,
+        "designer|uiInterfaceName": "default",
+        "designer|userAlias": "permissionlist",
+        "designer|userClassName": "manager.permission.PermissionList",
+        "enableColumnHide": false,
+        "enableColumnMove": false,
+        "enableColumnResize": false,
+        "height": null,
+        "hideHeaders": true,
+        "itemId": null,
+        "margin": null,
+        "padding": null,
+        "resizable": null,
+        "session": null,
+        "store": "Permission",
+        "title": "",
+        "width": 250
+    },
+    "name": "manager.user.UserList1",
+    "designerId": "c74fe3b6-8188-41c1-b9eb-edf1120be0e0",
+    "viewControllerInstanceId": "6822a94f-f485-4f0a-add7-f77fbbdbe9fd",
+    "viewModelInstanceId": "f96b906d-94d9-48f1-9fdd-a8b4231ebf85",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "permissionListToolbar",
+                "dock": "top"
+            },
+            "name": "MyToolbar2",
+            "designerId": "56a59783-6eb0-4535-9c05-dd4551b047dc",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "hiddenField",
+                        "fieldLabel": null,
+                        "layout|flex": 1,
+                        "maxHeight": 25,
+                        "maxWidth": null,
+                        "value": null,
+                        "width": null
+                    },
+                    "name": "MyDisplayField16",
+                    "designerId": "a8059a8f-c384-4d8b-a84f-cf97402a54e1"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_add_btn",
+                        "designer|displayName": "추가",
+                        "icon": null,
+                        "iconCls": "",
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_add_btn_over",
+                        "text": null,
+                        "width": null
+                    },
+                    "name": "MyButton2",
+                    "designerId": "ce2eed0c-7f9b-43f4-8bf5-43df91fde53c",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPermissionAddButtonClick",
+                                "implHandler": [
+                                    "this.viewPermission(null);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onPermissionAddButtonClick",
+                            "designerId": "2c1e9928-eab5-4438-8742-1d93d160227d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "list_del_btn",
+                        "designer|displayName": "삭제",
+                        "disabled": true,
+                        "icon": null,
+                        "iconCls": null,
+                        "itemId": null,
+                        "layout|flex": 1,
+                        "margin": null,
+                        "overCls": "list_del_btn_over",
+                        "reference": "del_permission_btn",
+                        "text": null
+                    },
+                    "name": "MyButton4",
+                    "designerId": "a8383b5d-59d3-468f-9678-f18cde44f318",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPermissionDelButtonClick",
+                                "implHandler": [
+                                    "if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                                    "    var PermissionGrid = button.up('permissionlist');",
+                                    "    var selection = PermissionGrid.getSelectionModel().getSelection()[0];",
+                                    "    selection.erase();",
+                                    "",
+                                    "    this.viewPermission(selection);",
+                                    "",
+                                    "    button.disable();",
+                                    "",
+                                    "",
+                                    "} else {",
+                                    "    Ext.MessageBox.alert('로그인 요청', '로그인 후 이용이 가능합니다.', function(btn){",
+                                    "        if (btn == 'ok') {            ",
+                                    "        }",
+                                    "    }, this);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onPermissionDelButtonClick",
+                            "designerId": "ca3e6d0c-e298-43d7-a973-37de1492aaa5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.RowNumberer",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "designer|displayName": "permissionRowNumberer",
+                "flex": 1,
+                "tdCls": "x-grid-cell-row-numberer x-grid-cell-special grid-size"
+            },
+            "name": "MyRowNumberer",
+            "designerId": "bf4eb00c-f525-402c-be61-2bb69f766644"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "flex": 4,
+                "tdCls": "grid-size",
+                "text": null,
+                "width": null
+            },
+            "name": "MyColumn",
+            "designerId": "e7e1f74c-735b-4f81-8aba-fe13eaf1d332"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPermissionlistviewSelectionChange",
+                "implHandler": [
+                    "var delBtn = this.lookupReference('del_permission_btn');",
+                    "delBtn.enable();"
+                ],
+                "name": "selectionchange",
+                "scope": "me"
+            },
+            "name": "onPermissionlistviewSelectionChange",
+            "designerId": "06dde08f-7cd2-47cc-b9cd-581e7bada700"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPermissionGridpanelItemDblClick",
+                "implHandler": [
+                    "this.viewPermission(record);"
+                ],
+                "name": "itemclick",
+                "scope": "me"
+            },
+            "name": "onPermissionGridpanelItemDblClick",
+            "designerId": "f80b177b-5ba9-44bb-b4d4-2a47c251ca29"
+        }
+    ]
+}

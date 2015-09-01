@@ -1,0 +1,12 @@
+[
+{
+    "id" : "mileage_point",
+    "name" : "마일리지 포인트",
+    "description" : "고객이 티켓을 구매 했을 경우 부여하는 포인트",
+    "min" : 0,
+    "max" : 1000000,
+    "relation_method": "status_type",
+    "relation_object": "user_status",
+    "icon" : "/resources/images/points/point_bill.png"
+}
+]

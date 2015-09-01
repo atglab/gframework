@@ -1,0 +1,129 @@
+.container{
+    color: #000000;
+
+    padding: 0px;
+    border-radius: 5px;
+    border: #FD249F 0px solid;
+}
+.panel {
+    border-color: #FD249F;
+}
+.panel-heading {
+    padding-top: 5px;
+    height: 30px;
+}
+.panel-primary>.panel-heading {
+    background-color: #FD249F;
+    border-color: #FD249F;
+    background-image: linear-gradient(to bottom,#FD249F 0,#FD249F 100%);
+}
+.panel-body {
+    border: 0.5px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.row {
+    margin: 0 0 5px 0;
+    border-radius: 5px;
+    padding: 0 0 0 0;
+}
+.col-thin {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+.badgeImg {
+    width: 100px;
+}
+.transparentImg {
+    filter:alpha(opacity=10);
+    -moz-opacity:0.1;
+    -khtml-opacity: 0.1;
+    opacity: 0.1;
+}
+.imgCaption {
+    text-align: center;
+    font-weight: bold;
+}
+.transparentImgCaption {
+    text-align: center;
+    color: #999B99;
+    font-weight: lighter;
+}
+.timeCaption {
+    text-align: center;
+    color: #999B99;
+}
+abbr[title] {
+    border: none !important;
+    cursor: default !important;
+}
+.profileImg {
+    width: 150px;
+    float: left;
+}
+.userName {
+    padding-top: 20px;
+    font-weight: bold;
+}
+.list-group {
+
+}
+.col-box {
+    border-radius: 5px;
+    max-height: 300px;
+    min-height: 300px;
+    overflow: auto;
+    margin: 2px;
+}
+.list-group-item{
+
+}
+.badgeTable {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    max-height: 160px;
+    min-height: 160px;
+}
+.table {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.progress {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.progress-bar {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.missionName {
+    font-weight: bold;
+}
+.missionOptions {
+    text-align: right;
+}
+.missionState {
+    text-align: right;
+}
+.rewardIcon {
+    width: 60px;
+}
+.rewardIconImg {
+    width: 40px;
+    height: 40px;
+}
+.rewardName {
+    font-weight: bold;
+    text-align: left;
+}
+.rewardRank {
+    width: 30px;
+    text-align: center;
+}
+.rewardState {
+    text-align: right;
+}
+.activityTimeCaption{
+    text-align: left;
+    color: #999B99;
+}

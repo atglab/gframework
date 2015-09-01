@@ -1,0 +1,34 @@
+[
+{   
+  "id" : "user_level",
+  "name" : "고객 레벨",
+  "description" : "사용자의 거래 포인트에 따라 변하는 고객 레벨",
+  "relation_method" : "point_type",
+  "relation_object" : "transaction_point",
+  "max" : 5,
+  "icon" : "/resources/images/levels/level_1.png",
+  "level_table" : [ 
+      { "level" : 1, "condition" : "0" }, 
+      { "level" : 2, "condition" : "200000" },
+      { "level" : 3, "condition" : "400000" },
+      { "level" : 4, "condition" : "600000" },
+      { "level" : 5, "condition" : "800000" }      
+  ]
+},
+{   
+  "id" : "report_level",
+  "name" : "신고 레벨",
+  "description" : "사용자의 신고 포인트에 따라 변하는 신고 레벨",
+  "relation_method" : "point_type",
+  "relation_object" : "report_point",
+  "max" : 5,
+  "icon" : "/resources/images/levels/level_2.png",
+  "level_table" : [ 
+      { "level" : 1, "condition" : "0" }, 
+      { "level" : 2, "condition" : "20" },
+      { "level" : 3, "condition" : "40" },
+      { "level" : 4, "condition" : "60" },
+      { "level" : 5, "condition" : "80" }   
+  ]
+}
+]

@@ -1,0 +1,35 @@
+[
+{   
+  "id" : "user_status",
+  "name" : "사용자 등급",
+  "description" : "사용자의 구독 포인트에 따라 변하는 사용자 등급",
+  "relation_method" : "point_type",
+  "relation_object" : "subscribe_point",
+  "classes" : [ 
+      {
+          "rank" : 1,
+          "name" : "트로피1",
+          "condition" : "2000",
+          "icon" : "/resources/images/status/status_trophy.png"
+      }, 
+      {
+          "rank" : 2,
+          "name" : "트로피2",
+          "condition" : "4000",
+          "icon" : "/resources/images/status/status_trophy.png"
+      }, 
+      {
+          "rank" : 3,
+          "name" : "트로피3",
+          "condition" : "6000",
+          "icon" : "/resources/images/status/status_trophy.png"
+      }, 
+      {
+          "rank" : 4,
+          "name" : "트로피4",
+          "condition" : "8000",
+          "icon" : "/resources/images/status/status_trophy.png"
+      }
+  ]
+}
+]

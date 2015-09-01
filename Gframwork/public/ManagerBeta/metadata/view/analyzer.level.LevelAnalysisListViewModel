@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "levelanalysislist",
+        "designer|userClassName": "analyzer.level.LevelAnalysisListViewModel"
+    },
+    "name": "analyzer.point.PointAnalysisListViewModel1",
+    "designerId": "9e102542-e072-4334-a47c-24669d925042"
+}

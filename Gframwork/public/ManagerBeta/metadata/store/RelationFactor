@@ -1,0 +1,30 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "data": [
+            "[",
+            "    {",
+            "        \"id\": \"NUM_MISSION_COMPLETION\",",
+            "        \"name\": \"missoin 완료 횟수\"",
+            "    },",
+            "    {",
+            "        \"id\": \"mission_id\",",
+            "        \"name\": \"특정 mission\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "RelationFactor",
+        "groupField": null,
+        "model": "RelationFactor",
+        "session": null,
+        "storeId": "RelationFactor"
+    },
+    "name": "MyStore18",
+    "designerId": "4b4a66fa-9547-463c-8d6d-5b36f85259d9"
+}

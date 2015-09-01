@@ -1,0 +1,25 @@
+[
+
+{   
+  "id" : "login_badge",
+  "name" : "로그인 배지",
+  "category" : "기본",
+  "description" : "로그인 10회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_login.png"
+},
+{
+  "id" : "badge_write",
+  "name" : "글쓰기 배지",
+  "category" : "기본",
+  "description" : "글 작성 50회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_write.png"
+},
+{
+  "id" : "badge_comment",
+  "name" : "덧글 배지",
+  "category" : "기본",
+  "description" : "덧글 작성 50회 시 부여하는 배지",
+  "icon" : "/resources/images/badges/badge_comment.png"
+}
+
+]

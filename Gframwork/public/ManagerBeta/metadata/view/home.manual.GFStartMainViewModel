@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gfstartmain",
+        "designer|userClassName": "home.manual.GFStartMainViewModel"
+    },
+    "designerId": "8214bfe7-40d8-493a-a130-1a0cf8c21eb6"
+}

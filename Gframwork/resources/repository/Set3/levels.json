@@ -1,0 +1,18 @@
+[
+{   
+  "id" : "user_level",
+  "name" : "고객 레벨",
+  "description" : "사용자의 평가 포인트에 따라 변하는 고객 레벨",
+  "relation_method" : "point_type",
+  "relation_object" : "evaluation_point",
+  "max" : 5,
+  "icon" : "/resources/images/levels/level_trophy.png",
+  "level_table" : [ 
+      { "level" : 1, "condition" : "0" }, 
+      { "level" : 2, "condition" : "20000" },
+      { "level" : 3, "condition" : "40000" },
+      { "level" : 4, "condition" : "60000" },
+      { "level" : 5, "condition" : "80000" }        
+  ]
+}
+]

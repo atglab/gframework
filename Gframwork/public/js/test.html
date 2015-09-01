@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="jsencrypt.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $.ajax({
+                url: '/getpubkey',
+                dataType: 'json',
+                success: function(data){
+                    var pub = data.data;
+
+                    var encrypt = new JSEncrypt();
+                    encrypt.setPublicKey(pub);
+
+                    var encryptedUsername = encrypt.encrypt("admin");
+                    var encryptedPassword = encrypt.encrypt("atglab1");
+
+                    console.log(encryptedUsername);
+                    console.log(encryptedPassword);
+
+                    $.ajax({
+                        url: '/login',
+                        type: 'post',
+                        data: {username: encryptedUsername, password: encryptedPassword},
+                        success: function (data) {
+                            console.log(data);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

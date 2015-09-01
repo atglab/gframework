@@ -1,0 +1,301 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "baseCls": null,
+        "closable": false,
+        "collapseFirst": false,
+        "componentCls": null,
+        "designer|initialView": true,
+        "designer|userAlias": "loginmain",
+        "designer|userClassName": "main.login.LoginMain",
+        "headerOverCls": null,
+        "height": null,
+        "overCls": null,
+        "requires": [
+            "Ext.window.Toast"
+        ],
+        "resizable": [
+            "false"
+        ],
+        "title": "Manager - Login",
+        "width": null
+    },
+    "designerId": "93b7ddcb-a9e6-4e42-a2c2-3f69286aa6e8",
+    "viewControllerInstanceId": "1d0b01d7-0360-47c6-a1b7-14b07081ac8f",
+    "viewModelInstanceId": "83dbf3f3-896e-4b43-9a6c-61ec921cb21a",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": false,
+                "bodyPadding": 10,
+                "collapseFirst": false,
+                "collapsed": false,
+                "collapsible": false,
+                "container|align": "stretch",
+                "designer|uiInterfaceName": "default-framed",
+                "frame": true,
+                "iconAlign": null,
+                "layout": "vbox",
+                "reference": "form",
+                "title": null,
+                "width": null
+            },
+            "name": "MyForm",
+            "designerId": "538e9b38-30c0-412b-92a4-640774b78401",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "managerID",
+                        "emptyText": "manager id",
+                        "fieldLabel": "Manager ID",
+                        "name": "user",
+                        "reference": "managerID",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{theManager}"
+                        ],
+                        "vtype": "alphanum"
+                    },
+                    "name": "MyTextField6",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "6c7dc5b6-d7d0-4d76-b8d3-1bf422897859"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "emptyText": "password",
+                        "fieldLabel": "Password",
+                        "inputType": "password",
+                        "labelAlign": null,
+                        "name": "pass",
+                        "reference": "managerPW",
+                        "width": null
+                    },
+                    "name": "MyTextField7",
+                    "designerId": "9f8f3614-28d1-4e92-b981-0cb0fd820d47"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": true,
+                        "iconAlign": null,
+                        "text": "Login",
+                        "width": null
+                    },
+                    "name": "MyButton19",
+                    "designerId": "11a07388-56b8-4525-a1bb-0e25b7d45490",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLoginButtonClick",
+                                "implHandler": [
+                                    "var managerID\t= this.lookupReference('managerID');",
+                                    "var managerPW\t= this.lookupReference('managerPW');",
+                                    "var loginMain \t= button.up('loginmain');",
+                                    "",
+                                    "",
+                                    "var key = Ext.getStore('PublicKey').data.items[0].get('key');",
+                                    "",
+                                    "",
+                                    "var encrypt = new JSEncrypt();",
+                                    "encrypt.setPublicKey(key);",
+                                    "",
+                                    "var encryptedID = encrypt.encrypt(managerID.value);",
+                                    "var encryptedPW = encrypt.encrypt(managerPW.value);",
+                                    "",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: '/login',",
+                                    "    method: 'POST',",
+                                    "    params:{",
+                                    "        username: encryptedID,",
+                                    "        password: encryptedPW",
+                                    "    },",
+                                    "    success: function(response){",
+                                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                    "",
+                                    "        if(decodeResponse.success) {",
+                                    "",
+                                    "            var managerInfo = Ext.getStore('ManagerInfo');",
+                                    "            managerInfo.removeAll();",
+                                    "            managerInfo.add({",
+                                    "                token: decodeResponse.data.token,",
+                                    "                key: decodeResponse.data.user.username",
+                                    "            });",
+                                    "",
+                                    "",
+                                    "            loginMain.close();",
+                                    "",
+                                    "        }",
+                                    "",
+                                    "    },",
+                                    "    failure: function(response){",
+                                    "        managerID.setValue('');",
+                                    "        managerPW.setValue('');",
+                                    "",
+                                    "        Ext.toast({",
+                                    "            title: '관리자 계정 확인' ,",
+                                    "            html: '아이디 또는 비밀번호를 다시 확인해주세요.',",
+                                    "            align: 't',",
+                                    "            bodyPadding:10",
+                                    "        });",
+                                    "",
+                                    "    }",
+                                    "",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onLoginButtonClick",
+                            "designerId": "0c0e55cf-807a-4b7e-b109-d5275bd3b07f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowClose",
+                "implHandler": [
+                    "if(panel.isFirstInstance) {",
+                    "    var managerID\t= this.lookupReference('managerID');",
+                    "    var loginSuccess = new GFManager.view.main.GFmain({",
+                    "        viewModel: {",
+                    "            data: {",
+                    "                theManager: managerID.value",
+                    "            }",
+                    "        }",
+                    "    });",
+                    "    loginSuccess.show();",
+                    "} else {",
+                    "    if(Ext.getStore('ManagerInfo').data.length !== 0) {",
+                    "",
+                    "        var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "        var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "        Ext.getStore('User').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Mission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Activity').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('ActivityMission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Badge').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Permission').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Status').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Level').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Point').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('Rule').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('StatusClass').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "        Ext.getStore('RepoStatus').proxy.headers = { 'x-key': key, 'x-access-token': token };",
+                    "",
+                    "",
+                    "        Ext.getStore('User').load();",
+                    "        Ext.getStore('Mission').load();",
+                    "        Ext.getStore('Activity').load();",
+                    "        Ext.getStore('ActivityMission').load();",
+                    "        Ext.getStore('Badge').load();",
+                    "        Ext.getStore('Permission').load();",
+                    "        Ext.getStore('Status').load();",
+                    "        Ext.getStore('Level').load();",
+                    "        Ext.getStore('Point').load();",
+                    "        Ext.getStore('Rule').load();",
+                    "        Ext.getStore('StatusClass').load();",
+                    "        Ext.getStore('RepoStatus').load();",
+                    "",
+                    "    }",
+                    "}",
+                    "",
+                    "panel.container.component.lookupReference('loginBtn').show();",
+                    "var logoutBtn = panel.container.component.lookupReference('logoutBtn');",
+                    "logoutBtn.setText('로그아웃');",
+                    "",
+                    "/*panel.container.component.lookupReference('home').show();",
+                    "",
+                    "panel.container.component.lookupReference('analyzer').show();*/",
+                    ""
+                ],
+                "name": "close",
+                "scope": "me"
+            },
+            "name": "onWindowClose",
+            "designerId": "89e599a3-010f-440a-8baa-e690059ef317"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoginWindowBeforeRender",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url: '/getpubkey',",
+                    "    method: 'GET',",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);        ",
+                    "",
+                    "        var publicKey = Ext.getStore('PublicKey');",
+                    "        publicKey.removeAll();",
+                    "        publicKey.add({",
+                    "            key: decodeResponse.data",
+                    "        });",
+                    "    },",
+                    "    failure: function(response){",
+                    "        console.log(response);",
+                    "    }",
+                    "",
+                    "});"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "name": "onLoginWindowBeforeRender",
+            "designerId": "8485ee88-2a26-4e33-9f8b-1ef63b241411"
+        }
+    ]
+}

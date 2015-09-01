@@ -1,0 +1,19 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoDestroy": null,
+        "autoLoad": null,
+        "designer|userClassName": "Point",
+        "groupField": null,
+        "model": "Point",
+        "session": null,
+        "storeId": "Point"
+    },
+    "name": "MyStore11",
+    "designerId": "6fa71578-ecea-4b3e-8c79-34e33dc86472"
+}

@@ -1,0 +1,662 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "main",
+        "designer|userClassName": "home.main.Main",
+        "height": null,
+        "layout": "border",
+        "width": null
+    },
+    "name": "manager.main.ManagerMain1",
+    "designerId": "62ff2991-0c38-421c-b67f-0bb3a4360c2a",
+    "viewControllerInstanceId": "76806bc5-5390-4cab-9c2b-86285157db5a",
+    "viewModelInstanceId": "c8ff02b0-3212-4c8d-954e-8311b8d4d9ad",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "top_menu_color"
+                ],
+                "collapsed": null,
+                "collapsible": true,
+                "designer|uiInterfaceName": "left-menu-panel",
+                "layout": "border",
+                "layout|flex": null,
+                "layout|region": "west",
+                "maxWidth": 162,
+                "padding": "0 5 0 0",
+                "title": "Home",
+                "ui": "left-menu-panel",
+                "width": 162
+            },
+            "name": "MyPanel",
+            "designerId": "7f3f372c-c6f8-48e8-aa93-71e342f9f2f4",
+            "cn": [
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "bodyBorder": false,
+                        "bodyPadding": null,
+                        "border": false,
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "collapsible": false,
+                        "componentCls": null,
+                        "defaults": null,
+                        "designer|createAlias": "",
+                        "designer|displayName": "HomeMenu",
+                        "designer|uiInterfaceName": "navigation",
+                        "dock": null,
+                        "hideMode": null,
+                        "iconCls": null,
+                        "itemCls": null,
+                        "itemId": "managerMenu",
+                        "layout|flex": null,
+                        "layout|region": "west",
+                        "margin": null,
+                        "maxWidth": null,
+                        "padding": null,
+                        "tabPosition": "left",
+                        "tabRotation": [
+                            "0"
+                        ],
+                        "title": null,
+                        "ui": "navigation",
+                        "width": null
+                    },
+                    "name": "MyTabPanel",
+                    "designerId": "fbffcc0d-fcd4-4227-b328-2063ee54a9a8",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "collapsedCls": null,
+                                "componentCls": null,
+                                "designer|displayName": "Home",
+                                "disabledCls": null,
+                                "focusCls": null,
+                                "headerOverCls": "",
+                                "icon": null,
+                                "iconAlign": null,
+                                "iconCls": "",
+                                "layout": "fit",
+                                "margin": null,
+                                "overCls": null,
+                                "padding": "0 0 0 1",
+                                "title": "Home",
+                                "width": null
+                            },
+                            "name": "MyPanel15",
+                            "designerId": "12d55ca2-8234-46a4-84e6-f30e4d9e0f37",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "cls": null,
+                                        "designer|displayName": "HomeTabConfig",
+                                        "focusCls": "",
+                                        "iconCls": "left_menu_home_btn_over",
+                                        "layout|flex": null,
+                                        "layout|margins": null,
+                                        "margin": null,
+                                        "maxWidth": 162,
+                                        "overCls": null,
+                                        "tabPosition": null,
+                                        "textAlign": "left",
+                                        "width": 162
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "32b38ca5-a87c-4d5a-84e7-0515dbd8346b",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onHomeTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_home_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onHomeTabMouseOver",
+                                            "designerId": "e06d9f5a-ff4f-404e-b347-8ffee3d74500"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onHomeTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "",
+                                                    "     button.setIconCls('left_menu_home_btn_over');",
+                                                    "",
+                                                    "} else {",
+                                                    "",
+                                                    "      button.setIconCls('left_menu_home_btn');",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onHomeTabMouseOut",
+                                            "designerId": "1e702ab3-f9fe-41d5-aefa-9646e3eab10c"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onHomeTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_home_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onHomeTabDeactivate",
+                                            "designerId": "c18faccf-49a8-4f67-b95f-d7acad5a1b79"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onHomeTabClick",
+                                                "implHandler": [
+                                                    "var tabs\t= this.lookupReference('tabpanelTitle');",
+                                                    "tabs.setTitle('Home');",
+                                                    "",
+                                                    "var homeMain\t= this.lookupReference('homeMain');",
+                                                    "var manualMain\t= this.lookupReference('manualMain');",
+                                                    "var wizardMain\t= this.lookupReference('wizardMain');",
+                                                    "",
+                                                    "homeMain.show();",
+                                                    "manualMain.hide();",
+                                                    "wizardMain.hide();",
+                                                    "",
+                                                    "",
+                                                    "/*var tabs\t= this.lookupReference('homemainpanel');",
+                                                    "tabs.removeAll();",
+                                                    "",
+                                                    "var homeMain = {",
+                                                    "    xtype: 'homemain'",
+                                                    "};",
+                                                    "homeMain.title = 'Home';",
+                                                    "",
+                                                    "var homeEditTab = tabs.add(homeMain);",
+                                                    "tabs.setActiveTab(homeEditTab);*/"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onHomeTabClick",
+                                            "designerId": "4170715d-e475-4b0a-98b4-6f608d115b85"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Manual",
+                                "icon": null,
+                                "iconCls": null,
+                                "layout": "fit",
+                                "overCls": null,
+                                "padding": "0 0 0 1",
+                                "title": "Manual"
+                            },
+                            "name": "MyPanel4",
+                            "designerId": "457ba9ee-ae13-419c-8ba2-03170751ef73",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": null,
+                                        "designer|displayName": "ManualTabConfig",
+                                        "icon": null,
+                                        "iconCls": "left_menu_manual_btn",
+                                        "overCls": null,
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig4",
+                                    "designerId": "b8ef248b-6d34-4250-9c5c-fc4998bd5152",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onManualTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_manual_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onManualTabMouseOver",
+                                            "designerId": "249e3ce1-31a7-4952-98a0-87301619218c"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onManualTabMouseOut",
+                                                "implHandler": [
+                                                    "if(button.active) {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_manual_btn_over');",
+                                                    "",
+                                                    "} else {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_manual_btn');",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onManualTabMouseOut",
+                                            "designerId": "7de4ea92-2fe3-4192-b223-b13b904b2492"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onManualTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_manual_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onManualTabDeactivate",
+                                            "designerId": "f3ca5b5f-3e11-4f2a-94ad-0851394d5399"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onManualTabClick",
+                                                "implHandler": [
+                                                    "var tabs\t= this.lookupReference('tabpanelTitle');",
+                                                    "tabs.setTitle('Manual');",
+                                                    "",
+                                                    "var homeMain\t= this.lookupReference('homeMain');",
+                                                    "var manualMain\t= this.lookupReference('manualMain');",
+                                                    "var wizardMain\t= this.lookupReference('wizardMain');",
+                                                    "",
+                                                    "homeMain.hide();",
+                                                    "manualMain.show();",
+                                                    "wizardMain.hide();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onManualTabClick",
+                                            "designerId": "940aafc6-9a51-42ac-a69f-1f00973b226b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Wizard",
+                                "iconCls": "",
+                                "layout": "fit",
+                                "margin": null,
+                                "padding": "0 0 0 1",
+                                "title": "Wizard"
+                            },
+                            "name": "MyPanel2",
+                            "designerId": "40030a61-9d0e-47aa-9d72-beb2ad057bdc",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "designer|displayName": "WizardTabConfig",
+                                        "iconCls": "left_menu_wizard_btn",
+                                        "layout|margins": null,
+                                        "margin": null,
+                                        "overCls": null,
+                                        "tabPosition": null,
+                                        "textAlign": "left"
+                                    },
+                                    "name": "TabConfig1",
+                                    "designerId": "65e14c42-6dd0-4214-8185-a522e64c570b",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onWizardTabMouseOver",
+                                                "implHandler": [
+                                                    "button.setIconCls('left_menu_wizard_btn_over');"
+                                                ],
+                                                "name": "mouseover",
+                                                "scope": "me"
+                                            },
+                                            "name": "onWizardTabMouseOver",
+                                            "designerId": "d7797ce6-244c-4ffc-a078-92b09fade3f5"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onWizardTabMouseOut",
+                                                "implHandler": [
+                                                    "",
+                                                    "if(button.active) {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_wizard_btn_over');",
+                                                    "",
+                                                    "} else {",
+                                                    "",
+                                                    "    button.setIconCls('left_menu_wizard_btn');",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "mouseout",
+                                                "scope": "me"
+                                            },
+                                            "name": "onWizardTabMouseOut",
+                                            "designerId": "d6b869ce-70ea-4a83-80a1-68c60ff23e5e"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onWizardTabDeactivate",
+                                                "implHandler": [
+                                                    "tab.setIconCls('left_menu_wizard_btn');"
+                                                ],
+                                                "name": "deactivate",
+                                                "scope": "me"
+                                            },
+                                            "name": "onWizardTabDeactivate",
+                                            "designerId": "d761d5fc-4caa-4842-9dfa-96c71980b8f3"
+                                        },
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onWizardTabClick",
+                                                "implHandler": [
+                                                    "var tabs\t= this.lookupReference('tabpanelTitle');",
+                                                    "tabs.setTitle('Wizard');",
+                                                    "",
+                                                    "var homeMain\t= this.lookupReference('homeMain');",
+                                                    "var manualMain\t= this.lookupReference('manualMain');",
+                                                    "var wizardMain\t= this.lookupReference('wizardMain');",
+                                                    "",
+                                                    "homeMain.hide();",
+                                                    "manualMain.hide();",
+                                                    "wizardMain.show();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "name": "onWizardTabClick",
+                                            "designerId": "a5380f28-b9df-4406-8b34-1a84bc3cb24e"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeTab": 0,
+                "baseCls": null,
+                "designer|displayName": "",
+                "id": null,
+                "layout|flex": null,
+                "layout|region": "center",
+                "reference": "homemainpanel",
+                "title": null
+            },
+            "name": "MyTabPanel1",
+            "designerId": "4e0633ca-1521-4a2e-a39a-d3c45c3f7857",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "top_menu_color_background",
+                        "container|align": "stretch",
+                        "layout": "vbox",
+                        "reference": "tabpanelTitle",
+                        "title": "Home"
+                    },
+                    "name": "MyPanel13",
+                    "designerId": "ccab26ad-63ab-48bd-8aa8-4d860b2d67b0",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "TabConfig",
+                                "scale": null
+                            },
+                            "name": "TabConfig9",
+                            "designerId": "56e62150-03a2-41df-9bad-47f2cf792c23"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "homeMain",
+                                "layout|flex": 1,
+                                "reference": "homeMain"
+                            },
+                            "name": "home.home.homemain",
+                            "designerId": "a125beec-d452-4129-9855-91af488236b2",
+                            "masterInstanceId": "ad9cef44-e0ab-4bfa-953f-72facd121f81",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "form"
+                                        ],
+                                        "fn": "onFormTabpanelSubRemoveAll",
+                                        "implHandler": [
+                                            "this.fireViewEvent('tabpanelRemoveAll', this, null);"
+                                        ],
+                                        "name": "tabpanelSubRemoveAll",
+                                        "scope": "me"
+                                    },
+                                    "name": "onFormTabpanelSubRemoveAll",
+                                    "designerId": "fc78917b-b3ee-4835-b3e0-d93e7ac404e1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "layout|flex": 1,
+                                "reference": "manualMain"
+                            },
+                            "name": "home.manual.manualmain",
+                            "designerId": "269f716b-2f6c-4d76-a3c2-ddde0d4ef5f3",
+                            "masterInstanceId": "723df93f-b363-454b-af72-f5a087c14895"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "layout|flex": 1,
+                                "reference": "wizardMain"
+                            },
+                            "name": "home.wizard.wizardmain",
+                            "designerId": "bb9f9e09-ebf7-470c-bb47-317e7bb212b5",
+                            "masterInstanceId": "5f32e90a-24cb-40e6-a1ee-4dbdd2ae4196",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "tabpanel"
+                                        ],
+                                        "fn": "onTabpanelTabpanelSubRemoveAll1",
+                                        "implHandler": [
+                                            "this.fireViewEvent('tabpanelRemoveAll', this, null);"
+                                        ],
+                                        "name": "tabpanelSubRemoveAll1",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTabpanelTabpanelSubRemoveAll1",
+                                    "designerId": "634c603e-9d14-4641-b340-2d1e4c752c19"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

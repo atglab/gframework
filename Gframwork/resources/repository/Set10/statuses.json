@@ -1,0 +1,35 @@
+[
+{   
+  "id" : "user_status",
+  "name" : "사용자 등급",
+  "description" : "후원 포인트에 따라 변하는 사용자 등급",
+  "relation_method" : "point_type",
+  "relation_object" : "sponsor_point",
+  "classes" : [ 
+      {
+          "rank" : 1,
+          "name" : "메달1",
+          "condition" : "0",
+          "icon" : "/resources/images/status/status_medal_t1.png"
+      }, 
+      {
+          "rank" : 2,
+          "name" : "메달2",
+          "condition" : "10000",
+          "icon" : "/resources/images/status/status_medal_t1.png"
+      }, 
+      {
+          "rank" : 3,
+          "name" : "메달3",
+          "condition" : "100000",
+          "icon" : "/resources/images/status/status_medal_t1.png"
+      }, 
+      {
+          "rank" : 4,
+          "name" : "메달4",
+          "condition" : "500000",
+          "icon" : "/resources/images/status/status_medal_t1.png"
+      }
+  ]
+}
+]

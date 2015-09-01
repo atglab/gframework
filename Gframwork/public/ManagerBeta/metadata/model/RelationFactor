@@ -1,0 +1,58 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RelationFactor",
+        "idProperty": null
+    },
+    "name": "Template2",
+    "designerId": "98c38a8f-9536-4e66-889c-1f65ccf8215a",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "id"
+            },
+            "name": "MyString16",
+            "designerId": "90cf806e-dd28-4d52-bf5e-a1b28896525e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString14",
+            "designerId": "33c859a0-02d9-4f9e-aaab-b0cc398cd462"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enablePaging": true
+            },
+            "name": "MyMemoryProxy6",
+            "designerId": "d6c36c54-9e00-48ab-bfe4-5aea245ba243"
+        }
+    ]
+}

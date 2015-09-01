@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RewardType",
+        "idProperty": null
+    },
+    "name": "Template1",
+    "designerId": "6085e9f8-df8e-4510-94f2-1d18cacf964d",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "id"
+            },
+            "name": "MyString16",
+            "designerId": "fa385ab6-66de-4f8e-93a1-1b589c1530fb"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "name",
+                "unique": true
+            },
+            "name": "MyString14",
+            "designerId": "ccf14a74-5618-43c0-8c1c-b9c2b9f8d516"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyMemoryProxy5",
+            "designerId": "536f9ad0-2ca0-4a53-9f54-2e615269e23a"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "missionlist",
+        "designer|userClassName": "manager.mission.MissionListViewController"
+    },
+    "name": "manager.badge.BadgeListViewController4",
+    "designerId": "6161135f-0407-4f05-9527-3564bafa9cd9",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewMission",
+                "implHandler": [
+                    "this.fireViewEvent('viewMission', this.getView(), record);"
+                ]
+            },
+            "name": "viewMission",
+            "designerId": "a28024c7-788c-40fe-ae97-b7c647052826"
+        }
+    ]
+}

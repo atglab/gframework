@@ -1,0 +1,165 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leveledit",
+        "designer|userClassName": "manager.level.LevelEditViewController"
+    },
+    "name": "manager.point.PointEditViewController2",
+    "designerId": "2e86c971-f082-4eb1-b2d6-7bc31a8e4250",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelLevel",
+                "implHandler": [
+                    "var level\t\t\t= this.getViewModel().get('theLevel');",
+                    "",
+                    "",
+                    "if(!level.create) {",
+                    "    var isDirtyLevel\t= level.dirty;",
+                    "",
+                    "    var levelEntity\t\t\t= Ext.getStore('LevelEntity');",
+                    "    var isDirtyLevelEntity\t= levelEntity.getModifiedRecords().length;",
+                    "",
+                    "",
+                    "    if(isDirtyLevel)  {",
+                    "",
+                    "        if(!level.create) {",
+                    "            Ext.getStore('Level').rejectChanges();",
+                    "",
+                    "            //==================================================================",
+                    "            var relation_method\t\t= this.getViewModel().get('theLevel').get('relation_method');",
+                    "            var relation_object\t\t= this.getViewModel().get('theLevel').get('relation_object');",
+                    "",
+                    "            var method_radiogroup \t= this.lookupReference('relation_method');",
+                    "            var relationFactorList\t= this.lookupReference('relation_factor');",
+                    "            var store;",
+                    "",
+                    "            if(relation_method == 'mission_type') {",
+                    "",
+                    "                store\t= Ext.getStore('RelationFactor');",
+                    "                method_radiogroup.items.items[1].setValue(true);",
+                    "",
+                    "            } else if(relation_method == 'point_type') {",
+                    "",
+                    "                store\t= Ext.getStore('Point');",
+                    "                method_radiogroup.items.items[0].setValue(true);",
+                    "",
+                    "            }",
+                    "",
+                    "            relationFactorList.bindStore(store);",
+                    "            relationFactorList.setValue(relation_object);",
+                    "            //==================================================================",
+                    "",
+                    "",
+                    "            var levelIcon = this.lookupReference('levelIcon');",
+                    "            this.onSelectedLevelIcon(levelIcon);",
+                    "        }",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "    if(isDirtyLevelEntity) {",
+                    "",
+                    "        levelEntity.rejectChanges();      ",
+                    "        var bindLevelEntityData = this.getViewModel().get('theLevel').get('level_table');",
+                    "        levelEntity.loadRawData(bindLevelEntityData, false);",
+                    "",
+                    "    }",
+                    "",
+                    "}"
+                ]
+            },
+            "name": "onCancelLevel",
+            "designerId": "6e0a0033-ae57-4f0d-8096-ecb5190216f5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "max",
+                    "difficulty",
+                    "type",
+                    "id"
+                ],
+                "fn": "onRequestLevel",
+                "implHandler": [
+                    "var me = this;",
+                    "Ext.Ajax.request({",
+                    "    url: '/manager/rewards/leveltable',",
+                    "    method: 'GET',",
+                    "    params:{",
+                    "        maxLevel: max,",
+                    "        difficulty: difficulty,",
+                    "        rtype: type,",
+                    "        rid: id",
+                    "    },",
+                    "    success: function(response){",
+                    "        console.log(response);",
+                    "",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "        var levelEntityStore\t= Ext.getStore('LevelEntity');",
+                    "        levelEntityStore.loadData(decodeResponse.data, false);          ",
+                    "        ",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "onRequestLevel",
+            "designerId": "c95c6926-f54a-4634-b01a-a09c882f0e04"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "component"
+                ],
+                "fn": "onSelectedLevelIcon",
+                "implHandler": [
+                    "var level\t= this.getViewModel().get('theLevel');",
+                    "",
+                    "if(!level.create) {",
+                    "    if(level.get('icon') == '/resources/images/levels/level_01.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[0]);",
+                    "    } else if(level.get('icon') == '/resources/images/levels/level_02.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[1]);",
+                    "    } else if(level.get('icon') == '/resources/images/levels/level_1.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[2]);",
+                    "    } else if(level.get('icon') == '/resources/images/levels/level_2.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[3]);",
+                    "    } else if(level.get('icon') == '/resources/images/levels/level_tv.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[4]);",
+                    "    } else if(level.get('icon') == '/resources/images/levels/level_trophy.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[5]);",
+                    "    }    ",
+                    "    ",
+                    "}"
+                ]
+            },
+            "name": "onSelectedLevelIcon",
+            "designerId": "7a12c7b7-ccb9-431c-9048-ca7953b76eea"
+        }
+    ]
+}

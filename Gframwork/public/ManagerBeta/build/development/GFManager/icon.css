@@ -1,0 +1,430 @@
+.top_menu_color {
+
+    background: #00326b;    
+}
+
+.top_menu_color_background {
+
+    background: #F6F6F6;    
+}
+
+.top_menu_font {
+
+    color:#ffffff;  
+    font-size: 25px;
+}
+
+.panel_color {
+    background: #C9C9C9;
+}
+
+.left_menu_user_btn {
+    background: url(/resources/images/left_menu/left_menu_user_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_user_btn_over {
+    background: url(/resources/images/left_menu/left_menu_user_btn_over.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_status_btn {
+    background: url(/resources/images/left_menu/left_menu_status_btn.png) no-repeat;
+    background-size: contain !important;
+}
+
+.left_menu_status_btn_over {
+    background: url(/resources/images/left_menu/left_menu_status_btn_over.png) no-repeat;
+    background-size: contain !important;    
+}
+
+
+.left_menu_point_btn {
+    background: url(/resources/images/left_menu/left_menu_point_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_point_btn_over {
+    background: url(/resources/images/left_menu/left_menu_point_btn_over.png) no-repeat;
+    background-size: contain !important;    
+}
+
+
+.left_menu_permission_btn {
+    background: url(/resources/images/left_menu/left_menu_permission_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_permission_btn_over {
+    background: url(/resources/images/left_menu/left_menu_permission_btn_over.png) no-repeat;
+    background-size: contain !important;    
+}
+
+
+.left_menu_mission_btn {
+    background: url(/resources/images/left_menu/left_menu_mission_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_mission_btn_over {
+    background: url(/resources/images/left_menu/left_menu_mission_btn_over.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_level_btn {
+    background: url(/resources/images/left_menu/left_menu_level_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+
+.left_menu_level_btn_over {
+    background: url(/resources/images/left_menu/left_menu_level_btn_over.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_badge_btn {
+    background: url(/resources/images/left_menu/left_menu_badge_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+.left_menu_badge_btn_over {
+    background: url(/resources/images/left_menu/left_menu_badge_btn_over.png) no-repeat;       
+    background-size: contain !important;    
+}
+
+.left_menu_activity_btn {
+    background: url(/resources/images/left_menu/left_menu_activity_btn.png) no-repeat;    
+    background-size: contain !important; 
+}
+.left_menu_activity_btn_over {
+    background: url(/resources/images/left_menu/left_menu_activity_btn_over.png) no-repeat; 
+    background-size: contain !important; 
+}
+
+
+
+
+
+.left_menu_home_btn {
+    background: url(/resources/images/left_menu/left_menu_home_btn.png) no-repeat;    
+    background-size: contain !important; 
+}
+.left_menu_home_btn_over {
+    background: url(/resources/images/left_menu/left_menu_home_btn_over.png) no-repeat; 
+    background-size: contain !important; 
+}
+
+.left_menu_manual_btn {
+    background: url(/resources/images/left_menu/left_menu_manual_btn.png) no-repeat;    
+    background-size: contain !important; 
+}
+.left_menu_manual_btn_over {
+    background: url(/resources/images/left_menu/left_menu_manual_btn_over.png) no-repeat; 
+    background-size: contain !important; 
+}
+.left_menu_wizard_btn {
+    background: url(/resources/images/left_menu/left_menu_wizard_btn.png) no-repeat;    
+    background-size: contain !important; 
+}
+.left_menu_wizard_btn_over {
+    background: url(/resources/images/left_menu/left_menu_wizard_btn_over.png) no-repeat; 
+    background-size: contain !important; 
+}
+
+
+
+
+
+
+.list_import_btn {
+    background: url(/resources/images/list/list_import_btn.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+
+.list_import_btn_over {
+    background: url(/resources/images/list/list_import_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+
+
+.list_add_btn {
+    background: url(/resources/images/list/list_add_btn.png) no-repeat;
+    background-size: contain !important;
+    height: 25px;    
+    width: 60px;
+}
+
+
+.list_add_btn_over {
+    background: url(/resources/images/list/list_add_btn_over.png) no-repeat;
+    background-size: contain !important;
+    height: 25px;    
+    width: 60px;
+}
+
+.list_del_btn {
+    background: url(/resources/images/list/list_del_btn.png) no-repeat;
+    background-size: contain !important;
+    height: 25px;
+    width: 60px;    
+}
+
+.list_del_btn_over {
+    background: url(/resources/images/list/list_del_btn_over.png) no-repeat;
+    background-size: contain !important;
+    height: 25px;
+    width: 60px;    
+}
+
+
+.edit_save_btn {
+    background: url(/resources/images/list/edit_save_btn.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+.edit_save_btn_over {
+    background: url(/resources/images/list/edit_save_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+.edit_cancel_btn {
+    background: url(/resources/images/list/edit_cancel_btn.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+.edit_cancel_btn_over {
+    background: url(/resources/images/list/edit_cancel_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+.edit_browse_btn {
+    background: url(/resources/images/list/edit_browse_btn.png) no-repeat;   
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+.edit_browse_btn_over {
+    background: url(/resources/images/list/edit_browse_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    height: 25px;
+    width: 60px;
+}
+
+
+.edit_tooltip_btn {
+    background: url(/resources/images/list/edit_tooltip_btn.png) no-repeat;
+    background-size: contain !important;    
+    height: 20px;
+    width: 20px;
+}
+
+.edit_tooltip_btn_over {
+    background: url(/resources/images/list/edit_tooltip_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    height: 20px;
+    width: 20px;
+}
+
+
+
+.icon_repository {
+    float: left;    
+    border: 1px dotted #ffffff; 
+    margin: 8px 8px 4px 8px;
+}
+
+.x-item-selected.icon_repository {    
+    border: 1px dotted #000000; 
+    margin: 8px 8px 4px 8px;
+}
+
+
+
+
+
+
+.top_menu_analyzer_btn {
+    background: #00326b url(/resources/images/top_menu/top_menu_analyzer_btn.png) no-repeat;
+    background-size: contain !important;  
+    width: 30px;
+    height: 30px;
+}
+
+.top_menu_analyzer_btn_over {
+    background: #00326b url(/resources/images/top_menu/top_menu_analyzer_btn_over.png) no-repeat;
+    background-size: contain !important;  
+    width: 30px;
+    height: 30px;
+}
+
+.top_menu_home_btn {
+    background: url(/resources/images/top_menu/top_menu_home_btn.png) no-repeat;
+    background-size: contain !important;    
+    width: 30px;
+    height: 30px;
+}
+
+.top_menu_home_btn_over {
+    background: url(/resources/images/top_menu/top_menu_home_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.top_menu_manager_btn {
+    background: url(/resources/images/top_menu/top_menu_manager_btn.png) no-repeat;
+    background-size: contain !important;    
+    width: 30px;
+    height: 30px;
+}
+
+.top_menu_manager_btn_over {
+    background: url(/resources/images/top_menu/top_menu_manager_btn_over.png) no-repeat;
+    background-size: contain !important;    
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.manager-add {
+    background-image: url(/resources/images/add.gif) !important;
+}
+
+.manager-delete {
+    background: url(/resources/images/delete.gif) no-repeat;   
+}
+
+.manager-edit {
+    width: 30px;
+    height: 30px;  
+    background: url(/resources/images/edit.png) no-repeat;
+    background-size: contain !important;
+    border-style: none !important;
+    border-radius: 0px !important; 
+}
+
+
+
+
+
+
+
+.list_profile_btn {
+    background: url(/resources/images/user/user.png) no-repeat;
+    background-size: contain !important;        
+}
+
+.list_search_btn {
+    background: url(/resources/images/list/list_search_btn.png) no-repeat;
+    background-size: contain !important;    
+    width: 30px;
+    height: 30px;  
+}
+
+.list_tooltip_btn {
+    background: url(/resources/images/list/list_tooltip_btn.png) no-repeat;
+    background-size: contain !important;    
+}
+
+
+
+
+.gf-log {
+    width: 300px;
+    height: 80px;
+
+    background: url(/resources/images/gf_log.gif) no-repeat;
+    background-size: contain !important;
+    border-style: none !important;
+    border-radius: 0px !important;
+}
+
+.menu-button{
+
+    background: #00326b;
+    color:#ffffff;      
+}
+
+
+.menu-button .x-btn-inner{
+
+    background: #00326b;
+    color:#ffffff;      
+}
+
+.x-btn-pressed.menu-button .x-btn-inner{
+
+    background: #00326b;
+    color:#fff100;       
+}
+
+.x-btn-over.menu-button .x-btn-inner{
+
+    background: #00326b;
+    color:#fff100;       
+}
+
+
+
+
+
+
+.user-search {
+    width: 30px;
+    height: 30px;  
+    background: url(/resources/images/user/user_search.png) no-repeat;
+    background-size: contain !important;
+    border-style: none !important;
+    border-radius: 0px !important;    
+}
+
+
+.tool-tip {
+    width: 30px;
+    height: 30px;  
+    background: url(/resources/images/tooltip.png) no-repeat;
+    background-size: contain !important;
+    border-style: none !important;
+    border-radius: 0px !important;
+
+}
+
+
+.grid-size {           
+    line-height: 25px;
+}
+
+.grid-img {
+    height: 30px;
+    width: 30px; 
+}
+
+.x-grid-img {
+    height: 30px;
+    width: 30px; 
+}
+
+
+.x-action-col-cell img {
+    height: 25px;
+    width: 25px;
+}
+

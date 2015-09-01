@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "missionanalysislist",
+        "designer|userClassName": "analyzer.mission.MissionAnalysisListViewModel"
+    },
+    "name": "analyzer.permission.PermissionAnalysisListViewModel1",
+    "designerId": "92b83024-f736-4de6-b186-4b9c607cc0bb"
+}

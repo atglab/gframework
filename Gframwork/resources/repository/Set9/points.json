@@ -1,0 +1,12 @@
+[
+{   
+  "id" : "subscribe_point",
+  "name" : "구독 포인트",
+  "description" : "블로그의 글을 구독 했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 10000,    
+  "relation_method": "status_type",
+  "relation_object": "user_status",
+  "icon" : "/resources/images/points/point_subscription.png"
+}
+]

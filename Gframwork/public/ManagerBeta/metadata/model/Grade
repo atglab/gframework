@@ -1,0 +1,58 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Grade",
+        "idProperty": null
+    },
+    "name": "LevelEntity1",
+    "designerId": "31a88116-5338-4f59-af38-191975dbc1df",
+    "cn": [
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "level",
+                "unique": true
+            },
+            "name": "MyNumber5",
+            "designerId": "72d78a63-ac48-416c-b00c-3245a2add342"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "condition"
+            },
+            "name": "MyString14",
+            "designerId": "7087cb1a-e4a6-420c-a74e-e8211a02d5d2"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "gradeEntityMemoryProxy",
+                "enablePaging": true
+            },
+            "name": "MyMemoryProxy1",
+            "designerId": "9ce55ad1-48f0-419d-b335-de2f39d69bd5"
+        }
+    ]
+}

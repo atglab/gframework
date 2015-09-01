@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leveledit",
+        "designer|userClassName": "manager.level.LevelEditViewModel"
+    },
+    "name": "manager.point.PointEditViewModel2",
+    "designerId": "ffdc2606-09b0-4344-a803-a302cf6e4684"
+}

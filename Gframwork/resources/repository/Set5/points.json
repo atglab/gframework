@@ -1,0 +1,23 @@
+[
+
+{
+  "id" : "purchase_point",
+  "name" : "상품 구매 포인트",
+  "description" : "고객이 여행 상품을 구매 했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 1000000,
+  "relation_method": "status_type",
+  "relation_object": "user_status",
+  "icon" : "/resources/images/points/point_bill.png"
+},
+{   
+  "id" : "evaluation_point",
+  "name" : "평가 포인트",
+  "description" : "사용자가 여행 후기 작성 또는 여행 상품에 대해 평가 했을 경우 부여하는 포인트",
+  "min" : 0,
+  "max" : 100000,
+  "relation_method": "level_type",
+  "relation_object": "evaluation_level",
+  "icon" : "/resources/images/points/point_pen.png"
+}
+]

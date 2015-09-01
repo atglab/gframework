@@ -1,0 +1,127 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pointedit",
+        "designer|userClassName": "manager.point.PointEditViewController"
+    },
+    "name": "MyViewController",
+    "designerId": "fbafca3b-7cde-4698-8610-1741f531e7fe",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelPoint",
+                "implHandler": [
+                    "var point\t\t\t= this.getViewModel().get('thePoint');",
+                    "var isDirtyPoint\t= point.dirty;",
+                    "if(isDirtyPoint)  {",
+                    "    if(!point.create) {",
+                    "        Ext.getStore('Point').rejectChanges();",
+                    "",
+                    "        var pointIcon = this.lookupReference('pointIcon');",
+                    "        this.onSelectedPointIcon(pointIcon);",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "onCancelPoint",
+            "designerId": "9b6cee8a-9474-44c3-a8cc-253588ed5f67"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "poistion"
+                ],
+                "fn": "onSaveError",
+                "implHandler": [
+                    "Ext.toast({",
+                    "    title: 'Point-저장 실패' ,",
+                    "    html: '필드값을 다시 확인해주세요.',",
+                    "    align: 't',",
+                    "    bodyPadding:10",
+                    "});"
+                ]
+            },
+            "name": "onSaveError",
+            "designerId": "2a6890ee-fce7-4a5d-964c-a99fe1786a20"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "component"
+                ],
+                "fn": "onSelectedPointIcon",
+                "implHandler": [
+                    "var point\t= this.getViewModel().get('thePoint');",
+                    "",
+                    "if(!point.create) {",
+                    "    if(point.get('icon') == '/resources/images/points/point_mark.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[0]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_medal.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[1]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_potion.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[2]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_star.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[3]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_bill.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[4]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_exp_1.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[5]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_exp_2.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[6]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_gold.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[7]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_user.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[8]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_pen.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[9]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_report.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[10]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_subscription.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[11]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_download.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[12]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_sponsor.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[13]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_car.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[14]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_game_user.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[15]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_game.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[16]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_game_download.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[17]);",
+                    "    } else if(point.get('icon') == '/resources/images/points/point_movie.png') {",
+                    "        component.selModel.select(component.dataSource.data.items[18]);",
+                    "    }",
+                    "",
+                    "}"
+                ]
+            },
+            "name": "onSelectedPointIcon",
+            "designerId": "5089bb7a-038e-4be6-995b-d44b451b638a"
+        }
+    ]
+}

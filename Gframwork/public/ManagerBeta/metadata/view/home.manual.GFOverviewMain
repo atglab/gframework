@@ -1,0 +1,56 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": null,
+        "cls": [
+            "top_menu_color"
+        ],
+        "designer|userAlias": "gfoverviewmain",
+        "designer|userClassName": "home.manual.GFOverviewMain",
+        "height": null,
+        "maxWidth": 880,
+        "minWidth": null,
+        "padding": 3,
+        "scrollable": null,
+        "title": null,
+        "width": 880
+    },
+    "name": "MyForm22",
+    "designerId": "f17c77e6-1cce-4c08-b638-2c4e59b08adb",
+    "viewControllerInstanceId": "b8c01c87-ced9-4a9b-afe4-246ea6df417d",
+    "viewModelInstanceId": "2b9bb78c-23e1-4619-b84e-11c7b9548137",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": null,
+                "height": null,
+                "margin": null,
+                "maxHeight": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "minWidth": null,
+                "padding": null,
+                "scrollable": "true",
+                "src": "/resources/images/manual/overviewGF.png",
+                "style": "max-height:100%; max-width:100%;",
+                "width": null
+            },
+            "name": "MyImg14",
+            "configAlternates": {
+                "style": "string"
+            },
+            "designerId": "ce9fc5ce-f038-43ed-9cc1-bd0c07c6a439"
+        }
+    ]
+}

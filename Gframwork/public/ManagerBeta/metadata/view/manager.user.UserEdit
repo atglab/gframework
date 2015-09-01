@@ -1,0 +1,851 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "useredit",
+        "designer|userClassName": "manager.user.UserEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "reference": null,
+        "scrollable": "true",
+        "title": [
+            "{theUser.name}"
+        ],
+        "width": null
+    },
+    "name": "manager.user.UserEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "b3bd0b33-5009-4345-898d-6e694378afbf",
+    "viewControllerInstanceId": "a8ceba89-7700-43c6-98b7-680a6f37c606",
+    "viewModelInstanceId": "c1273758-37a4-42ef-a0bf-cb40106c0553",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "dock": null,
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer22",
+            "designerId": "d3ddd7b0-1bdd-4db6-85ea-26fd19f9fb76",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "bottom",
+                        "designer|displayName": "userEditToolbar",
+                        "enableFocusableContainer": null,
+                        "layout|flex": null,
+                        "width": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "f7e131c9-ee09-4f7f-82cd-a969c543d924",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null,
+                                "width": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "d3e9e5da-7480-4ce3-917c-d49a2b017b80",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUserSaveButtonClick",
+                                        "implHandler": [
+                                            "var userEditTab = button.up('useredit');",
+                                            "var me = this;",
+                                            "",
+                                            "var saveUser \t= userEditTab.getViewModel().get('theUser');",
+                                            "var genderCmp\t= this.lookupReference('gender');",
+                                            "var userIDCmp\t= this.lookupReference('userID');",
+                                            "var userImg\t\t= this.lookupReference('userImg');",
+                                            "",
+                                            "if(saveUser.create) {\t\t//새로운 User",
+                                            "    if(userEditTab.isValid()) {",
+                                            "",
+                                            "        if(!saveUser.id || !saveUser.name || !saveUser.nickname) {",
+                                            "            Ext.toast({",
+                                            "                title: 'User-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        } else {",
+                                            "            var userStore\t= Ext.getStore('User');",
+                                            "            var user\t\t= Ext.create('GFManager.model.User');",
+                                            "            var gender;",
+                                            "",
+                                            "            user.set('id', saveUser.id);",
+                                            "            user.set('name', saveUser.name);",
+                                            "            user.set('nickname', saveUser.nickname);",
+                                            "",
+                                            "",
+                                            "            if(genderCmp.items.items[0].value) {\t\t//남자",
+                                            "                gender = 1;",
+                                            "            } else if(genderCmp.items.items[1].value) {\t//여자",
+                                            "                gender = 2;",
+                                            "            } else if(genderCmp.items.items[2].value) {\t//기타",
+                                            "                gender = 0;",
+                                            "            }",
+                                            "",
+                                            "            //user.set('profile', userImg.src.substring(1));",
+                                            "            user.set('profile', userImg.src);",
+                                            "            user.set('gender', gender);",
+                                            "            user.set('birthday', saveUser.birthday);",
+                                            "",
+                                            "            userStore.add(user);",
+                                            "            userStore.save();",
+                                            "            userStore.commitChanges();",
+                                            "",
+                                            "            userEditTab.close();",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'User-추가',",
+                                            "                html: '새로운 User ('+ saveUser.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "",
+                                            "    } else {",
+                                            "        Ext.toast({",
+                                            "            title: 'User-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "} else {\t\t\t\t\t\t\t//기존 User",
+                                            "    if(saveUser.dirty) { \t\t\t//기존 User 정보 변경시",
+                                            "        if(userEditTab.isValid()) {\t//기존 User 정보 검증",
+                                            "            Ext.MessageBox.confirm('User-저장', saveUser.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                if (btn == 'yes') {",
+                                            "",
+                                            "                    saveUser.save();",
+                                            "",
+                                            "                    Ext.toast({",
+                                            "                        title: 'User-수정 완료' ,",
+                                            "                        html: saveUser.get('name') + '의 User정보가 성공적으로 수정되었습니다.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "",
+                                            "                } else {",
+                                            "                    me.onCancelUser();",
+                                            "                }",
+                                            "            });",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'User-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onUserSaveButtonClick",
+                                    "designerId": "fd90a336-d742-43b1-b8ea-34be03b397db"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null,
+                                "width": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "97a85217-6f92-4757-a9ac-a80ae2c9e536",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUserCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelUser();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onUserCancelButtonClick",
+                                    "designerId": "95ffb4a7-8f48-45db-a685-7b1de9438608"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet2",
+            "designerId": "474e12eb-bbaa-494b-8ba1-4b55c997807b",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "userImageField",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout|flex": 2,
+                        "width": ""
+                    },
+                    "name": "MyFieldContainer1",
+                    "designerId": "41fbf469-fa1d-4f19-8576-c70048993d5e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": null,
+                                "layout": "auto",
+                                "reference": "imageForm",
+                                "title": null
+                            },
+                            "name": "MyForm1",
+                            "designerId": "8035dfd4-7481-418f-b633-0a3f3485046e",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "designer|displayName": "userImg",
+                                        "height": 160,
+                                        "maxHeight": 160,
+                                        "maxWidth": 160,
+                                        "reference": "userImg",
+                                        "src": "/resources/images/user/user.png",
+                                        "width": 160
+                                    },
+                                    "name": "MyImg1",
+                                    "designerId": "f125507e-12f6-4e51-b135-eba404045916",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onUserImageBeforeRender",
+                                                "implHandler": [
+                                                    "var user\t= this.getViewModel().get('theUser');",
+                                                    "var userImg\t= this.lookupReference('userImg');",
+                                                    "",
+                                                    "if(user.create) {\t\t//새로운 User 추가시",
+                                                    "} else {",
+                                                    "    userImg.setSrc(''+user.get('profile'));    ",
+                                                    "}"
+                                                ],
+                                                "name": "beforerender",
+                                                "scope": "me"
+                                            },
+                                            "name": "onUserImageBeforeRender",
+                                            "designerId": "63940515-61eb-4e02-89eb-818721454e92"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.File",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": null,
+                                        "buttonOnly": true,
+                                        "componentCls": null,
+                                        "dirtyCls": null,
+                                        "fieldLabel": null,
+                                        "height": null,
+                                        "margin": null,
+                                        "maxWidth": null,
+                                        "msgTarget": null,
+                                        "name": "imgupload",
+                                        "overCls": null,
+                                        "reference": "fileup",
+                                        "regex": "(/.(gif|jpg|jpeg|png)$/i)",
+                                        "regexText": "이미지 파일만 선택 가능합니다.",
+                                        "renderTo": null,
+                                        "width": null
+                                    },
+                                    "name": "MyFileUpload1",
+                                    "designerId": "033c4ec0-d127-4ef6-9aa2-335ba2811f8a",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onFilefieldChange",
+                                                "implHandler": [
+                                                    "var imgForm\t= this.lookupReference('imageForm');",
+                                                    "var userId\t= this.lookupReference('userID').value;",
+                                                    "var userImg\t= this.lookupReference('userImg');",
+                                                    "",
+                                                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                                    "",
+                                                    "var me\t\t= this;",
+                                                    "",
+                                                    "",
+                                                    "var encodedFilename = Ext.urlEncode({ 'x_key': key, 'access_token': token });",
+                                                    "",
+                                                    "if(userId) {    ",
+                                                    "    imgForm.submit({",
+                                                    "        url:'/api/v1/manager/users/userprofile/' + userId + '?'+encodedFilename,        ",
+                                                    "        waitMsg: '이미지 로드 중...',",
+                                                    "        success: function(response, records){",
+                                                    "            var decodeResponse \t\t= Ext.decode(records.response.responseText);            ",
+                                                    "            var img = ''+decodeResponse.data;",
+                                                    "            userImg.setSrc(img);",
+                                                    "",
+                                                    "            var user\t= me.getViewModel().get('theUser');",
+                                                    "            if(!user.create) {",
+                                                    "                user.set('profile', decodeResponse.data);",
+                                                    "            }",
+                                                    "        },",
+                                                    "        failure: function(response){            ",
+                                                    "        }",
+                                                    "    });",
+                                                    "} else {",
+                                                    "    Ext.toast({",
+                                                    "        title: 'User-이미지 수정' ,",
+                                                    "        html: 'User의 이미지를 변경하기 위해서는 ID를 입력해주세요.',",
+                                                    "        align: 't',",
+                                                    "        bodyPadding:10",
+                                                    "    });",
+                                                    "",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onFilefieldChange",
+                                            "designerId": "d77ca215-85b9-412e-9cb6-9e81cf666ebe"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.FileButton",
+                                            "reference": {
+                                                "name": "buttonConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "arrowCls": null,
+                                                "baseCls": null,
+                                                "cls": " ",
+                                                "componentCls": null,
+                                                "designer|displayName": "userImageButton",
+                                                "height": null,
+                                                "iconCls": null,
+                                                "maxHeight": null,
+                                                "maxWidth": 160,
+                                                "overCls": null,
+                                                "text": "이미지 찾기",
+                                                "width": 160
+                                            },
+                                            "name": "MyFileButton",
+                                            "designerId": "0c66b9fb-eb00-4c5c-8dc7-0aa48e4b38e0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "alignTarget": null,
+                        "defaultAlign": null,
+                        "designer|displayName": "userInfomationField",
+                        "fieldLabel": null,
+                        "height": null,
+                        "labelAlign": null,
+                        "layout": "anchor",
+                        "layout|flex": 5,
+                        "margin": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer2",
+                    "designerId": "b11b8891-2e78-4d20-af9f-f3777ab2efd5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "designer|displayName": "ID",
+                                "emptyText": "특수문자를 제외한 1~20자 이내의 ID를 입력하세요.",
+                                "fieldLabel": "ID*",
+                                "layout|anchor": "100%",
+                                "maskRe": null,
+                                "maxLength": 20,
+                                "maxLengthText": null,
+                                "minLength": 1,
+                                "reference": "userID",
+                                "regex": "/^[A-Za-z]/",
+                                "value": [
+                                    "{theUser.id}"
+                                ],
+                                "vtype": "alphanum"
+                            },
+                            "name": "MyTextField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "c31dc7a1-7698-48ad-8c50-ce08b6656ea0",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUserIDTextfieldBeforeRender",
+                                        "implHandler": [
+                                            "var userIDCmp\t\t= this.lookupReference('userID');",
+                                            "var isCreateUser\t= this.getViewModel().get('theUser').create;",
+                                            "",
+                                            "if(isCreateUser) {\t\t//새로운 User 추가시",
+                                            "    userIDCmp.setDisabled(false);",
+                                            "} else {",
+                                            "    userIDCmp.setDisabled(true);",
+                                            "}"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onUserIDTextfieldBeforeRender",
+                                    "designerId": "c0857bd4-451e-4714-9096-63d95e74a225"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "이름",
+                                "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                                "fieldLabel": "이름*",
+                                "formBind": null,
+                                "layout|anchor": "100%",
+                                "maxLength": 20,
+                                "minLength": 1,
+                                "publishes": null,
+                                "value": [
+                                    "{theUser.name}"
+                                ]
+                            },
+                            "name": "MyTextField",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "8ee5ec03-96d7-4a3a-bd56-22045e720a79"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "닉네임",
+                                "emptyText": "1~20자 이내의 닉네임을 입력하세요.",
+                                "fieldLabel": "닉네임*",
+                                "layout|anchor": "100%",
+                                "maxLength": 20,
+                                "minLength": 1,
+                                "publishes": null,
+                                "value": [
+                                    "{theUser.nickname}"
+                                ]
+                            },
+                            "name": "MyTextField1",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "4730cc28-8d43-46bd-b850-eb31f5753df0"
+                        },
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "성별",
+                                "fieldLabel": "성별",
+                                "layout|anchor": "100%",
+                                "reference": "gender",
+                                "value": null
+                            },
+                            "name": "MyRadioGroup1",
+                            "designerId": "03f9a32b-545b-488f-be03-0478b103b81e",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "남성",
+                                        "designer|displayName": "남성",
+                                        "fieldLabel": null,
+                                        "inputValue": "1",
+                                        "name": "method",
+                                        "value": null
+                                    },
+                                    "name": "MyRadio",
+                                    "designerId": "ebaaad04-0b94-4a43-8fd6-4bd89b6536cb"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "여성",
+                                        "designer|displayName": "여성",
+                                        "fieldLabel": null,
+                                        "inputValue": "2",
+                                        "name": "method",
+                                        "value": null
+                                    },
+                                    "name": "MyRadio1",
+                                    "designerId": "1102295b-c91e-489a-95b5-320651d5970c"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "기타",
+                                        "designer|displayName": "기타",
+                                        "fieldLabel": null,
+                                        "formBind": null,
+                                        "inputValue": "0",
+                                        "name": "method",
+                                        "value": null
+                                    },
+                                    "name": "MyRadio3",
+                                    "designerId": "64422c97-b116-499b-b36e-8a44c52d3d5f"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUserRadiogroupChange",
+                                        "implHandler": [
+                                            "var isCreateUser\t= this.getViewModel().get('theUser').create;",
+                                            "",
+                                            "if(isCreateUser) {\t\t//새로운 User 추가시",
+                                            "} else {",
+                                            "    var user\t= this.getViewModel().get('theUser');",
+                                            "    user.set('gender', newValue.method);    ",
+                                            "}"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onUserRadiogroupChange",
+                                    "designerId": "6ef3d040-4d06-4bc0-a5f8-e92a59b6ba10"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onUserRadiogroupBeforeRender",
+                                        "implHandler": [
+                                            "var genderCmp\t\t= this.lookupReference('gender');",
+                                            "var isCreateUser\t= this.getViewModel().get('theUser').create;",
+                                            "",
+                                            "if(isCreateUser) {\t\t//새로운 User 추가시",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    var gender\t\t= this.getViewModel().get('theUser').get('gender');",
+                                            "",
+                                            "    if(gender !== null) {",
+                                            "",
+                                            "        if(gender === 0) {\t\t\t//기타",
+                                            "",
+                                            "            genderCmp.items.items[2].setValue(true);",
+                                            "",
+                                            "",
+                                            "        } else if(gender === 1) {\t//남자",
+                                            "",
+                                            "            genderCmp.items.items[0].setValue(true);",
+                                            "",
+                                            "",
+                                            "        } else if(gender === 2) {\t//여자",
+                                            "",
+                                            "            genderCmp.items.items[1].setValue(true);",
+                                            "",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onUserRadiogroupBeforeRender",
+                                    "designerId": "8075b2cc-766d-488d-9caa-124bc0365015"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "생년월일을 입력하세요.",
+                                "fieldLabel": "생년월일",
+                                "format": "Y-m-d",
+                                "layout|anchor": "100%",
+                                "modelValidation": false,
+                                "submitFormat": null,
+                                "value": [
+                                    "{theUser.birthday}"
+                                ]
+                            },
+                            "name": "MyDateField",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "8275ac13-fc52-4a47-9d62-b3cbc7fd018d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'user_edittab') {",
+                    "",
+                    "} else {",
+                    "",
+                    "    if(!this.getViewModel().data.theUser.dropped) {",
+                    "        var user\t\t= this.getViewModel().get('theUser');",
+                    "",
+                    "        var isDirtyUser\t= user.dirty;",
+                    "        var isCreateUser= user.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyUser)  {\t\t//기존 User 수정시 Tab이 변경되었을 경우",
+                    "",
+                    "            Ext.MessageBox.confirm('User-저장', user.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    user.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'User-수정 완료' ,",
+                    "                        html: user.get('name') + '의 User정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelUser();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onUserFormDeactivate",
+            "designerId": "fc5a69f2-86ae-497b-97d5-13a3afe7b59b"
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer37",
+            "designerId": "1ac12858-c2dd-48b2-bf7a-6a8b86acdb51",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "14af4aa4-e7d1-4300-89e2-f2720d94a8ea"
+                }
+            ]
+        }
+    ]
+}

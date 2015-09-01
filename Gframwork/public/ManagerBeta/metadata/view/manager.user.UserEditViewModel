@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "useredit",
+        "designer|userClassName": "manager.user.UserEditViewModel",
+        "links": null
+    },
+    "designerId": "c1273758-37a4-42ef-a0bf-cb40106c0553"
+}

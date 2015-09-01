@@ -1,0 +1,1402 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "leveledit",
+        "designer|userClassName": "manager.level.LevelEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "reference": null,
+        "scrollable": "true",
+        "title": [
+            "{theLevel.name}"
+        ],
+        "width": null
+    },
+    "name": "manager.activity.ActivityEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "68d8c349-1a76-4de8-bebe-f2731bcbcb9f",
+    "viewControllerInstanceId": "2e86c971-f082-4eb1-b2d6-7bc31a8e4250",
+    "viewModelInstanceId": "ffdc2606-09b0-4344-a803-a302cf6e4684",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer28",
+            "designerId": "3c81ecdf-732b-4ca9-8a0b-8ca0bb4cb2af",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "levelEditToolbar",
+                        "enableFocusableContainer": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "47adfdf9-25be-4749-8d7d-91ac813235ab",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "10540639-f127-4576-9c76-c46753a2ce66",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelSaveButtonClick",
+                                        "implHandler": [
+                                            "var levelEditTab = button.up('leveledit');",
+                                            "var me = this;",
+                                            "",
+                                            "var saveLevel = levelEditTab.getViewModel().get('theLevel');",
+                                            "",
+                                            "var isLevelEntity = Ext.getStore('LevelEntity').getModifiedRecords().length;",
+                                            "",
+                                            "var method_radiogroup = this.lookupReference('relation_method');",
+                                            "var difficultyCmp \t\t= this.lookupReference('difficulty');",
+                                            "",
+                                            "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                            "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                            "",
+                                            "if(saveLevel.create) {",
+                                            "",
+                                            "    if(levelEditTab.isValid()) {",
+                                            "",
+                                            "        if(!saveLevel.id || !saveLevel.name || !saveLevel.description ||",
+                                            "           !saveLevel.relation_object || !saveLevel.max || !saveLevel.icon) {",
+                                            "            Ext.toast({",
+                                            "                title: 'Level-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        } else {",
+                                            "            var levelStore\t= Ext.getStore('Level');",
+                                            "            var level \t\t= Ext.create('GFManager.model.Level');",
+                                            "            var relation_method;",
+                                            "",
+                                            "            level.set('id', saveLevel.id);",
+                                            "            level.set('name', saveLevel.name);",
+                                            "            level.set('description', saveLevel.description);",
+                                            "",
+                                            "            if(method_radiogroup.items.items[0].value) {",
+                                            "                relation_method = method_radiogroup.items.items[0].inputValue;",
+                                            "            } else if(method_radiogroup.items.items[1].value) {",
+                                            "                relation_method = method_radiogroup.items.items[1].inputValue;",
+                                            "            }",
+                                            "",
+                                            "            level.set('relation_method', relation_method);",
+                                            "            level.set('relation_object', saveLevel.relation_object);",
+                                            "            level.set('max', saveLevel.max);",
+                                            "            level.set('icon', saveLevel.icon);",
+                                            "",
+                                            "            var max\t\t\t= saveLevel.max;",
+                                            "            var difficulty\t= difficultyCmp.value;",
+                                            "            var type\t\t= relation_method;",
+                                            "            var id\t\t\t= saveLevel.relation_object;",
+                                            "",
+                                            "            var levelEntityStore\t= Ext.getStore('LevelEntity');",
+                                            "            var ckLoadBtntoStore\t= levelEntityStore.data.length;",
+                                            "",
+                                            "            if(ckLoadBtntoStore === 0) {\t\t//불러오기 버튼을 클릭하지 않았다면",
+                                            "                Ext.toast({",
+                                            "                    title: 'Level-저장 실패' ,",
+                                            "                    html: '불러오기 버튼을 클릭하여 레벨표를 완성하고 저장해주세요.<br>(*필수입력 : 연동방식, 연동요소, 최대레벨 및 난이도)',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "",
+                                            "            } else {",
+                                            "",
+                                            "                if(max && difficulty && type && id) {\t//값이 있으면",
+                                            "",
+                                            "                    if(id.indexOf('.') == -1) {",
+                                            "",
+                                            "                        Ext.Ajax.request({",
+                                            "                            url: '/api/v1/manager/rewards/leveltable',",
+                                            "                            method: 'GET',",
+                                            "                            headers: {",
+                                            "                                'x-key': key,",
+                                            "                                'x-access-token': token",
+                                            "                            },",
+                                            "                            params:{",
+                                            "                                maxLevel: max,",
+                                            "                                difficulty: difficulty,",
+                                            "                                rtype: type,",
+                                            "                                rid: id",
+                                            "                            },",
+                                            "                            success: function(response){",
+                                            "",
+                                            "                                var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "                                var levelEntityStore\t= Ext.getStore('LevelEntity');",
+                                            "                                levelEntityStore.loadData(decodeResponse.data, false);",
+                                            "",
+                                            "                                level.set('level_table', decodeResponse.data);",
+                                            "",
+                                            "",
+                                            "                                levelStore.add(level);",
+                                            "                                levelStore.save();",
+                                            "                                levelStore.commitChanges();",
+                                            "",
+                                            "                                levelEditTab.close();",
+                                            "",
+                                            "",
+                                            "                                Ext.toast({",
+                                            "                                    title: 'Level-추가',",
+                                            "                                    html: '새로운 Level ('+ saveLevel.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                                    align: 't',",
+                                            "                                    bodyPadding:10",
+                                            "                                });",
+                                            "",
+                                            "                            },",
+                                            "                            failure: function(response){console.log(response);}",
+                                            "",
+                                            "                        });",
+                                            "                    } else {",
+                                            "",
+                                            "                        Ext.toast({",
+                                            "                            title: 'Level-저장 실패' ,",
+                                            "                            html: '필드값을 다시 확인해주세요.',",
+                                            "                            align: 't',",
+                                            "                            bodyPadding:10",
+                                            "                        });",
+                                            "                    }",
+                                            "                } else {\t\t\t//값이 없으면",
+                                            "",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Level-저장 실패' ,",
+                                            "                        html: '필드값을 다시 확인해주세요.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                }",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "        }",
+                                            "",
+                                            "    } else {",
+                                            "",
+                                            "        Ext.toast({",
+                                            "            title: 'Level-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    if(saveLevel.dirty || isLevelEntity) { \t//change",
+                                            "        if(levelEditTab.isValid()) {",
+                                            "",
+                                            "            if(!saveLevel.get('id') || !saveLevel.get('name') || !saveLevel.get('description') ||",
+                                            "               !saveLevel.get('relation_object') || !saveLevel.get('max') || !saveLevel.get('icon')) {",
+                                            "",
+                                            "                Ext.toast({",
+                                            "                    title: 'Level-저장 실패' ,",
+                                            "                    html: '필드값을 다시 확인해주세요.',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "",
+                                            "            } else {",
+                                            "",
+                                            "                if(saveLevel.get('relation_object').indexOf('.') != -1) {",
+                                            "                    Ext.toast({",
+                                            "                        title: 'Level-저장 실패' ,",
+                                            "                        html: '필드값을 다시 확인해주세요.',",
+                                            "                        align: 't',",
+                                            "                        bodyPadding:10",
+                                            "                    });",
+                                            "                } else {",
+                                            "",
+                                            "                    Ext.MessageBox.confirm('Level-저장', saveLevel.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                        if (btn == 'yes') {",
+                                            "",
+                                            "                            Ext.getStore('LevelEntity').save();",
+                                            "                            Ext.getStore('LevelEntity').commitChanges();",
+                                            "",
+                                            "                            saveLevel.save();",
+                                            "",
+                                            "                            Ext.toast({",
+                                            "                                title: 'Level-수정 완료' ,",
+                                            "                                html: saveLevel.get('name') + '의 Level정보가 성공적으로 수정되었습니다.',",
+                                            "                                align: 't',",
+                                            "                                bodyPadding:10",
+                                            "                            });",
+                                            "",
+                                            "                        } else {",
+                                            "                            me.onCancelLevel();",
+                                            "                        }",
+                                            "                    });",
+                                            "                }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Level-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelSaveButtonClick",
+                                    "designerId": "00f1c885-723d-4fd7-8b7d-82b5b6d05675"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "cls": null,
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "dc941d68-fbeb-4e97-94b0-7f20144799cb",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelLevel();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelCancelButtonClick",
+                                    "designerId": "b221e8bd-2153-497f-8742-00530cd9b174"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "anchorSize": null,
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet3",
+            "designerId": "ef7b5a56-8688-43ee-a710-6fbb4e10cfba",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "ID",
+                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                        "fieldLabel": "ID*",
+                        "layout|anchor": "100%",
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "reference": "levelID",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{theLevel.id}"
+                        ],
+                        "vtype": "alphanum",
+                        "width": null
+                    },
+                    "name": "MyTextField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "fdc2f5a2-920f-4011-9dfc-4ba09be7c5b6",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLevelIDTextfieldBeforeRender",
+                                "implHandler": [
+                                    "var levelIDCmp\t\t= this.lookupReference('levelID');",
+                                    "var isCreateLevel\t= this.getViewModel().get('theLevel').create;",
+                                    "",
+                                    "if(isCreateLevel) {",
+                                    "    levelIDCmp.setDisabled(false);",
+                                    "} else {",
+                                    "    levelIDCmp.setDisabled(true);",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onLevelIDTextfieldBeforeRender",
+                            "designerId": "c0c69750-8018-4845-b991-23aa80307a7b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "이름",
+                        "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                        "fieldLabel": "이름*",
+                        "formBind": null,
+                        "layout|anchor": "100%",
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "publishes": null,
+                        "value": [
+                            "{theLevel.name}"
+                        ]
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "b87393b9-fb80-45c1-93ff-c269c81b8750"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "설명",
+                        "emptyText": "1~1000자 이내의 설명을 입력하세요.",
+                        "fieldLabel": "설명*",
+                        "height": 60,
+                        "layout|anchor": "100%",
+                        "maxHeight": 60,
+                        "maxLength": 1000,
+                        "minLength": 1,
+                        "value": [
+                            "{theLevel.description}"
+                        ]
+                    },
+                    "name": "MyTextArea3",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "90aa9209-7d9d-40c4-a224-0190142301c3"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "연동방식",
+                        "fieldLabel": "연동방식*",
+                        "reference": "relation_method",
+                        "value": null
+                    },
+                    "name": "MyRadioGroup",
+                    "designerId": "43e99bda-258d-49a2-a1e3-9803b64bac44",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Point",
+                                "designer|displayName": "Point",
+                                "fieldLabel": null,
+                                "inputValue": "point_type",
+                                "name": "method"
+                            },
+                            "name": "MyRadio",
+                            "designerId": "7841f321-ebb4-46ef-bc70-126e5b2117b6"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Mission",
+                                "designer|displayName": "Mission",
+                                "fieldLabel": null,
+                                "inputValue": "mission_type",
+                                "name": "method",
+                                "value": null
+                            },
+                            "name": "MyRadio2",
+                            "designerId": "3ffdfb27-19ee-450f-8226-39686ec8a23f"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLevelRadiogroupChange",
+                                "implHandler": [
+                                    "var radioPosition \t\t= newValue.method;",
+                                    "var isCreateLevel\t\t= this.getViewModel().get('theLevel').create;",
+                                    "var relationFactorCmp\t= this.lookupReference('relation_factor');",
+                                    "var store;",
+                                    "",
+                                    "",
+                                    "if(isCreateLevel) {\t\t//새로운 Level 추가시",
+                                    "    if(radioPosition == 'point_type') {",
+                                    "        store =  Ext.getStore('Point');",
+                                    "    } else if(radioPosition == 'mission_type') {",
+                                    "        store =  Ext.getStore('RelationFactor');",
+                                    "    }",
+                                    "} else {",
+                                    "",
+                                    "    if(radioPosition == 'point_type') {",
+                                    "        store =  Ext.getStore('Point');",
+                                    "        this.getViewModel().get('theLevel').set('relation_method', 'point_type');",
+                                    "    } else if(radioPosition == 'mission_type') {",
+                                    "        store =  Ext.getStore('RelationFactor');",
+                                    "        this.getViewModel().get('theLevel').set('relation_method', 'mission_type');",
+                                    "    }",
+                                    "}",
+                                    "",
+                                    "relationFactorCmp.bindStore(store);",
+                                    "",
+                                    "var value \t\t= relationFactorCmp.value;",
+                                    "var rawValue\t= relationFactorCmp.rawValue;",
+                                    "",
+                                    "if(value == rawValue) {",
+                                    "    relationFactorCmp.setValue('');",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onLevelRadiogroupChange",
+                            "designerId": "82198b10-6187-4fb1-a0b7-91040886eebe"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLevelRadiogroupBeforeRender",
+                                "implHandler": [
+                                    "var relationMethodCmp\t= this.lookupReference('relation_method');",
+                                    "var isCreateLevel\t\t= this.getViewModel().get('theLevel').create;",
+                                    "",
+                                    "if(isCreateLevel) {\t\t//새로운 Level 추가시",
+                                    "     relationMethodCmp.items.items[0].setValue(true);",
+                                    "} else {",
+                                    "    //연동방식 init",
+                                    "    var relation_method = this.getViewModel().get('theLevel').get('relation_method');",
+                                    "",
+                                    "    //연동방식에 따른 Radio버튼 위치 및 연동요소 Store 설정",
+                                    "    if(relation_method == 'point_type'){\t//연동방식이 Point일 경우,",
+                                    "        relationMethodCmp.items.items[0].setValue(true);",
+                                    "    } else if(relation_method == 'mission_type') {\t//연동방식이 Mission일 경우,",
+                                    "        relationMethodCmp.items.items[1].setValue(true);",
+                                    "    } ",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onLevelRadiogroupBeforeRender",
+                            "designerId": "1bc35e78-c3c3-43a8-b4bd-518b23c37a8c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "연동요소",
+                        "displayField": "name",
+                        "editable": false,
+                        "emptyText": "연동요소를 리스트에서 선택하세요.",
+                        "fieldLabel": "연동요소*",
+                        "id": null,
+                        "layout|anchor": "100%",
+                        "reference": "relation_factor",
+                        "renderTo": null,
+                        "store": null,
+                        "value": [
+                            "{theLevel.relation_object}"
+                        ],
+                        "valueField": "id",
+                        "valueNotFoundText": null
+                    },
+                    "name": "MyComboBox",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "074c5e17-2abf-47e8-9fcf-f191a700fcc7",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRelationFactorComboboxSelect",
+                                "implHandler": [
+                                    "var selectedRelationFactor\t= record.get('name');",
+                                    "var isCondition \t\t\t= this.lookupReference('condition');",
+                                    "",
+                                    "if(selectedRelationFactor !== '특정 mission') {",
+                                    "",
+                                    "    isCondition.setEditor({",
+                                    "        xtype: 'numberfield',",
+                                    "        allowBlank: false",
+                                    "    });",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "",
+                                    "    isCondition.setEditor({",
+                                    "        xtype: 'numberfield',",
+                                    "        allowBlank: false,",
+                                    "        editable: false,",
+                                    "        disabled: true",
+                                    "    });",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onRelationFactorComboboxSelect",
+                            "designerId": "4f86e39d-227d-4ffd-82a2-87f133a1dc92"
+                        },
+                        {
+                            "type": "Ext.view.BoundList",
+                            "reference": {
+                                "name": "listConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "pointBoundList",
+                                "itemSelector": "div"
+                            },
+                            "name": "MyBoundList7",
+                            "designerId": "53647cc2-86c7-4277-a202-f02a88f534be",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<tpl if=\"{icon}\">       ",
+                                            "    <img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}        ",
+                                            "<tpl else>\t\t\t\t\t\t\t        ",
+                                            "    {name}            ",
+                                            "</tpl>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "064bb46c-cb1a-418b-8c78-14f7a34ea1a2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "levelField",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "width": null
+                    },
+                    "name": "MyFieldContainer",
+                    "designerId": "ac469290-45ba-4206-9a93-f81bb7c98f67",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "최대 레벨",
+                                "emptyText": "10",
+                                "fieldLabel": "최대 레벨*",
+                                "layout|flex": 1,
+                                "minValue": 0,
+                                "reference": null,
+                                "value": [
+                                    "{theLevel.max}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyNumberField2",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "4513b7db-c285-4510-996d-b3aec362c80d"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "난이도",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "최상",
+                                "fieldLabel": "난이도",
+                                "layout|flex": 1,
+                                "layout|margins": null,
+                                "margin": "0 0 0 10",
+                                "pageSize": null,
+                                "reference": "difficulty",
+                                "store": [
+                                    "[['5','최상'],['4','상'],['3','중'],['2','하'],['1','최하']]"
+                                ],
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox2",
+                            "configAlternates": {
+                                "store": "array"
+                            },
+                            "designerId": "5c854e0a-bbcc-4cfd-aeee-d382026357e1",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelComboboxBeforeRender",
+                                        "implHandler": [
+                                            "component.setValue(5);"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelComboboxBeforeRender",
+                                    "designerId": "ed40f50b-dfd8-4ebb-8e13-26c323087109"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "업방식",
+                                "displayField": "name",
+                                "emptyText": "누적",
+                                "fieldLabel": "업방식*",
+                                "hidden": true,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "padding": null,
+                                "store": [
+                                    "[['true','누적'],['false','차감']]",
+                                    ""
+                                ],
+                                "value": [
+                                    "{theLevel.isCumulative}"
+                                ],
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox5",
+                            "configAlternates": {
+                                "value": "binding",
+                                "store": "array"
+                            },
+                            "designerId": "a3695f9e-8ff5-4d4f-b236-f4ab3cdd6c4d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "text": "불러오기"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "512f0202-8a7c-432a-97bf-825dc0200d07",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelLoadButtonClick",
+                                        "implHandler": [
+                                            "var levelEditTab\t= button.up('leveledit');",
+                                            "var level \t\t\t= levelEditTab.getViewModel().get('theLevel');",
+                                            "",
+                                            "var isCreateLevel\t= level.create;",
+                                            "var difficultyCmp\t= this.lookupReference('difficulty');",
+                                            "var me\t\t\t\t= this;",
+                                            "",
+                                            "var max;",
+                                            "var difficulty;",
+                                            "var type;",
+                                            "var id;",
+                                            "",
+                                            "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                                            "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                                            "",
+                                            "if(isCreateLevel) {",
+                                            "",
+                                            "    if(!difficultyCmp.value || !level.relation_object || !level.max) {",
+                                            "        Ext.toast({",
+                                            "            title: 'Level-불러오기 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동방식, 연동요소, 최대레벨 및 난이도)',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    } else {",
+                                            "        max\t\t\t= level.max;",
+                                            "        difficulty\t= difficultyCmp.value;",
+                                            "        var method_radiogroup = this.lookupReference('relation_method');",
+                                            "        if(method_radiogroup.items.items[0].value) {\t\t\ttype = 'point_type';\t}",
+                                            "        else if(method_radiogroup.items.items[1].value) {\t\ttype = 'mission_type';\t}",
+                                            "        id\t\t\t= level.relation_object;",
+                                            "",
+                                            "        if(id.indexOf('.') == -1) {",
+                                            "            Ext.Ajax.request({",
+                                            "                url: '/api/v1/manager/rewards/leveltable',",
+                                            "                method: 'GET',",
+                                            "                headers: {",
+                                            "                    'x-key': key,",
+                                            "                    'x-access-token': token",
+                                            "                },",
+                                            "                params:{",
+                                            "                    maxLevel: max,",
+                                            "                    difficulty: difficulty,",
+                                            "                    rtype: type,",
+                                            "                    rid: id",
+                                            "                },",
+                                            "                success: function(response){",
+                                            "",
+                                            "                    var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "                    var levelEntityStore\t= Ext.getStore('LevelEntity');",
+                                            "                    levelEntityStore.loadData(decodeResponse.data, false);",
+                                            "",
+                                            "                },",
+                                            "                failure: function(response){console.log(response);}",
+                                            "",
+                                            "            });",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Level-불러오기 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동방식, 연동요소, 최대레벨 및 난이도)',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "",
+                                            "        }",
+                                            "",
+                                            "",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "    //==================================================================================================",
+                                            "",
+                                            "",
+                                            "",
+                                            "    max \t\t= level.get('max');",
+                                            "    difficulty\t= difficultyCmp.value;",
+                                            "    type\t\t= level.get('relation_method');",
+                                            "    id\t\t\t= level.get('relation_object');",
+                                            "",
+                                            "    var me = this;",
+                                            "",
+                                            "",
+                                            "",
+                                            "    if(max && difficulty && type && id) {",
+                                            "        if(id.indexOf('.') == -1) {",
+                                            "",
+                                            "",
+                                            "            Ext.Ajax.request({",
+                                            "                url: '/api/v1/manager/rewards/leveltable',",
+                                            "                method: 'GET',",
+                                            "                headers: {",
+                                            "                    'x-key': key,",
+                                            "                    'x-access-token': token",
+                                            "                },",
+                                            "                params:{",
+                                            "                    maxLevel: max,",
+                                            "                    difficulty: difficulty,",
+                                            "                    rtype: type,",
+                                            "                    rid: id",
+                                            "                },",
+                                            "                success: function(response){",
+                                            "                    // console.log(response);",
+                                            "",
+                                            "                    var decodeResponse \t\t= Ext.decode(response.responseText);",
+                                            "                    var levelEntityStore\t= Ext.getStore('LevelEntity');",
+                                            "                    levelEntityStore.loadData(decodeResponse.data, false);",
+                                            "",
+                                            "                    me.getViewModel().get('theLevel').set('level_table', decodeResponse.data);",
+                                            "",
+                                            "                },",
+                                            "                failure: function(response){console.log(response);}",
+                                            "",
+                                            "            });",
+                                            "        } else {",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Level-불러오기 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동방식, 연동요소, 최대레벨 및 난이도)',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "    } else {",
+                                            "",
+                                            "        Ext.toast({",
+                                            "            title: 'Level-불러오기 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.<br>(*필수입력 : 연동방식, 연동요소, 최대레벨 및 난이도)',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelLoadButtonClick",
+                                    "designerId": "6d2aca78-3e70-4d0b-bf25-e2e5dc48bdc5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "레벨 표",
+                        "fieldLabel": "레벨 표*",
+                        "height": null,
+                        "margin": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer2",
+                    "designerId": "24cc3457-90ac-442d-aa5a-452f29f2bc51",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": null,
+                                "cls": [
+                                    "panel_color"
+                                ],
+                                "collapsedCls": null,
+                                "columnLines": true,
+                                "componentCls": null,
+                                "data": null,
+                                "defaultAlign": null,
+                                "deferRowRender": true,
+                                "designer|displayName": "LevelGridPanel",
+                                "enableColumnHide": false,
+                                "forceFit": true,
+                                "margin": null,
+                                "modelValidation": false,
+                                "overCls": null,
+                                "padding": "1 1 0 1",
+                                "reference": null,
+                                "stateful": true,
+                                "store": "LevelEntity",
+                                "title": null
+                            },
+                            "name": "MyGridPanel1",
+                            "configAlternates": {
+                                "data": "binding"
+                            },
+                            "designerId": "5c21c5f9-f986-478b-ae69-85feb87fcc00",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "center",
+                                        "dataIndex": "level",
+                                        "format": "0",
+                                        "sortable": true,
+                                        "text": "레벨"
+                                    },
+                                    "name": "MyNumberColumn5",
+                                    "designerId": "48627c97-8fba-4c7f-b1af-0143cea779eb",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "name": "MyNumberField",
+                                            "designerId": "0915311d-a2fa-45f3-82d3-88fa305b0567"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "center",
+                                        "dataIndex": "condition",
+                                        "designer|displayName": "획득 조건",
+                                        "format": "0",
+                                        "reference": "condition",
+                                        "shrinkWrap": null,
+                                        "sortable": true,
+                                        "text": "획득 조건"
+                                    },
+                                    "name": "MyNumberColumn4",
+                                    "designerId": "31789d48-7bc4-49ce-af18-8e4bcbce232f"
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.RowEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "levelRowEditingPlugin"
+                                    },
+                                    "name": "MyRowEditingPlugin1",
+                                    "designerId": "f9f3bed4-6712-41a9-b35c-8fe7a22fe317"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelGridpanelItemClick",
+                                        "implHandler": [
+                                            "var isCreateLevel\t\t= this.getViewModel().get('theLevel').create;",
+                                            "",
+                                            "if(isCreateLevel) {\t\t//새로운 Level 추가시",
+                                            "    ",
+                                            "} else {",
+                                            "    ",
+                                            "    var relation_object\t= this.getViewModel().get('theLevel').get('relation_object');",
+                                            "    var isCondition\t\t= this.lookupReference('condition');",
+                                            "",
+                                            "    if(relation_object !== 'relation_factor_02') {",
+                                            "",
+                                            "        isCondition.setEditor({",
+                                            "            xtype: 'numberfield',",
+                                            "            allowBlank: false",
+                                            "        });",
+                                            "",
+                                            "    } else {",
+                                            "",
+                                            "        isCondition.setEditor({",
+                                            "            xtype: 'numberfield',",
+                                            "            allowBlank: false,",
+                                            "            editable: false,",
+                                            "            disabled: true",
+                                            "        });",
+                                            "",
+                                            "    }",
+                                            "    ",
+                                            "}"
+                                        ],
+                                        "name": "itemclick",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelGridpanelItemClick",
+                                    "designerId": "8c76aeed-d8f2-4f44-8b6f-af01d141bb2d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "아이콘",
+                        "disabled": true,
+                        "height": null,
+                        "layout": "fit",
+                        "title": "아이콘*"
+                    },
+                    "name": "MyFieldSet6",
+                    "designerId": "8fbb7700-0841-447e-b6ee-dcc4e82e4237",
+                    "cn": [
+                        {
+                            "type": "Ext.view.View",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "level_icon",
+                                "itemSelector": "div.icon_repository",
+                                "reference": "levelIcon",
+                                "store": "LevelIcon"
+                            },
+                            "name": "MyView1",
+                            "designerId": "371e504a-896b-4a2d-97d0-0272f7449cef",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "level_itemTpl",
+                                        "implHandler": [
+                                            "<tpl for=\".\">",
+                                            "    <div class=\"icon_repository\">",
+                                            "            <img src=\"{icon}\" width=70 height=70/>",
+                                            "    </div>",
+                                            "</tpl>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "154e5c25-c3c3-481c-bca2-7ccd39af900a"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onLevelDataviewItemClick",
+                                        "implHandler": [
+                                            "this.getViewModel().set('theLevel.icon', record.getData().icon);"
+                                        ],
+                                        "name": "itemclick",
+                                        "scope": "me"
+                                    },
+                                    "name": "onLevelDataviewItemClick",
+                                    "designerId": "94de0a74-d356-42d8-a9e9-698fdd932837"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDataviewLevelAfterRender",
+                                        "implHandler": [
+                                            "this.onSelectedLevelIcon(component);"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onDataviewLevelAfterRender",
+                                    "designerId": "a9ade28c-3494-48b7-ab16-eb7bdc788446"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer42",
+            "designerId": "ef270765-26eb-4523-a780-35ba66dda5a1",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "eb16fe80-e6b1-4c78-9b34-decbe4fc5988"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLevelFormShow",
+                "implHandler": [
+                    "var isCreateLevel\t\t= this.getViewModel().get('theLevel').create;",
+                    "",
+                    "if(isCreateLevel) {",
+                    "    var levelEntityStore = Ext.getStore('LevelEntity');",
+                    "    levelEntityStore.loadData('', false);",
+                    "} else {",
+                    "    var levelEntityStore = Ext.getStore('LevelEntity');",
+                    "    var bindLevelEntityData = this.getViewModel().get('theLevel').get('level_table');",
+                    "    levelEntityStore.loadRawData(bindLevelEntityData, false);",
+                    "}"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "name": "onLevelFormShow",
+            "designerId": "5e46dbe2-8160-4252-843d-3984d5085c3c"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLevelFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'level_edittab') {",
+                    "",
+                    "} else {",
+                    "    if(!this.getViewModel().data.theLevel.dropped) {",
+                    "        var level\t\t= this.getViewModel().get('theLevel');",
+                    "",
+                    "        var isDirtyLevel\t= level.dirty;",
+                    "        var isCreateLevel\t= level.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyLevel)  {",
+                    "",
+                    "            Ext.MessageBox.confirm('Level-저장', level.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    level.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'Level-수정 완료' ,",
+                    "                        html: level.get('name') + '의 Level정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelLevel();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onLevelFormDeactivate",
+            "designerId": "10073145-a53e-4757-b3b9-67bea285ab8d"
+        }
+    ]
+}

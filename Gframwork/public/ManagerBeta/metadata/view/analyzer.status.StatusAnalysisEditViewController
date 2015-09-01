@@ -1,0 +1,164 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statusanalysisedit",
+        "designer|userClassName": "analyzer.status.StatusAnalysisEditViewController"
+    },
+    "name": "analyzer.level.LevelAnalysisEditViewController1",
+    "designerId": "6348cb70-dcb2-4416-9e2c-8ba8873119ba",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsAllStatuses",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/statuses',",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var statusAnalysisAllStore\t= me.getStore('statusAnalysisAll');",
+                    "        statusAnalysisAllStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsAllStatuses",
+            "designerId": "31927d68-6da5-45f0-8d6d-43a000b1ad2b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "statusId"
+                ],
+                "fn": "getStatisticsStatus",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/statuses/'+statusId,",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var statusAnalysisStore\t= me.getStore('statusAnalysis');",
+                    "        statusAnalysisStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsStatus",
+            "designerId": "d4c32a5a-454a-48f1-9ec0-5277e8a62b6e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "period"
+                ],
+                "fn": "getStatisticsStatusesByPeriod",
+                "implHandler": [
+                    "var status\t= this.getViewModel().get('theStatus');",
+                    "var me \t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "if(status.create) {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/statusesbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var statusAnalysisPeriodStore\t= me.getStore('statusAnalysisPeriod');",
+                    "            statusAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "",
+                    "} else {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/statusesbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            id: status.get('id'),",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var statusAnalysisPeriodStore\t= me.getStore('statusAnalysisPeriod');",
+                    "            statusAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "getStatisticsStatusesByPeriod",
+            "designerId": "03a7f30d-89a2-489a-a6f0-2e42a2f59fe9"
+        }
+    ]
+}

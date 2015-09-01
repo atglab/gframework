@@ -1,0 +1,1954 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": "10 10 10 10",
+        "container|align": "stretch",
+        "designer|userAlias": "missionedit",
+        "designer|userClassName": "manager.mission.MissionEdit",
+        "height": null,
+        "layout": "vbox",
+        "margin": null,
+        "modelValidation": true,
+        "scrollable": "true",
+        "title": [
+            "{theMission.name}"
+        ],
+        "width": null
+    },
+    "name": "manager.level.LevelEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "094ab19a-d49c-4da5-a4c4-277855ce1b3e",
+    "viewControllerInstanceId": "bde3a4a7-0093-41b8-8e97-14a133e8f427",
+    "viewModelInstanceId": "19eeabd7-e395-453a-9a40-6ea4dd8211da",
+    "cn": [
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "designer|displayName": "saveCancelField",
+                "fieldLabel": null,
+                "height": null,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": null
+            },
+            "name": "MyFieldContainer27",
+            "designerId": "d4da2c52-b766-4528-b908-d45653e6b071",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "missionEditToolbar",
+                        "enableFocusableContainer": null
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "e07657e3-92f5-4e38-9a4f-db1f5a214ab6",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_save_btn",
+                                "designer|displayName": "저장",
+                                "iconCls": "",
+                                "itemId": null,
+                                "layout|flex": null,
+                                "overCls": "edit_save_btn_over",
+                                "reference": null,
+                                "text": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "44b2072e-fac7-484c-94ab-f1a91ae118cd",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMissionSaveButtonClick",
+                                        "implHandler": [
+                                            "var missionEditTab = button.up('missionedit');",
+                                            "var me = this;",
+                                            "",
+                                            "var saveMission = missionEditTab.getViewModel().get('theMission');",
+                                            "",
+                                            "if(saveMission.create) {",
+                                            "",
+                                            "    if(missionEditTab.isValid()) {",
+                                            "",
+                                            "        if(!saveMission.id || !saveMission.name || !saveMission.description ||",
+                                            "           !saveMission.activityId || !saveMission.reward_type || !saveMission.reward_object ||",
+                                            "           !saveMission.exit_condition || !saveMission.ruleId) {",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Mission-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        } else {",
+                                            "",
+                                            "            var missionStore\t= Ext.getStore('Mission');",
+                                            "            var mission \t\t= Ext.create('GFManager.model.Mission');",
+                                            "",
+                                            "            mission.set('id', saveMission.id);",
+                                            "            mission.set('name', saveMission.name);",
+                                            "            mission.set('description', saveMission.description);",
+                                            "",
+                                            "            mission.set('activityId', saveMission.activityId);",
+                                            "            mission.set('reward_type', saveMission.reward_type);",
+                                            "            mission.set('reward_object', saveMission.reward_object);",
+                                            "",
+                                            "            if(saveMission.reward_type == 'badge_type' || saveMission.reward_type == 'permission_type') {",
+                                            "                mission.set('reward_parameter', 1);",
+                                            "            } else {",
+                                            "                mission.set('reward_parameter', saveMission.reward_parameter);",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "            mission.set('exit_condition', saveMission.exit_condition);",
+                                            "            mission.set('ruleId', saveMission.ruleId);",
+                                            "            mission.set('start_date', saveMission.start_date);",
+                                            "            mission.set('end_date', saveMission.end_date);",
+                                            "            mission.set('useExpiration', saveMission.useExpiration);",
+                                            "            mission.set('isContinuous', saveMission.isContinuous);",
+                                            "            mission.set('constraint_period', saveMission.constraint_period);",
+                                            "            mission.set('useConstraint', saveMission.useConstraint);",
+                                            "            mission.set('max_repeat_count', saveMission.max_repeat_count);",
+                                            "            mission.set('repeat_period', saveMission.repeat_period);",
+                                            "            mission.set('isRepeatable', saveMission.isRepeatable);",
+                                            "",
+                                            "",
+                                            "            missionStore.add(mission);",
+                                            "            missionStore.save();",
+                                            "            missionStore.commitChanges();",
+                                            "",
+                                            "            missionEditTab.close();",
+                                            "",
+                                            "            Ext.toast({",
+                                            "                title: 'Mission-추가',",
+                                            "                html: '새로운 Mission ('+ saveMission.name+ ') 가 성공적으로 추가되었습니다.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "",
+                                            "    } else {",
+                                            "        Ext.toast({",
+                                            "            title: 'Mission-저장 실패' ,",
+                                            "            html: '필드값을 다시 확인해주세요.',",
+                                            "            align: 't',",
+                                            "            bodyPadding:10",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    if(saveMission.dirty) { \t//change editTab",
+                                            "",
+                                            "        if(missionEditTab.isValid()) {",
+                                            "",
+                                            "            if(!saveMission.get('name') || !saveMission.get('description') ||",
+                                            "               !saveMission.get('activityId') || !saveMission.get('reward_type') ||",
+                                            "               !saveMission.get('reward_object') || !saveMission.get('exit_condition') || !saveMission.get('ruleId')) {",
+                                            "",
+                                            "                Ext.toast({",
+                                            "                    title: 'Mission-저장 실패' ,",
+                                            "                    html: '필드값을 다시 확인해주세요.',",
+                                            "                    align: 't',",
+                                            "                    bodyPadding:10",
+                                            "                });",
+                                            "            } else {",
+                                            "                Ext.MessageBox.confirm('Mission-저장', saveMission.get('name') + '의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                                            "                    if (btn == 'yes') {",
+                                            "",
+                                            "                        saveMission.save();",
+                                            "",
+                                            "                        Ext.toast({",
+                                            "                            title: 'Mission-수정 완료' ,",
+                                            "                            html: saveMission.get('name') + '의 Mission정보가 성공적으로 수정되었습니다.',",
+                                            "                            align: 't',",
+                                            "                            bodyPadding:10",
+                                            "                        });",
+                                            "",
+                                            "                    } else {",
+                                            "",
+                                            "                        me.onCancelMission();",
+                                            "",
+                                            "                    }",
+                                            "                });",
+                                            "",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "",
+                                            "        } else {",
+                                            "            Ext.toast({",
+                                            "                title: 'Mission-저장 실패' ,",
+                                            "                html: '필드값을 다시 확인해주세요.',",
+                                            "                align: 't',",
+                                            "                bodyPadding:10",
+                                            "            });",
+                                            "        }",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onMissionSaveButtonClick",
+                                    "designerId": "6e81d7f4-e4e8-4760-9000-aa3aef853d23"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_cancel_btn",
+                                "designer|displayName": "취소",
+                                "iconCls": "",
+                                "layout|flex": null,
+                                "overCls": "edit_cancel_btn_over",
+                                "reference": "missionCancelBtn",
+                                "text": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "87b43a76-80af-4763-aad4-bbee66130ba9",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMissionCancelButtonClick",
+                                        "implHandler": [
+                                            "this.onCancelMission();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onMissionCancelButtonClick",
+                                    "designerId": "7e59f53a-5f51-4db4-bff3-08752a193da0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "layout": "vbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "title": "상세 정보",
+                "width": ""
+            },
+            "name": "MyFieldSet1",
+            "designerId": "3fa4703e-5f79-4efb-a9c8-58c73f14c7c2",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "designer|displayName": "ID",
+                        "emptyText": "1~20자 이내의 ID를 입력하세요.",
+                        "fieldLabel": "ID*",
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "reference": "missionId",
+                        "regex": "/^[A-Za-z]/",
+                        "value": [
+                            "{theMission.id}"
+                        ],
+                        "vtype": "alphanum"
+                    },
+                    "name": "MyTextField2",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "4bb88d9f-8b6d-4ea3-857a-eac7a5f685bb",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMissionIdTextfieldBeforeRender",
+                                "implHandler": [
+                                    "var missionId\t= this.lookupReference('missionId');",
+                                    "",
+                                    "if(this.getViewModel().get('theMission').create) {",
+                                    "",
+                                    "    missionId.setDisabled(false);",
+                                    "",
+                                    "} else {",
+                                    "",
+                                    "    missionId.setDisabled(true);",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "beforerender",
+                                "scope": "me"
+                            },
+                            "name": "onMissionIdTextfieldBeforeRender",
+                            "designerId": "2239446e-9b17-4dba-ba93-9cc03278a7b1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "이름",
+                        "emptyText": "1~20자 이내의 이름을 입력하세요.",
+                        "fieldLabel": "이름*",
+                        "formBind": null,
+                        "maxLength": 20,
+                        "minLength": 1,
+                        "publishes": null,
+                        "value": [
+                            "{theMission.name}"
+                        ]
+                    },
+                    "name": "MyTextField",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "b159187c-a7a9-4f7d-a91e-d7591a40881b"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "설명",
+                        "emptyText": "1~1000자 이내의 설명을 입력하세요.",
+                        "fieldLabel": "설명*",
+                        "height": 60,
+                        "layout|flex": 1,
+                        "maxHeight": 60,
+                        "maxLength": 1000,
+                        "minLength": 1,
+                        "value": [
+                            "{theMission.description}"
+                        ]
+                    },
+                    "name": "MyTextArea5",
+                    "configAlternates": {
+                        "value": "binding"
+                    },
+                    "designerId": "fd83b846-c29f-4b7b-8fc2-79b649b6d176"
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "ActivityField",
+                        "fieldLabel": "Activity*",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer31",
+                    "designerId": "71536869-25f1-45fa-8a57-dde08b8d7791",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Activity",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "Activity를 리스트에서 선택하세요.",
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "reference": null,
+                                "renderTo": null,
+                                "store": "Activity",
+                                "value": [
+                                    "{theMission.activityId}"
+                                ],
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox8",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "7d6a2f22-9b8b-4848-a5ee-d1253b8c0d11"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}' 을(를) 수행하기 위한 사용자 Activity를 선택하세요."
+                                ]
+                            },
+                            "name": "MyButton13",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "ba6cbd99-1617-48ed-a399-1482d4781c7b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "보상",
+                        "fieldLabel": "보상*",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer10",
+                    "designerId": "f33b23b0-fc82-4251-b836-c81ec5cfa7bf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "rewardType",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "보상 타입을 선택하세요.",
+                                "fieldLabel": null,
+                                "formBind": false,
+                                "id": null,
+                                "itemId": null,
+                                "layout|flex": 1,
+                                "margin": "0 5 0 0",
+                                "reference": null,
+                                "renderTo": null,
+                                "store": "RewardType",
+                                "value": [
+                                    "{theMission.reward_type}"
+                                ],
+                                "valueField": "id",
+                                "valueNotFoundText": "asd"
+                            },
+                            "name": "MyComboBox9",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "79289163-049f-4df2-b7f6-d1e745f84415",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMissionRewardTypeComboboxSelect",
+                                        "implHandler": [
+                                            "var missionRewardList\t\t= this.lookupReference('missionRewardList');",
+                                            "var seletedRewardTypeName\t= record.get('name');",
+                                            "var seletedRewardTypeID\t\t= record.get('id');",
+                                            "var store\t\t\t\t\t= Ext.getStore(seletedRewardTypeName);",
+                                            "",
+                                            "missionRewardList.bindStore(store);",
+                                            "missionRewardList.setValue('');",
+                                            "missionRewardList.setDisabled(false);",
+                                            "",
+                                            "",
+                                            "//var rewardObject\t= this.getViewModel().get('theMission').get('reward_object');",
+                                            "",
+                                            "var rewardOptionField\t\t= this.lookupReference('rewardOptionField');",
+                                            "var rewardOptionListStatus\t= this.lookupReference('rewardOptionListStatus');",
+                                            "var rewardOptionListLevel\t= this.lookupReference('rewardOptionListLevel');",
+                                            "",
+                                            "",
+                                            "if(seletedRewardTypeID == 'badge_type') {",
+                                            "",
+                                            "    //=================================",
+                                            "    rewardOptionField.disable();",
+                                            "    rewardOptionField.show();",
+                                            "    rewardOptionListStatus.hide();",
+                                            "    rewardOptionListLevel.hide();",
+                                            "    //=================================",
+                                            "",
+                                            "} else if(seletedRewardTypeID == 'point_type') {",
+                                            "",
+                                            "    //=================================",
+                                            "    rewardOptionField.enable();",
+                                            "    rewardOptionField.show();",
+                                            "    rewardOptionListStatus.hide();",
+                                            "    rewardOptionListLevel.hide();",
+                                            "    //=================================",
+                                            "",
+                                            "} else if(seletedRewardTypeID == 'level_type') {",
+                                            "",
+                                            "",
+                                            "    //=================================",
+                                            "    rewardOptionField.disable();",
+                                            "    rewardOptionField.hide();",
+                                            "    rewardOptionListStatus.hide();",
+                                            "    rewardOptionListLevel.show();",
+                                            "    //=================================",
+                                            "",
+                                            "} else if(seletedRewardTypeID == 'status_type') {",
+                                            "",
+                                            "",
+                                            "",
+                                            "    //=================================",
+                                            "    rewardOptionField.disable();",
+                                            "    rewardOptionField.hide();",
+                                            "    rewardOptionListStatus.show();",
+                                            "    rewardOptionListLevel.hide();",
+                                            "    //=================================",
+                                            "",
+                                            "} else if(seletedRewardTypeID == 'permission_type') {",
+                                            "",
+                                            "    //=================================",
+                                            "    rewardOptionField.disable();",
+                                            "    rewardOptionField.show();",
+                                            "    rewardOptionListStatus.hide();",
+                                            "    rewardOptionListLevel.hide();",
+                                            "    //=================================",
+                                            "}"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onMissionRewardTypeComboboxSelect",
+                                    "designerId": "c2e9a769-e405-4a6f-bc23-04e66111736e"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMissionRewardBeforeRender",
+                                        "implHandler": [
+                                            "var isCreatedMission\t\t= this.getViewModel().get('theMission').create;",
+                                            "",
+                                            "var missionRewardList\t\t= this.lookupReference('missionRewardList');",
+                                            "",
+                                            "",
+                                            "var rewardOptionField\t\t= this.lookupReference('rewardOptionField');",
+                                            "var rewardOptionListStatus\t= this.lookupReference('rewardOptionListStatus');",
+                                            "var rewardOptionListLevel\t= this.lookupReference('rewardOptionListLevel');",
+                                            "",
+                                            "",
+                                            "var isContinuous\t\t\t= this.lookupReference('isContinuous');",
+                                            "var constraintPeriod\t\t= this.lookupReference('constraintPeriod');",
+                                            "var repeatCount\t\t\t\t= this.lookupReference('repeatCount');",
+                                            "var repeatPeriod\t\t\t= this.lookupReference('repeatPeriod');",
+                                            "",
+                                            "",
+                                            "var EndDateField\t\t\t= this.lookupReference('EndDateField');",
+                                            "var StartDateField\t\t\t= this.lookupReference('StartDateField');",
+                                            "",
+                                            "",
+                                            "",
+                                            "if(isCreatedMission) {",
+                                            "",
+                                            "    missionRewardList.setDisabled(true);",
+                                            "",
+                                            "    rewardOptionField.disable();",
+                                            "    rewardOptionField.show();",
+                                            "    rewardOptionListStatus.hide();",
+                                            "    rewardOptionListLevel.hide();",
+                                            "",
+                                            "",
+                                            "    isContinuous.disable();",
+                                            "    constraintPeriod.disable();",
+                                            "    repeatCount.disable();",
+                                            "    repeatPeriod.disable();",
+                                            "",
+                                            "    EndDateField.disable();",
+                                            "    StartDateField.disable();",
+                                            "",
+                                            "",
+                                            "} else {",
+                                            "",
+                                            "    var rewardType \t\t= this.getViewModel().get('theMission').get('reward_type');",
+                                            "    var rewardObject\t= this.getViewModel().get('theMission').get('reward_object');",
+                                            "",
+                                            "    var rewardListStore;",
+                                            "    var rewardOptionStore;",
+                                            "",
+                                            "    var findResult;",
+                                            "    var data;",
+                                            "",
+                                            "",
+                                            "    if(rewardType == 'badge_type') {",
+                                            "",
+                                            "        rewardListStore\t= Ext.getStore('Badge');",
+                                            "",
+                                            "        //=================================",
+                                            "        rewardOptionField.disable();",
+                                            "        rewardOptionField.show();",
+                                            "        rewardOptionListStatus.hide();",
+                                            "        rewardOptionListLevel.hide();",
+                                            "        //=================================",
+                                            "",
+                                            "    } else if(rewardType == 'point_type') {",
+                                            "",
+                                            "        rewardListStore\t= Ext.getStore('Point');",
+                                            "",
+                                            "        //=================================",
+                                            "        rewardOptionField.enable();",
+                                            "        rewardOptionField.show();",
+                                            "        rewardOptionListStatus.hide();",
+                                            "        rewardOptionListLevel.hide();",
+                                            "        //=================================",
+                                            "",
+                                            "    } else if(rewardType == 'level_type') {",
+                                            "",
+                                            "        rewardListStore\t= Ext.getStore('Level');",
+                                            "",
+                                            "        //=================================",
+                                            "        rewardOptionField.hide();",
+                                            "        rewardOptionListStatus.hide();",
+                                            "        rewardOptionListLevel.show();",
+                                            "        //=================================",
+                                            "",
+                                            "",
+                                            "    } else if(rewardType == 'status_type') {",
+                                            "",
+                                            "        rewardListStore\t= Ext.getStore('Status');",
+                                            "",
+                                            "        //=================================",
+                                            "        rewardOptionField.hide();",
+                                            "        rewardOptionListStatus.show();",
+                                            "        rewardOptionListLevel.hide();",
+                                            "        //=================================",
+                                            "",
+                                            "    } else if(rewardType == 'permission_type') {",
+                                            "",
+                                            "        rewardListStore\t= Ext.getStore('Permission');",
+                                            "",
+                                            "        //=================================",
+                                            "        rewardOptionField.disable();",
+                                            "        rewardOptionField.show();",
+                                            "        rewardOptionListStatus.hide();",
+                                            "        rewardOptionListLevel.hide();",
+                                            "        //=================================",
+                                            "    }",
+                                            "",
+                                            "    missionRewardList.bindStore(rewardListStore);",
+                                            "}"
+                                        ],
+                                        "name": "beforerender",
+                                        "scope": "me"
+                                    },
+                                    "name": "onMissionRewardBeforeRender",
+                                    "designerId": "d5d4387a-a77f-42d9-899e-97f8b3203381"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "rewardList",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "보상을 선택하세요.",
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 5",
+                                "reference": "missionRewardList",
+                                "renderTo": null,
+                                "store": null,
+                                "value": [
+                                    "{theMission.reward_object}"
+                                ],
+                                "valueField": "id",
+                                "valueNotFoundText": null
+                            },
+                            "name": "MyComboBox10",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "234c149b-6ab6-4dc0-8ab3-3389344407a1",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect",
+                                        "implHandler": [
+                                            "    var storeType \t\t\t= record.store.storeId;",
+                                            "",
+                                            "    var seletedRewardObject\t= record.get('id');",
+                                            "    var store;",
+                                            "    var findResult;",
+                                            "    var data;",
+                                            "",
+                                            "",
+                                            "    var rewardOptionField\t\t= this.lookupReference('rewardOptionField');",
+                                            "    var rewardOptionListStatus\t= this.lookupReference('rewardOptionListStatus');",
+                                            "    var rewardOptionListLevel\t= this.lookupReference('rewardOptionListLevel');",
+                                            "",
+                                            "",
+                                            "    if(storeType == 'Level') {",
+                                            "",
+                                            "        //=================================",
+                                            "        rewardOptionField.hide();",
+                                            "        rewardOptionListStatus.hide();",
+                                            "        rewardOptionListLevel.show();",
+                                            "        rewardOptionListLevel.setValue('');",
+                                            "        //=================================",
+                                            "        ",
+                                            "        store \t\t= Ext.getStore('Level');",
+                                            "        findResult\t= store.findRecord('id', seletedRewardObject);",
+                                            "        data\t\t= findResult.get('level_table');        ",
+                                            "        Ext.getStore('LevelEntity').loadRawData(data, false);",
+                                            "",
+                                            "",
+                                            "    } else if(storeType == 'Status') {",
+                                            "        ",
+                                            "        //=================================",
+                                            "        rewardOptionField.hide();",
+                                            "        rewardOptionListStatus.show();",
+                                            "        rewardOptionListLevel.hide();",
+                                            "        rewardOptionListStatus.setValue('');",
+                                            "        //=================================",
+                                            "",
+                                            "        store \t\t= Ext.getStore('Status');",
+                                            "        findResult\t= store.findRecord('id', seletedRewardObject);",
+                                            "        data\t\t= findResult.get('classes');",
+                                            "        Ext.getStore('StatusClass').loadRawData(data, false);        ",
+                                            "",
+                                            "    }"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelect",
+                                    "designerId": "58af7249-4ec9-485a-96dd-568688f4ba0f"
+                                },
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "rewardListBoundList",
+                                        "itemSelector": "div"
+                                    },
+                                    "name": "MyBoundList",
+                                    "designerId": "2a8e5563-d658-4b0d-b765-c8b6ac47a0c8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    "",
+                                                    "<tpl for=\".\">",
+                                                    "",
+                                                    "    <tpl if=\"{icon}\">   \t\t\t\t\t<!-- B, P, L-->",
+                                                    "",
+                                                    "        <tpl if=\"{relation_object}\">  \t\t<!-- P, L-->            ",
+                                                    "",
+                                                    "            <tpl if=\"{level_table}\">  \t\t\t<!-- Level-->      ",
+                                                    "",
+                                                    "                <tpl if= 'relation_object == \\\"mission_id\\\"'>",
+                                                    "                    <div>      ",
+                                                    "                        <img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}",
+                                                    "                    </div>            ",
+                                                    "                </tpl>  ",
+                                                    "",
+                                                    "                <tpl else>\t\t\t\t\t\t\t<!-- Point-->  ",
+                                                    "",
+                                                    "                    <img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}                ",
+                                                    "",
+                                                    "                </tpl>",
+                                                    "",
+                                                    "",
+                                                    "                <tpl else>\t\t\t\t\t\t\t\t<!-- Badge -->            ",
+                                                    "",
+                                                    "                    <img src=\"{icon}\" align=left width=20 height=20/> &nbsp; {name}",
+                                                    "",
+                                                    "                </tpl>",
+                                                    "",
+                                                    "                <tpl else>\t\t\t\t\t\t\t\t<!-- S, Per -->",
+                                                    "",
+                                                    "                    <tpl if=\"{relation_object}\">\t\t\t<!-- Status -->   ",
+                                                    "",
+                                                    "                        <tpl if= 'relation_object == \\\"mission_id\\\"'>                    ",
+                                                    "                            <div>                        ",
+                                                    "                                {name}                    ",
+                                                    "                            </div> ",
+                                                    "                            <tpl else>",
+                                                    "                                <div>                                                             ",
+                                                    "                                </div> ",
+                                                    "                            </tpl>             ",
+                                                    "",
+                                                    "                            <tpl else>\t\t\t\t\t\t\t\t<!-- Permission -->  ",
+                                                    "",
+                                                    "                                <tpl if= 'get_method == \\\"mission_type\\\"'>                    ",
+                                                    "                                    <div>                        ",
+                                                    "                                        {name}            ",
+                                                    "                                    </div>                            ",
+                                                    "                                </tpl> ",
+                                                    "",
+                                                    "                            </tpl>        ",
+                                                    "",
+                                                    "                        </tpl>      ",
+                                                    "",
+                                                    "",
+                                                    "                    </tpl>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "6be06b3f-c792-4366-b48a-14cf8826e233"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}'  완료시 획득하는 보상을 선택하세요."
+                                ]
+                            },
+                            "name": "MyButton14",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "244f2928-1c73-4ccb-97a9-dceff8cfcf36"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "보상옵션",
+                        "fieldLabel": "보상 옵션",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "margin": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer30",
+                    "designerId": "3d023619-b49a-476a-95a6-456e24ef52c7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "rewardOptionField",
+                                "emptyText": "보상 옵션",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "reference": "rewardOptionField",
+                                "value": [
+                                    "{theMission.reward_parameter}"
+                                ]
+                            },
+                            "name": "MyNumberField7",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "a7bbd0be-ff9e-4715-9795-a5e7d9a4195b"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoSelect": null,
+                                "designer|displayName": "rewardOptionListLevel",
+                                "displayField": "level",
+                                "editable": false,
+                                "emptyText": "보상 옵션",
+                                "fieldLabel": null,
+                                "formBind": null,
+                                "hidden": true,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "reference": "rewardOptionListLevel",
+                                "stateful": true,
+                                "store": "LevelEntity",
+                                "value": [
+                                    "{theMission.reward_parameter}"
+                                ],
+                                "valueField": "level"
+                            },
+                            "name": "MyComboBox15",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "ff037498-6e2d-455d-86e9-25db9745ece5",
+                            "cn": [
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "rewardOptionListLevelBoundList",
+                                        "itemSelector": "div"
+                                    },
+                                    "name": "MyBoundList1",
+                                    "designerId": "0d337e23-3354-4569-ba8d-6f958f3eeef4",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    " 레벨 : <font color=\"red\">{level}</font> &nbsp;&nbsp;   획득 조건 :  <font color=\"red\">{condition}</font>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "12311a15-0cf9-4ea9-b29a-b464c3f3505d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRewardOptionListLevelComboboxExpand",
+                                        "implHandler": [
+                                            "var rewardListStore\t\t= Ext.getStore('Level');",
+                                            "var rewardOptionStore\t= Ext.getStore('LevelEntity');",
+                                            "rewardOptionStore.loadData('',false);",
+                                            "",
+                                            "",
+                                            "var isMissionCreate\t= this.getViewModel().get('theMission').create;",
+                                            "",
+                                            "if(!isMissionCreate) {",
+                                            "    var rewardObject\t\t= this.getViewModel().get('theMission').get('reward_object');",
+                                            "    var findResult\t\t\t= rewardListStore.findRecord('id', rewardObject);",
+                                            "    if(findResult !== null) {",
+                                            "        var data \t\t\t= findResult.get('level_table');",
+                                            "        rewardOptionStore.loadData(data, false);",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "expand",
+                                        "scope": "me"
+                                    },
+                                    "name": "onRewardOptionListLevelComboboxExpand",
+                                    "designerId": "9c3096d0-8958-4d2a-8d8b-110ec7394915"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "rewardOptionListStatus",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "보상 옵션",
+                                "fieldLabel": null,
+                                "hidden": true,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "reference": "rewardOptionListStatus",
+                                "store": "StatusClass",
+                                "value": [
+                                    "{theMission.reward_parameter}"
+                                ],
+                                "valueField": "rank"
+                            },
+                            "name": "MyComboBox3",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "e2a334b2-f15b-43fd-8448-781730b41e49",
+                            "cn": [
+                                {
+                                    "type": "Ext.view.BoundList",
+                                    "reference": {
+                                        "name": "listConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "rewardOptionListStatusBoundList",
+                                        "itemSelector": "div"
+                                    },
+                                    "name": "MyBoundList2",
+                                    "designerId": "80c6f096-baf1-46bf-aca5-126abca5ceed",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    "<img src=\"{icon}\" align=left width=20 height=20/> &nbsp;&nbsp;",
+                                                    "순번 : <font color=\"red\">{rank}</font> &nbsp; 등급명 : <font color=\"red\">{name}</font>  &nbsp; ",
+                                                    "획득조건 : <font color=\"red\">{condition}</font>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "3c1cf324-fd4e-4cc7-a57e-63814e3e7465"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRewardOptionListStatusComboboxExpand",
+                                        "implHandler": [
+                                            "var rewardListStore\t\t= Ext.getStore('Status');",
+                                            "var rewardOptionStore\t= Ext.getStore('StatusClass');",
+                                            "rewardOptionStore.loadData('',false);",
+                                            "",
+                                            "",
+                                            "var isMissionCreate\t= this.getViewModel().get('theMission').create;",
+                                            "",
+                                            "if(!isMissionCreate) {",
+                                            "    var rewardObject\t\t= this.getViewModel().get('theMission').get('reward_object');",
+                                            "    var findResult\t\t\t= rewardListStore.findRecord('id', rewardObject);",
+                                            "    if(findResult !== null) {",
+                                            "        var data \t\t\t= findResult.get('classes');",
+                                            "        rewardOptionStore.loadData(data, false);",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "name": "expand",
+                                        "scope": "me"
+                                    },
+                                    "name": "onRewardOptionListStatusComboboxExpand",
+                                    "designerId": "cb6b629f-e2ff-44ab-bfc9-40d18200f7a7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "종료조건필드",
+                        "fieldLabel": "종료조건*",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer32",
+                    "designerId": "92575217-23ba-412b-a3b5-95ebf492a18c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "종료조건",
+                                "emptyText": "종료조건을 입력하세요.",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "value": [
+                                    "{theMission.exit_condition}"
+                                ]
+                            },
+                            "name": "MyNumberField8",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "9712b51f-ad98-4851-9b6a-eda5be0aa442"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}' 을(를) 종료하기 위한 조건(횟수)을 입력하세요.(숫자만 입력 가능)"
+                                ]
+                            },
+                            "name": "MyButton15",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "b529e6a6-8630-41c2-89f6-c0b6b04dca52"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "규칙필드",
+                        "fieldLabel": "규칙*",
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer33",
+                    "designerId": "818048d9-2b0e-4409-a18b-bc7d4df430f6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "규칙",
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "규칙을 리스트에서 선택하세요.",
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "reference": null,
+                                "renderTo": null,
+                                "store": "Rule",
+                                "value": [
+                                    "{theMission.ruleId}"
+                                ],
+                                "valueField": "id"
+                            },
+                            "name": "MyComboBox11",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "010fd82b-eaa6-477c-8f7e-e65f82f5450e"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}' 에 사용할 규칙을 선택하세요."
+                                ]
+                            },
+                            "name": "MyButton16",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "387aa035-54d2-4e66-b150-c24eb4cb80e1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "반복완료",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer11",
+                    "designerId": "02dc6453-db3a-4a10-9aa3-748334922ee4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": null,
+                                "designer|displayName": "isRepeat",
+                                "fieldLabel": "반복완료",
+                                "layout|flex": 1,
+                                "margin": "0 10 0 0",
+                                "reference": null,
+                                "value": [
+                                    "{theMission.isRepeatable}"
+                                ]
+                            },
+                            "name": "MyCheckbox",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "42ddd628-961f-48e5-ae46-50e22bc66c4d"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayField",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "maxWidth": 70,
+                                "value": "Mission 은",
+                                "width": 70
+                            },
+                            "name": "MyDisplayField6",
+                            "designerId": "d140293b-69a8-42b9-a17b-e50b732d814c"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "repeatPeriod",
+                                "disabled": [
+                                    "{!theMission.isRepeatable}"
+                                ],
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "반복 주기 없음",
+                                "enforceMaxLength": false,
+                                "fieldLabel": "",
+                                "id": null,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "matchFieldWidth": false,
+                                "reference": "repeatPeriod",
+                                "renderTo": null,
+                                "store": [
+                                    "[['0','반복 주기 없음'],['1','1일에 1번씩'],['2','1주에 1번씩'],['3','1달에 1번씩'],['4','1년에 1번씩']]"
+                                ],
+                                "value": [
+                                    "{theMission.repeat_period}"
+                                ],
+                                "valueField": "id",
+                                "width": null
+                            },
+                            "name": "MyComboBox12",
+                            "configAlternates": {
+                                "disabled": "binding",
+                                "value": "binding",
+                                "store": "array"
+                            },
+                            "designerId": "fe3ac506-07d2-4ec1-bed2-c6919eeedeee"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayField",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "maxWidth": 60,
+                                "value": "최대",
+                                "width": 60
+                            },
+                            "name": "MyDisplayField5",
+                            "designerId": "2c1f7702-11dc-4623-ac3a-f892183904a7"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "repeatCount",
+                                "disabled": [
+                                    "{!theMission.isRepeatable}"
+                                ],
+                                "emptyText": "0",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "reference": "repeatCount",
+                                "value": [
+                                    "{theMission.max_repeat_count}"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyNumberField9",
+                            "configAlternates": {
+                                "value": "binding",
+                                "disabled": "binding"
+                            },
+                            "designerId": "3a10a843-e24e-43b0-98b7-b2325e9c7fae"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayField",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "maxWidth": 60,
+                                "value": "번 완료",
+                                "width": null
+                            },
+                            "name": "MyDisplayField",
+                            "designerId": "706bd440-341d-4bd8-9b2f-93923ad6cf73"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}' 의 미션 반복 주기와 최대 반복 횟수를 입력하세요."
+                                ]
+                            },
+                            "name": "MyButton17",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "33ba7c60-ddf9-4952-874c-9c900d66a9ed"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "제한조건",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer12",
+                    "designerId": "f86ec4aa-0778-4c76-ba97-f3ba0a9dbf22",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": null,
+                                "designer|displayName": "useConstraint",
+                                "fieldLabel": "제한조건",
+                                "layout|flex": 1,
+                                "margin": "0 10 0 0",
+                                "reference": null,
+                                "value": [
+                                    "{theMission.useConstraint}"
+                                ]
+                            },
+                            "name": "MyCheckbox",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "2e23e113-ee5d-462d-a139-43ff8ab16f47"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayField",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "maxWidth": 70,
+                                "value": "Activity 는 ",
+                                "width": 70
+                            },
+                            "name": "MyDisplayField1",
+                            "designerId": "aa0c1e6f-bfa8-46de-96da-a5f524c81a34"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "constraintPeriod",
+                                "disabled": [
+                                    "{!theMission.useConstraint}"
+                                ],
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "1일",
+                                "enforceMaxLength": false,
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "matchFieldWidth": false,
+                                "reference": "constraintPeriod",
+                                "renderTo": null,
+                                "store": [
+                                    "[['1','1일'],['2','1주'],['3','1달'],['4','1년']]"
+                                ],
+                                "value": [
+                                    "{theMission.constraint_period}"
+                                ],
+                                "valueField": "id",
+                                "width": null
+                            },
+                            "name": "MyComboBox12",
+                            "configAlternates": {
+                                "value": "binding",
+                                "disabled": "binding",
+                                "store": "array"
+                            },
+                            "designerId": "83add2fa-54b3-4216-8cd4-ad2a84e0c358"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayField",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "maxWidth": 60,
+                                "value": "에 1번 씩",
+                                "width": 60
+                            },
+                            "name": "MyDisplayField7",
+                            "designerId": "c9d88fd5-430c-416a-a0f4-9b25b98a0b34"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "isContinuous",
+                                "disabled": [
+                                    "{!theMission.useConstraint}"
+                                ],
+                                "displayField": "name",
+                                "editable": false,
+                                "emptyText": "연속",
+                                "enforceMaxLength": false,
+                                "fieldLabel": null,
+                                "id": null,
+                                "layout|flex": 1,
+                                "margin": null,
+                                "reference": "isContinuous",
+                                "renderTo": null,
+                                "store": [
+                                    "[['true','연속'],['false','불연속']]",
+                                    ""
+                                ],
+                                "value": [
+                                    "{theMission.isContinuous}"
+                                ],
+                                "valueField": "id",
+                                "width": null
+                            },
+                            "name": "MyComboBox14",
+                            "configAlternates": {
+                                "disabled": "binding",
+                                "value": "binding",
+                                "store": "array"
+                            },
+                            "designerId": "37afaf17-5044-467d-8168-9730b2fb688d"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "displayField",
+                                "fieldLabel": null,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "maxWidth": 60,
+                                "value": " 수행"
+                            },
+                            "name": "MyDisplayField2",
+                            "designerId": "c8d592e4-8345-4ae0-a760-16e7008dea13"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}' 의 사용자 Activity 제한 조건을 입력하세요."
+                                ]
+                            },
+                            "name": "MyButton18",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "20af26fd-d59f-4044-b333-fbdff1cda9d4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoFitErrors": false,
+                        "designer|displayName": "제한기간",
+                        "fieldLabel": null,
+                        "height": null,
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "width": null
+                    },
+                    "name": "MyFieldContainer5",
+                    "designerId": "55f1388a-2fa6-4d7e-8f1e-1a0765ef9045",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": null,
+                                "designer|displayName": "useExpiration",
+                                "fieldLabel": "제한기간",
+                                "margin": "0 5 0 0",
+                                "reference": null,
+                                "value": [
+                                    "{theMission.useExpiration}"
+                                ]
+                            },
+                            "name": "MyCheckbox",
+                            "configAlternates": {
+                                "value": "binding"
+                            },
+                            "designerId": "4be55aa3-81d2-4606-94e8-c1e1553d6e13"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": null,
+                                "defaultAlign": null,
+                                "designer|displayName": "StartDateField",
+                                "disabled": [
+                                    "{!theMission.useExpiration}"
+                                ],
+                                "emptyText": "시작일",
+                                "fieldLabel": null,
+                                "format": "Y-m-d",
+                                "labelAlign": null,
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "reference": "StartDateField",
+                                "value": [
+                                    "{theMission.start_date}"
+                                ]
+                            },
+                            "name": "MyDateField1",
+                            "configAlternates": {
+                                "value": "binding",
+                                "disabled": "binding"
+                            },
+                            "designerId": "d7692e32-3f6c-42c9-95bd-98fdac5b00cc"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "EndDateField",
+                                "disabled": [
+                                    "{!theMission.useExpiration}"
+                                ],
+                                "emptyText": "종료일",
+                                "fieldLabel": null,
+                                "format": "Y-m-d",
+                                "layout|flex": 1,
+                                "margin": "0 0 0 10",
+                                "reference": "EndDateField",
+                                "value": [
+                                    "{theMission.end_date}"
+                                ]
+                            },
+                            "name": "MyDateField2",
+                            "configAlternates": {
+                                "value": "binding",
+                                "disabled": "binding"
+                            },
+                            "designerId": "dbbb75ee-ac68-488c-a457-f64da6c6cac8"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "edit_tooltip_btn",
+                                "designer|displayName": "toottip",
+                                "iconAlign": "right",
+                                "layout|flex": null,
+                                "margin": "0 0 0 10",
+                                "overCls": "edit_tooltip_btn_over",
+                                "text": null,
+                                "tooltip": [
+                                    "'{theMission.name}' 의 제한기한을 입력하세요."
+                                ]
+                            },
+                            "name": "MyButton21",
+                            "configAlternates": {
+                                "tooltip": "binding"
+                            },
+                            "designerId": "46735faf-ebc1-47bc-8a98-a8a8bca85911"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "container|pack": "end",
+                "fieldLabel": null,
+                "height": 120,
+                "layout": "hbox",
+                "layout|flex": null,
+                "maxWidth": 700,
+                "width": 700
+            },
+            "name": "MyFieldContainer41",
+            "designerId": "5e3a7888-3dc5-4900-b555-3b6ede13241e",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "maxWidth": null,
+                        "minWidth": null,
+                        "style": [
+                            "{",
+                            "  color: 'red'",
+                            "}"
+                        ],
+                        "text": "(*)필수 입력"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "f2069a41-9155-4c4c-a1b6-cd7a49f65164"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMissionFormDeactivate",
+                "implHandler": [
+                    "if(component.itemId == 'mission_edittab') {",
+                    "",
+                    "} else {",
+                    "    if(!this.getViewModel().data.theMission.dropped) {",
+                    "        var mission\t\t= this.getViewModel().get('theMission');",
+                    "",
+                    "        var isDirtyMission\t= mission.dirty;",
+                    "        var isCreateMission\t= mission.create;",
+                    "        var me = this;",
+                    "",
+                    "        if(isDirtyMission)  {",
+                    "",
+                    "            Ext.MessageBox.confirm('Mission-저장', mission.get('name')+'의 정보가 변경되었습니다. 저장하시겠습니까?', function(btn){",
+                    "                if (btn == 'yes') {",
+                    "",
+                    "                    mission.save();",
+                    "",
+                    "                    Ext.toast({",
+                    "                        title: 'Mission-수정 완료' ,",
+                    "                        html: mission.get('name') + '의 Mission정보가 성공적으로 수정되었습니다.',",
+                    "                        align: 't',",
+                    "                        bodyPadding:10",
+                    "                    });",
+                    "                } else {",
+                    "                    me.onCancelMission();",
+                    "                }",
+                    "            });",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "name": "deactivate",
+                "scope": "me"
+            },
+            "name": "onMissionFormDeactivate",
+            "designerId": "061125f4-8586-4de9-9127-3f8f46a48f46"
+        }
+    ]
+}

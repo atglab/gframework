@@ -1,0 +1,105 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ActivityLog",
+        "idProperty": null
+    },
+    "name": "Activity1",
+    "designerId": "a38d4632-de6b-4184-abfd-02bf7b0878f2",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "activity_id",
+                "unique": true
+            },
+            "name": "MyString16",
+            "designerId": "165e4b10-3183-4141-98ca-d4b3b955a628"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "user_id",
+                "unique": true
+            },
+            "name": "MyString14",
+            "designerId": "07b866f1-2f42-45d0-a056-6f5de87f585b"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "created_at"
+            },
+            "name": "MyDate4",
+            "designerId": "3b07f716-ebd9-4df1-84d5-e02d95fbf416"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "activityLogRestProxy",
+                "url": "/api/v1/analyzer/users/activitylogs"
+            },
+            "name": "MyRestProxy2",
+            "designerId": "21895506-9f31-48f2-b3c0-abef66c3b284",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "activityLogJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "87ee82fa-6329-4913-a8e2-d0a537fc142a"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "activityLogJsonWriter",
+                        "encode": true,
+                        "rootProperty": "data",
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter3",
+                    "designerId": "2e304e39-2727-4cf2-981a-5d70b9fc68ad"
+                }
+            ]
+        }
+    ]
+}

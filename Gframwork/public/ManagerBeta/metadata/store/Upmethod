@@ -1,0 +1,46 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": [
+            "[",
+            "    {",
+            "        \"id\": \"true\",",
+            "        \"name\": \"누적\"",
+            "    },",
+            "    {",
+            "        \"id\": \"false\",",
+            "        \"name\": \"차감\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "Upmethod",
+        "groupField": null,
+        "model": "Template",
+        "session": null,
+        "storeId": "Upmethod"
+    },
+    "name": "MyStore21",
+    "designerId": "d697229d-ebf2-4404-810f-1d71d05ecb57",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "upmethodSorter",
+                "property": "name"
+            },
+            "name": "MySorter4",
+            "designerId": "3d6ef4b9-06f8-4ce1-8ba8-27aaa8481638"
+        }
+    ]
+}

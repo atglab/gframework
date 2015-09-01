@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "statuslist",
+        "designer|userClassName": "manager.status.StatusListViewModel"
+    },
+    "designerId": "245a8cd0-a5fd-4e0b-87c6-4617ba4d51d6"
+}

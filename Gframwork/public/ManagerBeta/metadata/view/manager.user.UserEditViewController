@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "useredit",
+        "designer|userClassName": "manager.user.UserEditViewController"
+    },
+    "designerId": "a8ceba89-7700-43c6-98b7-680a6f37c606",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelUser",
+                "implHandler": [
+                    "var user\t\t= this.getViewModel().get('theUser');",
+                    "var isDirtyUser\t= user.dirty;",
+                    "if(isDirtyUser)  {",
+                    "",
+                    "    Ext.getStore('User').rejectChanges();",
+                    "",
+                    "    //=========================================================",
+                    "    //\t\t\t\tgender setting(Radio Group)",
+                    "    //=========================================================",
+                    "",
+                    "    var user\t\t= this.getViewModel().get('theUser');",
+                    "    var genderCmp \t= this.lookupReference('gender');",
+                    "",
+                    "    ",
+                    "    if(user.get('gender') === 0) {\t\t\t//기타",
+                    "        genderCmp.items.items[2].setValue(true);",
+                    "    } else if(user.get('gender') === 1) {\t//남자",
+                    "        genderCmp.items.items[0].setValue(true);",
+                    "    } else if(user.get('gender') === 2) {\t//여자",
+                    "        genderCmp.items.items[1].setValue(true);",
+                    "    }",
+                    "    //=========================================================",
+                    "",
+                    "    var userImg\t= this.lookupReference('userImg');",
+                    "    userImg.setSrc(''+user.get('profile'));",
+                    "",
+                    "}"
+                ]
+            },
+            "name": "onCancelUser",
+            "designerId": "59b567f7-7e31-4fde-9528-502562ef4fd5"
+        }
+    ]
+}

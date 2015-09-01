@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "permissionanalysislist",
+        "designer|userClassName": "analyzer.permission.PermissionAnalysisListViewController"
+    },
+    "name": "analyzer.status.StatusAnalysisListViewController1",
+    "designerId": "89eb5b4e-cde0-411b-aca0-7d8f7c1aa050",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewPermissionAnalysis",
+                "implHandler": [
+                    "this.fireViewEvent('viewPermissionAnalysis', this.getView(), record);"
+                ]
+            },
+            "name": "viewPermissionAnalysis",
+            "designerId": "1312821c-80c0-4f85-87fb-93182621ca11"
+        }
+    ]
+}

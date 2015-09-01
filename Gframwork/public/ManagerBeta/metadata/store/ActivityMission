@@ -1,0 +1,17 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "ActivityMission",
+        "groupField": null,
+        "model": "ActivityMission",
+        "storeId": "ActivityMission"
+    },
+    "name": "StatusClass2",
+    "designerId": "f6a9c0c8-526a-4a39-852d-f58bd41e6abe"
+}

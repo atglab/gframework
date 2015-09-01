@@ -1,0 +1,72 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ActivityMission",
+        "idProperty": null
+    },
+    "name": "StatusClass1",
+    "designerId": "de87a8fb-4321-4046-b641-808f19e3f2eb",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "id"
+            },
+            "name": "MyString39",
+            "designerId": "41b1af77-5707-4ba6-a4a5-670eb474880d"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "missionId"
+            },
+            "name": "MyString14",
+            "designerId": "c1f4ce62-81e5-4051-beb0-96541335149b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "missionName"
+            },
+            "name": "MyString31",
+            "designerId": "825dca50-254a-4345-8d5d-5adb1b939d15"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "activityMissionMemoryProxy",
+                "enablePaging": true
+            },
+            "name": "MyMemoryProxy2",
+            "designerId": "926a10ee-df28-4f19-8c46-e420fa742ba7"
+        }
+    ]
+}

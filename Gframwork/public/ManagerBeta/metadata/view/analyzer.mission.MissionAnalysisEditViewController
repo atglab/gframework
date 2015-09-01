@@ -1,0 +1,201 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "missionanalysisedit",
+        "designer|userClassName": "analyzer.mission.MissionAnalysisEditViewController"
+    },
+    "name": "analyzer.permission.PermissionAnalysisEditViewController1",
+    "designerId": "ccaeeff4-010b-432a-9dad-0fddd30d7c37",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsAllMissions",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/missions',",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var missionAnalysisAllStore\t= me.getStore('missionAnalysisAll');",
+                    "        missionAnalysisAllStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsAllMissions",
+            "designerId": "931dd734-7883-4ac1-8b04-4f6002e6443f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsMissionsCompletion",
+                "implHandler": [
+                    "var mission\t= this.getViewModel().get('theMission');",
+                    "var me \t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/missionscompletion/'+mission.get('id'),",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var missionAnalysisDistributionStore\t= me.getStore('missionAnalysisDistribution');",
+                    "        missionAnalysisDistributionStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});"
+                ]
+            },
+            "name": "getStatisticsMissionsCompletion",
+            "designerId": "029d5ee5-eb83-4e94-aa11-2db431d87d01"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getStatisticsMissionsStatus",
+                "implHandler": [
+                    "var mission\t= this.getViewModel().get('theMission');",
+                    "var me \t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: '/api/v1/analyzer/missionsstatus/'+mission.get('id'),",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'x-key': key,",
+                    "        'x-access-token': token",
+                    "    },",
+                    "    success: function(response){",
+                    "        var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "        var missionAnalysisDistributionStore\t= me.getStore('missionAnalysisDistribution');",
+                    "        missionAnalysisDistributionStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "    },",
+                    "    failure: function(response){console.log(response);}",
+                    "",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "getStatisticsMissionsStatus",
+            "designerId": "2df8fc1d-1794-43aa-8241-0b3ab866320a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "period"
+                ],
+                "fn": "getStatisticsMissionByPeriod",
+                "implHandler": [
+                    "var mission\t= this.getViewModel().get('theMission');",
+                    "var me \t\t\t= this;",
+                    "",
+                    "var key = Ext.getStore('ManagerInfo').data.items[0].get('key');",
+                    "var token = Ext.getStore('ManagerInfo').data.items[0].get('token');",
+                    "",
+                    "if(mission.create) {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/missionsbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var missionAnalysisPeriodStore\t= me.getStore('missionAnalysisPeriod');",
+                    "            missionAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "",
+                    "} else {",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/api/v1/analyzer/missionsbyperiod',",
+                    "        method: 'GET',",
+                    "        headers: {",
+                    "            'x-key': key,",
+                    "            'x-access-token': token",
+                    "        },",
+                    "        params:{",
+                    "            id: mission.get('id'),",
+                    "            period: period",
+                    "        },",
+                    "        success: function(response){",
+                    "            var decodeResponse \t\t= Ext.decode(response.responseText);",
+                    "",
+                    "            var missionAnalysisPeriodStore\t= me.getStore('missionAnalysisPeriod');",
+                    "            missionAnalysisPeriodStore.loadData(decodeResponse.data, false);",
+                    "",
+                    "        },",
+                    "        failure: function(response){console.log(response);}",
+                    "",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "getStatisticsMissionByPeriod",
+            "designerId": "0dda25e1-e14e-4211-b58b-3ad158329207"
+        }
+    ]
+}

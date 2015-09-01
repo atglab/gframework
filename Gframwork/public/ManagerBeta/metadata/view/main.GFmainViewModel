@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gfmain",
+        "designer|userClassName": "main.GFmainViewModel"
+    },
+    "name": "main.GFmainViewModel1",
+    "designerId": "324def16-7637-4794-b518-c8344d6697af"
+}

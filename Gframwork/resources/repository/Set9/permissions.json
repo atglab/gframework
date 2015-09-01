@@ -1,0 +1,10 @@
+[
+{
+"id" : "write_permission",
+"name" : "글쓰기 권한",
+"description" : "사용자 등급이 2등급 이상일 경우 주어지는 권한",
+"get_parameter" : "2",
+"relation_method" : "status_type",
+"relation_object" : "user_status"   
+}
+]

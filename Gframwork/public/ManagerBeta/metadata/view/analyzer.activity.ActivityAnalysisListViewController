@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "activityanalysislist",
+        "designer|userClassName": "analyzer.activity.ActivityAnalysisListViewController"
+    },
+    "name": "analyzer.badge.BadgeAnalysisListViewController1",
+    "designerId": "d9e2fb0d-7346-4024-8670-bd21f43d0fc4",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "viewActivityAnalysis",
+                "implHandler": [
+                    "this.fireViewEvent('viewActivityAnalysis', this.getView(), record);"
+                ]
+            },
+            "name": "viewActivityAnalysis",
+            "designerId": "485e784c-6d75-4b18-85c6-c8583370dfc4"
+        }
+    ]
+}

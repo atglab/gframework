@@ -1,0 +1,1913 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userAlias": "useranalysisedit",
+        "designer|userClassName": "analyzer.user.UserAnalysisEdit",
+        "height": null,
+        "layout": "vbox",
+        "requires": [
+            "Ext.chart.interactions.ItemHighlight"
+        ],
+        "title": [
+            "{theUser.name}"
+        ],
+        "width": null
+    },
+    "name": "analyzer.badge.BadgeAnalysisEdit1",
+    "configAlternates": {
+        "title": "binding"
+    },
+    "designerId": "f78527cd-9567-4b86-95dd-ec8f44685ad6",
+    "viewControllerInstanceId": "5afbbc08-50c2-4ad1-90c1-5e60e4aec4b4",
+    "viewModelInstanceId": "bd5624a2-ad10-42ee-bfb7-af3e8cbb0c70",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|displayName": "전체",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "reference": "allUserAnalysis"
+            },
+            "name": "MyContainer14",
+            "designerId": "34de03d0-c16b-4e96-a1ce-4c450fc296ef",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "container|align": "stretch",
+                        "designer|displayName": "전체 통계",
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "padding": "5 0 5 0",
+                        "title": "전체 통계"
+                    },
+                    "name": "MyPanel7",
+                    "designerId": "668727a3-e4ae-464c-8683-10a78654f35e",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.PolarChart",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": false,
+                                "colors": [
+                                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                ],
+                                "designer|displayName": "userGenderAnalysisPieChart",
+                                "dock": null,
+                                "innerPadding": 20,
+                                "layout|flex": 1,
+                                "maxHeight": null,
+                                "maxWidth": 500,
+                                "reference": null,
+                                "sprites": [
+                                    "{",
+                                    "    type: 'text',",
+                                    "    text: '성별 분포',",
+                                    "    width: 100,",
+                                    "    height: 30,    ",
+                                    "    font: '18px bold',",
+                                    "    x: 30,",
+                                    "    y: 30",
+                                    "}"
+                                ],
+                                "store": [
+                                    "{userGenderTotal}"
+                                ]
+                            },
+                            "name": "MyPieChart",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "2052d865-1e6c-4224-a5e6-ed422f410bd3",
+                            "isBuiltIn": true,
+                            "iconCls": "icon-pie-chart",
+                            "autoName": "MyPieChart",
+                            "cn": [
+                                {
+                                    "type": "Ext.chart.series.Pie",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "userGenderAnalysisPieSeries",
+                                        "highlight": [
+                                            "true"
+                                        ],
+                                        "label": [
+                                            "{",
+                                            "    field: 'x',",
+                                            "    calloutLine: {",
+                                            "        length: 40,",
+                                            "        width: 3",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "tooltip": [
+                                            "{",
+                                            "    trackMouse: true,",
+                                            "    renderer: function(storeItem, item) {",
+                                            "        this.setHtml(storeItem.get('x') + ': ' + storeItem.get('y') +'명');",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "xField": "y"
+                                    },
+                                    "name": "MyPieSeries1",
+                                    "designerId": "e3122520-618c-4dea-a18d-7bd142350987"
+                                },
+                                {
+                                    "type": "Ext.chart.Legend",
+                                    "reference": {
+                                        "name": "legend",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "border": null,
+                                        "designer|displayName": "userGenderLegend",
+                                        "docked": "bottom",
+                                        "itemSelector": null,
+                                        "store": null
+                                    },
+                                    "name": "MyLegend1",
+                                    "designerId": "623cd083-9101-4292-ab89-c68a363104e1",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "docked",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.chart.PolarChart",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": false,
+                                "colors": [
+                                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                ],
+                                "designer|displayName": "userAgeAnalysisPieChart",
+                                "dock": null,
+                                "innerPadding": 20,
+                                "layout|flex": 1,
+                                "maxHeight": null,
+                                "maxWidth": 500,
+                                "reference": null,
+                                "sprites": [
+                                    "{",
+                                    "    type: 'text',",
+                                    "    text: '연령 분포',",
+                                    "    width: 100,",
+                                    "    height: 30,    ",
+                                    "    font: '18px bold',",
+                                    "    x: 30,",
+                                    "    y: 30",
+                                    "}"
+                                ],
+                                "store": [
+                                    "{userAgeTotal}"
+                                ]
+                            },
+                            "name": "MyPieChart1",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "06f24571-c039-4681-bd7c-7018e6fb4148",
+                            "isBuiltIn": true,
+                            "iconCls": "icon-pie-chart",
+                            "autoName": "MyPieChart",
+                            "cn": [
+                                {
+                                    "type": "Ext.chart.series.Pie",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "userAgeAnalysisPieSeries",
+                                        "highlight": [
+                                            "true"
+                                        ],
+                                        "label": [
+                                            "{",
+                                            "    field: 'x',",
+                                            "    calloutLine: {",
+                                            "        length: 40,",
+                                            "        width: 3",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "tooltip": [
+                                            "{",
+                                            "    trackMouse: true,",
+                                            "    renderer: function(storeItem, item) {",
+                                            "        this.setHtml(storeItem.get('x') + ': ' + storeItem.get('y') +'명');",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "xField": "y"
+                                    },
+                                    "name": "MyPieSeries1",
+                                    "designerId": "e626f974-53a9-4b62-b738-1d81c781dbc0"
+                                },
+                                {
+                                    "type": "Ext.chart.Legend",
+                                    "reference": {
+                                        "name": "legend",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "border": null,
+                                        "designer|displayName": "userAgeLegend",
+                                        "docked": "bottom",
+                                        "itemSelector": null,
+                                        "store": null
+                                    },
+                                    "name": "MyLegend2",
+                                    "designerId": "a839f994-6d8b-447e-85c6-0a7672bc7bda",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "docked",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": 10,
+                        "container|align": "stretch",
+                        "designer|displayName": "시간에 따른 가입자 수 통계",
+                        "layout": "vbox",
+                        "layout|flex": 1,
+                        "title": "시간에 따른 가입자 수 통계"
+                    },
+                    "name": "MyForm2",
+                    "designerId": "3a6a96a2-ed5b-47a6-8bdf-88867985b034",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.CartesianChart",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "colors": [
+                                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                ],
+                                "designer|displayName": "userLineChart",
+                                "dock": null,
+                                "height": 350,
+                                "insetPadding": [
+                                    "40"
+                                ],
+                                "layout|flex": 1,
+                                "maxHeight": 350,
+                                "maxWidth": 1000,
+                                "reference": "userChartRef",
+                                "sprites": null,
+                                "store": [
+                                    "{userAnalysisPeriod}"
+                                ],
+                                "width": 1000
+                            },
+                            "name": "MyLineChart",
+                            "configAlternates": {
+                                "store": "binding"
+                            },
+                            "designerId": "11399b59-f7aa-4463-bf51-965178f86864",
+                            "isBuiltIn": true,
+                            "iconCls": "icon-line-chart",
+                            "autoName": "MyLineChart",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "userPeriodToolbar",
+                                        "dock": "top"
+                                    },
+                                    "name": "MyToolbar12",
+                                    "designerId": "4c32d2bc-8bc9-43b9-b432-2f3953f9a30f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.RadioGroup",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "기간검색",
+                                                "fieldLabel": "기간검색",
+                                                "layout|flex": null,
+                                                "reference": null,
+                                                "width": 400
+                                            },
+                                            "name": "MyRadioGroup3",
+                                            "designerId": "b8ce6fd0-bce4-42b1-8ecb-5b50e23e8bbe",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Radio",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "boxLabel": "1일",
+                                                        "checked": true,
+                                                        "designer|displayName": "1일",
+                                                        "fieldLabel": null,
+                                                        "inputValue": "1",
+                                                        "name": "period"
+                                                    },
+                                                    "name": "MyRadio4",
+                                                    "designerId": "589ea93d-ffcc-48aa-9d08-6d56c8328993"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Radio",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "boxLabel": "1주일",
+                                                        "designer|displayName": "1주일",
+                                                        "fieldLabel": null,
+                                                        "inputValue": "2",
+                                                        "name": "period"
+                                                    },
+                                                    "name": "MyRadio5",
+                                                    "designerId": "d86aebe2-4e9e-4a7f-b79a-4622e9e10eba"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Radio",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "boxLabel": "1개월",
+                                                        "designer|displayName": "1개월",
+                                                        "fieldLabel": null,
+                                                        "inputValue": "3",
+                                                        "name": "period"
+                                                    },
+                                                    "name": "MyRadio6",
+                                                    "designerId": "07c18478-1425-4322-b0dd-07be5e2ffb07"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Radio",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "boxLabel": "1년",
+                                                        "designer|displayName": "1년",
+                                                        "fieldLabel": null,
+                                                        "inputValue": "4",
+                                                        "name": "period"
+                                                    },
+                                                    "name": "MyRadio7",
+                                                    "designerId": "4eb15e52-4dba-469a-8911-994bf52355cd"
+                                                },
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onUserPeriodRadiogroupChange",
+                                                        "implHandler": [
+                                                            "this.getStatisticsAllUsersByPeriod(newValue.period);"
+                                                        ],
+                                                        "name": "change",
+                                                        "scope": "me"
+                                                    },
+                                                    "name": "onUserPeriodRadiogroupChange",
+                                                    "designerId": "e285e488-e15c-4173-9b44-8fd761a79fdd"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.axis.Numeric",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "발생 횟수",
+                                        "fields": [
+                                            "y"
+                                        ],
+                                        "grid": [
+                                            "true"
+                                        ],
+                                        "listeners": [
+                                            "{",
+                                            "    rangechange: function (axis, range) {",
+                                            "        if (!range) {",
+                                            "            return;",
+                                            "        }        ",
+                                            "        ",
+                                            "        var max = range[1];",
+                                            "        if (max >= 1000) {",
+                                            "            range[1] = max + (max * 0.3);",
+                                            "        } else {",
+                                            "            range[1] = max + (max * 0.3);",
+                                            "        }",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "minimum": 0,
+                                        "position": "left",
+                                        "title": [
+                                            "'발생 횟수'"
+                                        ]
+                                    },
+                                    "name": "MyNumericAxis",
+                                    "configAlternates": {
+                                        "listeners": "object"
+                                    },
+                                    "designerId": "407dfa06-4c8a-45a9-9fc0-e50d2385e1e2",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "listeners",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "label",
+                                                    "layout",
+                                                    "lastLabel"
+                                                ],
+                                                "fn": "renderer",
+                                                "implHandler": [
+                                                    "return Ext.util.Format.number(label\t, '0.0');"
+                                                ]
+                                            },
+                                            "name": "renderer",
+                                            "designerId": "841ae760-758a-41e5-b044-2a89c43db406"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.axis.Category",
+                                    "reference": {
+                                        "name": "axes",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "날짜",
+                                        "fields": [
+                                            "x"
+                                        ],
+                                        "grid": [
+                                            "true"
+                                        ],
+                                        "listeners": [
+                                            "{",
+                                            "    rangechange: function (axis, range) {",
+                                            "        if (!range) {",
+                                            "            return;",
+                                            "        }        ",
+                                            "        ",
+                                            "        var max = range[1];",
+                                            "        range[1] = max + 1;",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "title": [
+                                            "날짜"
+                                        ]
+                                    },
+                                    "name": "MyCategoryAxis",
+                                    "configAlternates": {
+                                        "listeners": "object"
+                                    },
+                                    "designerId": "c36b496a-554f-4dbe-9829-9f7feb404feb",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "listeners",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.series.Line",
+                                    "reference": {
+                                        "name": "series",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "axis": "left",
+                                        "designer|displayName": "userLineSeries",
+                                        "highlightCfg": [
+                                            "{",
+                                            "    scaling: 2",
+                                            "}"
+                                        ],
+                                        "label": [
+                                            "{",
+                                            "    field: 'y',",
+                                            "    display: 'over'",
+                                            "}"
+                                        ],
+                                        "marker": [
+                                            "{",
+                                            "    type: 'circle',",
+                                            "    fx: {",
+                                            "        duration: 200,",
+                                            "        easing: 'backOut'",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "style": [
+                                            "{",
+                                            "    lineWidth: 3",
+                                            "}"
+                                        ],
+                                        "title": [
+                                            "legend"
+                                        ],
+                                        "tooltip": [
+                                            "{",
+                                            "    trackMouse: true,",
+                                            "    style: 'background: #fff',",
+                                            "    renderer: function(storeItem, item) {",
+                                            "        var title = item.series.getTitle();",
+                                            "        this.setHtml(storeItem.get('x') + ': ' + storeItem.get(item.series.getYField()));",
+                                            "    }",
+                                            "}"
+                                        ],
+                                        "xField": "x",
+                                        "yField": [
+                                            "y"
+                                        ]
+                                    },
+                                    "name": "MyLineSeries",
+                                    "designerId": "bd5d5a2f-953c-42a9-81d3-3248613ee8bd",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "axis",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.chart.interactions.PanZoom",
+                                    "reference": {
+                                        "name": "interactions",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "userPanZoom"
+                                    },
+                                    "name": "MyPanZoomInteraction",
+                                    "designerId": "9a70eeca-ce93-4e64-b79a-dc4cd0dbe9e4"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|displayName": "특정 사용자",
+                "hidden": true,
+                "layout": "vbox",
+                "layout|flex": 1,
+                "reference": "specificUserAnalysis"
+            },
+            "name": "MyContainer15",
+            "designerId": "af521842-9924-4715-82f0-e0d001f45af4",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "top_menu_color"
+                        ],
+                        "container|align": "stretch",
+                        "layout": "hbox",
+                        "layout|flex": null,
+                        "margin": null,
+                        "padding": "5 0 5 0",
+                        "title": "기본 정보"
+                    },
+                    "name": "MyPanel6",
+                    "designerId": "371b275a-a71e-47bf-95ce-52dc690aeeb7",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "designer|displayName": "userImg",
+                                "height": 160,
+                                "margin": "5 5 5 20",
+                                "maxHeight": 160,
+                                "maxWidth": 160,
+                                "reference": "userImg",
+                                "src": "/resources/images/user/user.png",
+                                "width": 160
+                            },
+                            "name": "MyImg2",
+                            "designerId": "46efe488-e8c2-4be5-b4c9-1c5859a21678"
+                        },
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "alignTarget": null,
+                                "defaultAlign": null,
+                                "designer|displayName": "userInfomationField",
+                                "fieldLabel": null,
+                                "height": null,
+                                "labelAlign": null,
+                                "layout": "anchor",
+                                "layout|flex": 1,
+                                "margin": "10 10 10 10",
+                                "maxWidth": 700,
+                                "padding": null,
+                                "width": null
+                            },
+                            "name": "MyFieldContainer34",
+                            "designerId": "78abd87e-6e95-4c79-a5a7-8f3e6cbd9135",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "ID",
+                                        "editable": false,
+                                        "emptyText": "ID",
+                                        "fieldLabel": "ID",
+                                        "layout|anchor": "100%",
+                                        "maskRe": null,
+                                        "maxLength": 20,
+                                        "maxLengthText": null,
+                                        "minLength": 1,
+                                        "reference": "userId",
+                                        "value": null
+                                    },
+                                    "name": "MyTextField2",
+                                    "designerId": "5e8067d3-06fa-437e-8d54-2dc52e56bb5f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "이름",
+                                        "editable": false,
+                                        "emptyText": "이름",
+                                        "fieldLabel": "이름",
+                                        "formBind": null,
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "reference": "userName",
+                                        "value": null
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "a4155e9f-68eb-4815-87fb-e28a021cb22a"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "닉네임",
+                                        "editable": false,
+                                        "emptyText": "닉네임",
+                                        "fieldLabel": "닉네임",
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "reference": "userNick",
+                                        "value": null
+                                    },
+                                    "name": "MyTextField1",
+                                    "designerId": "36558c07-3f66-4eff-b492-d520fcb48ee5"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "성별",
+                                        "editable": false,
+                                        "emptyText": "성별",
+                                        "fieldLabel": "성별",
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "reference": "userGender",
+                                        "value": null
+                                    },
+                                    "name": "MyTextField3",
+                                    "designerId": "301ee77b-edf8-4232-adc4-a2797bff1aef"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "나이",
+                                        "editable": false,
+                                        "emptyText": "나이",
+                                        "fieldLabel": "나이",
+                                        "layout|anchor": "100%",
+                                        "maxLength": 20,
+                                        "minLength": 1,
+                                        "publishes": null,
+                                        "reference": "userAge",
+                                        "value": null
+                                    },
+                                    "name": "MyTextField4",
+                                    "designerId": "c387bf72-c8f2-4aaf-a114-d5bb03c06d9e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "designer|displayName": "세부정보",
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "title": null
+                    },
+                    "name": "MyPanel9",
+                    "designerId": "362d7c95-a227-422e-8b7e-a4a11fb34037",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "cls": [
+                                    "top_menu_color"
+                                ],
+                                "html": [
+                                    "'<center><h2>해당 유저의 게임 메카닉 정보를 찾을수 없습니다.</h2></center>'"
+                                ],
+                                "layout": "accordion",
+                                "layout|flex": 1,
+                                "padding": "0 5 0 0",
+                                "title": "게임 메카닉 정보"
+                            },
+                            "name": "MyForm4",
+                            "designerId": "44543cb6-67da-4220-b802-217d47486172",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Badges",
+                                        "layout": "fit",
+                                        "reference": "badgesInfo",
+                                        "title": "Badges"
+                                    },
+                                    "name": "MyPanel10",
+                                    "designerId": "16cb3a2c-f45d-44a2-b79d-208478a9ee0e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.view.View",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "badge_icon",
+                                                "disableSelection": true,
+                                                "itemSelector": "div.icon_repository",
+                                                "store": [
+                                                    "{badges}"
+                                                ]
+                                            },
+                                            "name": "MyView1",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "95920d55-cfb3-4fe1-ae1b-bc8dfecf6ec4",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "itemTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "point_itemTpl",
+                                                        "implHandler": [
+                                                            "<tpl for=\".\">",
+                                                            "    <div class=\"icon_repository\">      ",
+                                                            "            <img src=\"/ManagerBeta{icon}\" width=70 height=70/>",
+                                                            "    </div>",
+                                                            "</tpl>"
+                                                        ]
+                                                    },
+                                                    "name": "itemTpl",
+                                                    "designerId": "a951f13d-ba23-4614-a8d9-788c043568ef"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Points",
+                                        "reference": "pointsInfo",
+                                        "title": "Points"
+                                    },
+                                    "name": "MyPanel11",
+                                    "designerId": "3aa13bbb-6611-402a-bb18-12a32d2b2576",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": true,
+                                                "designer|displayName": "pointGridPanel",
+                                                "forceFit": true,
+                                                "hideHeaders": true,
+                                                "store": [
+                                                    "{points}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel3",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "70ce6c1c-59d9-4d20-956e-2e6d47e7f587",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "name",
+                                                        "designer|displayName": "이름",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "이름"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "cb3be94e-92e5-4a4d-a19b-83de0c4f4f9a"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Action",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "anchorSize": null,
+                                                        "dataIndex": "icon",
+                                                        "defaultWidth": null,
+                                                        "designer|displayName": "아이콘",
+                                                        "flex": 1,
+                                                        "icon": null,
+                                                        "iconCls": "grid-img",
+                                                        "itemId": null,
+                                                        "tdCls": "grid-size",
+                                                        "text": "아이콘",
+                                                        "tooltip": null,
+                                                        "width": null
+                                                    },
+                                                    "name": "MyActionColumn6",
+                                                    "designerId": "a4ce4df4-1cbb-48e9-824f-044f895e79c0",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "this.icon = '/ManagerBeta/'+value;"
+                                                                ]
+                                                            },
+                                                            "name": "renderer",
+                                                            "designerId": "447bca82-4d8f-4eb2-a7da-08f6e742ac36"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Widget",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "ratio",
+                                                        "designer|displayName": "비율",
+                                                        "flex": 1,
+                                                        "sortable": true,
+                                                        "text": "비율"
+                                                    },
+                                                    "name": "MyWidget2",
+                                                    "designerId": "65720fdc-561e-408a-9062-923e2b52c4a9",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.ProgressBarWidget",
+                                                            "reference": {
+                                                                "name": "widget",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "ratioProgressBar",
+                                                                "textTpl": [
+                                                                    "'{percent:number(\"0\")}% done'"
+                                                                ]
+                                                            },
+                                                            "name": "MyProgressBarWidget",
+                                                            "designerId": "c264ecc4-aec8-4e02-b053-1bca82e018df"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "status",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "상태"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "ba49fde4-9e0a-4941-aeef-804fe03874ab"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Levels",
+                                        "reference": "levelsInfo",
+                                        "title": "Levels"
+                                    },
+                                    "name": "MyPanel12",
+                                    "designerId": "bf96a178-ed04-4db4-a659-71a2cd0e4e85",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": true,
+                                                "designer|displayName": "levelGridPanel",
+                                                "forceFit": true,
+                                                "hideHeaders": true,
+                                                "store": [
+                                                    "{levels}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel4",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "2a89bc77-2419-4bad-b2ed-626d7361438a",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "name",
+                                                        "designer|displayName": "이름",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "이름"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "6a0b75ae-e424-4d3c-b25a-e6d8d841c1e8"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Action",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "anchorSize": null,
+                                                        "dataIndex": "icon",
+                                                        "defaultWidth": null,
+                                                        "designer|displayName": "아이콘",
+                                                        "flex": 1,
+                                                        "icon": null,
+                                                        "iconCls": "grid-img",
+                                                        "itemId": null,
+                                                        "tdCls": "grid-size",
+                                                        "text": "아이콘",
+                                                        "tooltip": null,
+                                                        "width": null
+                                                    },
+                                                    "name": "MyActionColumn6",
+                                                    "designerId": "2a74b858-642f-410f-8b51-53902bc8db9d",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "this.icon = '/ManagerBeta/'+value;"
+                                                                ]
+                                                            },
+                                                            "name": "renderer",
+                                                            "designerId": "f472ea6b-2e29-455d-a5b0-0daaad35f57c"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Widget",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "ratio",
+                                                        "designer|displayName": "비율",
+                                                        "flex": 1,
+                                                        "sortable": true,
+                                                        "text": "비율"
+                                                    },
+                                                    "name": "MyWidget2",
+                                                    "designerId": "cf3c3d5d-f60e-4b53-97da-df7aed556cbc",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.ProgressBarWidget",
+                                                            "reference": {
+                                                                "name": "widget",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "ratioProgressBar",
+                                                                "textTpl": [
+                                                                    "'{percent:number(\"0\")}% done'"
+                                                                ]
+                                                            },
+                                                            "name": "MyProgressBarWidget",
+                                                            "designerId": "bd56bd74-1fc0-411d-8e4b-5a54dc302f76"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "status",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "상태"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "cade1a37-7089-4832-8c12-cdd8001c8845"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Statuses",
+                                        "reference": "statusesInfo",
+                                        "title": "Statuses"
+                                    },
+                                    "name": "MyPanel17",
+                                    "designerId": "92a6a360-2c0e-4766-9814-9f09d21a2439",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": true,
+                                                "designer|displayName": "statusGridPanel",
+                                                "forceFit": true,
+                                                "hideHeaders": true,
+                                                "store": [
+                                                    "{statuses}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel9",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "b5da8dd8-e61a-4cca-9dae-3a3a91a2ac61",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "name",
+                                                        "designer|displayName": "이름",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "이름"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "348fee82-e069-49c3-b5a3-fb4de1464c72"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Action",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "anchorSize": null,
+                                                        "dataIndex": "icon",
+                                                        "defaultWidth": null,
+                                                        "designer|displayName": "아이콘",
+                                                        "flex": 1,
+                                                        "icon": null,
+                                                        "iconCls": "grid-img",
+                                                        "itemId": null,
+                                                        "tdCls": "grid-size",
+                                                        "text": "아이콘",
+                                                        "tooltip": null,
+                                                        "width": null
+                                                    },
+                                                    "name": "MyActionColumn6",
+                                                    "designerId": "92cfb7ca-f2a4-483c-b6a9-fd864b8c5f2c",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "this.icon = '/ManagerBeta/'+value;"
+                                                                ]
+                                                            },
+                                                            "name": "renderer",
+                                                            "designerId": "d052e097-7e2d-4083-ad24-3a3c40ba5b2e"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "status",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "상태"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "ddf8751b-45d9-4ceb-a4f7-74dc704be321"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Permissions",
+                                        "reference": "permissionsInfo",
+                                        "title": "Permissions"
+                                    },
+                                    "name": "MyPanel18",
+                                    "designerId": "79248b79-145b-4180-a73d-c19948cdf4da",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": true,
+                                                "designer|displayName": "permissionGridPanel",
+                                                "forceFit": true,
+                                                "hideHeaders": true,
+                                                "store": [
+                                                    "{permissions}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel5",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "c299e6c8-aa73-42f5-87c6-228857e89d33",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "name",
+                                                        "designer|displayName": "이름",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "이름"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "f46c61fb-8393-46ce-b118-f3fde168a2c1"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "status",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "상태"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "083d83ca-2215-4ed8-884d-c17a503282a8"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "Missions",
+                                        "reference": "missionsInfo",
+                                        "title": "Missions"
+                                    },
+                                    "name": "MyPanel19",
+                                    "designerId": "5f40bc04-fdf5-4385-9155-e221f29b54fc",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": true,
+                                                "designer|displayName": "missionGridPanel",
+                                                "forceFit": true,
+                                                "hideHeaders": true,
+                                                "store": [
+                                                    "{missions}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel6",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "8a61756b-31c5-467c-b9c2-d33c95c7953c",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "name",
+                                                        "designer|displayName": "이름",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "이름"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "d433b79a-2a43-4c67-898c-b496402a4ebe"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Widget",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "ratio",
+                                                        "designer|displayName": "비율",
+                                                        "flex": 1,
+                                                        "sortable": true,
+                                                        "text": "비율"
+                                                    },
+                                                    "name": "MyWidget2",
+                                                    "designerId": "b0db4b10-3f5c-42f3-9506-f22b6403b5e1",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.ProgressBarWidget",
+                                                            "reference": {
+                                                                "name": "widget",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "ratioProgressBar",
+                                                                "textTpl": [
+                                                                    "'{percent:number(\"0\")}% done'"
+                                                                ]
+                                                            },
+                                                            "name": "MyProgressBarWidget",
+                                                            "designerId": "4d32d7ce-5cff-4e67-94dc-408595a0a3bb"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "status",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "상태"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "5745ef62-1e42-4f3d-b1ad-35f56e6f7df0"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "completeCount",
+                                                        "designer|displayName": "완료횟수",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "완료횟수"
+                                                    },
+                                                    "name": "MyColumn9",
+                                                    "designerId": "2a376794-db93-410a-953b-96ff0cb845af"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.tab.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "activeTab": 0,
+                                "designer|displayName": "최근 정보",
+                                "layout|flex": 1
+                            },
+                            "name": "MyTabPanel3",
+                            "designerId": "ff51a47e-b53b-4110-800a-dd26a868a085",
+                            "cn": [
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "최근 활동",
+                                        "scrollable": "true",
+                                        "title": "최근 활동",
+                                        "width": null
+                                    },
+                                    "name": "MyPanel20",
+                                    "designerId": "3f1837de-3266-481c-a40d-30a4bddb5bc8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tab.Tab",
+                                            "reference": {
+                                                "name": "tabConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "activityLogsTabConfig",
+                                                "layout|flex": 1
+                                            },
+                                            "name": "TabConfig",
+                                            "designerId": "0ff15b6b-d8aa-471a-8549-b9f9e1bf911a"
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": false,
+                                                "designer|displayName": "activityLogsGridPanel",
+                                                "forceFit": true,
+                                                "sortableColumns": false,
+                                                "store": [
+                                                    "{activityLogs}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel7",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "2f893cff-a32d-48a8-a3ef-57cadc76c5cd",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.RowNumberer",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "designer|displayName": "activityLogsRowNumberer",
+                                                        "flex": 1,
+                                                        "text": "순번"
+                                                    },
+                                                    "name": "MyRowNumberer5",
+                                                    "designerId": "17482433-2a80-4388-8c6b-ef5e07bf9b01"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "activity",
+                                                        "designer|displayName": "활동",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "활동"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "82b3bab8-f6ed-402b-9cdc-3240846f6a68"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "time",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "시간"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "bb75b7dd-b094-4899-b9a5-96cae79d01d8"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "최근 보상",
+                                        "scrollable": "true",
+                                        "title": "최근 보상"
+                                    },
+                                    "name": "MyPanel21",
+                                    "designerId": "0e629a97-2c16-43b8-9a98-4942f30c4e10",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.tab.Tab",
+                                            "reference": {
+                                                "name": "tabConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "rewardLogsTabConfig",
+                                                "layout|flex": 1
+                                            },
+                                            "name": "TabConfig3",
+                                            "designerId": "48738e75-b84a-450c-b624-5cfade6a56e0"
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "columnLines": false,
+                                                "designer|displayName": "rewardLogsGridPanel",
+                                                "forceFit": true,
+                                                "scrollable": null,
+                                                "sortableColumns": false,
+                                                "store": [
+                                                    "{rewardLogs}"
+                                                ],
+                                                "title": null
+                                            },
+                                            "name": "MyGridPanel8",
+                                            "configAlternates": {
+                                                "store": "binding"
+                                            },
+                                            "designerId": "4d60b31f-b5ca-4591-8403-529028a461bf",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.grid.column.RowNumberer",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "designer|displayName": "rewardLogsRowNumberer",
+                                                        "flex": 1,
+                                                        "text": "순번"
+                                                    },
+                                                    "name": "MyRowNumberer5",
+                                                    "designerId": "9a6a99b2-7f9b-49d5-a3fc-cc5115804119"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "reward",
+                                                        "designer|displayName": "활동",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "활동"
+                                                    },
+                                                    "name": "MyColumn7",
+                                                    "designerId": "f5f30523-216a-4985-8938-1b0e6230089f"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "align": "center",
+                                                        "dataIndex": "time",
+                                                        "designer|displayName": "상태",
+                                                        "flex": 1,
+                                                        "hideMode": null,
+                                                        "text": "시간"
+                                                    },
+                                                    "name": "MyColumn8",
+                                                    "designerId": "391e40dd-6172-4b62-9c27-1f68ba71271d"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserAnalysisFormShow",
+                "implHandler": [
+                    "var user\t\t\t\t= this.getViewModel().get('theUser');",
+                    "",
+                    "var statisticsAllUsers\t= this.lookupReference('allUserAnalysis');",
+                    "var statisticsUser\t\t= this.lookupReference('specificUserAnalysis');",
+                    "",
+                    "var nStart = new Date().getTime();     ",
+                    "console.log('게임 메카닉 결과 분석 시작 시점(User)');",
+                    "",
+                    "if(user.create) {",
+                    "",
+                    "    this.getStatisticsAllUsers();",
+                    "    this.getStatisticsAllUsersByPeriod(1);",
+                    "",
+                    "    statisticsAllUsers.show();",
+                    "    statisticsUser.hide();",
+                    "} else {",
+                    "    this.getStatisticsUser(user.id);",
+                    "",
+                    "    statisticsAllUsers.hide();",
+                    "    statisticsUser.show();",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    "var nEnd =  new Date().getTime();",
+                    "console.log('게임 메카닉 결과 분석 종료 시점(User)');",
+                    "",
+                    "var nDiff = nEnd - nStart;     ",
+                    "",
+                    "console.log('게임 메카닉 결과 분석 기능 반응 시간(User) : '+ nDiff + ' (ms)');"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onUserAnalysisFormShow",
+            "designerId": "d2809a86-b401-4a2d-b28f-b5f6f6b2b1fe"
+        }
+    ]
+}

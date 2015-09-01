@@ -1,0 +1,58 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LevelEntity",
+        "idProperty": null
+    },
+    "name": "Mission1",
+    "designerId": "ca816731-e1d8-4583-8ccd-bb550f169aaa",
+    "cn": [
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "level",
+                "unique": true
+            },
+            "name": "MyNumber5",
+            "designerId": "816b6187-af8a-4e4f-944e-a4239a0491d6"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": null,
+                "name": "condition"
+            },
+            "name": "MyString14",
+            "designerId": "4f643a44-23d6-4a67-9fcd-1d06196ce28e"
+        },
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "LevelEntityMemoryProxy",
+                "enablePaging": true
+            },
+            "name": "MyMemoryProxy1",
+            "designerId": "b296fb9c-1bf2-4a7f-b1d1-94da4ed871d5"
+        }
+    ]
+}
