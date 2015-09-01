@@ -1,0 +1,10 @@
+{
+  "SERVER_DOMAIN": "dev1.atglab.co.kr",
+  "SERVER_PORT": "3000",
+  "APIPATH_ACTIVITY_DO": "/api/activities/do",
+  "APIPATH_USER_ADD": "/api/users",
+  "APIPATH_USER_UPDATE": "/api/users/:id",
+  "APIPATH_USER_GET": "/api/users/:id",
+  "APIPATH_USER_DELETE": "/api/users/:id",
+  "APIPATH_HAS_PERMISSION": "/api/userpermission"
+}
